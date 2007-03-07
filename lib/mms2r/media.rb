@@ -24,7 +24,7 @@ require 'mms2r/verizon_media'
 # standard media features submit a sample to the author for inclusion in this
 # project.
 #
-# The +create+ method is a factory method to create MMS2R::Media
+# The create method is a factory method to create MMS2R::Media
 # Custom media producers can be pushed into the factory via the
 # MMS2R::CARRIER_CLASSES Hash, e.g.
 #
@@ -49,7 +49,7 @@ module MMS2R
 
   ##
   # A hash of carriers that MMS2r is currently aware of.
-  # The factory +create+ method uses the hostname portion 
+  # The factory create method uses the hostname portion 
   # of an MMS's from to select the correct type of MMS2R::Media
   # product.  If a specific media product is not available
   # MMS2R::Media should be used.
@@ -77,8 +77,8 @@ module MMS2R
     attr_reader :media
 
     ##
-    # Creates a new MMS2R::Media comprised of a +mail+ mail
-    # a +logger+.  Logger is an instance attribute allowing
+    # Creates a new Media comprised of a mail
+    # a logger.  Logger is an instance attribute allowing
     # for a logging strategy per carrier type
 
     def initialize(mail, logger=nil)
@@ -92,11 +92,11 @@ module MMS2R
     end
 
     ##
-    # Helper for +process+:: template method to decode the part based 
+    # Helper for process template method to decode the part based 
     # on its type and write its content to a temporary file.  Returns 
     # path to temporary file that holds the content.  Parts with a main
     # type of text will have their contents transformed with a call to
-    # +transform_text+::
+    # transform_text
     #
     # Producers should only override this method if the parts of
     # the MMS need special treatment besides what is expected for
@@ -104,7 +104,7 @@ module MMS2R
     #
     # Returns a tupple of content type, file path
 
-    def process_media(part) # :nodoc:
+    def process_media(part)
       # TMail body auto-magically decodes quoted
       # printable for text/html type.
       # base64_decode is safe in TMail facade, no work is performed
@@ -122,9 +122,9 @@ module MMS2R
     end
 
     ##
-    # Helper for +process_media+:: template method to transform text.
+    # Helper for process_media template method to transform text.
 
-    def transform_text(type,text) # :nodoc:
+    def transform_text(type,text)
       f = "#{self.class.name.downcase.gsub(/::/,'_')}_transform.yml"
       yf = File.join(self.class.conf_dir(), "#{f}")
       return text unless File::exist?(yf)
@@ -138,7 +138,7 @@ module MMS2R
     end
 
     ##
-    # Helper for +process+:: template method to determine if 
+    # Helper for process template method to determine if 
     # media contained in a part should be ignored.  Producers 
     # should override this method to return true for media such 
     # as images that are advertising, carrier logos, etc.
@@ -162,7 +162,7 @@ module MMS2R
     end
 
     ##
-    # Helper for +process+:: template method to name a temporary
+    # Helper for process template method to name a temporary
     # filepath based on information in the part.  This version
     # attempts to honor the name of the media as labeled in the part
     # header and creates a unique temporary directory for writing
@@ -194,12 +194,12 @@ module MMS2R
     # media of a MMS.
     #
     # Helpers methods for the process template:
-    # +ignore_media?+:: true if the media contained a is part should
+    # ignore_media? true if the media contained a is part should
     # be ignored.
-    # +process_media+:: retrieves media to temporary file, returns path
+    # process_media retrieves media to temporary file, returns path
     # to file.
-    # +transform_text+:: called by process_media, strips out advertising.
-    # +temp_file+:: creates a temporary filepath based on information from
+    # transform_text called by process_media, strips out advertising.
+    # temp_file creates a temporary filepath based on information from
     # the part.
 
     def process()
@@ -230,8 +230,8 @@ module MMS2R
     end
 
     ##
-    # Helper to +temp_file+:: to create a unique temporary directory that is
-    # a child of +tmp_dir+::.  This version is based on the message_id of the
+    # Helper to temp_file to create a unique temporary directory that is
+    # a child of tmp_dir  This version is based on the message_id of the
     # mail.
 
     def msg_tmp_dir()
@@ -246,7 +246,7 @@ module MMS2R
     #
     # Returns a MMS2R::Media product based on the characteristics
     # of the carrier from which the the MMS originated.  
-    # +mail+ is a TMail object, +logger+ is a Logger and may be
+    # mail is a TMail object, logger is a Logger and may be
     # nil.
 
     def self.create(mail, logger=nil)

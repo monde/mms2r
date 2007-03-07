@@ -16,14 +16,14 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.description = p.paragraphs_of('README.txt', 2..5).join("\n\n")
   p.url = p.paragraphs_of('README.txt', 0).first.split(/\n/)[1..-1]
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
-  p.extra_deps << ['mechanize']
   p.extra_deps << ['hpricot']
   p.extra_deps << ['rcov']
+  p.clean_globs << 'coverage'
 end
 
 Rcov::RcovTask.new do |t|
   t.test_files = FileList['test/test*.rb']
-  t.verbose = true     # uncomment to see the executed command
+  t.verbose = true
   t.rcov_opts << "--exclude rcov.rb,hpricot.rb,hpricot/.*\.rb"
 end
 

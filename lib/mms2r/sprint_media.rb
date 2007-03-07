@@ -18,7 +18,7 @@ module MMS2R
     # MMS2R::SprintMedia has to pick apart an HTML attachment to find
     # the URL to the media on Sprint's content server.
 
-    def process_media(part) # :nodoc:
+    def process_media(part)
       part.base64_decode
       if self.class.part_type?(part).eql?('text/plain')
         file_name = filename?(part)

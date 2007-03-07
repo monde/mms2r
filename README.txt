@@ -11,7 +11,7 @@ stripping out advertising injected by the cellphone carriers.  MMS messages are
 multipart email and the carriers often inject branding into these messages. 
 
 If MMS2R is not aware of a particular carrier no extra processing is done 
-to the MMS other than decoding and consolodating its media.
+to the MMS other than decoding and consolidating its media.
 
 Contact the author to add additional carriers to be processed by the library.
 
@@ -33,15 +33,22 @@ Corpus of carriers currently processed by MMS2R:
   require 'tmail'
   media = TMail::Media.parse(IO.readlines("mymail.file").join)
   mms = MMS2R::Media.create(mail,Logger.new(STDOUT))
-TODO fix the example
   mms.process
+  # mms.media is a hash that is indexed by mime-type
+  # the mime-type key returns an array of filepaths
+  # to media in the MMS that was of that type
   mms.media['image/jpeg'].each {|f| puts "${f}"}
   mms.media['text/plain'].each {|f| puts "${f}"}
+  text = File.open(mms.media['text/plain'][0], 'rb') { |file|
+       file.read
+  }
+  puts text
+  #remove the media that was put to temporary disk
+  #mms.purge
 
 == REQUIREMENTS:
 
 * TMail
-* Mechanize
 * Hpricot
 
 == INSTALL:

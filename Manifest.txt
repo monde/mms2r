@@ -38,7 +38,6 @@ lib/vendor/tmail/scanner_r.rb
 lib/vendor/tmail/stringio.rb
 lib/vendor/tmail/tmail.rb
 lib/vendor/tmail/utils.rb
-test/files/.verizon-video-01.mail.swp
 test/files/dot.jpg
 test/files/sprint-image-01.mail
 test/files/sprint-text-01.mail
@@ -47,11 +46,9 @@ test/files/sprint.mov
 test/files/verizon-image-01.mail
 test/files/verizon-text-01.mail
 test/files/verizon-video-01.mail
-test/net_http_stub.rb
 test/test_mms2r_cingular.rb
 test/test_mms2r_media.rb
 test/test_mms2r_mmode.rb
 test/test_mms2r_sprint.rb
 test/test_mms2r_tmobile.rb
 test/test_mms2r_verizon.rb
-test/uri_stub.rb
