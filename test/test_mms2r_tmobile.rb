@@ -1,0 +1,169 @@
+$:.unshift File.join(File.dirname(__FILE__), "..", "lib")
+require 'test/unit'
+require 'rubygems'
+require 'mms2r'
+require 'mms2r/media'
+require 'tmail/mail'
+require 'logger'
+
+class MMS2RTMobileTest < Test::Unit::TestCase
+
+  def setup
+    @log = Logger.new(STDOUT)
+    @log.level = Logger::DEBUG
+    @log.datetime_format = "%H:%M:%S"
+
+    msg = <<EOF
+Message-ID: <10234453.0093232090000.JavaMail.mms@lalaaa05>
+From: 2068675309@tmomail.net
+To: tommytutone@example.com
+Subject: ads are bad
+Date: Fri, 29 Dec 2006 17:48:41 -0800
+Mime-Version: 1.0
+Content-Type: multipart/related; type="text/html"; 
+	boundary="----=_Part_6032807_21271850.1167443321223"
+Importance: Normal
+X-MMS-Message-Type: MM4_forward.REQ
+X-Priority: 3
+
+------=_Part_6032807_21271850.1167443321223
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Content-ID: <0000>
+Content-Disposition: inline
+
+<html>
+  <head>
+=09=09<title>T-Mobile</title>=20
+=09=09<!--
+=09=09=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+=09=09If you can read this text, but much of the message below seems unread=
+able, you might be using an e-mail program that does not work with HTML.
+
+=09=09=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D-->
+=09=09<style type=3D"text/css">
+<!--
+
+=09=09.footer {
+=09=09=09font-family: Arial, Helvetica, sans-serif;
+=09=09=09font-size: 11px;
+=09=09=09color: #555555;
+=09=09=09text-decoration: none;
+=09=09}
+=09=09.normal {
+=09=09=09font-family: Arial, Helvetica, sans-serif;
+=09=09=09font-size: 10px;
+=09=09=09color: #555555;
+=09=09=09text-decoration: none;
+=09=09}
+
+=09=09-->
+=09=09</style>
+=09</head>
+=09<body marginwidth=3D"0" marginheight=3D"0" leftmargin=3D"0" topmargin=3D=
+"0" bgcolor=3D"#ffffff">
+=09=09<table border=3D"0" width=3D"600" cellspacing=3D"0" cellpadding=3D"0"=
+>
+=09=09=09<tr>
+=09=09=09=09<td width=3D"20" rowspan=3D"8"><img src=3D"cid:tmobilespace.gif=
+" width=3D"20" height=3D"20"></td>
+=09=09=09=09<td width=3D"600" colspan=3D"2"><img src=3D"cid:tmobilespace.gi=
+f" width=3D"600" height=3D"20"></td>
+=09=09=09=09<td width=3D"20" rowspan=3D"8"><img src=3D"cid:tmobilespace.gif=
+" width=3D"20" height=3D"20"></td>
+=09=09=09</tr>
+=09=09=09<tr>
+=09=09=09=09<td width=3D"600" colspan=3D"2"><img src=3D"cid:dottedline600.g=
+if" width=3D"600"></td>
+=09=09=09</tr>
+=09=09=09<tr>
+=09=09=09=09<td width=3D"370">
+=09=09=09=09    <!-- presentation starts here -->
+=09=09=09=09   <table border=3D0><tr><tr><td colspan=3D1 align=3D"Left"><IM=
+G align=3Dbaseline alt=3D"" border=3D0 hspace=3D0 src=3D"cid:280"></td></tr=
+></tr><TR><TD width=3D350 colSpan=3D1><IMG height=3D30 src=3D"cid:tmobilesp=
+ace.gif"  width=3D350></TD></TR><TR><TD width=3D350 colSpan=3D4><IMG src=3D=
+"cid:dottedline350.gif"  width=3D350></TD></TR><TR><TR><TD width=3D350 colS=
+pan=3D4><IMG height=3D30 src=3D"cid:tmobilespace.gif"  width=3D350></TD></T=
+R></table>=20
+=09=09=09=09    <!-- presentation ends here -->
+=09=09=09=09</td>
+=09=09=09=09<td width=3D"240" bgcolor=3D"#f2f2f2"><BR></td>
+=09=09=09</tr>
+  <tr>
+=09=09=09=09<td width=3D"600" colspan=3D"2"><img src=3D"cid:tmobilelogo.gif=
+" width=3D"600" height=3D"45"></td>
+  </tr>
+  <tr>
+=09=09=09=09<td width=3D"600" colspan=3D"2"><img src=3D"cid:tmobilespace.gi=
+f" width=3D"600" height=3D"10"></td>
+=09=09=09</tr>
+=09=09=09<tr>
+=09=09=09=09<td width=3D"600" colspan=3D"2"><span class=3D"footer">This mes=
+sage was sent from a T-Mobile wireless phone.
+</span></td>
+  </tr>
+  <tr>
+=09=09=09=09<td width=3D"600" colspan=3D"2"><img src=3D"cid:tmobilespace.gi=
+f" width=3D"600" height=3D"40"></td>
+  </tr>
+</table>
+</body></html>
+
+------=_Part_6032807_21271850.1167443321223
+Content-Type: image/jpeg; name=12-01-06_1234.jpg
+Content-Transfer-Encoding: base64
+Content-Location: 12-01-06_1234.jpg
+Content-ID: <280>
+
+R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==
+------=_Part_6032807_21271850.1167443321223
+Content-Type: image/gif; name=audio.gif
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=audio.gif
+Content-ID: <audio.gif>
+
+R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==
+------=_Part_6032807_21271850.1167443321223
+Content-Type: image/gif; name=dottedline600.gif
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=dottedline600.gif
+Content-ID: <dottedline600.gif>
+
+R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==
+------=_Part_6032807_21271850.1167443321223
+Content-Type: image/gif; name=tmobilelogo.gif
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=tmobilelogo.gif
+Content-ID: <tmobilelogo.gif>
+
+R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==
+------=_Part_6032807_21271850.1167443321223
+Content-Type: image/gif; name=tmobilespace.gif
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=tmobilespace.gif
+Content-ID: <tmobilespace.gif>
+
+R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==
+------=_Part_6032807_21271850.1167443321223
+Content-Type: image/gif; name=video.gif
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=video.gif
+Content-ID: <video.gif>
+
+R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==
+------=_Part_6032807_21271850.1167443321223--
+EOF
+    @simple_image_mail = TMail::Mail.parse(msg)
+  end
+
+  def teadown; end
+
+  def test_ignore_simple_image
+    mms = MMS2R::Media.create(@simple_image_mail)
+    mms.process
+    assert(mms.media.size == 1)
+    assert(File.basename(mms.media['image/jpeg'][0]).eql?('12-01-06_1234.jpg'))
+    mms.purge
+  end
+end
