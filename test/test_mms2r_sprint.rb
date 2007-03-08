@@ -117,7 +117,7 @@ class MMS2RSprintTest < Test::Unit::TestCase
 
   def test_simple_image
     mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
-    mms = MMS2R::Media.create(mail,@logger)
+    mms = MMS2R::Media.create(mail)
     mms.process
 
     assert(mms.media.size == 1)   
@@ -148,7 +148,7 @@ class MMS2RSprintTest < Test::Unit::TestCase
   end
 
   private
-    def load_mail(file)
-      IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
-    end
+  def load_mail(file)
+    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
+  end
 end

@@ -1,4 +1,18 @@
+== 1.0.1 / 2007-03-07
+
+* Reorganized tests and fixtures
+* Added carriers:
+* Cingular => cingularme.com
+* Nextel => messaging.nextel.com
+* Verizon => vtext.com
+
 == 1.0.0 / 2007-03-06
 
 * Birthday!
+* AT&T/Cingular => mmode.com
+* Cingular => mms.mycingular.com
+* Sprint => pm.sprint.com
+* Sprint => messaging.sprintpcs.com
+* T-Mobile => tmomail.net
+* Verizon => vzwpix.com
 

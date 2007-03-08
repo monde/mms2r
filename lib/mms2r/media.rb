@@ -10,6 +10,7 @@ require 'mms2r'
 require 'mms2r/version'
 require 'mms2r/cingular_media'
 require 'mms2r/mmode_media'
+require 'mms2r/nextel_media'
 require 'mms2r/sprint_media'
 require 'mms2r/tmobile_media'
 require 'mms2r/verizon_media'
@@ -56,10 +57,13 @@ module MMS2R
 
   CARRIER_CLASSES = {
     'mms.mycingular.com' => MMS2R::CingularMedia,
+    'cingularme.com' => MMS2R::CingularMedia,
     'mmode.com' => MMS2R::MModeMedia,
+    'messaging.nextel.com' => MMS2R::NextelMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
     'messaging.sprintpcs.com' => MMS2R::SprintMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
+    'vtext.com' => MMS2R::VerizonMedia,
     'vzwpix.com' => MMS2R::VerizonMedia
   }
 
@@ -111,30 +115,35 @@ module MMS2R
       # if the part is not base64 encoded.
       part.base64_decode
       file = temp_file(part)
-      content = part.body
-      content = transform_text(self.class.part_type?(part),content) if self.class.main_type?(part).eql?('text')
+      if self.class.main_type?(part).eql?('text')
+        type, content = transform_text(part)
+      else
+        type = self.class.part_type?(part)
+        content = part.body
+      end
       @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
       File.open(file,'w'){ |f|
         f.write(content)
       }
-      type = self.class.part_type?(part)
       return type, file
     end
 
     ##
     # Helper for process_media template method to transform text.
 
-    def transform_text(type,text)
+    def transform_text(part)
+      type = self.class.part_type?(part)
+      text = part.body
       f = "#{self.class.name.downcase.gsub(/::/,'_')}_transform.yml"
       yf = File.join(self.class.conf_dir(), "#{f}")
-      return text unless File::exist?(yf)
+      return type, text unless File::exist?(yf)
       h = YAML::load_file(yf)
       a = h[type]
-      return text if a.nil?
+      return type, text if a.nil?
       a.each do |from,to|
         text.gsub!(/#{from}/m,to)
       end
-      text
+      return type, text
     end
 
     ##
@@ -209,6 +218,14 @@ module MMS2R
       if !@mail.multipart?
         parts = Array.new()
         parts << @mail
+      end
+      parts.each do |p|
+        if self.class.part_type?(p).eql?('multipart/alternative')
+          part = parts.delete(p)
+          part.parts.each do |mp|
+             parts << mp
+          end
+        end
       end
       parts.each do |p|
         t = self.class.part_type?(p)

@@ -1,0 +1,17 @@
+Message-Id: <00000000000002.0123456789@mx.mms.example.com>
+Mime-Version: 1.0
+From: 2068675309@mms.example.com
+To: tommytutone@example.com
+Subject: text only
+Date: Thu, 11 Jan 2007 02:28:22 -0500
+Content-Type: multipart/mixed;  boundary="----=_Part_1061064_5544954.1168500502466"
+
+------=_Part_1061064_5544954.1168500502466
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+Content-Location: hello_world.txt
+Content-Disposition: inline
+
+aGVsbG8gd29ybGQ=
+------=_Part_1061064_5544954.1168500502466--
+

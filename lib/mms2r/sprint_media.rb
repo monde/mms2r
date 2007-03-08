@@ -22,8 +22,7 @@ module MMS2R
       part.base64_decode
       if self.class.part_type?(part).eql?('text/plain')
         file_name = filename?(part)
-        type = 'text/plain'
-        content = transform_text(type,part.body)
+        type, content = transform_text(part)
       elsif self.class.part_type?(part).eql?('text/html')
         doc = Hpricot(part.body)
         trs = doc.search("/html/body//tr")

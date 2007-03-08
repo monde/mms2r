@@ -1,0 +1,36 @@
+Message-Id: <0123456.7890123456789.JavaMail.foot@st-09>
+Date: Sat, 16 Sep 2006 08:05:47 -0600 (GMT-06:00)
+From: 12068675309@mmode.com
+To: tommytutone@example.com
+Subject: Picture(3).jpg
+Mime-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_012345_678901.1231231231239"
+X-Mms-Delivery-Report: no
+X-Mms-Delivery-Time: Sat, 16 Sep 2006 08:05:47 -0600 (GMT-06:00)
+X-Mms-MMS-Version: 1.0
+X-Mms-Message-Class: Personal
+X-Mms-Message-Type: m-send-req
+X-Mms-Message-Size: 33774
+X-Mms-Read-Reply: no
+X-Mms-Sender-Visibility: Show
+X-Mms-Transaction-ID: 3-1fac@mms.mmode.com
+X-Mms-Message-ID: 12345678@mms.mmode.com
+X-Priority: 3
+
+------=_Part_012345_678901.1231231231239
+Content-Type: image/jpeg; name="picture(3).jpg"
+Content-Transfer-Encoding: base64
+Content-ID: <picture(3).jpg>
+Content-Location: picture(3).jpg
+Content-Disposition: attachment
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+------=_Part_012345_678901.1231231231239--
+

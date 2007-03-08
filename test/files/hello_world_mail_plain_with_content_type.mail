@@ -1,0 +1,8 @@
+From:2068675309@mms.example.com
+To:tommytutone@example.com
+Subject: text only
+Message-Id: <00000000000001.0123456789@mx.mms.example.com>
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 10 Jan 2007 08:18:30 -0600 (CST)
+
+hello world

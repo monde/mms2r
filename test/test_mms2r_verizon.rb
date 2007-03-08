@@ -19,7 +19,7 @@ class MMS2RVerizonTest < Test::Unit::TestCase
 
   def test_simple_video
     mail = TMail::Mail.parse(load_mail('verizon-video-01.mail').join)
-    mms = MMS2R::Media.create(mail,@logger)
+    mms = MMS2R::Media.create(mail)
     mms.process
 
     assert(mms.media.size == 1)   
@@ -37,7 +37,7 @@ class MMS2RVerizonTest < Test::Unit::TestCase
 
   def test_simple_image
     mail = TMail::Mail.parse(load_mail('verizon-image-01.mail').join)
-    mms = MMS2R::Media.create(mail,@logger)
+    mms = MMS2R::Media.create(mail)
     mms.process
 
     assert(mms.media.size == 1)   
@@ -49,7 +49,7 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     file = mms.media['image/jpeg'][0]
     assert_not_nil(file)
     assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 41983, "file #{file} not 41983 byts")
+    assert(File::size(file) == 337, "file #{file} not 41983 byts")
     mms.purge
   end
 
@@ -67,8 +67,22 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_simple_text_vtext
+    mail = TMail::Mail.parse(load_mail('vtext-text-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    assert_equal(MMS2R::VerizonMedia, mms.class, "expected a #{MMS2R::VerizonMedia} and received a #{mms.class}")
+    mms.process
+    assert_not_nil(mms.media['text/plain'])   
+    file = mms.media['text/plain'][0]
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
+    text = IO.readlines("#{file}").join
+    assert_match(/hello world/, text)
+    mms.purge
+  end
+
   private
-    def load_mail(file)
-      IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
-    end
+  def load_mail(file)
+    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
+  end
 end
