@@ -1,10 +1,14 @@
-== 1.0.1 / 2007-03-07
+== 1.0.2 / 2007-03-07
 
 * Reorganized tests and fixtures
 * Added carriers:
 * Cingular => cingularme.com
 * Nextel => messaging.nextel.com
 * Verizon => vtext.com
+
+== 1.0.2 / 2007-03-07
+
+* Flubbed RubyForge release ... do not use this.
 
 == 1.0.0 / 2007-03-06
 
