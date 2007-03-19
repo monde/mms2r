@@ -1,8 +1,6 @@
-mms2r
+= mms2r
 
-by Mike Mondragon
-
-http://mms2r.rubyforge.org/    
+  http://mms2r.rubyforge.org/    
 
 == DESCRIPTION:
   

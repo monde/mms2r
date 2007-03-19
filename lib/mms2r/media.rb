@@ -111,9 +111,6 @@ module MMS2R
     def process_media(part)
       # TMail body auto-magically decodes quoted
       # printable for text/html type.
-      # base64_decode is safe in TMail facade, no work is performed
-      # if the part is not base64 encoded.
-      part.base64_decode
       file = temp_file(part)
       if self.class.main_type?(part).eql?('text')
         type, content = transform_text(part)
