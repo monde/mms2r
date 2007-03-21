@@ -81,12 +81,19 @@ module MMS2R
     attr_reader :media
 
     ##
+    # Carrier is the domain name of the carrier.  If the 
+    # carrier is not known the carrier will be set to 'mms2r.media'
+
+    attr_reader :carrier
+
+    ##
     # Creates a new Media comprised of a mail
     # a logger.  Logger is an instance attribute allowing
     # for a logging strategy per carrier type
 
-    def initialize(mail, logger=nil)
+    def initialize(mail, carrier, logger=nil)
       @mail = mail
+      @carrier = carrier
       @logger = logger
       @logger.info("#{self.class} created") unless @logger.nil?
       @media = Hash.new
@@ -264,12 +271,12 @@ module MMS2R
     # nil.
 
     def self.create(mail, logger=nil)
-      d = lambda{['',MMS2R::Media]}
+      d = lambda{['mms2r.media',MMS2R::Media]}
       cc = MMS2R::CARRIER_CLASSES.detect(d) do |n, c| 
               /[^@]+@(.+)/.match(mail.from[0])[1] =~ /#{Regexp.escape("#{n}")}/
       end
       cls = cc[1]
-      cls.new(mail, logger)
+      cls.new(mail, cc[0], logger)
     end
 
     ##

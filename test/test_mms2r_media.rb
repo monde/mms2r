@@ -16,7 +16,7 @@ class MMS2RMediaTest < Test::Unit::TestCase
   GENERIC_CARRIER = 'mms.example.com'
 
   CARRIER_TO_CLASS = {
-    'unknowncarrier.tld' => MMS2R::Media,
+    'mms2r.media' => MMS2R::Media,
     'mms.mycingular.com' => MMS2R::CingularMedia,
     'cingularme.com' => MMS2R::CingularMedia,
     'mmode.com' => MMS2R::MModeMedia,
@@ -144,6 +144,7 @@ class MMS2RMediaTest < Test::Unit::TestCase
       assert_equal(cls, mms.class, "expected a #{cls} and received a #{mms.class}")
       mms = MMS2R::Media.create(mail)
       assert_equal(cls, mms.class, "expected a #{cls} and received a #{mms.class}")
+      assert_equal(car, mms.carrier, "expected a #{car} and received a #{mms.carrier}")
     }
   end
 
