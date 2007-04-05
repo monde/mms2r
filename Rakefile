@@ -15,7 +15,7 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.summary = 'Extract media from MMS'
   p.description = p.paragraphs_of('README.txt', 2..6).join("\n\n")
   p.url = p.paragraphs_of('README.txt', 1).first.strip
-  p.changes = p.paragraphs_of('History.txt', 0).join("\n\n")
+  p.changes = p.paragraphs_of('History.txt', 1).join("\n\n")
   p.extra_deps << ['hpricot']
   p.clean_globs << 'coverage'
 end

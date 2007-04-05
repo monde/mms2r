@@ -39,7 +39,7 @@ TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
   require 'tmail'
   require 'fileutils'
 
-  media = TMail::Media.parse(IO.readlines("sample-MMS.file").join)
+  media = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
   mms = MMS2R::Media.create(media,Logger.new(STDOUT))
 
   # process finds all the media in a MMS, strips advertsing, then
@@ -66,12 +66,15 @@ TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
 
 == REQUIREMENTS:
 
-* RCov
 * Hpricot
 
 == INSTALL:
 
 * sudo gem install mms2r
+
+== Authors
+
+Copyright (c) 2007 by Mike Mondragon (blog[http://blog.mondragon.cc/])
 
 == LICENSE:
 

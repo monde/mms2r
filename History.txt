@@ -1,3 +1,7 @@
+== 1.0.3 / 2007-04-05 (Paper Cut)
+
+* Cleaned up packaging and errors in example found by Shane V. http://shanesbrain.net/
+
 == 1.0.2 / 2007-03-07
 
 * Reorganized tests and fixtures
@@ -6,7 +10,7 @@
 * Nextel => messaging.nextel.com
 * Verizon => vtext.com
 
-== 1.0.2 / 2007-03-07
+== 1.0.1 / 2007-03-07
 
 * Flubbed RubyForge release ... do not use this.
 
