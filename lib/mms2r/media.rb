@@ -68,7 +68,6 @@ module MMS2R
   }
 
   class MMS2R::Media
-
     ##
     # TMail object that the media files were derived from.
     attr_reader :mail
@@ -85,6 +84,12 @@ module MMS2R
     # carrier is not known the carrier will be set to 'mms2r.media'
 
     attr_reader :carrier
+
+    ##
+    # Base working dir where media for a unique mms message are
+    # dropped
+
+    attr_reader :media_dir
 
     ##
     # Creates a new Media comprised of a mail
@@ -289,7 +294,7 @@ module MMS2R
         "#{Time.now.to_i}.#{self.class.default_ext(self.class.part_type?(part))}"
     end
 
-    @@tmp_dir = File.join(Dir.tmpdir, ENV['USER'],'mms2r')
+    @@tmp_dir = File.join(Dir.tmpdir, (ENV['USER'].nil? ? '':ENV['USER']), 'mms2r')
 
     ##
     # Get the temporary directory where media files are written to.

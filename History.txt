@@ -1,3 +1,11 @@
+== 1.0.4 / 2007-04-09 (Metalocalypse)
+
+* fix teardown in test_mms2r_sprint.rb (shanesbrain.net)
+* clean up Net::HTTP in MMS2R::SprintMedia (shanesbrain.net)
+* added accessor MMS2R::Media.media_dir 
+* fixed a nil issue with underlying tmp working dir
+* added exception handling around Net::HTTP in MMS2R::SprintMedia
+
 == 1.0.3 / 2007-04-05 (Paper Cut)
 
 * Cleaned up packaging and errors in example found by Shane V. http://shanesbrain.net/

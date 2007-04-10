@@ -19,7 +19,6 @@ module MMS2R
     # the URL to the media on Sprint's content server.
 
     def process_media(part)
-      part.base64_decode
       if self.class.part_type?(part).eql?('text/plain')
         file_name = filename?(part)
         type, content = transform_text(part)
@@ -30,19 +29,22 @@ module MMS2R
         img = imgs[2].attributes['src']
         #here's where the content is, now download it
         url = URI.parse(img)
-        req = Net::HTTP::Get.new(url.path)
-        res = Net::HTTP.start(url.host, url.port) {|http|
-          http.request(req)
-        }
-        file_name ="#{img.match(/\/RECIPIENT\/([^\/]+)\//)[1]}.#{self.class.default_ext(res.content_type)}"
-        type = res.content_type
-        content = res.body
+        begin
+          res = Net::HTTP.get_response(url)
+          file_name ="#{img.match(/\/RECIPIENT\/([^\/]+)\//)[1]}.#{self.class.default_ext(res.content_type)}"
+          type = res.content_type
+          content = res.body
+        rescue
+          @logger.error("#{self.class} processing error, #{$!}") unless @logger.nil?
+        end
       end
-      file = File.join(msg_tmp_dir(),file_name)
-      @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
-      File.open(file,'w'){ |f|
-        f.write(content)
-      }
+      unless type.nil?
+        file = File.join(msg_tmp_dir(),file_name)
+        @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
+        File.open(file,'w'){ |f|
+          f.write(content)
+        }
+      end
       return type, file
     end
   end

@@ -95,7 +95,7 @@ class MMS2RSprintTest < Test::Unit::TestCase
     @log.datetime_format = "%H:%M:%S"
   end
 
-  def teadown; end
+  def teardown; end
 
   def test_simple_video
     mail = TMail::Mail.parse(load_mail('sprint-video-01.mail').join)
