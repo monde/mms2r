@@ -1,0 +1,43 @@
+Content-Type: multipart/related; boundary="45f5bb5505a8qwerty_0000"; type="multipart/alternative"
+To: <tommytutone@example.com>
+Date: Mon, 12 Mar 2007 20:43:01 GMT
+From: 20686753909@messaging.nextel.com
+Sender: "20686753909" <20686753909@messaging.nextel.com>
+X-Priority: 3
+MIME-Version: 1.0
+Message-Id: <20070112204344.ABCD1234.adcext11.messaging.nextel.com@dadslffd>
+
+This is a multi-part message in MIME format.
+
+--45f5bb5505a8qwerty_0000
+Content-Type: multipart/alternative; boundary="prez_1234567890_ldksjfa"
+
+
+--prez_1234567890_ldksjfa
+Content-Type: text/plain; charset="utf-8"
+
+This is an MMS message.  2006 Sprint Nextel. All rights reserved.
+--prez_1234567890_ldksjfa
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+
+This is an MMS message. <br><center> 2006 Sprint Nextel. All rights reserved</center>
+</body></html>
+
+--prez_1234567890_ldksjfa--
+
+--45f5bb5505a8qwerty_0000
+Content-ID: <Mar12_0001.jpg.jpg>
+Content-Type: image/jpeg; name="Mar12_0001.jpg"
+Content-Disposition: inline; filename="Mar12_0001.jpg"
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+--45f5bb5505a8qwerty_0000--

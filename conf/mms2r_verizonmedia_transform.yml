@@ -1,0 +1,3 @@
+--- 
+text/plain: 
+  "(.*?)\n\nThis message was sent using PIX-FLIX Messaging service from Verizon Wireless!.*" : "\1"

@@ -1,5 +1,10 @@
 --- 
 text/plain: 
 - This is an MMS message.  2006 Sprint Nextel. All rights reserved.
+- This is an MMS message. Please go to 
+- This is a multi-part message in MIME format.
 text/html: 
-- This is an MMS message. <br><center> 2006 Sprint Nextel. All rights reserved</center>
+- "<html><body>\n\n<center>This is an MMS message. <br><center> 2006 Sprint Nextel. All rights reserved</center>"
+- "<html><body>\n\nThis is an MMS message. <br><center> 2006 Sprint Nextel. All rights reserved</center>\n</body></html>"
+- "<html><body>\n\nThis is an MMS message. <br><center> 2006 Sprint Nextel. All rights reserved <br></center>\n</body></html>"
+- "<html><body>\n\nThis is an MMS message. Please go to "

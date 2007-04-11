@@ -13,7 +13,8 @@ having to deal with the garbage from the carriers.
 If MMS2R is not aware of a particular carrier no extra processing is done 
 to the MMS other than decoding and consolidating its media.
 
-Contact the author to add additional carriers to be processed by the library.
+Contact the author to add additional carriers to be processed by the 
+library.  Suggestions and patches appreciated and welcomed!
 
 Corpus of carriers currently processed by MMS2R:
 
@@ -43,12 +44,13 @@ TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
   mms = MMS2R::Media.create(media,Logger.new(STDOUT))
 
   # process finds all the media in a MMS, strips advertsing, then
-  # writes the user generated media to disk
+  # writes the user generated media to disk in a temporary subdirectory
   mms.process
 
   # mms.media is a hash that is indexed by mime-type.
   # The mime-type key returns an array of filepaths
-  # to media in the MMS that is of that type
+  # to media that were extract from the MMS and
+  # are of that type
   mms.media['image/jpeg'].each {|f| puts "#{f}"}
   mms.media['text/plain'].each {|f| puts "#{f}"}
 
@@ -61,7 +63,7 @@ TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
 
   puts "does the MMS have video? #{!mms.media['video/quicktime'].nil?}"
 
-  #remove the media that was put to temporary disk
+  #remove all the media that was put to temporary disk
   mms.purge
 
 == REQUIREMENTS:

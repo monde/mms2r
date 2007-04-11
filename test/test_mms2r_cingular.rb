@@ -15,7 +15,7 @@ class MMS2RCingularTest < Test::Unit::TestCase
     @log.datetime_format = "%H:%M:%S"
   end
 
-  def teadown; end
+  def teardown; end
 
   def test_clean_text_ad
     mail = TMail::Mail.parse(load_mail('cingularme-text-01.mail').join)

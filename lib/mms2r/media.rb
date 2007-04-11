@@ -171,7 +171,7 @@ module MMS2R
       m = /^([^\/]+)\//.match(type)[1]
       a.each do |i|
         if m.eql?('text')
-          return true if part.body =~ /#{Regexp.escape("#{i}")}/m
+          return true if 0 == (part.body =~ /#{Regexp.escape("#{i}")}/m)
         else
           return true if filename?(part).eql?(i)
         end
@@ -195,9 +195,8 @@ module MMS2R
     end
 
     ##
-    # Purges the unique directory created for this producer and
-    # all of the media that it contains.  This implementation is
-    # based on an instance variable called @media_dir
+    # Purges the unique MMS2R::Media.media_dir directory created 
+    # for this producer and all of the media that it contains.
 
     def purge()
       @logger.info("#{self.class} purging #{@media_dir} and all its contents") unless @logger.nil?
@@ -212,13 +211,10 @@ module MMS2R
     # media of a MMS.
     #
     # Helpers methods for the process template:
-    # ignore_media? true if the media contained a is part should
-    # be ignored.
-    # process_media retrieves media to temporary file, returns path
-    # to file.
-    # transform_text called by process_media, strips out advertising.
-    # temp_file creates a temporary filepath based on information from
-    # the part.
+    # * ignore_media? -- true if the media contained in a part should be ignored.
+    # * process_media -- retrieves media to temporary file, returns path to file.
+    # * transform_text -- called by process_media, strips out advertising.
+    # * temp_file -- creates a temporary filepath based on information from the part.
 
     def process()
       @logger.info("#{self.class} processing") unless @logger.nil?
@@ -272,7 +268,7 @@ module MMS2R
     #
     # Returns a MMS2R::Media product based on the characteristics
     # of the carrier from which the the MMS originated.  
-    # mail is a TMail object, logger is a Logger and may be
+    # mail is a TMail object, logger is a Logger and can be
     # nil.
 
     def self.create(mail, logger=nil)
@@ -312,7 +308,7 @@ module MMS2R
     @@conf_dir = File.join(File.dirname(__FILE__), '..', '..', 'conf')
 
     ##
-    # Set the directory where conf files are stored.
+    # Get the directory where conf files are stored.
 
     def self.conf_dir
       @@conf_dir
@@ -330,7 +326,7 @@ module MMS2R
 
     def self.safe_message_id(mid)
       return "#{Time.now.to_i}" if mid.nil?
-      mid.gsub(/<|>|@|\./, "")
+      mid.gsub(/\$|<|>|@|\./, "")
     end
 
     ##

@@ -1,3 +1,4 @@
+REMOVE.diff
 History.txt
 Manifest.txt
 README.txt
@@ -7,6 +8,7 @@ conf/mms2r_nextelmedia_ignore.yml
 conf/mms2r_sprintmedia_ignore.yml
 conf/mms2r_tmobilemedia_ignore.yml
 conf/mms2r_verizonmedia_ignore.yml
+conf/mms2r_verizonmedia_transform.yml
 lib/mms2r.rb
 lib/mms2r/cingular_media.rb
 lib/mms2r/media.rb
@@ -47,14 +49,20 @@ test/files/hello_world_mail_plain_no_content_type.mail
 test/files/hello_world_mail_plain_with_content_type.mail
 test/files/mmode-image-01.mail
 test/files/nextel-image-01.mail
+test/files/nextel-image-02.mail
+test/files/nextel-image-03.mail
+test/files/nextel-image-04.mail
 test/files/simple_image.mail
 test/files/simple_multipart_alternative.mail
 test/files/sprint-image-01.mail
+test/files/sprint-image-02.mail
 test/files/sprint-text-01.mail
 test/files/sprint-video-01.mail
 test/files/sprint.mov
 test/files/tmobile-image-01.mail
+test/files/tmobile-image-02.mail
 test/files/verizon-image-01.mail
+test/files/verizon-image-02.mail
 test/files/verizon-text-01.mail
 test/files/verizon-video-01.mail
 test/files/vtext-text-01.mail

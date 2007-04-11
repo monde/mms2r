@@ -15,7 +15,7 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     @log.datetime_format = "%H:%M:%S"
   end
 
-  def teadown; end
+  def teardown; end
 
   def test_simple_video
     mail = TMail::Mail.parse(load_mail('verizon-video-01.mail').join)
@@ -78,6 +78,31 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     assert(File::exist?(file), "file #{file} does not exist")
     text = IO.readlines("#{file}").join
     assert_match(/hello world/, text)
+    mms.purge
+  end
+  
+  def test_image_with_body_text
+    mail = TMail::Mail.parse(load_mail('verizon-image-02.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert(mms.media.size == 2)   
+    assert_not_nil(mms.media['text/plain'])
+    assert_nil(mms.media['text/html'])
+    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_match(/04-09-07_1114.jpg$/, mms.media['image/jpeg'][0])
+
+    file = mms.media['image/jpeg'][0]
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
+    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    
+    file = mms.media['text/plain'][0]
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
+    text = IO.readlines("#{file}").join
+    assert_equal "? Weird", text
+    
     mms.purge
   end
 

@@ -14,7 +14,7 @@ class MMS2RMModeTest < Test::Unit::TestCase
     @log.datetime_format = "%H:%M:%S"
   end
 
-  def teadown; end
+  def teardown; end
 
   def test_simple
     mail = TMail::Mail.parse(load_mail('mmode-image-01.mail').join)

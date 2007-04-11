@@ -1,3 +1,16 @@
+== 1.0.5 / 2007-04-10 (William Murderface)
+
+* patch submitted by Luke Francl
+* made ignore_media? start its text check from the start of the file (Luke)
+* added new text transform for Verizon messages (Luke)
+* updated Nextel ignore conf (Luke)
+* added addtional samples and tests for T-Mobile & Verizon (Luke)
+* cleaned up MMS2R::Media documentation
+* added Sprint broken image test for when media goes stale on their content server
+* fixed teardown typo in lots of plases
+* added tests for 4 three samples of unique variants of Sprint/Nextel text
+* 100% test coverage!
+
 == 1.0.4 / 2007-04-09 (Metalocalypse)
 
 * fix teardown in test_mms2r_sprint.rb (shanesbrain.net)

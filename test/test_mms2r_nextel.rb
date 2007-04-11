@@ -15,9 +15,9 @@ class MMS2RNextelTest < Test::Unit::TestCase
     @log.datetime_format = "%H:%M:%S"
   end
 
-  def teadown; end
+  def teardown; end
 
-  def test_simple_image
+  def test_simple_image1
     mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
@@ -27,6 +27,63 @@ class MMS2RNextelTest < Test::Unit::TestCase
     assert_nil(mms.media['text/html'])
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/Jan15_0001.jpg$/, mms.media['image/jpeg'][0])
+
+    file = mms.media['image/jpeg'][0]
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
+    assert(File::size(file) == 337, "file #{file} not 337 byts")
+
+    mms.purge
+  end
+
+  def test_simple_image2
+    mail = TMail::Mail.parse(load_mail('nextel-image-02.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert(mms.media.size == 1)   
+    assert_nil(mms.media['text/plain'])
+    assert_nil(mms.media['text/html'])
+    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_match(/Mar12_0001.jpg$/, mms.media['image/jpeg'][0])
+
+    file = mms.media['image/jpeg'][0]
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
+    assert(File::size(file) == 337, "file #{file} not 337 byts")
+
+    mms.purge
+  end
+
+  def test_simple_image3
+    mail = TMail::Mail.parse(load_mail('nextel-image-03.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert(mms.media.size == 1)   
+    assert_nil(mms.media['text/plain'])
+    assert_nil(mms.media['text/html'])
+    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_match(/Apr01_0001.jpg$/, mms.media['image/jpeg'][0])
+
+    file = mms.media['image/jpeg'][0]
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
+    assert(File::size(file) == 337, "file #{file} not 337 byts")
+
+    mms.purge
+  end
+
+  def test_simple_image4
+    mail = TMail::Mail.parse(load_mail('nextel-image-04.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert(mms.media.size == 1)   
+    assert_nil(mms.media['text/plain'])
+    assert_nil(mms.media['text/html'])
+    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_match(/Mar20_0001.jpg$/, mms.media['image/jpeg'][0])
 
     file = mms.media['image/jpeg'][0]
     assert_not_nil(file)

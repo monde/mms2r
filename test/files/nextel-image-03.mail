@@ -1,0 +1,44 @@
+Content-Type: multipart/related; boundary="460ffb124783qwerty_0000"; type="multipart/alternative"
+To: <tommytutone@example.com>
+Date: Sun, 01 Apr 2007 18:33:54 GMT
+From: 2068675309@messaging.nextel.com
+Sender: "2068675309" <2068675309@messaging.nextel.com>
+X-Priority: 3
+MIME-Version: 1.0
+Message-Id: <20070401183354.MZBE2686.adcmta27.messaging.nextel.com@opwvsmtp>
+Message-Id: <20070401184444.ABCD2699.afdsad29.messaging.nextel.com@fdsaddsl>
+
+This is a multi-part message in MIME format.
+
+--460ffb124783qwerty_0000
+Content-Type: multipart/alternative; boundary="prez_1234567890_ldksjfa"
+
+
+--prez_1234567890_ldksjfa
+Content-Type: text/plain; charset="utf-8"
+
+This is an MMS message. Please go to http://mms.nextel.com/mms/anon/do/legacy/viewDirect?sender=2068675309@messaging.nextel.com&recipient=tommytutone@example.com&password=1miiaa to view the message or http://mms.nextel.com/anon/do/legacy/replyDirect?sender=2068675309@messaging.nextel.com&recipient=tommytutone@example.com&password=1miiaa to reply to the message.  &copy; 2006 Sprint Nextel. All rights reserved.
+--prez_1234567890_ldksjfa
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+
+This is an MMS message. Please go to <a href="http://mms.nextel.com/mms/anon/do/legacy/viewDirect?sender=2068675309@messaging.nextel.com&recipient=tommytutone@example.com&password=1miiaa"> <b> VIEW </b> </a> to view the message or <a href="http://mms.nextel.com/mms/anon/do/legacy/replyDirect?sender=2068675309@messaging.nextel.com&recipient=tommytutone@example.com&password=1miiaa"> <b> REPLY </b></a> to reply to the message. <br><center> &copy; 2006 Sprint Nextel. All rights reserved</center>.
+</body></html>
+
+--prez_1234567890_ldksjfa--
+
+--460ffb124783qwerty_0000
+Content-ID: <Apr01_0001.jpg.jpg>
+Content-Type: image/jpeg; name="Apr01_0001.jpg"
+Content-Disposition: inline; filename="Apr01_0001.jpg"
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+--460ffb124783qwerty_0000--

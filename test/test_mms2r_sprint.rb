@@ -21,6 +21,14 @@ class SimpleImageServlet < WEBrick::HTTPServlet::AbstractServlet
   end
 end
 
+class BrokenImageServlet < WEBrick::HTTPServlet::AbstractServlet
+  def do_GET(req, res)
+    res['Content-Type'] = "text/html"
+    res.code = 404
+    res.body = '<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1></body></html>'
+  end
+end
+
 class SimpleVideoServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     res['Content-Type'] = "video/quicktime"
@@ -41,6 +49,7 @@ class Net::HTTP
 
   SERVLETS = {
     '/simpleimage' => SimpleImageServlet,
+    '/brokenimage' => BrokenImageServlet,
     '/simplevideo' => SimpleVideoServlet
   }
 
@@ -84,6 +93,11 @@ class Response
 
   def read_body
     yield body
+  end
+
+  def value()
+    return body if "200".eql?(@code)
+    raise Net::HTTPError.new('400 Bad Request', 'Good Bye')
   end
 end
 
@@ -130,6 +144,16 @@ class MMS2RSprintTest < Test::Unit::TestCase
     assert_not_nil(file)
     assert(File::exist?(file), "file #{file} does not exist")
     assert(File::size(file) == 337, "file #{file} not 337 byts")
+    mms.purge
+  end
+
+  def test_broken_image
+    mail = TMail::Mail.parse(load_mail('sprint-image-02.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert(mms.media.size == 0)
+
     mms.purge
   end
 

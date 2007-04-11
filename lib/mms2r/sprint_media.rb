@@ -31,6 +31,7 @@ module MMS2R
         url = URI.parse(img)
         begin
           res = Net::HTTP.get_response(url)
+          res.value
           file_name ="#{img.match(/\/RECIPIENT\/([^\/]+)\//)[1]}.#{self.class.default_ext(res.content_type)}"
           type = res.content_type
           content = res.body
