@@ -1,4 +1,3 @@
-REMOVE.diff
 History.txt
 Manifest.txt
 README.txt
