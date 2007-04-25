@@ -1,4 +1,5 @@
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
+require File.dirname(__FILE__) + "/test_helper"
 require 'test/unit'
 require 'rubygems'
 require 'yaml'
@@ -9,6 +10,7 @@ require 'tmail/mail'
 require 'logger'
 
 class MMS2RMediaTest < Test::Unit::TestCase
+  include MMS2R::TestHelper
 
   class MMS2R::FakeCarrier < MMS2R::Media; end
 
@@ -25,7 +27,8 @@ class MMS2RMediaTest < Test::Unit::TestCase
     'messaging.sprintpcs.com' => MMS2R::SprintMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
     'vtext.com' => MMS2R::VerizonMedia,
-    'vzwpix.com' => MMS2R::VerizonMedia
+    'vzwpix.com' => MMS2R::VerizonMedia,
+    'mms.dobson.net' => MMS2R::DobsonMedia
   }
 
   def use_temp_dirs
@@ -284,10 +287,5 @@ class MMS2RMediaTest < Test::Unit::TestCase
     assert(MMS2R::Media.sub_type?(mail.parts[0]).eql?('plain'))
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
     assert(MMS2R::Media.sub_type?(mail.parts[0]).eql?('gif'))
-  end
-
-  private
-  def load_mail(file)
-    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
   end
 end

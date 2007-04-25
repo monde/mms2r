@@ -1,3 +1,12 @@
+== 1.0.6 / 2007-04-24 (Pickles the Drummer)
+* patch submitted by Luke Francl
+* added support for mms.dobson.net (Dobson aka Cellular One) (Luke)
+* DRY'd up unit tests (Luke)
+* added get_media instance method that returns first video or image as File (Luke)
+* File from get_media can be used by/with attachment_fu (Luke)
+* added get_text instance method that returns first non advertising text
+* File from get_text can be used by/with attachment_fu
+
 == 1.0.5 / 2007-04-10 (William Murderface)
 
 * patch submitted by Luke Francl

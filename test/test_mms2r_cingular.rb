@@ -1,4 +1,5 @@
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
+require File.dirname(__FILE__) + "/test_helper"
 require 'test/unit'
 require 'rubygems'
 require 'mms2r'
@@ -8,6 +9,7 @@ require 'logger'
 
 
 class MMS2RCingularTest < Test::Unit::TestCase
+  include MMS2R::TestHelper
 
   def setup
     @log = Logger.new(STDOUT)
@@ -33,10 +35,5 @@ class MMS2RCingularTest < Test::Unit::TestCase
     good_text = "hello world\n\n"
     assert_match(/#{good_text}/m, text)
     mms.purge
-  end
-
-  private
-  def load_mail(file)
-    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
   end
 end

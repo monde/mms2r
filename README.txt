@@ -21,6 +21,7 @@ Corpus of carriers currently processed by MMS2R:
 * AT&T/Cingular => mmode.com
 * Cingular => mms.mycingular.com
 * Cingular => cingularme.com
+* Dobson/Cellular One => mms.dobson.net
 * Nextel => messaging.nextel.com
 * Sprint => pm.sprint.com
 * Sprint => messaging.sprintpcs.com
@@ -28,10 +29,10 @@ Corpus of carriers currently processed by MMS2R:
 * Verizon => vzwpix.com
 * Verizon => vtext.com
 
-== FEATURES/PROBLEMS:
+== FEATURES
 
-TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
- 
+* TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
+* get_media and get_text methods return a File that can be used in attachment_fu 
 == SYNOPSIS:
 
   require 'rubygems'
@@ -40,12 +41,23 @@ TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
   require 'tmail'
   require 'fileutils'
 
-  media = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
-  mms = MMS2R::Media.create(media,Logger.new(STDOUT))
+  # TMail::Mail.parse is what ActionMailer::Base.receive(email) does, see:
+  # http://wiki.rubyonrails.com/rails/pages/HowToReceiveEmailsWithActionMailer
+  email = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
+  mms = MMS2R::Media.create(email,Logger.new(STDOUT))
 
   # process finds all the media in a MMS, strips advertsing, then
   # writes the user generated media to disk in a temporary subdirectory
   mms.process
+
+  # most MMS are either image or video, get_media will blindly return
+  # the first video or image found
+  file = mms.get_media
+  puts "MMS had a media: #{file.inspect}" unless file.nil?
+
+  # get_text will blindly return the first (non-advertising) text found
+  file = mms.get_text
+  puts "MMS had some text: #{file.inspect}" unless file.nil?
 
   # mms.media is a hash that is indexed by mime-type.
   # The mime-type key returns an array of filepaths

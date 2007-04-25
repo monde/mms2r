@@ -1,0 +1,64 @@
+Delivered-To: luke@example.com
+Received: by 10.114.126.6 with SMTP id y6cs662518wac;
+        Wed, 18 Apr 2007 17:30:16 -0700 (PDT)
+Received: by 10.70.37.12 with SMTP id k12mr2098583wxk.1176942615765;
+        Wed, 18 Apr 2007 17:30:15 -0700 (PDT)
+Return-Path: <19075551234@mms.dobson.net>
+Received: from mms.dobson.net ([12.168.76.27])
+        by mx.google.com with SMTP id h13si2340383wxd.2007.04.18.17.30.14;
+        Wed, 18 Apr 2007 17:30:15 -0700 (PDT)
+Received-SPF: neutral (google.com: 12.168.76.27 is neither permitted nor denied by best guess record for domain of 19075551234@mms.dobson.net)
+Received: (qmail 4243 invoked from network); 19 Apr 2007 00:30:14 -0000
+Received: from unknown (HELO mmsc1be1.dobson.net) (172.23.1.158)
+  by 0 with SMTP; 19 Apr 2007 00:30:14 -0000
+Resent-To: luke@example.com
+Received: by mms.dobson.net ; Thu, 19 Apr 2007 00:30:14 GMT
+Content-Type: multipart/related;boundary=1_4626B816_9F1690;Type="application/smil";Start="<mms.smil.txt>"
+Subject: Subject
+Date: Thu, 19 Apr 2007 00:30:14 GMT
+To: luke@example.com
+From: 19075551234@mms.dobson.net
+Message-ID: <AVTD2MlE05dRftqAJ@mmsc1be1.dobson.net>
+Mime-Version: 1.0
+X-Mms-Message-Type: m-send-req
+X-Mms-Transaction-ID: AVTD2MlE05dRftqAJ
+X-Mms-MMS-Version: 1.0
+X-Mms-Message-Class: Personal
+X-Mms-Expiry: 1176949814
+X-Mms-Delivery-Time: 1176942614
+X-Mms-Priority: Normal
+X-Mms-Sender-Visibility: Show
+X-Mms-Delivery-Report: No
+X-Mms-Read-Reply: No
+X-Mms-Message-Size: 73237
+X-Mms-Mmsc-Originated: Yes
+
+--1_4626B816_9F1690
+Content-Type: application/smil;Charset=UTF-8;Name=mms.smil.txt
+content-location: mms.smil.txt
+content-id: <mms.smil.txt>
+Content-Transfer-Encoding: 7bit
+
+<smil><head><layout><root-layout width="176px" height="161px"/><region id="Image" left="0%" top="0%" height="67%" width="100%"/><region id="Text" left="0%" top="67%" height="33%" width="100%"/></layout></head><body><par dur="20s"><img src="media1.jpeg" type="image/jpeg" region="Image" alt="media1.jpeg" /><text src="media2.txt" type="text/plain" region="Text" alt="media2.txt" /></par></body></smil>
+--1_4626B816_9F1690
+Content-Type: image/jpeg;Name=04-18-07_1723.jpg
+content-location: media1.jpeg
+content-id: <media1.jpeg>
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+--1_4626B816_9F1690
+Content-Type: text/plain;Charset=UTF-8;Name=media2.txt
+content-id: <media2.txt>
+content-location: media2.txt
+Content-Transfer-Encoding: 7bit
+
+Body
+--1_4626B816_9F1690--
+

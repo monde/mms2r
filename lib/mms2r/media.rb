@@ -14,6 +14,7 @@ require 'mms2r/nextel_media'
 require 'mms2r/sprint_media'
 require 'mms2r/tmobile_media'
 require 'mms2r/verizon_media'
+require 'mms2r/dobson_media'
 
 ##
 # MMS2R is a library to collect media files from MMS messages. MMS messages 
@@ -64,7 +65,8 @@ module MMS2R
     'messaging.sprintpcs.com' => MMS2R::SprintMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
     'vtext.com' => MMS2R::VerizonMedia,
-    'vzwpix.com' => MMS2R::VerizonMedia
+    'vzwpix.com' => MMS2R::VerizonMedia,
+    'mms.dobson.net' => MMS2R::DobsonMedia
   }
 
   class MMS2R::Media
@@ -105,6 +107,28 @@ module MMS2R
       @dir_count = 0
       @media_dir = File.join(self.class.tmp_dir(), 
                      self.class.safe_message_id(@mail.message_id))
+    end
+
+    # Returns a File with the most likely candidate for the user-submitted
+    # media. Given that most MMS messages only have one file attached,
+    # this will try to give you that file. First it looks for videos, then
+    # images. It also adds singleton methods to the File object so it can
+    # be used in place of a CGI upload (local_path, original_filename, size,
+    # and content_type)
+    #
+    # Returns nil if no video or image is found.
+
+    def get_media
+      get_attachement(['video', 'image'])
+    end
+
+    # Returns a File with the most likely candidate that is text, or nil
+    # otherwise. It also adds singleton methods to the File object so it can
+    # be used in place of a CGI upload (local_path, original_filename, size,
+    # and content_type)
+
+    def get_text
+      get_attachement(['text'])
     end
 
     ##
@@ -360,6 +384,49 @@ module MMS2R
 
     def self.sub_type?(part)
       /\/([^\/]+)$/.match(self.part_type?(part))[1]
+    end
+
+    private
+
+    ##
+    # used by get_media and get_text to return the first attachment type
+    # listed in the types array
+
+    def get_attachement(types)
+
+      mime_type = nil
+      types.each{|t|
+        mime_type = media.keys.find { |key| 0 == (key =~ /#{t}/) } if mime_type.nil?
+      }
+
+      if mime_type.nil?
+        return nil
+      end
+
+      file = File.new(media[mime_type][0])
+
+      # These singleton methods implement the interface necessary to be used
+      # as a drop-in replacement for files uploaded with CGI.rb.
+      # This helps if you want to use the files with, for example,
+      # attachment_fu.
+      def file.local_path
+        self.path
+      end
+
+      def file.original_filename
+        File.basename(self.path)
+      end
+
+      def file.size
+        File.size(self.path)
+      end
+
+      # this one is kind of confusing because it needs a closure.
+      class << file
+        self
+      end.send(:define_method, :content_type) { mime_type }
+
+      return file
     end
 
   end

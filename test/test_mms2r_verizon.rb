@@ -1,5 +1,5 @@
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
-
+require File.dirname(__FILE__) + "/test_helper"
 require 'test/unit'
 require 'rubygems'
 require 'mms2r'
@@ -8,6 +8,7 @@ require 'tmail/mail'
 require 'logger'
 
 class MMS2RVerizonTest < Test::Unit::TestCase
+  include MMS2R::TestHelper
 
   def setup
     @log = Logger.new(STDOUT)
@@ -28,10 +29,8 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     assert_not_nil(mms.media['video/3gpp2'][0])
     assert_match(/012345_67890.3g2$/, mms.media['video/3gpp2'][0])
 
-    file = mms.media['video/3gpp2'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 16553, "file #{file} not 16553 byts")
+    assert_file_size(mms.media['video/3gpp2'][0], 16553)
+
     mms.purge
   end
 
@@ -46,10 +45,8 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/IMAGE_00004.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 41983 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
+
     mms.purge
   end
 
@@ -92,10 +89,7 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/04-09-07_1114.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
     
     file = mms.media['text/plain'][0]
     assert_not_nil(file)
@@ -104,10 +98,5 @@ class MMS2RVerizonTest < Test::Unit::TestCase
     assert_equal "? Weird", text
     
     mms.purge
-  end
-
-  private
-  def load_mail(file)
-    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
   end
 end

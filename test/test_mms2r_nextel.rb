@@ -1,5 +1,5 @@
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
-
+require File.dirname(__FILE__) + "/test_helper"
 require 'test/unit'
 require 'rubygems'
 require 'mms2r'
@@ -8,6 +8,7 @@ require 'tmail/mail'
 require 'logger'
 
 class MMS2RNextelTest < Test::Unit::TestCase
+  include MMS2R::TestHelper
 
   def setup
     @log = Logger.new(STDOUT)
@@ -16,6 +17,54 @@ class MMS2RNextelTest < Test::Unit::TestCase
   end
 
   def teardown; end
+
+  def test_simple_get_text_is_nil
+    mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert_nil(mms.get_text)
+
+    mms.purge
+  end
+
+  def test_simple_get_text
+    mail = TMail::Mail.parse(load_mail('cingularme-text-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    file = mms.get_text
+    assert_file_size(file, 13)
+    assert_match(/\.txt$/, file.original_filename)
+    assert_equal(13, file.size)
+    assert_match(/\.txt$/, file.local_path)
+
+    mms.purge
+  end
+
+  def test_simple_get_media_is_nil
+    mail = TMail::Mail.parse(load_mail('cingularme-text-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert_nil(mms.get_media)
+
+    mms.purge
+  end
+
+  def test_simple_get_media
+    mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    file = mms.get_media
+    assert_file_size(file, 337)
+    assert_equal('Jan15_0001.jpg', file.original_filename)
+    assert_equal(337, file.size)
+    assert_match(/Jan15_0001.jpg$/, file.local_path)
+
+    mms.purge
+  end
 
   def test_simple_image1
     mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
@@ -28,10 +77,7 @@ class MMS2RNextelTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/Jan15_0001.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
 
     mms.purge
   end
@@ -47,10 +93,7 @@ class MMS2RNextelTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/Mar12_0001.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
 
     mms.purge
   end
@@ -66,10 +109,7 @@ class MMS2RNextelTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/Apr01_0001.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
 
     mms.purge
   end
@@ -85,16 +125,8 @@ class MMS2RNextelTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/Mar20_0001.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
 
     mms.purge
-  end
-
-  private
-  def load_mail(file)
-    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
   end
 end

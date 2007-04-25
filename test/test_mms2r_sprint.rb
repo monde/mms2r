@@ -1,5 +1,5 @@
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
-
+require File.dirname(__FILE__) + "/test_helper"
 require 'test/unit'
 require 'webrick'
 require 'net/http'
@@ -102,6 +102,7 @@ class Response
 end
 
 class MMS2RSprintTest < Test::Unit::TestCase
+  include MMS2R::TestHelper
 
   def setup
     @log = Logger.new(STDOUT)
@@ -122,10 +123,7 @@ class MMS2RSprintTest < Test::Unit::TestCase
     assert_not_nil(mms.media['video/quicktime'][0])
     assert_match(/000_0123a01234567895_1.mov$/, mms.media['video/quicktime'][0])
 
-    file = mms.media['video/quicktime'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 49063, "file #{file} not 49063 byts")
+    assert_file_size(mms.media['video/quicktime'][0], 49063)
     mms.purge
   end
 
@@ -140,10 +138,7 @@ class MMS2RSprintTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/000_0123a01234567890_1.jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
     mms.purge
   end
 
@@ -169,10 +164,5 @@ class MMS2RSprintTest < Test::Unit::TestCase
     text = IO.readlines("#{file}").join
     assert_match(/hello world/, text)
     mms.purge
-  end
-
-  private
-  def load_mail(file)
-    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
   end
 end

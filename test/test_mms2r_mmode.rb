@@ -1,4 +1,5 @@
 $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
+require File.dirname(__FILE__) + "/test_helper"
 require 'test/unit'
 require 'rubygems'
 require 'mms2r'
@@ -7,6 +8,7 @@ require 'tmail/mail'
 require 'logger'
 
 class MMS2RMModeTest < Test::Unit::TestCase
+  include MMS2R::TestHelper
 
   def setup
     @log = Logger.new(STDOUT)
@@ -28,16 +30,7 @@ class MMS2RMModeTest < Test::Unit::TestCase
     assert_not_nil(mms.media['image/jpeg'][0])
     assert_match(/picture\(3\).jpg$/, mms.media['image/jpeg'][0])
 
-    file = mms.media['image/jpeg'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File::size(file) == 337, "file #{file} not 337 byts")
-
+    assert_file_size(mms.media['image/jpeg'][0], 337)
     mms.purge
-  end
-
-  private
-  def load_mail(file)
-    IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
   end
 end
