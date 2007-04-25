@@ -1,4 +1,5 @@
 == 1.0.6 / 2007-04-24 (Pickles the Drummer)
+
 * patch submitted by Luke Francl
 * added support for mms.dobson.net (Dobson aka Cellular One) (Luke)
 * DRY'd up unit tests (Luke)
