@@ -50,6 +50,8 @@ Corpus of carriers currently processed by MMS2R:
   # writes the user generated media to disk in a temporary subdirectory
   mms.process
 
+  puts "MMS has default carrier subject!" if mms.get_subject.nil?
+
   # most MMS are either image or video, get_media will blindly return
   # the first video or image found
   file = mms.get_media

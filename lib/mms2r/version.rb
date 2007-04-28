@@ -6,7 +6,7 @@ module MMS2R
     ##
     # MMS2R Library version
 
-    VERSION = '1.0.6'
+    VERSION = '1.0.7'
 
   end
 end

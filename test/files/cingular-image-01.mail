@@ -1,0 +1,66 @@
+Delivered-To: luke@example.com
+Received: by 10.35.66.7 with SMTP id t7cs256749pyk;
+        Tue, 24 Apr 2007 16:40:50 -0700 (PDT)
+Received: by 10.64.143.12 with SMTP id q12mr104771qbd.1177458050520;
+        Tue, 24 Apr 2007 16:40:50 -0700 (PDT)
+Return-Path: <3105550101@mms.mycingular.com>
+Received: from iad2.emailsrvr.com (iad2.emailsrvr.com [207.97.227.212])
+        by mx.google.com with ESMTP id 7si86743nzn.2007.04.24.16.40.46;
+        Tue, 24 Apr 2007 16:40:50 -0700 (PDT)
+Received-SPF: neutral (google.com: 207.97.227.212 is neither permitted nor denied by best guess record for domain of 3105550101@mms.mycingular.com)
+Received: by mail41a.mail.iad.mlsrvr.com (SMTP Server, from userid 5000)
+	id 0B65D514083; Tue, 24 Apr 2007 19:40:45 -0400 (EDT)
+Received: from gate16.gate.iad.mlsrvr.com (gate16.gate.iad.mlsrvr.com [192.168.1.36])
+	by mail41a.mail.iad.mlsrvr.com (SMTP Server) with ESMTP id F3302514081
+	for <go@example.com>; Tue, 24 Apr 2007 19:40:44 -0400 (EDT)
+Received: from gate1.gate.sat.mlsrvr.com (gate.sat.emailsrvr.com [66.216.121.101])
+	by gate16.gate.iad.mlsrvr.com (SMTP Server) with ESMTP id BA6FB1380D7
+	for <go@example.com>; Tue, 24 Apr 2007 19:40:44 -0400 (EDT)
+X-Virus-Scanned: OK, w
+X-Spam-Score: -
+X-Spam-Level: 
+X-Spam-Status: No, score=x tagged_above=-100 required=10 WHITELISTED tests=[]
+Received: from atlmtaow02.cingularme.com (atlmtaow02.cingularme.com [66.102.165.7])
+	by gate1.gate.sat.mlsrvr.com (SMTP Server) with ESMTP id 4C1F71B4006
+	for <go@example.com>; Tue, 24 Apr 2007 19:40:44 -0400 (EDT)
+X-Mms-MMS-Version: 18
+Date: Tue, 24 Apr 2007 19:40:43 -0400
+X-Mms-Sender-Visibility: 1
+X-Nokia-Ag-Internal: ; smiltype=true; internaldate=1177458043783
+Content-Type: multipart/mixed;  boundary="----=_Part_2944038_406917.1177458043793"
+X-Mms-Delivery-Report: 1
+Received: from alpagw02 ([209.183.34.196]) by atlmtaow02.cingularme.com (InterMail vM.6.01.04.00 201-2131-118-20041027) with ESMTP id <20070424234043.EHXN2345.atlmtaow02.cingularme.com@alpagw02> for <go@example.com>; Tue, 24 Apr 2007 19:40:43 -0400
+X-Mms-Transaction-ID: 1-5190f9
+From: <3105550101@mms.mycingular.com>
+To: go@example.com
+X-Mms-Message-Class: 0
+X-Mms-Read-Reply: 1
+Mime-Version: 1.0
+Message-ID: <18398745.1177458043793.JavaMail.wluser@alpagw02>
+X-Mms-Priority: 1
+X-Mms-Message-Type: 0
+Subject: Multimedia message
+X-Nokia-Ag-Version: 2.0
+
+------=_Part_2944038_406917.1177458043793
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+Content-Location: smil.txt
+Content-Disposition: inline
+
+V2F0ZXI=
+------=_Part_2944038_406917.1177458043793
+Content-Type: image/jpeg;Name=04-18-07_1723.jpg
+content-location: media1.jpeg
+content-id: <media1.jpeg>
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+------=_Part_2944038_406917.1177458043793--
+

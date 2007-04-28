@@ -288,4 +288,23 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
     assert(MMS2R::Media.sub_type?(mail.parts[0]).eql?('gif'))
   end
+
+  def test_get_subject
+    subjects = [nil, '', 'Multimedia message', '(no subject)', 'You have new Picture Mail!']
+
+    subjects.each{|s|  
+      mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
+      mail.subject = s
+      mms = MMS2R::Media.create(mail)
+      mms.process
+      assert_equal(nil, mms.get_subject)
+      mms.purge
+    }
+
+    mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    assert_equal('text only', mms.get_subject)
+    mms.purge
+  end
 end

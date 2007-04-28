@@ -109,6 +109,19 @@ module MMS2R
                      self.class.safe_message_id(@mail.message_id))
     end
 
+    # Filter some common place holder subjects from MMS messages and replace 
+    # them with nil.
+    
+    def get_subject
+      subject = @mail.subject
+      if subject.nil? || subject.strip.length == 0 ||
+         subject =~ /^(Multimedia message|\(no subject\)|You have new Picture Mail!)$/
+        return nil
+      end
+
+      subject
+    end
+
     # Returns a File with the most likely candidate for the user-submitted
     # media. Given that most MMS messages only have one file attached,
     # this will try to give you that file. First it looks for videos, then

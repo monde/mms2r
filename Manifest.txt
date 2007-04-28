@@ -42,6 +42,7 @@ lib/vendor/tmail/scanner_r.rb
 lib/vendor/tmail/stringio.rb
 lib/vendor/tmail/tmail.rb
 lib/vendor/tmail/utils.rb
+test/files/cingular-image-01.mail
 test/files/cingularme-text-01.mail
 test/files/dobson-image-01.mail
 test/files/dot.jpg

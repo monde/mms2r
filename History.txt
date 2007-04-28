@@ -1,3 +1,9 @@
+== 1.0.7 / 2007-04-27 (Senator Stampingston)
+
+* patch submitted by Luke Francl
+* added a get_subject method that returns nil when any MMS has a default carrier subject
+* get_subject returns nil for '', 'Multimedia message', '(no subject)', 'You have new Picture Mail!'
+
 == 1.0.6 / 2007-04-24 (Pickles the Drummer)
 
 * patch submitted by Luke Francl

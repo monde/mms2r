@@ -36,4 +36,23 @@ class MMS2RCingularTest < Test::Unit::TestCase
     assert_match(/#{good_text}/m, text)
     mms.purge
   end
+  
+  def test_image
+    mail = TMail::Mail.parse(load_mail('cingular-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    assert_equal(MMS2R::CingularMedia, mms.class, "expected a #{MMS2R::CingularMedia} and received a #{mms.class}")
+    mms.process
+    
+    assert(mms.media.size == 2, "Size is #{mms.media.size}")
+    assert_not_nil(mms.media['text/plain'])
+    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_match(/04-18-07_1723.jpg$/, mms.media['image/jpeg'][0])
+    
+    assert_equal(nil, mms.get_subject, "Default Cingular subject not stripped")
+    assert_file_size(mms.media['image/jpeg'][0], 337)
+
+    assert_equal("Water", IO.readlines(mms.get_text.path).join)
+    
+    mms.purge
+  end
 end
