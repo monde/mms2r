@@ -121,6 +121,18 @@ module MMS2R
 
       subject
     end
+    
+    # Convenience method that returns a string including all the text of the 
+    # first text/plain file found. Returns empty string if no body text 
+    # is found.
+    def get_body
+      text_file = get_text
+      if text_file.nil?
+        return ""
+      end
+      
+      IO.readlines(text_file.path).join.strip
+    end
 
     # Returns a File with the most likely candidate for the user-submitted
     # media. Given that most MMS messages only have one file attached,

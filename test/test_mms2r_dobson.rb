@@ -33,4 +33,14 @@ class MMS2RDobson < Test::Unit::TestCase
     assert_equal "Body", text.strip
     mms.purge
   end
+  
+  def test_get_body_should_return_user_text
+    mail = TMail::Mail.parse(load_mail('dobson-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    
+    assert_equal('Body', mms.get_body)
+    
+    mms.purge
+  end
 end
