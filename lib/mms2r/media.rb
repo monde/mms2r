@@ -110,16 +110,26 @@ module MMS2R
     end
 
     # Filter some common place holder subjects from MMS messages and replace 
-    # them with nil.
+    # them with ""
     
     def get_subject
       subject = @mail.subject
-      if subject.nil? || subject.strip.length == 0 ||
-         subject =~ /^(Multimedia message|\(no subject\)|You have new Picture Mail!)$/
-        return nil
-      end
+      return "" if subject.nil? || subject.strip.length == 0
 
-      subject
+      a = Array.new
+      # default ignore default subjects are in mms2r_media.yml
+      f = "#{self.class.superclass.name.downcase.gsub(/::/,'_')}_subject.yml"
+      yf = File.join(self.class.conf_dir(), "#{f}")
+      a = a + YAML::load_file(yf) if File::exist?(yf) 
+      # class default subjects
+      f = "#{self.class.name.downcase.gsub(/::/,'_')}_subject.yml"
+      yf = File.join(self.class.conf_dir(), "#{f}")
+      a = a + YAML::load_file(yf) if File::exist?(yf) 
+      return subject if a.size == 0
+      sub = Regexp.escape(subject)
+
+      return "" if a.detect{|s| s=~/^#{sub}$/}
+      return subject
     end
     
     # Convenience method that returns a string including all the text of the 

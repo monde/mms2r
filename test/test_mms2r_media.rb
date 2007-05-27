@@ -61,8 +61,8 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('simple_multipart_alternative.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_not_nil(mms.media['text/plain'])
-    assert(mms.media.size == 3)
+    assert_not_nil mms.media['text/plain']
+    assert mms.media.size == 3
     assert(mms.media['text/plain'].size == 1)
     assert(mms.media['text/html'].size == 1)
     assert(mms.media['image/gif'].size == 1)
@@ -290,14 +290,14 @@ class MMS2RMediaTest < Test::Unit::TestCase
   end
 
   def test_get_subject
-    subjects = [nil, '', 'Multimedia message', '(no subject)', 'You have new Picture Mail!']
+    subjects = [nil, '', '(no subject)']
 
+    mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     subjects.each{|s|  
-      mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
       mail.subject = s
       mms = MMS2R::Media.create(mail)
       mms.process
-      assert_equal(nil, mms.get_subject)
+      assert_equal("", mms.get_subject, "Default subject not scrubbed.")
       mms.purge
     }
 

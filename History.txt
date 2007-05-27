@@ -1,3 +1,9 @@
+== 1.1.0 / 2007-05-28 (Toki Wartooth)
+
+* get_body to return body text (Luke Francl)
+* get_subject returns "" for default subjects now (Mike Mondragon)
+* default subjects listed in yaml by carrier in conf directory (Mike Mondragon)
+
 == 1.0.7 / 2007-04-27 (Senator Stampingston)
 
 * patch submitted by Luke Francl
