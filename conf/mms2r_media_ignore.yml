@@ -1,0 +1,4 @@
+---
+text/plain:
+- !ruby/regexp /^$/
+

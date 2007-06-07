@@ -23,9 +23,10 @@ end
 
 class BrokenImageServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
-    res['Content-Type'] = "text/html"
-    res.code = 404
-    res.body = '<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1></body></html>'
+    raise
+    #res['Content-Type'] = "text/html"
+    #res.code = 404
+    #res.body = '<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1></body></html>'
   end
 end
 
@@ -48,6 +49,7 @@ class Net::HTTP
   end
 
   SERVLETS = {
+    '/mmps' => SimpleImageServlet,
     '/simpleimage' => SimpleImageServlet,
     '/brokenimage' => BrokenImageServlet,
     '/simplevideo' => SimpleVideoServlet
@@ -60,7 +62,17 @@ class Net::HTTP
     path = url.path.gsub('%20', ' ').match(/^\/[^\/]+/)[0]
     res = Response.new
     request.query = WEBrick::HTTPUtils.parse_query(url.query)
-    SERVLETS[path].new({}).send("do_#{request.method}", request, res)
+    servlet = case
+              when request.query['HACK'].eql?('VIDEO')
+                SimpleVideoServlet
+              when request.query['HACK'].eql?('IMAGE')
+                SimpleImageServlet
+              when request.query['HACK'].eql?('BROKEN')
+                BrokenImageServlet
+              else
+                  SERVLETS[path]
+              end
+    servlet.new({}).send("do_#{request.method}", request, res)
     res.code ||= "200"
     res
   end
@@ -101,7 +113,7 @@ class Response
   end
 end
 
-class MMS2RSprintTest < Test::Unit::TestCase
+class TestMms2rSprint < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup
@@ -112,66 +124,94 @@ class MMS2RSprintTest < Test::Unit::TestCase
 
   def teardown; end
 
-  def test_simple_video
+  def test_mms_should_have_text
+    mail = TMail::Mail.parse(load_mail('sprint-text-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    assert_equal 1, mms.media.size
+    assert_equal 1, mms.media['text/plain'].size
+    assert_equal 7, mms.get_text.size
+    text = IO.readlines("#{mms.get_text.path}").join
+    assert_match(/Tea Pot/, text)
+    mms.purge
+  end
+
+  def test_mms_should_have_a_phone_number
+    mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    assert_equal '2068509247', mms.get_number
+    mms.purge
+  end
+
+  def test_should_have_simple_video
     mail = TMail::Mail.parse(load_mail('sprint-video-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    assert(mms.media.size == 1)   
-    assert_nil(mms.media['text/plain'])
-    assert_nil(mms.media['text/html'])
-    assert_not_nil(mms.media['video/quicktime'][0])
-    assert_match(/000_0123a01234567895_1.mov$/, mms.media['video/quicktime'][0])
+    assert_equal 1, mms.media.size
+    assert_nil mms.media['text/plain']
+    assert_nil mms.media['text/html']
+    assert_not_nil mms.media['video/quicktime'][0]
+    assert_match(/000_0123a01234567895_1-0.mov$/, mms.media['video/quicktime'][0])
 
-    assert_file_size(mms.media['video/quicktime'][0], 49063)
+    assert_file_size mms.media['video/quicktime'][0], 49063
     
-    assert_equal("", mms.get_subject, "Default Sprint subject not scrubbed.")
+    assert_equal "", mms.get_subject, "Default Sprint subject not scrubbed."
     
     mms.purge
   end
 
-  def test_simple_image
+  def test_should_have_simple_image
     mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    assert(mms.media.size == 1)   
-    assert_nil(mms.media['text/plain'])
-    assert_nil(mms.media['text/html'])
-    assert_not_nil(mms.media['image/jpeg'][0])
-    assert_match(/000_0123a01234567890_1.jpg$/, mms.media['image/jpeg'][0])
+    assert_equal 1, mms.media.size
+    assert_nil mms.media['text/plain']
+    assert_nil mms.media['text/html']
+    assert_not_nil mms.media['image/jpeg'][0]
+    assert_match(/000_0123a01234567890_1-0.jpg$/, mms.media['image/jpeg'][0])
 
-    assert_file_size(mms.media['image/jpeg'][0], 337)
+    assert_file_size mms.media['image/jpeg'][0], 337
     
-    assert_equal("", mms.get_subject, "Default Sprint subject not scrubbed")
+    assert_equal "", mms.get_subject, "Default Sprint subject not scrubbed"
     
     mms.purge
   end
 
-  def test_broken_image
-    mail = TMail::Mail.parse(load_mail('sprint-image-02.mail').join)
+  def test_should_have_two_images
+    mail = TMail::Mail.parse(load_mail('sprint-two-images-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    assert(mms.media.size == 0)
+    assert_equal 1, mms.media.size
+    assert_nil mms.media['text/plain']
+    assert_nil mms.media['text/html']
+    assert_equal 2, mms.media['image/jpeg'].size
+    assert_not_nil mms.media['image/jpeg'][0]
+    assert_not_nil mms.media['image/jpeg'][1]
+    assert_match(/000_0123a01234567890_1-0.jpg$/, mms.media['image/jpeg'][0])
+    assert_match(/000_0123a01234567890_1-1.jpg$/, mms.media['image/jpeg'][1])
 
+    assert_file_size mms.media['image/jpeg'][0], 337
+    assert_file_size mms.media['image/jpeg'][1], 337
+    
+    assert_equal "", mms.get_subject, "Default Sprint subject not scrubbed"
+    
     mms.purge
   end
 
-  def test_simple_text
-    mail = TMail::Mail.parse(load_mail('sprint-text-01.mail').join)
+  def test_image_should_be_missing
+    mail = TMail::Mail.parse(load_mail('sprint-broken-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
-    assert_equal(MMS2R::SprintMedia, mms.class, "expected a #{MMS2R::SprintMedia} and received a #{mms.class}")
     mms.process
-    assert_not_nil(mms.media['text/plain'])   
-    file = mms.media['text/plain'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    text = IO.readlines("#{file}").join
-    assert_match(/hello world/, text)
+
+    assert_equal 0, mms.media.size
+
     mms.purge
   end
-  
+
   def test_get_body_should_return_empty_string_when_there_is_no_user_text
     mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
     mms = MMS2R::Media.create(mail)

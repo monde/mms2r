@@ -1,3 +1,6 @@
 --- 
 text/plain: 
-  "(.*?)\s+This message was sent using PIX-FLIX Messaging service from Verizon Wireless!.*" : "\1"
+  ? !ruby/regexp /^(.+?)\s+This message was sent using PIX-FLIX Messaging service from Verizon Wireless!.*/m
+  : \1
+
+

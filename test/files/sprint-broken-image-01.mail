@@ -1,4 +1,4 @@
-Message-ID: <01234567.9876543210980.JavaMail.jkdos@lalal10>
+Message-ID: <01234567.9876543210987.JavaMail.jkdos@lalal09>
 From: "someuser@pm.sprint.com" <someuser@pm.sprint.com>
 To: tommytutone@example.com
 Subject: You have new Picture Mail!
@@ -13,7 +13,7 @@ Importance: Normal
 Content-Type: text/plain; charset=us-ascii
 Content-Transfer-Encoding: 7bit
 
-You have new Video Mail!
+You have new Picture Mail!
 
 Click Go/View to see now.
 http://pictures.sprintpcs.com/?mivt=helloworld0123456789&shareName=MMS
@@ -64,7 +64,7 @@ Content-Transfer-Encoding: 7bit
    <td VALIGN="top" colspan="2">
         <table border="0" cellpadding="0" cellspacing="0" width="590" bgcolor="#FFFFFF">
             <tr>
-                <td><br/><p><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" width="10"/><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>You have a Video Mail from someuser@pm.sprint.com</b></font><br/><br/></p></td>
+                <td><br/><p><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" width="10"/><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>You have a Picture Mail from someuser@pm.sprint.com</b></font><br/><br/></p></td>
             </tr>
         </table>
     </td>
@@ -81,7 +81,7 @@ Content-Transfer-Encoding: 7bit
                         <table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="7" style="table-layout:fixed">
                             <tr>
                                 <td align="center">
-                                    <img src="http://localhost:99163/mmps/RECIPIENT/000_0123a01234567895_1/2?inviteToken=helloworld0123456789&amp;iconifyVideo=true&amp;wm=1&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1&amp;HACK=VIDEO"/>
+                                    <img src="http://localhost:99163/mmps/RECIPIENT/000_0123a01234567890_1/2?inviteToken=helloworld0123456789&amp;limitsize=258,258&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1&amp;HACK=BROKEN"/>
                                 </td>
                             </tr>
                         </table>
@@ -107,7 +107,7 @@ Content-Transfer-Encoding: 7bit
                                  Options
                                 </div>
                                 <div style="padding:10px; background-color:#f1f1f1; font: normal 10pt trebuchet ms" width="280">
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=MMS&amp;messageState=RETRIEVED">View Video</a><br/>
+                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=MMS&amp;messageState=RETRIEVED">View Picture</a><br/>
                                  <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=PRINT">Order Prints and Gifts</a><br/>
                                  <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=REPLY">Reply to Sender</a><br/>
                                  <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=REPLYTOALL">Reply to All</a><br/>

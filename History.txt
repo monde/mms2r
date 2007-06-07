@@ -1,8 +1,20 @@
-== 1.1.0 / 2007-05-28 (Toki Wartooth)
+== 1.1.0 / 2007-06-05 (Toki Wartooth)
 
 * get_body to return body text (Luke Francl)
-* get_subject returns "" for default subjects now (Mike Mondragon)
-* default subjects listed in yaml by carrier in conf directory (Mike Mondragon)
+* get_subject returns "" for default subjects now
+* default subjects listed in yaml by carrier in conf directory
+* added granularity to Cingular, Sprint, and Verizon carrier services (Will Jessup)
+* refactored Sprint instance to process all media (Will Jessup + Mike)
+* optimized text transformations (Will Jessup)
+* properly handle ISO-8859-1 and UTF-8 text (Will Jessup)
+* clean up unit tests and make them ZenTest/autotest happy
+* configuration file ignores, transforms, and subjects all store Regexp's
+* Put vendor Text::Format & TMail::Mail as an external subversion dependency 
+  to the 1.2 stable branch of Rails ActionMailer
+* added get_number method to return the phone number associated with this MMS
+* get_media and get_text attachment_fu helper return the largest piece of media
+  of that type if the more than one exits in the media (Luke Francl)
+* added block support to process() method (Shane Vitarana)
 
 == 1.0.7 / 2007-04-27 (Senator Stampingston)
 
@@ -26,7 +38,7 @@
 * made ignore_media? start its text check from the start of the file (Luke)
 * added new text transform for Verizon messages (Luke)
 * updated Nextel ignore conf (Luke)
-* added addtional samples and tests for T-Mobile & Verizon (Luke)
+* added additional samples and tests for T-Mobile & Verizon (Luke)
 * cleaned up MMS2R::Media documentation
 * added Sprint broken image test for when media goes stale on their content server
 * fixed teardown typo in lots of plases

@@ -9,7 +9,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class MMS2RMediaTest < Test::Unit::TestCase
+class TestMms2rMedia < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   class MMS2R::FakeCarrier < MMS2R::Media; end
@@ -19,16 +19,16 @@ class MMS2RMediaTest < Test::Unit::TestCase
 
   CARRIER_TO_CLASS = {
     'mms2r.media' => MMS2R::Media,
-    'mms.mycingular.com' => MMS2R::CingularMedia,
-    'cingularme.com' => MMS2R::CingularMedia,
+    'cingularme.com' => MMS2R::CingularMeMedia,
+    'mms.dobson.net' => MMS2R::DobsonMedia,
     'mmode.com' => MMS2R::MModeMedia,
+    'mms.mycingular.com' => MMS2R::MyCingularMedia,
     'messaging.nextel.com' => MMS2R::NextelMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
-    'messaging.sprintpcs.com' => MMS2R::SprintMedia,
+    'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
-    'vtext.com' => MMS2R::VerizonMedia,
-    'vzwpix.com' => MMS2R::VerizonMedia,
-    'mms.dobson.net' => MMS2R::DobsonMedia
+    'vtext.com' => MMS2R::VtextMedia,
+    'vzwpix.com' => MMS2R::VerizonMedia
   }
 
   def use_temp_dirs
@@ -62,16 +62,16 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     mms.process
     assert_not_nil mms.media['text/plain']
-    assert mms.media.size == 3
-    assert(mms.media['text/plain'].size == 1)
-    assert(mms.media['text/html'].size == 1)
-    assert(mms.media['image/gif'].size == 1)
+    assert_equal 3, mms.media.size
+    assert_equal 1, mms.media['text/plain'].size
+    assert_equal 1, mms.media['text/html'].size
+    assert_equal 1, mms.media['image/gif'].size
 
     file = mms.media['text/plain'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
-    assert_match(/This is an MMS message.  Hello World./, text)
+    assert_equal "This is an MMS message.  Hello World.", text
     mms.purge
   end
 
@@ -79,26 +79,39 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_not_nil(mms.media['image/gif'])
-    assert(mms.media.size == 1)
-    file = mms.media['image/gif'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
-    assert(File.basename(file) =~ /spacer\.gif/, "file #{file} does not exist")
+    assert_not_nil mms.media['image/gif']
+    assert_equal 1, mms.media.size
+    file = mms.media['image/gif'].first
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
+    assert File.basename(file) =~ /spacer\.gif/, "file #{file} does not exist"
     mms.purge
+  end
+
+  def test_collect_simple_image_using_block
+    mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
+    mms = MMS2R::Media.create(mail)
+    file_array = nil
+    mms.process do |k, v|
+      file_array = v if (k == 'image/gif')
+      assert_not_nil(file = file_array.first)
+      assert(File::exist?(file), "file #{file} does not exist")
+      assert(File.basename(file) =~ /spacer\.gif/, "file #{file} does not exist")
+    end
+    assert !File.exist?(file_array.first)
   end
 
   def test_collect_text_plain
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_not_nil(mms.media['text/plain'])   
-    assert(mms.media.size == 1)
+    assert_not_nil mms.media['text/plain']
+    assert_equal 1, mms.media.size
     file = mms.media['text/plain'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
-    assert_match(/hello world/, text)
+    assert_equal "hello world", text
     mms.purge
   end
 
@@ -106,13 +119,14 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('hello_world_mail_multipart.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_not_nil(mms.media['text/plain'])   
-    assert(mms.media.size == 1)
+    assert_not_nil mms.media['text/plain']
+    assert_not_nil mms.media['application/smil']
+    assert_equal 2, mms.media.size
     file = mms.media['text/plain'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
-    assert_match(/hello world/, text)
+    assert_equal "hello world", text
     mms.purge
   end
 
@@ -124,9 +138,9 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     mms.process
     file = mms.media['text/plain'][0]
-    assert(File::exist?(file), "file #{file} does not exist")
+    assert File::exist?(file), "file #{file} does not exist"
     mms.purge
-    assert(!File::exist?(file), "file #{file} should not exist!")
+    assert !File::exist?(file), "file #{file} should not exist!"
   end
 
   def test_custom_media_carrier
@@ -136,7 +150,7 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.new
     mail.from = ["#{JENNYSNUMER}@#{host}"]
     mms = MMS2R::Media.create(mail)
-    assert_equal(cls, mms.class, "expected a #{cls} and received a #{mms.class}")
+    assert_equal cls, mms.class, "expected a #{cls} and received a #{mms.class}"
   end
 
   def test_create
@@ -144,10 +158,10 @@ class MMS2RMediaTest < Test::Unit::TestCase
       mail = TMail::Mail.new
       mail.from = ["#{JENNYSNUMER}@#{car}"]
       mms = MMS2R::Media.create(mail)
-      assert_equal(cls, mms.class, "expected a #{cls} and received a #{mms.class}")
+      assert_equal cls, mms.class, "expected a #{cls} and received a #{mms.class}"
       mms = MMS2R::Media.create(mail)
-      assert_equal(cls, mms.class, "expected a #{cls} and received a #{mms.class}")
-      assert_equal(car, mms.carrier, "expected a #{car} and received a #{mms.carrier}")
+      assert_equal cls, mms.class, "expected a #{cls} and received a #{mms.class}"
+      assert_equal car, mms.carrier, "expected a #{car} and received a #{mms.carrier}"
     }
   end
 
@@ -156,20 +170,20 @@ class MMS2RMediaTest < Test::Unit::TestCase
       mail = TMail::Mail.new
       mail.from = ["#{JENNYSNUMER}@#{car}"]
       mms = MMS2R::Media.create(mail,@log)
-      assert_equal(cls, mms.class, "expected a #{cls} and received a #{mms.class}")
+      assert_equal cls, mms.class, "expected a #{cls} and received a #{mms.class}"
     }
   end
 
   def test_tmp_dir
     use_temp_dirs()
     MMS2R::Media.tmp_dir = @tmpdir
-    assert(MMS2R::Media.tmp_dir.eql?(@tmpdir))
+    assert MMS2R::Media.tmp_dir.eql?(@tmpdir)
   end
 
   def test_conf_dir
     use_temp_dirs()
     MMS2R::Media.conf_dir = @confdir
-    assert(MMS2R::Media.conf_dir.eql?(@confdir))
+    assert MMS2R::Media.conf_dir.eql?(@confdir)
   end
 
   def test_transform_text
@@ -183,18 +197,72 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_not_nil(mms.media['text/plain'])   
+    assert_not_nil mms.media['text/plain']
     file = mms.media['text/plain'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
-    assert_match(/foo bar/, text)
+    assert_equal "foo bar", text
+    mms.purge
+  end
+
+  def test_transform_text_for_application_smil
+    use_temp_dirs()
+    t={"Water" => "Juice"}
+    h={'application/smil' => t}
+    f = File.join(MMS2R::Media.conf_dir, 'mms2r_media_transform.yml')
+    File.open(f, 'w') do |out|
+      YAML.dump(h, out)
+    end
+    mail = TMail::Mail.parse(load_mail('hello_world_mail_multipart.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    assert_not_nil mms.media['application/smil']
+    file = mms.media['application/smil'][0]
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
+    text = IO.readlines("#{file}").join
+    assert_equal "Juice", text
+    mms.purge
+  end
+
+  def test_mms_with_two_images_should_get_media_to_largest_file
+    mail = TMail::Mail.parse(load_mail('simple-with-two-images-two-texts.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    file = mms.get_media
+    assert_equal 'big.jpg', file.original_filename
+    mms.purge
+  end
+
+  def test_mms_with_two_texts_should_get_text_to_largest_file
+    mail = TMail::Mail.parse(load_mail('simple-with-two-images-two-texts.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    file = mms.get_text
+    assert_equal 'big.txt', file.original_filename
+    mms.purge
+  end
+
+  def test_mms_should_have_a_phone_number
+    mail = TMail::Mail.parse(load_mail('hello_world_empty_text.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    assert_equal '2068675309', mms.get_number
+    mms.purge
+  end
+
+  def test_transform_text_should_ignore_empty_text_parts
+    mail = TMail::Mail.parse(load_mail('hello_world_empty_text.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+    assert_equal 0, mms.media.size
     mms.purge
   end
 
   def test_ignore_text
     use_temp_dirs()
-    a=["hello world"]
+    a=[/^hello world$/]
     h={'text/plain' => a}
     f = File.join(MMS2R::Media.conf_dir, 'mms2r_media_ignore.yml')
     File.open(f, 'w') do |out|
@@ -203,8 +271,8 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert(mms.media['text/plain'].nil?)
-    assert(mms.media.size == 0)
+    assert mms.media['text/plain'].nil?
+    assert_equal 0, mms.media.size
     mms.purge
   end
 
@@ -219,8 +287,8 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert(mms.media['image/gif'].nil?)
-    assert(mms.media.size == 0)
+    assert mms.media['image/gif'].nil?
+    assert_equal 0, mms.media.size
     mms.purge
   end
 
@@ -235,8 +303,8 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert(mms.media['image/gif'].size == 1)
-    assert(mms.media.size == 1)
+    assert_equal 1, mms.media['image/gif'].size
+    assert_equal 1, mms.media.size
     mms.purge
   end
 
@@ -245,48 +313,48 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mid1_a="1234abcd"
     mid2_b="<01234567.0123456789012.JavaMail.fooba@foo-bars999>"
     mid2_a="012345670123456789012JavaMailfoobafoo-bars999"
-    assert(MMS2R::Media.safe_message_id(mid1_b).eql?(mid1_a))
-    assert(MMS2R::Media.safe_message_id(mid2_b).eql?(mid2_a))
+    assert MMS2R::Media.safe_message_id(mid1_b).eql?(mid1_a)
+    assert MMS2R::Media.safe_message_id(mid2_b).eql?(mid2_a)
   end
 
   def default_ext
-    assert(MMS2R::Media.default_ext('text').nil?)
-    assert(MMS2R::Media.default_ext('text/plain').eql?('plain'))
-    assert(MMS2R::Media.default_ext('image/jpeg').eql?('jpeg'))
-    assert(MMS2R::Media.default_ext('video/mp4').eql?('mp4'))
+    assert MMS2R::Media.default_ext('text').nil?
+    assert MMS2R::Media.default_ext('text/plain').eql?('plain')
+    assert MMS2R::Media.default_ext('image/jpeg').eql?('jpeg')
+    assert MMS2R::Media.default_ext('video/mp4').eql?('mp4')
   end
 
   def test_part_type
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
-    assert(MMS2R::Media.part_type?(mail).eql?('text/plain'))
+    assert MMS2R::Media.part_type?(mail).eql?('text/plain')
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_with_content_type.mail').join)
-    assert(MMS2R::Media.part_type?(mail).eql?('text/plain'))
+    assert MMS2R::Media.part_type?(mail).eql?('text/plain')
     mail = TMail::Mail.parse(load_mail('hello_world_mail_multipart.mail').join)
-    assert(MMS2R::Media.part_type?(mail.parts[0]).eql?('text/plain'))
+    assert MMS2R::Media.part_type?(mail.parts[0]).eql?('text/plain')
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
-    assert(MMS2R::Media.part_type?(mail.parts[0]).eql?('image/gif'))
+    assert MMS2R::Media.part_type?(mail.parts[0]).eql?('image/gif')
   end
 
   def test_main_type
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
-    assert(MMS2R::Media.main_type?(mail).eql?('text'))
+    assert MMS2R::Media.main_type?(mail).eql?('text')
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_with_content_type.mail').join)
-    assert(MMS2R::Media.main_type?(mail).eql?('text'))
+    assert MMS2R::Media.main_type?(mail).eql?('text')
     mail = TMail::Mail.parse(load_mail('hello_world_mail_multipart.mail').join)
-    assert(MMS2R::Media.main_type?(mail.parts[0]).eql?('text'))
+    assert MMS2R::Media.main_type?(mail.parts[0]).eql?('text')
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
-    assert(MMS2R::Media.main_type?(mail.parts[0]).eql?('image'))
+    assert MMS2R::Media.main_type?(mail.parts[0]).eql?('image')
   end
 
   def test_sub_type
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
-    assert(MMS2R::Media.sub_type?(mail).eql?('plain'))
+    assert MMS2R::Media.sub_type?(mail).eql?('plain')
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_with_content_type.mail').join)
-    assert(MMS2R::Media.sub_type?(mail).eql?('plain'))
+    assert MMS2R::Media.sub_type?(mail).eql?('plain')
     mail = TMail::Mail.parse(load_mail('hello_world_mail_multipart.mail').join)
-    assert(MMS2R::Media.sub_type?(mail.parts[0]).eql?('plain'))
+    assert MMS2R::Media.sub_type?(mail.parts[0]).eql?('plain')
     mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
-    assert(MMS2R::Media.sub_type?(mail.parts[0]).eql?('gif'))
+    assert MMS2R::Media.sub_type?(mail.parts[0]).eql?('gif')
   end
 
   def test_get_subject
@@ -297,14 +365,14 @@ class MMS2RMediaTest < Test::Unit::TestCase
       mail.subject = s
       mms = MMS2R::Media.create(mail)
       mms.process
-      assert_equal("", mms.get_subject, "Default subject not scrubbed.")
+      assert_equal '', mms.get_subject, "Default subject not scrubbed."
       mms.purge
     }
 
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_equal('text only', mms.get_subject)
+    assert_equal 'text only', mms.get_subject
     mms.purge
   end
   
@@ -312,7 +380,7 @@ class MMS2RMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_equal('hello world', mms.get_body)
+    assert_equal 'hello world', mms.get_body
     mms.purge
   end
 end

@@ -13,5 +13,12 @@ Content-Location: hello_world.txt
 Content-Disposition: inline
 
 aGVsbG8gd29ybGQ=
+------=_Part_1061064_5544954.1168500502466
+Content-Type: application/smil;Charset=UTF-8;Name=mms.smil.txt
+content-location: mms.smil.txt
+content-id: <mms.smil.txt>
+Content-Transfer-Encoding: 7bit
+
+Water
 ------=_Part_1061064_5544954.1168500502466--
 

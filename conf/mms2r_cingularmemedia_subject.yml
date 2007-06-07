@@ -1,0 +1,3 @@
+---
+- !ruby/regexp /^Multimedia message$/
+

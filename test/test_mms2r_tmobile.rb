@@ -7,7 +7,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class MMS2RTMobileTest < Test::Unit::TestCase
+class TestMms2rTmobile < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup
@@ -23,13 +23,13 @@ class MMS2RTMobileTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    assert(mms.media.size == 1)
-    assert_nil(mms.media['text/plain'])
-    assert_nil(mms.media['text/html'])
-    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_equal 1, mms.media.size
+    assert_nil mms.media['text/plain']
+    assert_nil mms.media['text/html']
+    assert_not_nil mms.media['image/jpeg'][0]
     assert_match(/12-01-06_1234.jpg$/, mms.media['image/jpeg'][0])
 
-    assert_file_size(mms.media['image/jpeg'][0], 337)
+    assert_file_size mms.media['image/jpeg'][0], 337
 
     mms.purge
   end
@@ -39,17 +39,17 @@ class MMS2RTMobileTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     mms.process
     
-    assert(mms.media.size == 2)
-    assert_not_nil(mms.media['text/plain'])
-    assert_nil(mms.media['text/html'])
-    assert_not_nil(mms.media['image/jpeg'][0])
+    assert_equal 2, mms.media.size
+    assert_not_nil mms.media['text/plain']
+    assert_nil mms.media['text/html']
+    assert_not_nil mms.media['image/jpeg'][0]
     assert_match(/07-25-05_0935.jpg$/, mms.media['image/jpeg'][0])
     
-    assert_file_size(mms.media['image/jpeg'][0], 337)
+    assert_file_size mms.media['image/jpeg'][0], 337
     
     file = mms.media['text/plain'][0]
-    assert_not_nil(file)
-    assert(File::exist?(file), "file #{file} does not exist")
+    assert_not_nil file
+    assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
     assert_equal "Lillies", text.strip
     

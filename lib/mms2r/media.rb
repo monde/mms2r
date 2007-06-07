@@ -8,13 +8,17 @@ require 'tmpdir'
 require 'yaml'
 require 'mms2r'
 require 'mms2r/version'
-require 'mms2r/cingular_media'
+require 'mms2r/cingular_me_media'
+require 'mms2r/dobson_media'
 require 'mms2r/mmode_media'
+require 'mms2r/my_cingular_media'
 require 'mms2r/nextel_media'
 require 'mms2r/sprint_media'
+require 'mms2r/sprint_pcs_media'
 require 'mms2r/tmobile_media'
 require 'mms2r/verizon_media'
-require 'mms2r/dobson_media'
+require 'mms2r/vtext_media'
+
 
 ##
 # MMS2R is a library to collect media files from MMS messages. MMS messages 
@@ -22,11 +26,11 @@ require 'mms2r/dobson_media'
 # messages. MMS2R strips the advertising from an MMS leaving the actual user 
 # generated media.
 #
-# If you encounter MMS from a carrier that contains advertising other non-
-# standard media features submit a sample to the author for inclusion in this
+# If you encounter MMS from a carrier that contains advertising and other non-
+# standard media, submit a sample to the author for inclusion in this
 # project.
 #
-# The create method is a factory method to create MMS2R::Media
+# The create method is a factory method to create MMS2R::Media .
 # Custom media producers can be pushed into the factory via the
 # MMS2R::CARRIER_CLASSES Hash, e.g.
 #
@@ -38,7 +42,8 @@ require 'mms2r/dobson_media'
 module MMS2R
 
   ##
-  # A hash of file extentions for common mimetypes
+  # A hash of file extensions for common mimetypes
+
   EXT = {
     'text/plain' => 'txt',
     'text/html' => 'html',
@@ -52,21 +57,21 @@ module MMS2R
   ##
   # A hash of carriers that MMS2r is currently aware of.
   # The factory create method uses the hostname portion 
-  # of an MMS's from to select the correct type of MMS2R::Media
-  # product.  If a specific media product is not available
-  # MMS2R::Media should be used.
+  # of an MMS's From header to select the correct type 
+  # of MMS2R::Media product.  If a specific media product 
+  # is not available MMS2R::Media should be used.
 
   CARRIER_CLASSES = {
-    'mms.mycingular.com' => MMS2R::CingularMedia,
-    'cingularme.com' => MMS2R::CingularMedia,
+    'cingularme.com' => MMS2R::CingularMeMedia,
+    'mms.dobson.net' => MMS2R::DobsonMedia,
     'mmode.com' => MMS2R::MModeMedia,
+    'mms.mycingular.com' => MMS2R::MyCingularMedia,
     'messaging.nextel.com' => MMS2R::NextelMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
-    'messaging.sprintpcs.com' => MMS2R::SprintMedia,
+    'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
-    'vtext.com' => MMS2R::VerizonMedia,
     'vzwpix.com' => MMS2R::VerizonMedia,
-    'mms.dobson.net' => MMS2R::DobsonMedia
+    'vtext.com' => MMS2R::VtextMedia
   }
 
   class MMS2R::Media
@@ -94,7 +99,24 @@ module MMS2R
     attr_reader :media_dir
 
     ##
-    # Creates a new Media comprised of a mail
+    # Factory method that creates MMS2R::Media products.
+    #
+    # Returns a MMS2R::Media product based on the characteristics
+    # of the carrier from which the MMS originated.  
+    # mail is a TMail object, logger is a Logger and can be
+    # nil.
+
+    def self.create(mail, logger=nil)
+      d = lambda{['mms2r.media',MMS2R::Media]} #sets a default to detect
+      cc = MMS2R::CARRIER_CLASSES.detect(d) do |n, c| 
+              /[^@]+@(.+)/.match(mail.from[0])[1] =~ /^#{Regexp.escape("#{n}")}$/
+      end
+      cls = cc[1]
+      cls.new(mail, cc[0], logger)
+    end
+
+    ##
+    # Intialize a new Media comprised of a mail and
     # a logger.  Logger is an instance attribute allowing
     # for a logging strategy per carrier type
 
@@ -107,17 +129,39 @@ module MMS2R
       @dir_count = 0
       @media_dir = File.join(self.class.tmp_dir(), 
                      self.class.safe_message_id(@mail.message_id))
+      # get warnings out of our hair ...
+      @number = nil
+      @subject = nil
+      @body = nil
+      @default_media = nil
+      @default_text = nil
     end
 
+    ##
+    # Get the phone number associated with this MMS if it exists.
+    # The value returned is simplistic it, is just the user name of
+    # the from address before the @ symbol.  Validate the number by
+    # your application on your own.  Most carriers are using the real
+    # phone number as the username.
+
+    def get_number
+      # override this method in a child if the number exists elsewhere (like Sprint)
+      @number ||= /^([^@]+)@/.match(mail.from[0])[1]
+    end
+
+    ##
     # Filter some common place holder subjects from MMS messages and replace 
     # them with ""
     
     def get_subject
-      subject = @mail.subject
-      return "" if subject.nil? || subject.strip.length == 0
+      return @subject if @subject
 
+      subject = @mail.subject
+      return @subject ||= "" if subject.nil? || subject.strip.length == 0
+
+      # subject is not already set, lets see what our defaults are
       a = Array.new
-      # default ignore default subjects are in mms2r_media.yml
+      # default subjects to ignore are in mms2r_media.yml
       f = "#{self.class.superclass.name.downcase.gsub(/::/,'_')}_subject.yml"
       yf = File.join(self.class.conf_dir(), "#{f}")
       a = a + YAML::load_file(yf) if File::exist?(yf) 
@@ -125,23 +169,23 @@ module MMS2R
       f = "#{self.class.name.downcase.gsub(/::/,'_')}_subject.yml"
       yf = File.join(self.class.conf_dir(), "#{f}")
       a = a + YAML::load_file(yf) if File::exist?(yf) 
-      return subject if a.size == 0
-      sub = Regexp.escape(subject)
-
-      return "" if a.detect{|s| s=~/^#{sub}$/}
-      return subject
+      return @subject ||= subject if a.size == 0
+      return @subject ||= "" if a.detect{|r| r.match(subject.strip)}
+      return @subject ||= subject
     end
     
     # Convenience method that returns a string including all the text of the 
     # first text/plain file found. Returns empty string if no body text 
     # is found.
     def get_body
+      return @body if @body
+
       text_file = get_text
       if text_file.nil?
-        return ""
+        return @body ||= ""
       end
       
-      IO.readlines(text_file.path).join.strip
+      return @body ||= IO.readlines(text_file.path).join.strip
     end
 
     # Returns a File with the most likely candidate for the user-submitted
@@ -149,21 +193,133 @@ module MMS2R
     # this will try to give you that file. First it looks for videos, then
     # images. It also adds singleton methods to the File object so it can
     # be used in place of a CGI upload (local_path, original_filename, size,
-    # and content_type)
+    # and content_type).  The largest file found in terms of bytes is returned.
     #
-    # Returns nil if no video or image is found.
+    # Returns nil if there are not any video or image Files found.
 
     def get_media
-      get_attachement(['video', 'image'])
+      return @default_media ||= get_attachement(['video', 'image'])
     end
 
     # Returns a File with the most likely candidate that is text, or nil
     # otherwise. It also adds singleton methods to the File object so it can
     # be used in place of a CGI upload (local_path, original_filename, size,
-    # and content_type)
+    # and content_type).  The largest file found in terms of bytes is returned.
+    #
+    # Returns nil if there are not any text Files found
 
     def get_text
-      get_attachement(['text'])
+      return @default_text ||= get_attachement(['text'])
+    end
+
+    ##
+    # process is a template method and collects all the media in a MMS.
+    # Override helper methods to this template to clean out advertising 
+    # and/or ignore media that are advertising. This method should not be 
+    # overridden unless there is an extreme special case in processing the 
+    # media of a MMS (like Sprint)
+    #
+    # Helpers methods for the process template:
+    # * ignore_media? -- true if the media contained in a part should be ignored.
+    # * process_media -- retrieves media to temporary file, returns path to file.
+    # * transform_text -- called by process_media, strips out advertising.
+    # * temp_file -- creates a temporary filepath based on information from the part.
+    # 
+    # Block support:
+    # Calling process() with a block to automatically iterate through media
+    # and purge after the block yields. For example, to process and receive
+    # all media types of video, you can do:
+    #   mms.process do |media_type, file|
+    #     results << file if media_type =~ /video/
+    #   end
+
+    def process()
+      @logger.info("#{self.class} processing") unless @logger.nil?
+
+      # build up all the parts
+      parts = @mail.parts
+      if !@mail.multipart?
+        parts = Array.new()
+        parts << @mail
+      end
+      # double check for multipart/alternative, if it exists
+      # replace it with its children parts
+      parts.each do |p|
+        if self.class.part_type?(p).eql?('multipart/alternative')
+          part = parts.delete(p)
+          part.parts.each { |mp| parts << mp }
+        end
+      end
+      # get to work
+      parts.each do |p|
+        t = self.class.part_type?(p)
+        unless ignore_media?(t,p)
+          t,f = process_media(p)
+          add_file(t,f) unless t.nil? || f.nil?
+        end
+      end
+
+      if block_given?
+        media.each do |k, v|
+          yield(k, v)
+          purge
+        end
+      end
+
+    end
+
+    ##
+    # Helper for process template method to determine if 
+    # media contained in a part should be ignored.  Producers 
+    # should override this method to return true for media such 
+    # as images that are advertising, carrier logos, etc.
+    # The corresponding *_ignore.yml for a given class contains
+    # either a regular expression for the text types or a file
+    # name for all other types.  When writing an ignore regular
+    # expression assume that the text it will be evaluated against
+    # has been flattened where one or more consecutive whitespace 
+    # (tab, space, new lines and line feeds) characters are replaced 
+    # with one space ' ' character.
+
+    def ignore_media?(type,part)
+
+      # default media to ignore are in mms2r_media.yml
+      # which is a hash of mime types as keys each to an
+      # array of regular expressions
+      f = "#{self.class.superclass.name.downcase.gsub(/::/,'_')}_ignore.yml"
+      yf = File.join(self.class.conf_dir(), "#{f}")
+      h = YAML::load_file(yf) if File::exist?(yf) 
+      h ||= Hash.new
+
+      # merge in the ignore hash of the specific child
+      f = "#{self.class.name.downcase.gsub(/::/,'_')}_ignore.yml"
+      yf = File.join(self.class.conf_dir(), "#{f}")
+      if File::exist?(yf)
+        h2 = YAML::load_file(yf)
+        h2.each do |k,v|
+          unless h[k]
+            h[k] = v
+          else
+            v.each{|e| h[k] << e}
+          end
+        end
+      end
+      a ||= h[type]
+      return false if h.size == 0 || a.nil?
+
+      m = /^([^\/]+)\//.match(type)[1]
+      # fire each regular expression, only break if there is a match
+      ignore = a.each do |i|
+        if m.eql?('text') || type.eql?('application/smil')
+          s = part.body.gsub(/\s+/m," ").strip
+          break(i) if i.match(s)
+        else
+          break(i) if filename?(part).eql?(i)
+        end
+      end
+      return ignore.eql?(a) ? false : true # when ignore is equal to 'a' that
+                                          # means none of the breaks fired in
+                                          # the loop, if a break 
     end
 
     ##
@@ -175,20 +331,25 @@ module MMS2R
     #
     # Producers should only override this method if the parts of
     # the MMS need special treatment besides what is expected for
-    # a normal mime part.
+    # a normal mime part (like Sprint).
     #
-    # Returns a tupple of content type, file path
+    # Returns a tuple of content type, file path
 
     def process_media(part)
       # TMail body auto-magically decodes quoted
       # printable for text/html type.
       file = temp_file(part)
-      if self.class.main_type?(part).eql?('text')
-        type, content = transform_text(part)
+      case
+      when self.class.main_type?(part).eql?('text')
+        type, content = transform_text_part(part)
+      when self.class.part_type?(part).eql?('application/smil')
+        type, content = transform_text_part(part)
       else
         type = self.class.part_type?(part)
         content = part.body
       end
+      return type, nil if content.nil?
+
       @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
       File.open(file,'w'){ |f|
         f.write(content)
@@ -198,44 +359,42 @@ module MMS2R
 
     ##
     # Helper for process_media template method to transform text.
+    # The regular expressions for the transform are in the
+    # conf/*_transform.yml files.
+    # Input is the type of text and the text to transform.
 
-    def transform_text(part)
-      type = self.class.part_type?(part)
-      text = part.body
+    def transform_text(type, text)
       f = "#{self.class.name.downcase.gsub(/::/,'_')}_transform.yml"
       yf = File.join(self.class.conf_dir(), "#{f}")
       return type, text unless File::exist?(yf)
+
       h = YAML::load_file(yf)
       a = h[type]
       return type, text if a.nil?
-      a.each do |from,to|
-        text.gsub!(/#{from}/m,to)
+
+      #convert to UTF-8
+      begin
+        c = Iconv.new('ISO-8859-1', 'UTF-8' )
+        utf_t = c.iconv(text)
+      rescue Exception => e
+        utf_t = text
       end
-      return type, text
+
+      # 'from' is a Regexp in the conf and 'to' is the match position
+      # or from is text that will be replaced with to
+      a.each { |from,to| utf_t = utf_t.gsub(from,to).strip }
+      return type, utf_t.strip
     end
 
     ##
-    # Helper for process template method to determine if 
-    # media contained in a part should be ignored.  Producers 
-    # should override this method to return true for media such 
-    # as images that are advertising, carrier logos, etc.
+    # Helper for process_media template method to transform text.
+    # The regular expressions for the trans are in *_transform.yml
+    # Input is a mail part
 
-    def ignore_media?(type,part)
-      f = "#{self.class.name.downcase.gsub(/::/,'_')}_ignore.yml"
-      yf = File.join(self.class.conf_dir(), "#{f}")
-      return false unless File::exist?(yf)
-      h = YAML::load_file(yf)
-      a = h[type]
-      return false if a.nil?
-      m = /^([^\/]+)\//.match(type)[1]
-      a.each do |i|
-        if m.eql?('text')
-          return true if 0 == (part.body =~ /#{Regexp.escape("#{i}")}/m)
-        else
-          return true if filename?(part).eql?(i)
-        end
-      end
-      false
+    def transform_text_part(part)
+      type = self.class.part_type?(part)
+      text = part.body.strip
+      transform_text(type, text)
     end
 
     ##
@@ -245,7 +404,7 @@ module MMS2R
     # header and creates a unique temporary directory for writing
     # the file so filename collision does not occur.
     # Consumers of this method expect the directory
-    # structure to the file exists, if the method is overriden it
+    # structure to the file exists, if the method is overridden it
     # is mandatory that this behavior is retained.
 
     def temp_file(part)
@@ -260,44 +419,6 @@ module MMS2R
     def purge()
       @logger.info("#{self.class} purging #{@media_dir} and all its contents") unless @logger.nil?
       FileUtils.rm_rf(@media_dir)
-    end
-
-    ##
-    # process is a template method and collects all the media in a MMS.
-    # Override helper methods to this template to clean out advertising 
-    # and/or ignore media that are advertising. This method should not be 
-    # overridden unless there is an extreme special case in processing the 
-    # media of a MMS.
-    #
-    # Helpers methods for the process template:
-    # * ignore_media? -- true if the media contained in a part should be ignored.
-    # * process_media -- retrieves media to temporary file, returns path to file.
-    # * transform_text -- called by process_media, strips out advertising.
-    # * temp_file -- creates a temporary filepath based on information from the part.
-
-    def process()
-      @logger.info("#{self.class} processing") unless @logger.nil?
-
-      parts = @mail.parts
-      if !@mail.multipart?
-        parts = Array.new()
-        parts << @mail
-      end
-      parts.each do |p|
-        if self.class.part_type?(p).eql?('multipart/alternative')
-          part = parts.delete(p)
-          part.parts.each do |mp|
-             parts << mp
-          end
-        end
-      end
-      parts.each do |p|
-        t = self.class.part_type?(p)
-        unless ignore_media?(t,p)
-          t,f = process_media(p)
-          add_file(t,f) unless f.nil?
-        end
-      end
     end
 
     ##
@@ -323,30 +444,13 @@ module MMS2R
     end
 
     ##
-    # Factory method that creates MMS2R::Media products.
-    #
-    # Returns a MMS2R::Media product based on the characteristics
-    # of the carrier from which the the MMS originated.  
-    # mail is a TMail object, logger is a Logger and can be
-    # nil.
-
-    def self.create(mail, logger=nil)
-      d = lambda{['mms2r.media',MMS2R::Media]}
-      cc = MMS2R::CARRIER_CLASSES.detect(d) do |n, c| 
-              /[^@]+@(.+)/.match(mail.from[0])[1] =~ /#{Regexp.escape("#{n}")}/
-      end
-      cls = cc[1]
-      cls.new(mail, cc[0], logger)
-    end
-
-    ##
     # returns a filename declared for a part, or a default if its not defined
 
     def filename?(part)
       part.sub_header("content-type", "name") ||
         part.sub_header("content-disposition", "filename") ||
         (part['content-location'] && part['content-location'].body) ||
-        "#{Time.now.to_i}.#{self.class.default_ext(self.class.part_type?(part))}"
+        "#{Time.now.to_f}.#{self.class.default_ext(self.class.part_type?(part))}"
     end
 
     @@tmp_dir = File.join(Dir.tmpdir, (ENV['USER'].nil? ? '':ENV['USER']), 'mms2r')
@@ -380,7 +484,7 @@ module MMS2R
     end
 
     ##
-    # Helper to created a safe directory path element based on the
+    # Helper to create a safe directory path element based on the
     # mail message id.
 
     def self.safe_message_id(mid)
@@ -389,16 +493,16 @@ module MMS2R
     end
 
     ##
-    # Returns a default file extension based on a content_type
+    # Returns a default file extension based on a content type
 
     def self.default_ext(content_type)
       ext = MMS2R::EXT[content_type]
-      return /[^\/]+\/(.+)/.match(content_type)[1] if ext.nil?
+      ext = /[^\/]+\/(.+)/.match(content_type)[1] if ext.nil?
       ext
     end
 
     ##
-    # Determines the mimetype of a part.  Gauruntees a type is returned.
+    # Determines the mimetype of a part.  Guarantees a type is returned.
 
     def self.part_type?(part)
       if part.content_type.nil?
@@ -424,21 +528,31 @@ module MMS2R
     private
 
     ##
-    # used by get_media and get_text to return the first attachment type
+    # used by get_media and get_text to return the biggest attachment type
     # listed in the types array
 
     def get_attachement(types)
 
-      mime_type = nil
-      types.each{|t|
-        mime_type = media.keys.find { |key| 0 == (key =~ /#{t}/) } if mime_type.nil?
-      }
-
-      if mime_type.nil?
-        return nil
+      # get all the files that are of the major types passed in
+      files = Array.new
+      types.each do |t|
+        media.keys.each do |k|
+          files.concat(media[k]) if /^#{t}\//.match(k)
+        end
       end
+      return nil if files.size == 0
 
-      file = File.new(media[mime_type][0])
+      #get the largest file
+      size = 0
+      file = nil # explicitly declare the file
+      files.each do |f|
+        # this will safely evaluate since we wouldn't be looking at
+        # media[mime_type] after the check just before this
+        if File.size(f) > size
+          size = File.size(f)
+          file = File.new(f)
+        end
+      end
 
       # These singleton methods implement the interface necessary to be used
       # as a drop-in replacement for files uploaded with CGI.rb.

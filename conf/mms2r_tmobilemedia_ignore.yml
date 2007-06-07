@@ -1,9 +1,6 @@
 --- 
-text/html: 
-- |
-  <html>
-    <head>
-  		<title>T-Mobile</title> 
+text/html:
+- !ruby/regexp /^<html> <head> <title>T-Mobile</title>/
 image/gif: 
 - dottedline350.gif
 - dottedline600.gif

@@ -8,7 +8,7 @@ MMS2R is a library that decodes the parts of an MMS message to disk while
 stripping out advertising injected by the cellphone carriers.  MMS messages are 
 multipart email and the carriers often inject branding into these messages.  Use
 MMS2R if you want to get at the real user generated content from a MMS without
-having to deal with the garbage from the carriers.
+having to deal with the cruft from the carriers.
 
 If MMS2R is not aware of a particular carrier no extra processing is done 
 to the MMS other than decoding and consolidating its media.
@@ -31,8 +31,8 @@ Corpus of carriers currently processed by MMS2R:
 
 == FEATURES
 
-* TMail from 1.3.1 of ActionMailer is shipped as a vendor library with MMS2R
 * get_media and get_text methods return a File that can be used in attachment_fu 
+
 == SYNOPSIS:
 
   require 'rubygems'
@@ -50,14 +50,17 @@ Corpus of carriers currently processed by MMS2R:
   # writes the user generated media to disk in a temporary subdirectory
   mms.process
 
-  puts "MMS has default carrier subject!" if mms.get_subject.nil?
+  puts "MMS has default carrier subject!" if mms.get_subject.eql?("")
 
-  # most MMS are either image or video, get_media will blindly return
-  # the first video or image found
+  # access the senders phone number
+  puts "MMS was from phone #{mms.get_number}"
+
+  # most MMS are either image or video, get_media will return the largest
+  # (non-advertising) video or image found
   file = mms.get_media
   puts "MMS had a media: #{file.inspect}" unless file.nil?
 
-  # get_text will blindly return the first (non-advertising) text found
+  # get_text return the largest (non-advertising) text found
   file = mms.get_text
   puts "MMS had some text: #{file.inspect}" unless file.nil?
 
@@ -67,6 +70,13 @@ Corpus of carriers currently processed by MMS2R:
   # are of that type
   mms.media['image/jpeg'].each {|f| puts "#{f}"}
   mms.media['text/plain'].each {|f| puts "#{f}"}
+
+  # Block support, process and receive all media types of video
+  mms.process do |media_type, file|
+    results << file if media_type =~ /video/
+  end
+  # or
+  image = mms.media['image/jpeg'].first
 
   # print the text (assumes MMS had text)
   text = IO.readlines(mms.media['text/plain'][0]).join
@@ -88,9 +98,22 @@ Corpus of carriers currently processed by MMS2R:
 
 * sudo gem install mms2r
 
+== CONTRIBUTE:
+
+If you contribute a patch that we accept then generally we'll
+give you developer rights for the project on RubyForge.  Please
+ensure your work includes 100% test converage.  Your text 
+coverage can be verified with the rcov and heckle rack tasks.
+
 == Authors
 
 Copyright (c) 2007 by Mike Mondragon (blog[http://blog.mondragon.cc/])
+
+== Contributors
+
+* Luke Francl (blog[http://railspikes.com/])
+* Will Jessup (blog[http://www.willjessup.com/])
+* Shane Vitarana (blog[http://www.shanesbrain.net/])
 
 == LICENSE:
 
