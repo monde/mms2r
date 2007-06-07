@@ -1,0 +1,4 @@
+--- 
+application/smil: 
+- !ruby/regexp /^<smil><head><layout><root-layout width=/
+
