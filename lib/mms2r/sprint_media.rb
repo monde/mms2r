@@ -1,8 +1,6 @@
 require 'net/http'
 require 'rubygems'
 require 'hpricot'
-require 'mms2r'
-require 'mms2r/media'
 
 module MMS2R
 

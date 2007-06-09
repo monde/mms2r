@@ -7,7 +7,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class TestMms2rMyCingular < Test::Unit::TestCase
+class MMS2R::MyCingularMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_image

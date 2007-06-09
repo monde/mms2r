@@ -7,7 +7,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class TestMms2rTmobile < Test::Unit::TestCase
+class MMS2R::TMobileMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup

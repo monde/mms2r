@@ -35,11 +35,14 @@ Corpus of carriers currently processed by MMS2R:
 
 == SYNOPSIS:
 
+  # required to use the MMS2R gem proper
   require 'rubygems'
   require 'mms2r'
-  require 'mms2r/media'
+
+  # required for the example
   require 'tmail'
   require 'fileutils'
+  require 'logger'
 
   # TMail::Mail.parse is what ActionMailer::Base.receive(email) does, see:
   # http://wiki.rubyonrails.com/rails/pages/HowToReceiveEmailsWithActionMailer
@@ -71,13 +74,6 @@ Corpus of carriers currently processed by MMS2R:
   mms.media['image/jpeg'].each {|f| puts "#{f}"}
   mms.media['text/plain'].each {|f| puts "#{f}"}
 
-  # Block support, process and receive all media types of video
-  mms.process do |media_type, file|
-    results << file if media_type =~ /video/
-  end
-  # or
-  image = mms.media['image/jpeg'].first
-
   # print the text (assumes MMS had text)
   text = IO.readlines(mms.media['text/plain'][0]).join
   puts text
@@ -89,6 +85,14 @@ Corpus of carriers currently processed by MMS2R:
 
   #remove all the media that was put to temporary disk
   mms.purge
+
+  # Block support, process and receive all media types of video.
+  # Purge is called at the conclusion of the block so be sure
+  # to do something with the bits you are looking for
+  mms.process do |media_type, files|
+    # assumes a Clip model
+    Clip.create(:uploaded_data => files.first, :title => "From phone") if media_type =~ /video/
+  end
 
 == REQUIREMENTS:
 
@@ -103,11 +107,15 @@ Corpus of carriers currently processed by MMS2R:
 If you contribute a patch that we accept then generally we'll
 give you developer rights for the project on RubyForge.  Please
 ensure your work includes 100% test converage.  Your text 
-coverage can be verified with the rcov and heckle rack tasks.
+coverage can be verified with the rcov rake task.  The library
+is ZenTest autotest discovery enabled so running autotest in the
+root of the project is very helpful during development.
 
 == Authors
 
 Copyright (c) 2007 by Mike Mondragon (blog[http://blog.mondragon.cc/])
+
+MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 
 == Contributors
 
@@ -119,7 +127,8 @@ Copyright (c) 2007 by Mike Mondragon (blog[http://blog.mondragon.cc/])
 
 (The MIT License)
 
-Copyright (c) 2007 Mike Mondragon.  All rights reserved.
+Copyright (c) 2007 Mike Mondragon (mikemondragon@gmail.com).
+All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

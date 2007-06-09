@@ -113,7 +113,7 @@ class Response
   end
 end
 
-class TestMms2rSprint < Test::Unit::TestCase
+class MMS2R::SprintMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup

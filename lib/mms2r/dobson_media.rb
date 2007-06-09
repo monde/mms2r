@@ -1,7 +1,3 @@
-require 'mms2r'
-
-require 'mms2r/media'
-
 module MMS2R
 
   ##

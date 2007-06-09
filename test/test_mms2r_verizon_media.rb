@@ -7,7 +7,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class TestMms2rVerizon < Test::Unit::TestCase
+class MMS2R::VerizonMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup

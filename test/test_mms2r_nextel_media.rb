@@ -7,7 +7,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class TestMms2rNextel < Test::Unit::TestCase
+class MMS2R::NextelMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_simple_get_text_is_nil

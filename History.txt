@@ -1,4 +1,4 @@
-== 1.1.0 / 2007-06-05 (Toki Wartooth)
+== 1.1.0 / 2007-06-08 (Toki Wartooth)
 
 * get_body to return body text (Luke Francl)
 * get_subject returns "" for default subjects now
@@ -7,7 +7,7 @@
 * refactored Sprint instance to process all media (Will Jessup + Mike)
 * optimized text transformations (Will Jessup)
 * properly handle ISO-8859-1 and UTF-8 text (Will Jessup)
-* clean up unit tests and make them ZenTest/autotest happy
+* autotest powers activate! (ZenTest autotest discovery enabled)
 * configuration file ignores, transforms, and subjects all store Regexp's
 * Put vendor Text::Format & TMail::Mail as an external subversion dependency 
   to the 1.2 stable branch of Rails ActionMailer

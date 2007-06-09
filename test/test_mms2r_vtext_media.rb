@@ -7,21 +7,22 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class TestMms2rSprintPcs < Test::Unit::TestCase
+class MMS2R::VtextMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
-  def test_simple_text
-    mail = TMail::Mail.parse(load_mail('sprint-pcs-text-01.mail').join)
+  def test_simple_text_vtext
+
+    mail = TMail::Mail.parse(load_mail('vtext-text-01.mail').join)
     mms = MMS2R::Media.create(mail)
-    assert_equal MMS2R::SprintPcsMedia, mms.class, "expected a #{MMS2R::SprintPcsMedia} and received a #{mms.class}"
+    assert_equal(MMS2R::VtextMedia, mms.class, "expected a #{MMS2R::VtextMedia} and received a #{mms.class}")
     mms.process
-    assert_not_nil mms.media['text/plain']
+    assert_not_nil(mms.media['text/plain'])   
     file = mms.media['text/plain'][0]
-    assert_not_nil file
-    assert File::exist?(file), "file #{file} does not exist"
+    assert_not_nil(file)
+    assert(File::exist?(file), "file #{file} does not exist")
     text = IO.readlines("#{file}").join
     assert_match(/hello world/, text)
     mms.purge
   end
-  
+
 end

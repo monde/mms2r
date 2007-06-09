@@ -8,7 +8,7 @@ require 'tmail/mail'
 require 'logger'
 
 
-class TestMms2rDobson < Test::Unit::TestCase
+class MMS2R::DobsonMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_dobson_image

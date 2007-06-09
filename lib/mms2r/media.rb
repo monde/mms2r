@@ -1,24 +1,13 @@
-# Copyright (c) 2007 by Mike Mondragon ()
+#--
+# Copyright (c) 2007 by Mike Mondragon (mikemondragon@gmail.com)
 #
-# Please see the LICENSE file for licensing.
+# Please see the LICENSE file for licensing information
+#++
 
 require 'fileutils'
 require 'pathname'
 require 'tmpdir'
 require 'yaml'
-require 'mms2r'
-require 'mms2r/version'
-require 'mms2r/cingular_me_media'
-require 'mms2r/dobson_media'
-require 'mms2r/mmode_media'
-require 'mms2r/my_cingular_media'
-require 'mms2r/nextel_media'
-require 'mms2r/sprint_media'
-require 'mms2r/sprint_pcs_media'
-require 'mms2r/tmobile_media'
-require 'mms2r/verizon_media'
-require 'mms2r/vtext_media'
-
 
 ##
 # MMS2R is a library to collect media files from MMS messages. MMS messages 
@@ -40,39 +29,6 @@ require 'mms2r/vtext_media'
 # media = MMS2R::Media.create(some_tmail) #media will be a MMS2R::FakeCarrier
 
 module MMS2R
-
-  ##
-  # A hash of file extensions for common mimetypes
-
-  EXT = {
-    'text/plain' => 'txt',
-    'text/html' => 'html',
-    'image/png' => 'png',
-    'image/gif' => 'gif',
-    'image/jpeg' => 'jpg',
-    'video/quicktime' => 'mov',
-    'video/3gpp2' => '3g2'
-  }
-
-  ##
-  # A hash of carriers that MMS2r is currently aware of.
-  # The factory create method uses the hostname portion 
-  # of an MMS's From header to select the correct type 
-  # of MMS2R::Media product.  If a specific media product 
-  # is not available MMS2R::Media should be used.
-
-  CARRIER_CLASSES = {
-    'cingularme.com' => MMS2R::CingularMeMedia,
-    'mms.dobson.net' => MMS2R::DobsonMedia,
-    'mmode.com' => MMS2R::MModeMedia,
-    'mms.mycingular.com' => MMS2R::MyCingularMedia,
-    'messaging.nextel.com' => MMS2R::NextelMedia,
-    'pm.sprint.com' => MMS2R::SprintMedia,
-    'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
-    'tmomail.net' => MMS2R::TMobileMedia,
-    'vzwpix.com' => MMS2R::VerizonMedia,
-    'vtext.com' => MMS2R::VtextMedia
-  }
 
   class MMS2R::Media
     ##
@@ -162,11 +118,11 @@ module MMS2R
       # subject is not already set, lets see what our defaults are
       a = Array.new
       # default subjects to ignore are in mms2r_media.yml
-      f = "#{self.class.superclass.name.downcase.gsub(/::/,'_')}_subject.yml"
+      f = clz.yaml_file_name(sclz, :subject)
       yf = File.join(self.class.conf_dir(), "#{f}")
       a = a + YAML::load_file(yf) if File::exist?(yf) 
       # class default subjects
-      f = "#{self.class.name.downcase.gsub(/::/,'_')}_subject.yml"
+      f = clz.yaml_file_name(clz, :subject)
       yf = File.join(self.class.conf_dir(), "#{f}")
       a = a + YAML::load_file(yf) if File::exist?(yf) 
       return @subject ||= subject if a.size == 0
@@ -227,11 +183,14 @@ module MMS2R
     # 
     # Block support:
     # Calling process() with a block to automatically iterate through media
-    # and purge after the block yields. For example, to process and receive
+    # and *purge* after the block yields. For example, to process and receive
     # all media types of video, you can do:
     #   mms.process do |media_type, file|
     #     results << file if media_type =~ /video/
     #   end
+    #
+    # note: auto-purging is a feature of calling process() with a block, purge
+    # must be explicitly called otherwise
 
     def process()
       @logger.info("#{self.class} processing") unless @logger.nil?
@@ -286,13 +245,13 @@ module MMS2R
       # default media to ignore are in mms2r_media.yml
       # which is a hash of mime types as keys each to an
       # array of regular expressions
-      f = "#{self.class.superclass.name.downcase.gsub(/::/,'_')}_ignore.yml"
+      f = clz.yaml_file_name(sclz, :ignore)
       yf = File.join(self.class.conf_dir(), "#{f}")
       h = YAML::load_file(yf) if File::exist?(yf) 
       h ||= Hash.new
 
       # merge in the ignore hash of the specific child
-      f = "#{self.class.name.downcase.gsub(/::/,'_')}_ignore.yml"
+      f = clz.yaml_file_name(clz, :ignore)
       yf = File.join(self.class.conf_dir(), "#{f}")
       if File::exist?(yf)
         h2 = YAML::load_file(yf)
@@ -364,7 +323,7 @@ module MMS2R
     # Input is the type of text and the text to transform.
 
     def transform_text(type, text)
-      f = "#{self.class.name.downcase.gsub(/::/,'_')}_transform.yml"
+      f = clz.yaml_file_name(clz, :transform)
       yf = File.join(self.class.conf_dir(), "#{f}")
       return type, text unless File::exist?(yf)
 
@@ -523,6 +482,34 @@ module MMS2R
 
     def self.sub_type?(part)
       /\/([^\/]+)$/.match(self.part_type?(part))[1]
+    end
+
+    ##
+    # helper to contruct a yml file name with a class
+    # name based pattern, i.e. mms2r_tmobilemedia_ignore.yml
+    # for yaml_file_name(MMS2R::TMobileMedia,:ignore)
+
+    def self.yaml_file_name(clz,kind)
+      # like active_support's inflector
+      flat = clz.name.gsub(/::/, '_').
+      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+      gsub(/([a-z])([A-Z])/,'\1_\2').
+      tr("-", "_").downcase
+      "#{flat}_#{kind.to_s}.yml"
+    end
+
+    ##
+    # helper to fetch self.class quicly
+
+    def clz
+      self.class
+    end
+
+    ##
+    # helper to fetch self.class.superclass quicly
+
+    def sclz
+      self.class.superclass
     end
 
     private

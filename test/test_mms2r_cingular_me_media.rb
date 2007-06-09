@@ -8,7 +8,7 @@ require 'tmail/mail'
 require 'logger'
 
 
-class TestMms2rCingularMe < Test::Unit::TestCase
+class MMS2R::CingularMeMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup

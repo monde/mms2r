@@ -5,11 +5,10 @@ require 'rubygems'
 require 'yaml'
 require 'fileutils'
 require 'mms2r'
-require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class TestMms2rMedia < Test::Unit::TestCase
+class MMS2R::MediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   class MMS2R::FakeCarrier < MMS2R::Media; end
@@ -55,6 +54,10 @@ class TestMms2rMedia < Test::Unit::TestCase
     FileUtils.rm_rf(@confdir)
     MMS2R::Media.tmp_dir = @oldtmpdir
     MMS2R::Media.conf_dir = @oldconfdir
+  end
+
+  def test_version
+    assert MMS2R::Media::VERSION > '0.0.1'
   end
 
   def test_collect_text_multipart_alternative
@@ -382,5 +385,12 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.process
     assert_equal 'hello world', mms.get_body
     mms.purge
+  end
+
+  def test_yaml_file_name
+    assert_equal 'mms2r_my_cingular_media_subject.yml', MMS2R::Media.yaml_file_name(MMS2R::MyCingularMedia,:subject)
+    assert_equal 'mms2r_t_mobile_media_subject.yml', MMS2R::Media.yaml_file_name(MMS2R::TMobileMedia,:subject)
+    assert_equal 'mms2r_media_ignore.yml', MMS2R::Media.yaml_file_name(MMS2R::MyCingularMedia.superclass,:ignore)
+    assert_equal 'mms2r_media_transform.yml', MMS2R::Media.yaml_file_name(MMS2R::Media,:transform)
   end
 end
