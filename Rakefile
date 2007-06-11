@@ -2,7 +2,10 @@
 
 require 'rubygems'
 require 'hoe'
-require 'rcov/rcovtask'
+begin
+  require 'rcov/rcovtask'
+rescue LoadError
+end
 
 $LOAD_PATH.unshift 'lib'
 require 'mms2r'
@@ -20,10 +23,13 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.clean_globs << 'coverage'
 end
 
-Rcov::RcovTask.new do |t|
-  t.test_files = FileList['test/test*.rb']
-  t.verbose = true
-  t.rcov_opts << "--exclude rcov.rb,hpricot.rb,hpricot/.*\.rb"
+begin
+  Rcov::RcovTask.new do |t|
+    t.test_files = FileList['test/test*.rb']
+    t.verbose = true
+    t.rcov_opts << "--exclude rcov.rb,hpricot.rb,hpricot/.*\.rb"
+  end
+rescue NameError
 end
 
 # vim: syntax=Ruby
