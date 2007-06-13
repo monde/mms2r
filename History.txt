@@ -1,3 +1,8 @@
+== 1.1.2 / 2007-06-13 (Dethklok roadie #2)
+
+* placed versioned hpricot dependency in Hoe's extra_deps (an attempt to appease 
+  firebrigade gods or not cause Gem::RemoteInstallationCancelled whichever you prefer)
+
 == 1.1.1 / 2007-06-11 (Dethklok roadie)
 
 * rescue rcov non-dependency in Rakefile to make firebrigade happy
