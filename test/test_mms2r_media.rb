@@ -20,14 +20,15 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     'mms2r.media' => MMS2R::Media,
     'cingularme.com' => MMS2R::CingularMeMedia,
     'mms.dobson.net' => MMS2R::DobsonMedia,
+    'mms.myhelio.com' => MMS2R::HelioMedia,
     'mmode.com' => MMS2R::MModeMedia,
     'mms.mycingular.com' => MMS2R::MyCingularMedia,
     'messaging.nextel.com' => MMS2R::NextelMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
     'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
-    'vtext.com' => MMS2R::VtextMedia,
-    'vzwpix.com' => MMS2R::VerizonMedia
+    'vzwpix.com' => MMS2R::VerizonMedia,
+    'vtext.com' => MMS2R::VtextMedia
   }
 
   def use_temp_dirs
@@ -368,7 +369,7 @@ class MMS2R::MediaTest < Test::Unit::TestCase
       mail.subject = s
       mms = MMS2R::Media.create(mail)
       mms.process
-      assert_equal '', mms.get_subject, "Default subject not scrubbed."
+      assert_equal nil, mms.get_subject, "Default subject not scrubbed."
       mms.purge
     }
 
