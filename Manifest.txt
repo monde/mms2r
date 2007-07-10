@@ -5,6 +5,7 @@ Rakefile
 conf/mms2r_cingular_me_media_subject.yml
 conf/mms2r_cingular_me_media_transform.yml
 conf/mms2r_dobson_media_ignore.yml
+conf/mms2r_helio_media_ignore.yml
 conf/mms2r_media_ignore.yml
 conf/mms2r_media_subject.yml
 conf/mms2r_my_cingular_media_subject.yml
@@ -18,6 +19,7 @@ dev_tools/debug_sprint_hpricot_parsing.rb
 lib/mms2r.rb
 lib/mms2r/cingular_me_media.rb
 lib/mms2r/dobson_media.rb
+lib/mms2r/helio_media.rb
 lib/mms2r/m_mode_media.rb
 lib/mms2r/media.rb
 lib/mms2r/my_cingular_media.rb
@@ -55,6 +57,7 @@ test/files/cingularme-text-01.mail
 test/files/cingularme-text-02.mail
 test/files/dobson-image-01.mail
 test/files/dot.jpg
+test/files/helio-image-01.mail
 test/files/hello_world_empty_text.mail
 test/files/hello_world_mail_multipart.mail
 test/files/hello_world_mail_plain_no_content_type.mail
@@ -85,6 +88,7 @@ test/files/vtext-text-01.mail
 test/test_helper.rb
 test/test_mms2r_cingular_me_media.rb
 test/test_mms2r_dobson_media.rb
+test/test_mms2r_helio_media.rb
 test/test_mms2r_m_mode_media.rb
 test/test_mms2r_media.rb
 test/test_mms2r_my_cingular_media.rb
@@ -94,5 +98,8 @@ test/test_mms2r_sprint_pcs_media.rb
 test/test_mms2r_t_mobile_media.rb
 test/test_mms2r_verizon_media.rb
 test/test_mms2r_vtext_media.rb
+tinderbox/sandbox/cache/sources-0.0.1.gem
+tinderbox/sandbox/gems/sources-0.0.1/lib/sources.rb
+tinderbox/sandbox/specifications/sources-0.0.1.gemspec
 vendor/plugins/mms2r/lib/autotest/discover.rb
 vendor/plugins/mms2r/lib/autotest/mms2r.rb
