@@ -60,7 +60,7 @@ module MMS2R
     # Digs out where Sprint hides the phone number
 
     def sprint_phone_number(doc)
-      c = doc.search("/html/head/comment//").last
+      c = doc.search("/html/head/comment()").last
       t = c.content.gsub(/\s+/m," ").strip
       #@number returned in parent's get_number
       @number = / name=&quot;MDN&quot;&gt;(\d+)&lt;/.match(t)[1]

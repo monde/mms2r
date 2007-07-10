@@ -21,7 +21,7 @@ class MMS2R::MyCingularMediaTest < Test::Unit::TestCase
     assert_not_nil mms.media['image/jpeg'][0]
     assert_match(/04-18-07_1723.jpg$/, mms.media['image/jpeg'][0])
     
-    assert_equal "", mms.get_subject, "Default Cingular subject not stripped"
+    assert_equal nil, mms.get_subject, "Default Cingular subject not stripped"
     assert_file_size mms.media['image/jpeg'][0], 337
 
     assert_equal "Water", IO.readlines(mms.get_text.path).join

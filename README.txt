@@ -22,6 +22,7 @@ Corpus of carriers currently processed by MMS2R:
 * Cingular => mms.mycingular.com
 * Cingular => cingularme.com
 * Dobson/Cellular One => mms.dobson.net
+* Helio => mms.myhelio.com
 * Nextel => messaging.nextel.com
 * Sprint => pm.sprint.com
 * Sprint => messaging.sprintpcs.com

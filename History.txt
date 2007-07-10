@@ -1,7 +1,13 @@
+== 1.1.3 / 2007-06-13 (Charles Foster Ofdensen)
+
+* Helio support by Will Jessup
+* get_subject returns nil on default carrier subjects 
+
 == 1.1.2 / 2007-06-13 (Dethklok roadie #2)
 
-* placed versioned hpricot dependency in Hoe's extra_deps (an attempt to appease 
-  firebrigade gods or not cause Gem::RemoteInstallationCancelled whichever you prefer)
+* placed versioned hpricot dependency in Hoe's extra_deps (an attempt to 
+  appease firebrigade gods or not cause Gem::RemoteInstallationCancelled 
+  whichever you prefer)
 
 == 1.1.1 / 2007-06-11 (Dethklok roadie)
 
@@ -12,7 +18,8 @@
 * get_body to return body text (Luke Francl)
 * get_subject returns "" for default subjects now
 * default subjects listed in yaml by carrier in conf directory
-* added granularity to Cingular, Sprint, and Verizon carrier services (Will Jessup)
+* added granularity to Cingular, Sprint, and Verizon carrier services (Will 
+  Jessup)
 * refactored Sprint instance to process all media (Will Jessup + Mike)
 * optimized text transformations (Will Jessup)
 * properly handle ISO-8859-1 and UTF-8 text (Will Jessup)
@@ -28,15 +35,18 @@
 == 1.0.7 / 2007-04-27 (Senator Stampingston)
 
 * patch submitted by Luke Francl
-* added a get_subject method that returns nil when any MMS has a default carrier subject
-* get_subject returns nil for '', 'Multimedia message', '(no subject)', 'You have new Picture Mail!'
+* added a get_subject method that returns nil when any MMS has a default
+  carrier subject
+* get_subject returns nil for '', 'Multimedia message', '(no subject)', 'You
+   have new Picture Mail!'
 
 == 1.0.6 / 2007-04-24 (Pickles the Drummer)
 
 * patch submitted by Luke Francl
 * added support for mms.dobson.net (Dobson aka Cellular One) (Luke)
 * DRY'd up unit tests (Luke)
-* added get_media instance method that returns first video or image as File (Luke)
+* added get_media instance method that returns first video or image as File 
+  (Luke)
 * File from get_media can be used by/with attachment_fu (Luke)
 * added get_text instance method that returns first non advertising text
 * File from get_text can be used by/with attachment_fu
@@ -49,7 +59,8 @@
 * updated Nextel ignore conf (Luke)
 * added additional samples and tests for T-Mobile & Verizon (Luke)
 * cleaned up MMS2R::Media documentation
-* added Sprint broken image test for when media goes stale on their content server
+* added Sprint broken image test for when media goes stale on their content 
+  server
 * fixed teardown typo in lots of plases
 * added tests for 4 three samples of unique variants of Sprint/Nextel text
 * 100% test coverage!
@@ -64,7 +75,8 @@
 
 == 1.0.3 / 2007-04-05 (Paper Cut)
 
-* Cleaned up packaging and errors in example found by Shane V. http://shanesbrain.net/
+* Cleaned up packaging and errors in example found by Shane V. 
+  http://shanesbrain.net/
 
 == 1.0.2 / 2007-03-07
 

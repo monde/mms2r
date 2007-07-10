@@ -18,7 +18,8 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.description = p.paragraphs_of('README.txt', 2..6).join("\n\n")
   p.url = p.paragraphs_of('README.txt', 1).first.strip
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
-  p.extra_deps << ['hpricot', '>= 0.5.0']
+  p.extra_deps << ['hpricot', '>= 0.6.0']
+  p.extra_deps << ['mechanize', '>= 0.6.9']
   p.clean_globs << 'coverage'
 end
 

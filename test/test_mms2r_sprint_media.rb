@@ -157,7 +157,7 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
 
     assert_file_size mms.media['video/quicktime'][0], 49063
     
-    assert_equal "", mms.get_subject, "Default Sprint subject not scrubbed."
+    assert_equal nil, mms.get_subject, "Default Sprint subject not scrubbed."
     
     mms.purge
   end
@@ -175,7 +175,7 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
 
     assert_file_size mms.media['image/jpeg'][0], 337
     
-    assert_equal "", mms.get_subject, "Default Sprint subject not scrubbed"
+    assert_equal nil, mms.get_subject, "Default Sprint subject not scrubbed"
     
     mms.purge
   end
@@ -197,7 +197,7 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
     assert_file_size mms.media['image/jpeg'][0], 337
     assert_file_size mms.media['image/jpeg'][1], 337
     
-    assert_equal "", mms.get_subject, "Default Sprint subject not scrubbed"
+    assert_equal nil, mms.get_subject, "Default Sprint subject not scrubbed"
     
     mms.purge
   end

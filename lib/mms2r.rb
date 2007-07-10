@@ -8,6 +8,7 @@ $:.unshift(File.dirname(__FILE__) + "/vendor/")
 require 'mms2r/media'
 require 'mms2r/cingular_me_media'
 require 'mms2r/dobson_media'
+require 'mms2r/helio_media'
 require 'mms2r/m_mode_media'
 require 'mms2r/my_cingular_media'
 require 'mms2r/nextel_media'
@@ -29,6 +30,7 @@ module MMS2R
   CARRIER_CLASSES = {
     'cingularme.com' => MMS2R::CingularMeMedia,
     'mms.dobson.net' => MMS2R::DobsonMedia,
+    'mms.myhelio.com' => MMS2R::HelioMedia,
     'mmode.com' => MMS2R::MModeMedia,
     'mms.mycingular.com' => MMS2R::MyCingularMedia,
     'messaging.nextel.com' => MMS2R::NextelMedia,
@@ -57,7 +59,7 @@ module MMS2R
     ##
     # MMS2R Library version
 
-    VERSION = '1.1.2'
+    VERSION = '1.1.3'
 
     end
 

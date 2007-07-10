@@ -77,6 +77,7 @@ module MMS2R
     # for a logging strategy per carrier type
 
     def initialize(mail, carrier, logger=nil)
+
       @mail = mail
       @carrier = carrier
       @logger = logger
@@ -106,14 +107,16 @@ module MMS2R
     end
 
     ##
-    # Filter some common place holder subjects from MMS messages and replace 
-    # them with ""
-    
+    # Filter some common place holder subjects from MMS messages and
+    # return nil such that default carrier subjects can be pragmatically
+    # ignored.
+
     def get_subject
-      return @subject if @subject
+
+      return @subject if @subject # we've already done the work
 
       subject = @mail.subject
-      return @subject ||= "" if subject.nil? || subject.strip.length == 0
+      return @subject ||= nil if subject.nil? || subject.strip.length == 0
 
       # subject is not already set, lets see what our defaults are
       a = Array.new
@@ -126,7 +129,7 @@ module MMS2R
       yf = File.join(self.class.conf_dir(), "#{f}")
       a = a + YAML::load_file(yf) if File::exist?(yf) 
       return @subject ||= subject if a.size == 0
-      return @subject ||= "" if a.detect{|r| r.match(subject.strip)}
+      return @subject ||= nil if a.detect{|r| r.match(subject.strip)}
       return @subject ||= subject
     end
     
@@ -201,14 +204,25 @@ module MMS2R
         parts = Array.new()
         parts << @mail
       end
-      # double check for multipart/alternative, if it exists
+
+      # double check for multipart/related, if it exists
       # replace it with its children parts
+      parts.each do |p|
+        if self.class.part_type?(p).eql?('multipart/related')
+          part = parts.delete(p)
+          part.parts.each { |mp| parts << mp }
+        end
+      end
+
+      # multipart/related can have multipart/alternative as a child. if
+      # exists, replace with children
       parts.each do |p|
         if self.class.part_type?(p).eql?('multipart/alternative')
           part = parts.delete(p)
           part.parts.each { |mp| parts << mp }
         end
       end
+
       # get to work
       parts.each do |p|
         t = self.class.part_type?(p)
@@ -218,6 +232,7 @@ module MMS2R
         end
       end
 
+      # when process acts upon a block
       if block_given?
         media.each do |k, v|
           yield(k, v)
@@ -506,7 +521,7 @@ module MMS2R
     end
 
     ##
-    # helper to fetch self.class.superclass quicly
+    # helper to fetch self.class.superclass quickly
 
     def sclz
       self.class.superclass
@@ -532,6 +547,7 @@ module MMS2R
       #get the largest file
       size = 0
       file = nil # explicitly declare the file
+
       files.each do |f|
         # this will safely evaluate since we wouldn't be looking at
         # media[mime_type] after the check just before this
