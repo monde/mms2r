@@ -1,3 +1,8 @@
+== 1.1.4 / 2007-08-07 (Dr. Rockso)
+
+* AT&T => mms.att.net support (thanks Mike Chen and Dave Myron)
+* get_body returns nil when there is not user text (sorry Will!)
+
 == 1.1.3 / 2007-07-10 (Charles Foster Ofdensen)
 
 * Helio support by Will Jessup

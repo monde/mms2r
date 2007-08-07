@@ -6,6 +6,7 @@
 
 $:.unshift(File.dirname(__FILE__) + "/vendor/")
 require 'mms2r/media'
+require 'mms2r/a_t_t_media'
 require 'mms2r/cingular_me_media'
 require 'mms2r/dobson_media'
 require 'mms2r/helio_media'
@@ -28,6 +29,7 @@ module MMS2R
   # is not available MMS2R::Media should be used.
 
   CARRIER_CLASSES = {
+    'mms.att.net' => MMS2R::ATTMedia,
     'cingularme.com' => MMS2R::CingularMeMedia,
     'mms.dobson.net' => MMS2R::DobsonMedia,
     'mms.myhelio.com' => MMS2R::HelioMedia,
@@ -59,7 +61,7 @@ module MMS2R
     ##
     # MMS2R Library version
 
-    VERSION = '1.1.3'
+    VERSION = '1.1.4'
 
     end
 

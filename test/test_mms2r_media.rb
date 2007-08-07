@@ -18,6 +18,7 @@ class MMS2R::MediaTest < Test::Unit::TestCase
 
   CARRIER_TO_CLASS = {
     'mms2r.media' => MMS2R::Media,
+    'mms.att.net' => MMS2R::ATTMedia,
     'cingularme.com' => MMS2R::CingularMeMedia,
     'mms.dobson.net' => MMS2R::DobsonMedia,
     'mms.myhelio.com' => MMS2R::HelioMedia,
