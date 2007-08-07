@@ -14,7 +14,7 @@ require 'logger'
 class SimpleImageServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     res['Content-Type'] = "image/jpeg"
-    f = "files/dot.jpg"
+    f = "fixtures/dot.jpg"
     res.body = File.open("#{File.dirname(__FILE__)}/#{f}", 'rb') { |file|
        file.read
     }
@@ -33,7 +33,7 @@ end
 class SimpleVideoServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     res['Content-Type'] = "video/quicktime"
-    f = "files/sprint.mov"
+    f = "fixtures/sprint.mov"
     res.body = File.open("#{File.dirname(__FILE__)}/#{f}", 'rb') { |file|
        file.read
     }
@@ -212,10 +212,10 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_get_body_should_return_empty_string_when_there_is_no_user_text
+  def test_get_body_should_return_nil_when_there_is_no_user_text
     mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_equal("", mms.get_body)
+    assert_equal nil, mms.get_body
   end
 end

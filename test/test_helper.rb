@@ -8,7 +8,7 @@ module MMS2R
     end
   
     def load_mail(file)
-      IO.readlines("#{File.dirname(__FILE__)}/files/#{file}")
+      IO.readlines("#{File.dirname(__FILE__)}/fixtures/#{file}")
     end
   end
 end

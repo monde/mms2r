@@ -141,7 +141,7 @@ module MMS2R
 
       text_file = get_text
       if text_file.nil?
-        return @body ||= ""
+        return @body ||= nil
       end
       
       return @body ||= IO.readlines(text_file.path).join.strip
