@@ -1,3 +1,7 @@
+== 1.1.6 / 2007-08-11 (Mustakrakish, the Lake Troll part 2)
+
+* Redo of release mistake of 1.1.5
+
 == 1.1.5 / 2007-08-11 (Mustakrakish, the Lake Troll)
 
 * AT&T => mms.att.net not clearing out default "multimedia message"
