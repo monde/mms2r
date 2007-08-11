@@ -55,7 +55,6 @@ lib/vendor/tmail/scanner_r.rb
 lib/vendor/tmail/stringio.rb
 lib/vendor/tmail/tmail.rb
 lib/vendor/tmail/utils.rb
-test/.test_mms2r_a_t_t_media.rb.swp
 test/fixtures/att-image-01.mail
 test/fixtures/att-image-02.mail
 test/fixtures/cingularme-text-01.mail
