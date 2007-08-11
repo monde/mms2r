@@ -1,3 +1,10 @@
+== 1.1.5 / 2007-08-11 (Mustakrakish, the Lake Troll)
+
+* AT&T => mms.att.net not clearing out default "multimedia message"
+  subject to nil (Will Jessup)
+* Ignore case on default subject for all carriers in 
+  corresponding conf/mms2r_XXX_media_subject.yml
+
 == 1.1.4 / 2007-08-07 (Dr. Rockso)
 
 * AT&T => mms.att.net support (thanks Mike Chen and Dave Myron)
