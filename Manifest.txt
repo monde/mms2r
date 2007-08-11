@@ -2,6 +2,7 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
+conf/mms2r_att_media_subject.yml
 conf/mms2r_cingular_me_media_subject.yml
 conf/mms2r_cingular_me_media_transform.yml
 conf/mms2r_dobson_media_ignore.yml
@@ -54,7 +55,9 @@ lib/vendor/tmail/scanner_r.rb
 lib/vendor/tmail/stringio.rb
 lib/vendor/tmail/tmail.rb
 lib/vendor/tmail/utils.rb
+test/.test_mms2r_a_t_t_media.rb.swp
 test/fixtures/att-image-01.mail
+test/fixtures/att-image-02.mail
 test/fixtures/cingularme-text-01.mail
 test/fixtures/cingularme-text-02.mail
 test/fixtures/dobson-image-01.mail
