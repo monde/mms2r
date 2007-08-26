@@ -92,6 +92,8 @@ module MMS2R
       @body = nil
       @default_media = nil
       @default_text = nil
+
+      #TODO: new should be 'create' refactor to this behavior
     end
 
     ##
@@ -116,7 +118,7 @@ module MMS2R
       return @subject if @subject # we've already done the work
 
       subject = @mail.subject
-      return @subject ||= nil if subject.nil? || subject.strip.length == 0
+      return @subject ||= nil if subject.nil? || subject.strip.empty?
 
       # subject is not already set, lets see what our defaults are
       a = Array.new
@@ -128,7 +130,7 @@ module MMS2R
       f = clz.yaml_file_name(clz, :subject)
       yf = File.join(self.class.conf_dir(), "#{f}")
       a = a + YAML::load_file(yf) if File::exist?(yf) 
-      return @subject ||= subject if a.size == 0
+      return @subject ||= subject if a.empty?
       return @subject ||= nil if a.detect{|r| r.match(subject.strip)}
       return @subject ||= subject
     end
@@ -195,7 +197,7 @@ module MMS2R
     # note: auto-purging is a feature of calling process() with a block, purge
     # must be explicitly called otherwise
 
-    def process()
+    def process() # :yields: media_type, file
       @logger.info("#{self.class} processing") unless @logger.nil?
 
       # build up all the parts
@@ -269,8 +271,8 @@ module MMS2R
       f = clz.yaml_file_name(clz, :ignore)
       yf = File.join(self.class.conf_dir(), "#{f}")
       if File::exist?(yf)
-        h2 = YAML::load_file(yf)
-        h2.each do |k,v|
+        ignores = YAML::load_file(yf)
+        ignores.each do |k,v|
           unless h[k]
             h[k] = v
           else
@@ -279,7 +281,7 @@ module MMS2R
         end
       end
       a ||= h[type]
-      return false if h.size == 0 || a.nil?
+      return false if h.empty? || a.nil?
 
       m = /^([^\/]+)\//.match(type)[1]
       # fire each regular expression, only break if there is a match
@@ -542,11 +544,11 @@ module MMS2R
           files.concat(media[k]) if /^#{t}\//.match(k)
         end
       end
-      return nil if files.size == 0
+      return nil if files.empty?
 
       #get the largest file
+      file = nil # explicitly declare the file and sile
       size = 0
-      file = nil # explicitly declare the file
 
       files.each do |f|
         # this will safely evaluate since we wouldn't be looking at
@@ -578,7 +580,7 @@ module MMS2R
         self
       end.send(:define_method, :content_type) { mime_type }
 
-      return file
+      file
     end
 
   end

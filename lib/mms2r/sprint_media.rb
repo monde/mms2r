@@ -78,7 +78,7 @@ module MMS2R
       doc.search("/html/body//pre").each do |pre|
         type = 'text/plain'
         text = pre.inner_html.strip
-        next if text.size == 0
+        next if text.empty?
         type, text = transform_text(type, text)
         type, file = sprint_write_file(type, text.strip)
         add_file(type, file) unless type.nil? || file.nil?

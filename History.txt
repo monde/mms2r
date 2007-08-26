@@ -1,3 +1,10 @@
+== 1.1.7 / 2007-08-25 (Mustakrakish, the Lake Troll part 2)
+
+* Added suport for Orange of Poland Orange mmsemail.orange.pl (Zbigniew
+  Sobiecki)
+* Cleaned up documentation modifiers
+* Cleaned out non-Ruby code idioms
+ 
 == 1.1.6 / 2007-08-11 (Mustakrakish, the Lake Troll part 2)
 
 * Redo of release mistake of 1.1.5
