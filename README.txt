@@ -25,6 +25,7 @@ Corpus of carriers currently processed by MMS2R:
 * Dobson/Cellular One => mms.dobson.net
 * Helio => mms.myhelio.com
 * Nextel => messaging.nextel.com
+* Orange (Poland) => mmsemail.orange.pl
 * Sprint => pm.sprint.com
 * Sprint => messaging.sprintpcs.com
 * T-Mobile => tmomail.net
@@ -55,7 +56,7 @@ Corpus of carriers currently processed by MMS2R:
   # writes the user generated media to disk in a temporary subdirectory
   mms.process
 
-  puts "MMS has default carrier subject!" if mms.get_subject.eql?("")
+  puts "MMS has default carrier subject!" unless mms.get_subject
 
   # access the senders phone number
   puts "MMS was from phone #{mms.get_number}"

@@ -13,6 +13,7 @@ require 'mms2r/helio_media'
 require 'mms2r/m_mode_media'
 require 'mms2r/my_cingular_media'
 require 'mms2r/nextel_media'
+require 'mms2r/orange_poland_media'
 require 'mms2r/sprint_media'
 require 'mms2r/sprint_pcs_media'
 require 'mms2r/t_mobile_media'
@@ -36,6 +37,7 @@ module MMS2R
     'mmode.com' => MMS2R::MModeMedia,
     'mms.mycingular.com' => MMS2R::MyCingularMedia,
     'messaging.nextel.com' => MMS2R::NextelMedia,
+    'mmsemail.orange.pl' => MMS2R::OrangePolandMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
     'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
     'tmomail.net' => MMS2R::TMobileMedia,

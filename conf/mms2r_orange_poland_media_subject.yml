@@ -1,0 +1,3 @@
+---
+- !ruby/regexp /^Wiadomość multimedialna.\s*$/i
+
