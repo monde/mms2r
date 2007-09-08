@@ -374,6 +374,35 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_get_attachment_should_return_duck_typed_file
+
+    mail = TMail::Mail.parse(load_mail('simple_image.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    file_size = 43
+    base_name = 'spacer.gif'
+    mime_type = 'image/gif'
+
+    test = mms.media[mime_type].first
+    assert_not_nil test
+    assert_file_size test, file_size
+    assert File::exist?(test), "file #{test} does not exist"
+    assert_equal base_name, File.basename(test), "file #{test} does not exist as #{base_name}"
+
+    # get_media calls get_attachment and 
+    # get_attachment should return a file that has some duck sauce for
+    # act_as_attachment and attachment_fu
+    file = mms.get_media
+    assert_not_nil file, "file #{file} does not exist"
+    assert_equal test, file.local_path
+    assert_equal base_name, file.original_filename
+    assert_equal file_size, file.size
+    assert_equal mime_type, file.content_type
+
+    mms.purge
+  end
+
   def test_yaml_file_name
     assert_equal 'mms2r_my_cingular_media_subject.yml', MMS2R::Media.yaml_file_name(MMS2R::MyCingularMedia,:subject)
     assert_equal 'mms2r_t_mobile_media_subject.yml', MMS2R::Media.yaml_file_name(MMS2R::TMobileMedia,:subject)

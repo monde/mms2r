@@ -403,9 +403,7 @@ module MMS2R
     # Helper to add a file to the media hash.
 
     def add_file(type, file)
-      if @media[type].nil?
-        @media[type] = Array.new
-      end
+      @media[type] = [] unless @media[type]
       @media[type] << file
     end
 
@@ -549,8 +547,9 @@ module MMS2R
       return nil if files.empty?
 
       #get the largest file
-      file = nil # explicitly declare the file and sile
+      file = nil # explicitly declare the file and size
       size = 0
+      mime_type = nil
 
       files.each do |f|
         # this will safely evaluate since we wouldn't be looking at
@@ -558,6 +557,11 @@ module MMS2R
         if File.size(f) > size
           size = File.size(f)
           file = File.new(f)
+          # media is hash of types to arrays of file names
+          # detect on the hash returns an array, the 0th element is
+          # the mime type of the file that was found in the files array
+          # i.e. {'text/foo' => ['/foo/bar.txt', '/hello/world.txt']}
+          mime_type = media.detect{|k,v| v.detect{|fl| fl == f}}[0] rescue nil
         end
       end
 
