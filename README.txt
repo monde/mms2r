@@ -26,6 +26,7 @@ Corpus of carriers currently processed by MMS2R:
 * Helio => mms.myhelio.com
 * Nextel => messaging.nextel.com
 * Orange (Poland) => mmsemail.orange.pl
+* Orange (France) => orange.fr
 * Sprint => pm.sprint.com
 * Sprint => messaging.sprintpcs.com
 * T-Mobile => tmomail.net

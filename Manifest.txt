@@ -1,3 +1,5 @@
+.History.txt.swp
+.README.txt.swp
 History.txt
 Manifest.txt
 README.txt
@@ -11,6 +13,7 @@ conf/mms2r_media_ignore.yml
 conf/mms2r_media_subject.yml
 conf/mms2r_my_cingular_media_subject.yml
 conf/mms2r_nextel_media_ignore.yml
+conf/mms2r_orange_france_media_ignore.yml
 conf/mms2r_orange_poland_media_subject.yml
 conf/mms2r_sprint_media_ignore.yml
 conf/mms2r_sprint_media_subject.yml
@@ -18,7 +21,10 @@ conf/mms2r_t_mobile_media_ignore.yml
 conf/mms2r_verizon_media_ignore.yml
 conf/mms2r_verizon_media_transform.yml
 dev_tools/debug_sprint_hpricot_parsing.rb
+lib/.mms2r.rb.swp
 lib/mms2r.rb
+lib/mms2r/.media.rb.swp
+lib/mms2r/.orange_france_media.rb.swp
 lib/mms2r/a_t_t_media.rb
 lib/mms2r/cingular_me_media.rb
 lib/mms2r/dobson_media.rb
@@ -27,6 +33,7 @@ lib/mms2r/m_mode_media.rb
 lib/mms2r/media.rb
 lib/mms2r/my_cingular_media.rb
 lib/mms2r/nextel_media.rb
+lib/mms2r/orange_france_media.rb
 lib/mms2r/orange_poland_media.rb
 lib/mms2r/sprint_media.rb
 lib/mms2r/sprint_pcs_media.rb
@@ -57,6 +64,10 @@ lib/vendor/tmail/scanner_r.rb
 lib/vendor/tmail/stringio.rb
 lib/vendor/tmail/tmail.rb
 lib/vendor/tmail/utils.rb
+test/.test_mms2r_media.rb.swp
+test/.test_mms2r_orange_france_media.rb.swp
+test/fixtures/.orangefrance-text-and-image.mail.swp
+test/fixtures/.tmobile-image-01.mail.swp
 test/fixtures/att-image-01.mail
 test/fixtures/att-image-02.mail
 test/fixtures/cingularme-text-01.mail
@@ -74,6 +85,7 @@ test/fixtures/nextel-image-01.mail
 test/fixtures/nextel-image-02.mail
 test/fixtures/nextel-image-03.mail
 test/fixtures/nextel-image-04.mail
+test/fixtures/orangefrance-text-and-image.mail
 test/fixtures/orangepoland-text-01.mail
 test/fixtures/orangepoland-text-02.mail
 test/fixtures/simple-with-two-images-two-texts.mail
@@ -102,6 +114,7 @@ test/test_mms2r_m_mode_media.rb
 test/test_mms2r_media.rb
 test/test_mms2r_my_cingular_media.rb
 test/test_mms2r_nextel_media.rb
+test/test_mms2r_orange_france_media.rb
 test/test_mms2r_orange_poland_media.rb
 test/test_mms2r_sprint_media.rb
 test/test_mms2r_sprint_pcs_media.rb

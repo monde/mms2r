@@ -16,22 +16,6 @@ class MMS2R::MediaTest < Test::Unit::TestCase
   JENNYSNUMER = '2068675309'
   GENERIC_CARRIER = 'mms.example.com'
 
-  CARRIER_TO_CLASS = {
-    'mms2r.media' => MMS2R::Media,
-    'mms.att.net' => MMS2R::ATTMedia,
-    'cingularme.com' => MMS2R::CingularMeMedia,
-    'mms.dobson.net' => MMS2R::DobsonMedia,
-    'mms.myhelio.com' => MMS2R::HelioMedia,
-    'mmode.com' => MMS2R::MModeMedia,
-    'mms.mycingular.com' => MMS2R::MyCingularMedia,
-    'messaging.nextel.com' => MMS2R::NextelMedia,
-    'pm.sprint.com' => MMS2R::SprintMedia,
-    'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
-    'tmomail.net' => MMS2R::TMobileMedia,
-    'vzwpix.com' => MMS2R::VerizonMedia,
-    'vtext.com' => MMS2R::VtextMedia
-  }
-
   def use_temp_dirs
     MMS2R::Media.tmp_dir = @tmpdir
     MMS2R::Media.conf_dir = @confdir
@@ -103,7 +87,8 @@ class MMS2R::MediaTest < Test::Unit::TestCase
       assert(File::exist?(file), "file #{file} does not exist")
       assert(File.basename(file) =~ /spacer\.gif/, "file #{file} does not exist")
     end
-    assert !File.exist?(file_array.first)
+    # mms.purge has to be called manually 
+    assert File.exist?(file_array.first)
   end
 
   def test_collect_text_plain
@@ -159,7 +144,7 @@ class MMS2R::MediaTest < Test::Unit::TestCase
   end
 
   def test_create
-    CARRIER_TO_CLASS.each {|car, cls|
+    MMS2R::CARRIER_CLASSES.each do |car, cls|
       mail = TMail::Mail.new
       mail.from = ["#{JENNYSNUMER}@#{car}"]
       mms = MMS2R::Media.create(mail)
@@ -167,16 +152,16 @@ class MMS2R::MediaTest < Test::Unit::TestCase
       mms = MMS2R::Media.create(mail)
       assert_equal cls, mms.class, "expected a #{cls} and received a #{mms.class}"
       assert_equal car, mms.carrier, "expected a #{car} and received a #{mms.carrier}"
-    }
+    end
   end
 
   def test_logging
-    CARRIER_TO_CLASS.each {|car, cls|
+    MMS2R::CARRIER_CLASSES.each do |car, cls|
       mail = TMail::Mail.new
       mail.from = ["#{JENNYSNUMER}@#{car}"]
       mms = MMS2R::Media.create(mail,@log)
       assert_equal cls, mms.class, "expected a #{cls} and received a #{mms.class}"
-    }
+    end
   end
 
   def test_tmp_dir
@@ -366,13 +351,13 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     subjects = [nil, '', '(no subject)']
 
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
-    subjects.each{|s|  
+    subjects.each do |s|  
       mail.subject = s
       mms = MMS2R::Media.create(mail)
       mms.process
       assert_equal nil, mms.get_subject, "Default subject not scrubbed."
       mms.purge
-    }
+    end
 
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)

@@ -1,6 +1,13 @@
+== 1.1.8 / 2007-09-08 (James Grishnack - Head of Behemoth Productions, producer
+   of Blood Ocean)
+
+* Added support for Orange of France, Orange orange.fr (Julian Biard)
+* purge in the process block removed, purge must be called explicitly
+  after processing to clean up extracted temporary media files.
+
 == 1.1.7 / 2007-08-25 (Adam Nergal, friend of Skwisgaar, but not Pickles)
 
-* Added suport for Orange of Poland Orange mmsemail.orange.pl (Zbigniew
+* Added suport for Orange of Poland, Orange mmsemail.orange.pl (Zbigniew
   Sobiecki)
 * Cleaned up documentation modifiers
 * Cleaned out non-Ruby code idioms

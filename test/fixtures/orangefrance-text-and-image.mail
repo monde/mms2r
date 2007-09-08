@@ -1,0 +1,68 @@
+Message-ID: <803565.1188978142556.JavaMail.root@tn-03>
+Date: Wed, 5 Sep 2007 09:42:22 +0200 (CEST)
+From: <0688675309@orange.fr>
+To: example@example.com
+Mime-Version: 1.0
+X-Mms-Delivery-Report: no
+X-Mms-Delivery-Time: Wed, 05 Sep 2007 09:42:22 CEST
+X-Mms-MMS-Version: 1.0
+X-Mms-Message-Class: Personal
+X-Mms-Message-Type: m-send-req
+X-Mms-Message-Size: 56110
+Original_Msg_Size: 56110
+X-Mms-Read-Reply: no
+X-Mms-Sender-Visibility: Show
+X-Mms-Transaction-ID: 4660@
+X-Mms-Message-ID: 5181920103@ericsson.mms.orange.fr
+X-Priority: 3
+X-MMS-OPERATOR: ORANGE
+Content-Type: multipart/mixed; boundary="------------755776262782926"
+X-Ovh-Remote: 80.12.242.30 (smtp59.orange.fr)
+X-Ovh-Local: 213.186.33.73 (mx3.ovh.net)
+X-Spam-Check: DONE|H 0.5/N
+
+--------------755776262782926
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_3197436_24584554.1188978142551"
+
+
+------=_Part_3197436_24584554.1188978142551
+Content-Type: application/smil; charset=utf-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <AAAA>
+
+
+<smil><head><layout><root-layout height="1200px" width="1600px"/><region fit="hidden" height="1170px" id="Image" left="0px" top="0px" width="1600px"/><region fit="hidden" height="30px" id="Text" left="0px" top="1171px" width="1600px"/></layout></head><body><par dur="5000ms"><img region="Image" src="IMAGE.jpeg"/><text region="Text" src="Ar1.txt"/></par></body></smil>
+------=_Part_3197436_24584554.1188978142551
+Content-Type: image/jpeg; name=IMAGE.jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <IMAGE.jpeg>
+Content-Location: IMAGE.jpeg
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+------=_Part_3197436_24584554.1188978142551
+Content-Type: text/plain; name=Ar1.txt; charset=utf-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <Ar1.txt>
+Content-Location: Ar1.txt
+
+Test ma poule
+------=_Part_3197436_24584554.1188978142551--
+
+
+
+--------------755776262782926
+Content-Type: text/plain; name=banniere.txt; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+Un abonné Orange vous a envoyé ce message directement depuis son téléphone mobile. Vous aussi, communiquez en images avec MMS, les Messages Multimédia. Rendez-vous sur www.orange.fr.
+
+--------------755776262782926--
+
+

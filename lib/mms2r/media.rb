@@ -55,6 +55,11 @@ module MMS2R
     attr_reader :media_dir
 
     ##
+    # Various multi-parts that are bundled into mail
+
+    MULTIPARTS_TO_SPLIT = [ 'multipart/related', 'multipart/alternative', 'multipart/mixed' ]
+
+    ##
     # Factory method that creates MMS2R::Media products.
     #
     # Returns a MMS2R::Media product based on the characteristics
@@ -180,22 +185,21 @@ module MMS2R
     # overridden unless there is an extreme special case in processing the 
     # media of a MMS (like Sprint)
     #
-    # Helpers methods for the process template:
+    # Helper methods for the process template:
     # * ignore_media? -- true if the media contained in a part should be ignored.
     # * process_media -- retrieves media to temporary file, returns path to file.
     # * transform_text -- called by process_media, strips out advertising.
     # * temp_file -- creates a temporary filepath based on information from the part.
     # 
     # Block support:
-    # Calling process() with a block to automatically iterate through media
-    # and *purge* after the block yields. For example, to process and receive
-    # all media types of video, you can do:
+    # Calling process() with a block to automatically iterate through media.
+    # For example, to process and receive all media types of video, you can do:
     #   mms.process do |media_type, file|
     #     results << file if media_type =~ /video/
     #   end
     #
-    # note: auto-purging is a feature of calling process() with a block, purge
-    # must be explicitly called otherwise
+    # note: purge must be explicitly called to remove the media files
+    #       mms2r extracts from an mms message.
 
     def process() # :yields: media_type, file
       @logger.info("#{self.class} processing") unless @logger.nil?
@@ -210,7 +214,7 @@ module MMS2R
       # double check for multipart/related, if it exists
       # replace it with its children parts
       parts.each do |p|
-        if self.class.part_type?(p).eql?('multipart/related')
+        if MULTIPARTS_TO_SPLIT.include?(self.class.part_type?(p))
           part = parts.delete(p)
           part.parts.each { |mp| parts << mp }
         end
@@ -238,7 +242,6 @@ module MMS2R
       if block_given?
         media.each do |k, v|
           yield(k, v)
-          purge
         end
       end
 
@@ -289,9 +292,8 @@ module MMS2R
         if m.eql?('text') || type.eql?('application/smil')
           s = part.body.gsub(/\s+/m," ").strip
           break(i) if i.match(s)
-        else
-          break(i) if filename?(part).eql?(i)
         end
+        break(i) if filename?(part).eql?(i)
       end
       return ignore.eql?(a) ? false : true # when ignore is equal to 'a' that
                                           # means none of the breaks fired in

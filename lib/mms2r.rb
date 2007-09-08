@@ -13,6 +13,7 @@ require 'mms2r/helio_media'
 require 'mms2r/m_mode_media'
 require 'mms2r/my_cingular_media'
 require 'mms2r/nextel_media'
+require 'mms2r/orange_france_media'
 require 'mms2r/orange_poland_media'
 require 'mms2r/sprint_media'
 require 'mms2r/sprint_pcs_media'
@@ -37,6 +38,7 @@ module MMS2R
     'mmode.com' => MMS2R::MModeMedia,
     'mms.mycingular.com' => MMS2R::MyCingularMedia,
     'messaging.nextel.com' => MMS2R::NextelMedia,
+    'orange.fr' => MMS2R::OrangeFranceMedia,
     'mmsemail.orange.pl' => MMS2R::OrangePolandMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
     'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
@@ -63,7 +65,7 @@ module MMS2R
     ##
     # MMS2R Library version
 
-    VERSION = '1.1.7'
+    VERSION = '1.1.8'
 
     end
 
