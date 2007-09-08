@@ -1,3 +1,8 @@
+== 1.1.9 / 2007-09-08 (Rebecca Nightrod - controlling girlfriend of Nathan 
+Explosion)
+
+* fixed broken support for act_as_attachment and attachment_fu
+
 == 1.1.8 / 2007-09-08 (James Grishnack - Head of Behemoth Productions, producer
    of Blood Ocean)
 
