@@ -70,7 +70,10 @@ module MMS2R
     def self.create(mail, logger=nil)
       d = lambda{['mms2r.media',MMS2R::Media]} #sets a default to detect
       cc = MMS2R::CARRIER_CLASSES.detect(d) do |n, c| 
-              /[^@]+@(.+)/.match(mail.from[0])[1] =~ /^#{Regexp.escape("#{n}")}$/
+        match = /[^@]+@(.+)/.match(mail.from[0])
+        # check for nil match -- usually a malformed message, but it's better 
+        # not to choke on it.
+        match && match[1] && (match[1] =~ /^#{Regexp.escape("#{n}")}$/)
       end
       cls = cc[1]
       cls.new(mail, cc[0], logger)

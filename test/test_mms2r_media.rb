@@ -409,4 +409,11 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     assert_equal 'mms2r_media_ignore.yml', MMS2R::Media.yaml_file_name(MMS2R::MyCingularMedia.superclass,:ignore)
     assert_equal 'mms2r_media_transform.yml', MMS2R::Media.yaml_file_name(MMS2R::Media,:transform)
   end
+  
+  def test_create_should_fail_gracefully_with_broken_from
+    assert_nothing_raised do
+      mail = TMail::Mail.parse(load_mail('broken_from_spam.mail').join)
+      mms = MMS2R::Media.create(mail)
+    end
+  end
 end
