@@ -2,6 +2,7 @@ History.txt
 Manifest.txt
 README.txt
 Rakefile
+conf/mms2r_alltel_media_ignore.yml
 conf/mms2r_att_media_subject.yml
 conf/mms2r_cingular_me_media_subject.yml
 conf/mms2r_cingular_me_media_transform.yml
@@ -21,6 +22,7 @@ conf/mms2r_verizon_media_transform.yml
 dev_tools/debug_sprint_hpricot_parsing.rb
 lib/mms2r.rb
 lib/mms2r/a_t_t_media.rb
+lib/mms2r/alltel_media.rb
 lib/mms2r/cingular_me_media.rb
 lib/mms2r/dobson_media.rb
 lib/mms2r/helio_media.rb
@@ -59,8 +61,10 @@ lib/vendor/tmail/scanner_r.rb
 lib/vendor/tmail/stringio.rb
 lib/vendor/tmail/tmail.rb
 lib/vendor/tmail/utils.rb
+test/fixtures/alltel-image-01.mail
 test/fixtures/att-image-01.mail
 test/fixtures/att-image-02.mail
+test/fixtures/broken_from_spam.mail
 test/fixtures/cingularme-text-01.mail
 test/fixtures/cingularme-text-02.mail
 test/fixtures/dobson-image-01.mail
@@ -98,6 +102,7 @@ test/fixtures/verizon-video-01.mail
 test/fixtures/vtext-text-01.mail
 test/test_helper.rb
 test/test_mms2r_a_t_t_media.rb
+test/test_mms2r_alltel_media.rb
 test/test_mms2r_cingular_me_media.rb
 test/test_mms2r_dobson_media.rb
 test/test_mms2r_helio_media.rb

@@ -18,6 +18,7 @@ library.  Suggestions and patches appreciated and welcomed!
 
 Corpus of carriers currently processed by MMS2R:
 
+* Alltel => message.alltel.com
 * AT&T => mms.att.net
 * AT&T/Cingular => mmode.com
 * Cingular => mms.mycingular.com
