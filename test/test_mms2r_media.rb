@@ -242,14 +242,6 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_transform_text_should_ignore_empty_text_parts
-    mail = TMail::Mail.parse(load_mail('hello_world_empty_text.mail').join)
-    mms = MMS2R::Media.create(mail)
-    mms.process
-    assert_equal 0, mms.media.size
-    mms.purge
-  end
-
   def test_ignore_text
     use_temp_dirs()
     a=[/^hello world$/]

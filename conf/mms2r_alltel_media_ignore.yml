@@ -1,0 +1,13 @@
+--- 
+text/html:
+- !ruby/regexp /^<html> <head> <title>Picture Messaging<\/title>.*/
+multipart/alternative:
+- mms
+image/gif: 
+- spacer.gif
+- header.gif
+- bluebar.gif
+- divider.gif
+- greenbar.gif
+image/jpeg:
+- alltel_logo.jpg

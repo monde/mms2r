@@ -70,10 +70,10 @@ module MMS2R
     def self.create(mail, logger=nil)
       d = lambda{['mms2r.media',MMS2R::Media]} #sets a default to detect
       cc = MMS2R::CARRIER_CLASSES.detect(d) do |n, c| 
-        match = /[^@]+@(.+)/.match(mail.from[0])
+        match = /[^@]+@(.+)/.match(mail.from[0].strip)
         # check for nil match -- usually a malformed message, but it's better 
         # not to choke on it.
-        match && match[1] && (match[1] =~ /^#{Regexp.escape("#{n}")}$/)
+        match && match[1] && (match[1].downcase == n.downcase)
       end
       cls = cc[1]
       cls.new(mail, cc[0], logger)
@@ -292,7 +292,7 @@ module MMS2R
       m = /^([^\/]+)\//.match(type)[1]
       # fire each regular expression, only break if there is a match
       ignore = a.each do |i|
-        if m.eql?('text') || type.eql?('application/smil')
+        if m == 'text' || type == 'application/smil' || type == 'multipart/mixed'
           s = part.body.gsub(/\s+/m," ").strip
           break(i) if i.match(s)
         end

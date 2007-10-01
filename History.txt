@@ -1,3 +1,9 @@
+== 1.1.10 / 2007-09-30 (Face Bones)
+
+* fixed a case for a nil match on From in the create method (Luke Francl)
+* added support for Alltel message.alltel.com (Ben Wood)
+
+
 == 1.1.9 / 2007-09-08 (Rebecca Nightrod - controlling girlfriend of Nathan 
 Explosion)
 

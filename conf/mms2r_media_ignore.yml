@@ -1,4 +1,5 @@
 ---
+multipart/mixed:
+- !ruby/regexp /^Attachment\:\ /
 text/plain:
-- !ruby/regexp /^$/
-
+- !ruby/regexp /^\s+$/
