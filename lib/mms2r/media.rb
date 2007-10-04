@@ -572,7 +572,12 @@ module MMS2R
       # as a drop-in replacement for files uploaded with CGI.rb.
       # This helps if you want to use the files with, for example,
       # attachment_fu.
+
       def file.local_path
+        self.path
+      end
+
+      def file.path
         self.path
       end
 
