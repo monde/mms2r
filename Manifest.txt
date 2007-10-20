@@ -21,8 +21,8 @@ conf/mms2r_verizon_media_ignore.yml
 conf/mms2r_verizon_media_transform.yml
 dev_tools/debug_sprint_hpricot_parsing.rb
 lib/mms2r.rb
-lib/mms2r/a_t_t_media.rb
 lib/mms2r/alltel_media.rb
+lib/mms2r/att_media.rb
 lib/mms2r/cingular_me_media.rb
 lib/mms2r/dobson_media.rb
 lib/mms2r/helio_media.rb
@@ -101,8 +101,8 @@ test/fixtures/verizon-text-01.mail
 test/fixtures/verizon-video-01.mail
 test/fixtures/vtext-text-01.mail
 test/test_helper.rb
-test/test_mms2r_a_t_t_media.rb
 test/test_mms2r_alltel_media.rb
+test/test_mms2r_att_media.rb
 test/test_mms2r_cingular_me_media.rb
 test/test_mms2r_dobson_media.rb
 test/test_mms2r_helio_media.rb
