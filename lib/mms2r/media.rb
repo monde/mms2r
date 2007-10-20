@@ -117,7 +117,7 @@ module MMS2R
     end
 
     def get_number # :nodoc:
-      method_deprecated(:get_number, :number)
+      sclz.method_deprecated(:get_number, :number)
       self.number
     end
 
@@ -149,7 +149,7 @@ module MMS2R
     end
 
     def get_subject # :nodoc:
-      method_deprecated(:get_subject, :subject)
+      sclz.method_deprecated(:get_subject, :subject)
       self.subject
     end
     
@@ -168,7 +168,7 @@ module MMS2R
     end
 
     def get_body # :nodoc:
-      method_deprecated(:get_body, :body)
+      sclz.method_deprecated(:get_body, :body)
       self.body
     end
 
@@ -186,7 +186,7 @@ module MMS2R
     end
 
     def get_media # :nodoc:
-      method_deprecated(:get_media, :default_media)
+      sclz.method_deprecated(:get_media, :default_media)
       self.default_media
     end
 
@@ -202,7 +202,7 @@ module MMS2R
     end
 
     def get_text # :nodoc:
-      method_deprecated(:get_text, :default_text)
+      sclz.method_deprecated(:get_text, :default_text)
       self.default_text
     end
 
@@ -621,13 +621,11 @@ module MMS2R
     end
 
     def get_attachement(types) # :nodoc:
-      method_deprecated(:get_attachment, :attachment)
+      sclz.method_deprecated(:get_attachment, :attachment)
       self.attachement(types)
     end
 
-    protected
-
-    def method_deprecated(from, to)
+    def self.method_deprecated(from, to)
       msg = "Method '#{from}' has been deprecated use method '#{to}'." +
             "\nMethod '#{from}' will be removed in a future release"
       @logger.error(msg) if @logger
