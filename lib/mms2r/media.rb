@@ -577,10 +577,6 @@ module MMS2R
         self.path
       end
 
-      def file.path
-        self.path
-      end
-
       def file.original_filename
         File.basename(self.path)
       end
