@@ -568,6 +568,8 @@ module MMS2R
         end
       end
 
+      return nil if file.nil?
+
       # These singleton methods implement the interface necessary to be used
       # as a drop-in replacement for files uploaded with CGI.rb.
       # This helps if you want to use the files with, for example,
