@@ -1,8 +1,13 @@
+== 1.1.11 / 2007-10-20 (Dr. Armand Skagerakk Frederickshaven)
+
+* minor fix for attachment_fu where it might call #path on the cgi temp file
+  that is returned by get_attachment
+* renamed a_t_t_media.rb to att_media.rb to make autotest happy
+
 == 1.1.10 / 2007-09-30 (Face Bones)
 
 * fixed a case for a nil match on From in the create method (Luke Francl)
 * added support for Alltel message.alltel.com (Ben Wood)
-
 
 == 1.1.9 / 2007-09-08 (Rebecca Nightrod - controlling girlfriend of Nathan 
 Explosion)

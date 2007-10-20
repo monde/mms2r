@@ -8,6 +8,6 @@ module MMS2R
   # message can be the file name of the media attached
   # to the MMS or empty.
 
-  class MMS2R::ATTMedia < MMS2R::Media
+  class MMS2R::AttMedia < MMS2R::Media
   end
 end

@@ -7,7 +7,7 @@ require 'mms2r/media'
 require 'tmail/mail'
 require 'logger'
 
-class MMS2R::ATTMediaTest < Test::Unit::TestCase
+class MMS2R::AttMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup
@@ -21,7 +21,7 @@ class MMS2R::ATTMediaTest < Test::Unit::TestCase
   def test_simple
     mail = TMail::Mail.parse(load_mail('att-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
-    assert_equal(MMS2R::ATTMedia, mms.class, "expected a #{MMS2R::ATTMedia} and received a #{mms.class}")
+    assert_equal(MMS2R::AttMedia, mms.class, "expected a #{MMS2R::AttMedia} and received a #{mms.class}")
     mms.process
 
     assert(mms.media.size == 1)
@@ -37,7 +37,7 @@ class MMS2R::ATTMediaTest < Test::Unit::TestCase
   def test_subject
     mail = TMail::Mail.parse(load_mail('att-image-02.mail').join)
     mms = MMS2R::Media.create(mail)
-    assert_equal(MMS2R::ATTMedia, mms.class, "expected a #{MMS2R::ATTMedia} and received a #{mms.class}")
+    assert_equal(MMS2R::AttMedia, mms.class, "expected a #{MMS2R::AttMedia} and received a #{mms.class}")
     mms.process
 
     assert(mms.media.size == 1)

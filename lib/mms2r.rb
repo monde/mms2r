@@ -7,7 +7,7 @@
 $:.unshift(File.dirname(__FILE__) + "/vendor/")
 require 'mms2r/media'
 require 'mms2r/alltel_media'
-require 'mms2r/a_t_t_media'
+require 'mms2r/att_media'
 require 'mms2r/cingular_me_media'
 require 'mms2r/dobson_media'
 require 'mms2r/helio_media'
@@ -33,7 +33,7 @@ module MMS2R
 
   CARRIER_CLASSES = {
     'message.alltel.com' => MMS2R::AlltelMedia,
-    'mms.att.net' => MMS2R::ATTMedia,
+    'mms.att.net' => MMS2R::AttMedia,
     'cingularme.com' => MMS2R::CingularMeMedia,
     'mms.dobson.net' => MMS2R::DobsonMedia,
     'mms.myhelio.com' => MMS2R::HelioMedia,
