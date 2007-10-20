@@ -7,6 +7,10 @@
 * overridden SprintMedia#process failed to accept block (Layton Wedgeworth)
 * added method_deprecated to help mark methods that are going to be deprecated
 * #get_number marked deprecated, use #number instead
+* #get_subject marked deprecated, use #subject instead
+* #get_body marked deprecated, use #body instead
+* #get_text marked deprecated, use #text instead
+* #get_attachment marked deprecated, use #attachment instead
 
 == 1.1.10 / 2007-09-30 (Face Bones)
 

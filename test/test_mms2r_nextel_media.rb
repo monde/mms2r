@@ -10,12 +10,12 @@ require 'logger'
 class MMS2R::NextelMediaTest < Test::Unit::TestCase
   include MMS2R::TestHelper
 
-  def test_simple_get_text_is_nil
+  def test_simple_text_is_nil
     mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    assert_nil mms.get_text
+    assert_nil mms.text
 
     mms.purge
   end
