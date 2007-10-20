@@ -12,7 +12,7 @@ module MMS2R
   
   class MMS2R::HelioMedia < MMS2R::Media
     def body
-      d = Hpricot(text())
+      d = Hpricot(default_text())
       body = d.search("//table/tr[2]/td/table/tr/td/table/tr[6]/td").inner_html
       body 
     end

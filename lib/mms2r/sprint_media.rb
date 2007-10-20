@@ -69,7 +69,7 @@ module MMS2R
     def sprint_phone_number(doc)
       c = doc.search("/html/head/comment()").last
       t = c.content.gsub(/\s+/m," ").strip
-      #@number returned in parent's get_number
+      #@number returned in parent's #number
       @number = / name=&quot;MDN&quot;&gt;(\d+)&lt;/.match(t)[1]
     end
 

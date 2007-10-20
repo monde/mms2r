@@ -27,11 +27,11 @@ class MMS2R::AlltelMediaTest < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_get_media_should_return_user_generated_content
+  def test_default_media_should_return_user_generated_content
     mail = TMail::Mail.parse(load_mail('alltel-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    file = mms.get_media
+    file = mms.default_media
     assert_equal 'eastern sky.jpg', file.original_filename
     mms.purge
   end 

@@ -6,11 +6,13 @@
 * masthead.jpg misplaced in mms2r_t_mobile_media_ignore.yml (Layton Wedgeworth)
 * overridden SprintMedia#process failed to accept block (Layton Wedgeworth)
 * added method_deprecated to help mark methods that are going to be deprecated
+  in preparation of 1.2.x release
 * #get_number marked deprecated, use #number instead
 * #get_subject marked deprecated, use #subject instead
 * #get_body marked deprecated, use #body instead
-* #get_text marked deprecated, use #text instead
+* #get_text marked deprecated, use #default_text instead
 * #get_attachment marked deprecated, use #attachment instead
+* #get_media marked deprecated, use #default_media instead
 
 == 1.1.10 / 2007-09-30 (Face Bones)
 

@@ -216,11 +216,11 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_mms_with_two_images_should_get_media_to_largest_file
+  def test_mms_with_two_images_should_default_media_to_largest_file
     mail = TMail::Mail.parse(load_mail('simple-with-two-images-two-texts.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    file = mms.get_media
+    file = mms.default_media
     assert_equal 'big.jpg', file.original_filename
     mms.purge
   end
@@ -229,7 +229,7 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('simple-with-two-images-two-texts.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    file = mms.text
+    file = mms.default_text
     assert_equal 'big.txt', file.original_filename
     mms.purge
   end
@@ -382,10 +382,10 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     assert File::exist?(test), "file #{test} does not exist"
     assert_equal base_name, File.basename(test), "file #{test} does not exist as #{base_name}"
 
-    # get_media calls attachment and 
+    # default_media calls attachment and 
     # attachment should return a file that has some duck sauce for
     # act_as_attachment and attachment_fu
-    file = mms.get_media
+    file = mms.default_media
     assert_not_nil file, "file #{file} does not exist"
     assert_equal test, file.local_path
     assert_equal base_name, file.original_filename

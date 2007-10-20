@@ -21,7 +21,7 @@ class MMS2R::HelioMediaTest < Test::Unit::TestCase
     assert_equal @mms.class, MMS2R::HelioMedia
   end
 
-  def test_get_number_should_return_correct_number
+  def test_number_should_return_correct_number
     number = @mms.number()
     assert_equal number, 7608070850.to_s
   end
@@ -36,8 +36,8 @@ class MMS2R::HelioMediaTest < Test::Unit::TestCase
     assert_equal body, "Test image"
   end
 
-  def test_get_attachment_should_return_jpeg
-    image = @mms.get_media()
+  def test_attachment_should_return_jpeg
+    image = @mms.default_media()
     assert_not_nil @mms.media['image/jpeg'][0]
     assert_match(/0628070005.jpg$/, @mms.media['image/jpeg'][0])
   end

@@ -159,7 +159,7 @@ module MMS2R
     def body
       return @body if @body
 
-      text_file = text
+      text_file = default_text
       if text_file.nil?
         return @body ||= nil
       end
@@ -181,8 +181,13 @@ module MMS2R
     #
     # Returns nil if there are not any video or image Files found.
 
-    def get_media
+    def default_media
       return @default_media ||= attachement(['video', 'image'])
+    end
+
+    def get_media # :nodoc:
+      method_deprecated(:get_media, :default_media)
+      self.default_media
     end
 
     # Returns a File with the most likely candidate that is text, or nil
@@ -192,13 +197,13 @@ module MMS2R
     #
     # Returns nil if there are not any text Files found
 
-    def text
+    def default_text
       return @default_text ||= attachement(['text'])
     end
 
     def get_text # :nodoc:
-      method_deprecated(:get_text, :text)
-      self.text
+      method_deprecated(:get_text, :default_text)
+      self.default_text
     end
 
     ##
@@ -555,7 +560,7 @@ module MMS2R
     private
 
     ##
-    # used by #get_media and #text to return the biggest attachment type
+    # used by #default_media and #text to return the biggest attachment type
     # listed in the types array
 
     def attachement(types)

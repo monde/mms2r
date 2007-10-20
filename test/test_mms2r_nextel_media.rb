@@ -15,17 +15,17 @@ class MMS2R::NextelMediaTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    assert_nil mms.text
+    assert_nil mms.default_text
 
     mms.purge
   end
 
-  def test_simple_get_media
+  def test_simple_default_media
     mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
 
-    file = mms.get_media
+    file = mms.default_media
     assert_file_size file, 337
     assert_equal 'Jan15_0001.jpg', file.original_filename
     assert_equal 337, file.size

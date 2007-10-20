@@ -36,7 +36,8 @@ Corpus of carriers currently processed by MMS2R:
 
 == FEATURES
 
-* get_media and get_text methods return a File that can be used in attachment_fu 
+* #default_media and #default_text methods return a File that can be used in 
+  attachment_fu 
 
 == SYNOPSIS:
 
@@ -58,18 +59,18 @@ Corpus of carriers currently processed by MMS2R:
   # writes the user generated media to disk in a temporary subdirectory
   mms.process
 
-  puts "MMS has default carrier subject!" unless mms.get_subject
+  puts "MMS has default carrier subject!" unless mms.subject
 
   # access the senders phone number
-  puts "MMS was from phone #{mms.get_number}"
+  puts "MMS was from phone #{mms.number}"
 
-  # most MMS are either image or video, get_media will return the largest
+  # most MMS are either image or video, default_media will return the largest
   # (non-advertising) video or image found
-  file = mms.get_media
+  file = mms.default_media
   puts "MMS had a media: #{file.inspect}" unless file.nil?
 
-  # get_text return the largest (non-advertising) text found
-  file = mms.get_text
+  # text return the largest (non-advertising) text found
+  file = mms.default_text
   puts "MMS had some text: #{file.inspect}" unless file.nil?
 
   # mms.media is a hash that is indexed by mime-type.

@@ -130,8 +130,8 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
     mms.process
     assert_equal 1, mms.media.size
     assert_equal 1, mms.media['text/plain'].size
-    assert_equal 7, mms.text.size
-    text = IO.readlines("#{mms.text.path}").join
+    assert_equal 7, mms.default_text.size
+    text = IO.readlines("#{mms.default_text.path}").join
     assert_match(/Tea Pot/, text)
     mms.purge
   end
