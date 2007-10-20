@@ -39,12 +39,12 @@ class MMS2R::OrangeFranceMediaTest < Test::Unit::TestCase
     file = mms.media['text/plain'].first
     assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
-    assert_match /Test ma poule/, text
+    assert_match(/Test ma poule/, text)
 
     # image
     assert_not_nil mms.media['image/jpeg'] 
     assert_equal 1, mms.media['image/jpeg'].size
-    assert_match /IMAGE.jpeg$/, mms.media['image/jpeg'].first
+    assert_match(/IMAGE.jpeg$/, mms.media['image/jpeg'].first)
     assert_file_size mms.media['image/jpeg'].first, 337
 
     mms.purge
