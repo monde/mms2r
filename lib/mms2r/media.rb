@@ -625,7 +625,7 @@ module MMS2R
       self.attachement(types)
     end
 
-    def self.method_deprecated(from, to)
+    def self.method_deprecated(from, to) # :nodoc:
       msg = "Method '#{from}' has been deprecated use method '#{to}'." +
             "\nMethod '#{from}' will be removed in a future release"
       @logger.error(msg) if @logger
