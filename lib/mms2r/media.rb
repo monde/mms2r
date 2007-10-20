@@ -111,9 +111,14 @@ module MMS2R
     # your application on your own.  Most carriers are using the real
     # phone number as the username.
 
-    def get_number
+    def number
       # override this method in a child if the number exists elsewhere (like Sprint)
       @number ||= /^([^@]+)@/.match(mail.from[0])[1]
+    end
+
+    def get_number # :nodoc:
+      method_deprecated(:get_number, :number)
+      self.number
     end
 
     ##
@@ -121,7 +126,7 @@ module MMS2R
     # return nil such that default carrier subjects can be pragmatically
     # ignored.
 
-    def get_subject
+    def subject
 
       return @subject if @subject # we've already done the work
 
@@ -141,6 +146,11 @@ module MMS2R
       return @subject ||= subject if a.empty?
       return @subject ||= nil if a.detect{|r| r.match(subject.strip)}
       return @subject ||= subject
+    end
+
+    def get_subject # :nodoc:
+      method_deprecated(:get_subject, :subject)
+      self.subject
     end
     
     # Convenience method that returns a string including all the text of the 
@@ -593,6 +603,15 @@ module MMS2R
       end.send(:define_method, :content_type) { mime_type }
 
       file
+    end
+
+    protected
+
+    def method_deprecated(from, to)
+      msg = "Method '#{from}' has been deprecated use method '#{to}'." +
+            "\nMethod '#{from}' will be removed in a future release"
+      @logger.error(msg) if @logger
+      $stderr.puts msg
     end
 
   end

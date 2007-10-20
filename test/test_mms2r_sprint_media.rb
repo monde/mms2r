@@ -140,7 +140,7 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_equal '2068509247', mms.get_number
+    assert_equal '2068509247', mms.number
     mms.purge
   end
 
@@ -157,7 +157,7 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
 
     assert_file_size mms.media['video/quicktime'][0], 49063
     
-    assert_equal nil, mms.get_subject, "Default Sprint subject not scrubbed."
+    assert_equal nil, mms.subject, "Default Sprint subject not scrubbed."
     
     mms.purge
   end
@@ -175,9 +175,23 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
 
     assert_file_size mms.media['image/jpeg'][0], 337
     
-    assert_equal nil, mms.get_subject, "Default Sprint subject not scrubbed"
+    assert_equal nil, mms.subject, "Default Sprint subject not scrubbed"
     
     mms.purge
+  end
+
+  def test_collect_image_using_block
+    mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    file_array = nil
+    mms.process do |k, v|
+      file_array = v if (k == 'image/jpeg')
+      assert_not_nil(file = file_array.first)
+      assert(File::exist?(file), "file #{file} does not exist")
+      assert(File.basename(file) =~ /000_0123a01234567890_1-0\.jpg/, "file #{file} does not exist")
+    end
+    # mms.purge has to be called manually 
+    assert File.exist?(file_array.first)
   end
 
   def test_should_have_two_images
@@ -197,7 +211,7 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
     assert_file_size mms.media['image/jpeg'][0], 337
     assert_file_size mms.media['image/jpeg'][1], 337
     
-    assert_equal nil, mms.get_subject, "Default Sprint subject not scrubbed"
+    assert_equal nil, mms.subject, "Default Sprint subject not scrubbed"
     
     mms.purge
   end

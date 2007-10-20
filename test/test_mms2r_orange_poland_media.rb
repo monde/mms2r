@@ -15,7 +15,7 @@ class MMS2R::OrangePolandMediaTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     assert_equal MMS2R::OrangePolandMedia, mms.class, "expected a #{MMS2R::OrangePolandMedia} and received a #{mms.class}"
     mms.process
-    assert_nil mms.get_subject
+    assert_nil mms.subject
     assert_not_nil mms.media['text/plain']
     file = mms.media['text/plain'][0]
     assert_not_nil file
@@ -30,7 +30,7 @@ class MMS2R::OrangePolandMediaTest < Test::Unit::TestCase
     mms = MMS2R::Media.create(mail)
     assert_equal MMS2R::OrangePolandMedia, mms.class, "expected a #{MMS2R::OrangePolandMedia} and received a #{mms.class}"
     mms.process
-    assert mms.get_subject, "whazzup"
+    assert mms.subject, "whazzup"
     assert_not_nil mms.media['text/plain']
     file = mms.media['text/plain'][0]
     assert_not_nil file

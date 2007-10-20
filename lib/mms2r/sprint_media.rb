@@ -52,6 +52,13 @@ module MMS2R
       sprint_process_text(doc)
       sprint_process_media(doc)
 
+      # when process acts upon a block
+      if block_given?
+        media.each do |k, v|
+          yield(k, v)
+        end
+      end
+
     end
 
     private

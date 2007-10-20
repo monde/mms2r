@@ -22,12 +22,12 @@ class MMS2R::HelioMediaTest < Test::Unit::TestCase
   end
 
   def test_get_number_should_return_correct_number
-    number = @mms.get_number()
+    number = @mms.number()
     assert_equal number, 7608070850.to_s
   end
 
-  def test_get_subject_should_return_correct_subject
-    title = @mms.get_subject()
+  def test_subject_should_return_correct_subject
+    title = @mms.subject()
     assert_equal title, "Test image"
   end
 

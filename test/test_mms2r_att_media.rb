@@ -48,7 +48,7 @@ class MMS2R::AttMediaTest < Test::Unit::TestCase
 
     assert_file_size(mms.media['image/jpeg'][0], 337)
 
-    assert_nil mms.get_subject
+    assert_nil mms.subject
     mms.purge
   end
 end

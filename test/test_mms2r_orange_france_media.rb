@@ -20,7 +20,7 @@ class MMS2R::OrangeFranceMediaTest < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('orangefrance-text-and-image.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_nil mms.get_subject
+    assert_nil mms.subject
   end
 
   def test_processed_content

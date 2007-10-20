@@ -2,7 +2,11 @@
 
 * minor fix for attachment_fu where it might call #path on the cgi temp file
   that is returned by get_attachment
-* renamed a_t_t_media.rb to att_media.rb to make autotest happy
+* renamed a_t_t_media.rb to att_media.rb to make it autotest happy
+* masthead.jpg misplaced in mms2r_t_mobile_media_ignore.yml (Layton Wedgeworth)
+* overridden SprintMedia#process failed to accept block (Layton Wedgeworth)
+* added method_deprecated to help mark methods that are going to be deprecated
+* #get_number marked deprecated, use #number instead
 
 == 1.1.10 / 2007-09-30 (Face Bones)
 
