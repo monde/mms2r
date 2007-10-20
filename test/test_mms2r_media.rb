@@ -358,11 +358,11 @@ class MMS2R::MediaTest < Test::Unit::TestCase
     mms.purge
   end
   
-  def test_get_body
+  def test_body
     mail = TMail::Mail.parse(load_mail('hello_world_mail_plain_no_content_type.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_equal 'hello world', mms.get_body
+    assert_equal 'hello world', mms.body
     mms.purge
   end
 

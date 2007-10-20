@@ -226,10 +226,10 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_get_body_should_return_nil_when_there_is_no_user_text
+  def test_body_should_return_nil_when_there_is_no_user_text
     mail = TMail::Mail.parse(load_mail('sprint-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
-    assert_equal nil, mms.get_body
+    assert_equal nil, mms.body
   end
 end

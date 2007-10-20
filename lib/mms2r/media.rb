@@ -156,7 +156,7 @@ module MMS2R
     # Convenience method that returns a string including all the text of the 
     # first text/plain file found. Returns empty string if no body text 
     # is found.
-    def get_body
+    def body
       return @body if @body
 
       text_file = get_text
@@ -165,6 +165,11 @@ module MMS2R
       end
       
       return @body ||= IO.readlines(text_file.path).join.strip
+    end
+
+    def get_body # :nodoc:
+      method_deprecated(:get_body, :body)
+      self.body
     end
 
     # Returns a File with the most likely candidate for the user-submitted

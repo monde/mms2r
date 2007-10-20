@@ -31,8 +31,8 @@ class MMS2R::HelioMediaTest < Test::Unit::TestCase
     assert_equal title, "Test image"
   end
 
-  def test_get_body_should_return_correct_body
-    body = @mms.get_body()
+  def test_body_should_return_correct_body
+    body = @mms.body()
     assert_equal body, "Test image"
   end
 

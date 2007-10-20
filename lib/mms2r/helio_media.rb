@@ -11,7 +11,7 @@ module MMS2R
   # in the markup.
   
   class MMS2R::HelioMedia < MMS2R::Media
-    def get_body
+    def body
       text = get_text()
       d = Hpricot(text)
       body = d.search("//table/tr[2]/td/table/tr/td/table/tr[6]/td").inner_html
