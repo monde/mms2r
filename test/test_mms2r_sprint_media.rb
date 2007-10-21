@@ -30,6 +30,28 @@ class BrokenImageServlet < WEBrick::HTTPServlet::AbstractServlet
   end
 end
 
+class PurgedImageServlet < WEBrick::HTTPServlet::AbstractServlet
+  def do_GET(req, res)
+    res['Content-Type'] = "text/html"
+    res.code = 500
+    res.body = %q!<html>
+<head>
+<title>Pictures from Sprint: Error</title>
+<link rel="STYLESHEET" type="text/css" href="/retailers/PCSNEXTEL/main.css">
+</head>
+
+<body LEFTMARGIN="0" RIGHTMARGIN="0" TOPMARGIN="0" BOTTOMMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0">
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#F1F1F1" width="386">
+  <tr>
+    We're sorry, this page is not available. We apologize for the inconvenience. Please go to <a href="http://pictures.sprintpcs.com">pictures.sprintpcs.com</a> in case you are using an old bookmark, which is no longer valid.
+    </td>
+  </tr>
+</table>
+</body>
+</html>!
+  end
+end
+
 class SimpleVideoServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     res['Content-Type'] = "video/quicktime"
@@ -69,6 +91,8 @@ class Net::HTTP
                 SimpleImageServlet
               when request.query['HACK'].eql?('BROKEN')
                 BrokenImageServlet
+              when request.query['HACK'].eql?('PURGED')
+                PurgedImageServlet
               else
                   SERVLETS[path]
               end
@@ -218,6 +242,16 @@ class MMS2R::SprintMediaTest < Test::Unit::TestCase
 
   def test_image_should_be_missing
     mail = TMail::Mail.parse(load_mail('sprint-broken-image-01.mail').join)
+    mms = MMS2R::Media.create(mail)
+    mms.process
+
+    assert_equal 0, mms.media.size
+
+    mms.purge
+  end
+
+  def test_image_should_be_purged_from_content_server
+    mail = TMail::Mail.parse(load_mail('sprint-purged-image-01.mail').join)
     mms = MMS2R::Media.create(mail)
     mms.process
 

@@ -1,3 +1,9 @@
+== 1.1.12 / 2007-10-21 (Dr. Ronald von Moldenberg - Endorsement specialist)
+
+* fetch orginal images from Sprint content server (Layton Wedgeworth)
+* ignore Sprint messages when requested content has been purged from their
+  content server
+
 == 1.1.11 / 2007-10-20 (Dr. Armand Skagerakk Frederickshaven)
 
 * minor fix for attachment_fu where it might call #path on the cgi temp file

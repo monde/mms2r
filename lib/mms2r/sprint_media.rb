@@ -1,6 +1,7 @@
 require 'net/http'
 require 'rubygems'
 require 'hpricot'
+require 'cgi'
 
 module MMS2R
 
@@ -117,7 +118,14 @@ module MMS2R
       cnt = 0
       srcs.each do |src|
         begin
-          url = URI.parse(src)
+          # clean out the limiting parameters for images for the content server
+          # to get at the original image
+          url = URI.parse(CGI.unescapeHTML(src))
+          query={}
+          url.query.split('&').each{|a| p=a.split('='); query[p[0]] = p[1]}
+          query.delete_if{|k, v| k == 'limitsize' or k == 'squareoutput' }
+          url.query = query.map{|k,v| "#{k}=#{v}"}.join("&")
+
           #res = Net::HTTP.get_response(url)
           #lets be vanilla stealth
           agent = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; SV1; .NET CLR 1.1.4322)"
@@ -125,8 +133,15 @@ module MMS2R
             req = Net::HTTP::Get.new(url.request_uri, {'User-Agent' => agent})
             http.request(req)
           end
-        rescue
+        rescue StandardError => err
           @logger.error("#{self.class} processing error, #{$!}") unless @logger.nil?
+          next
+        end
+
+        # if the Sprint content server uses response code 500 when the content is purged
+        # the content type will text/html and the body will be the message
+        if res.content_type == 'text/html' && res.code = 500
+          @logger.error("Sprint content server returned response code 500") unless @logger.nil?
           next
         end
 
