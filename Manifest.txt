@@ -89,6 +89,7 @@ test/fixtures/simple_multipart_alternative.mail
 test/fixtures/sprint-broken-image-01.mail
 test/fixtures/sprint-image-01.mail
 test/fixtures/sprint-pcs-text-01.mail
+test/fixtures/sprint-purged-image-01.mail
 test/fixtures/sprint-text-01.mail
 test/fixtures/sprint-two-images-01.mail
 test/fixtures/sprint-video-01.mail
