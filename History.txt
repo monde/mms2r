@@ -1,6 +1,6 @@
 == 1.1.12 / 2007-10-21 (Dr. Ronald von Moldenberg - Endorsement specialist)
 
-* fetch orginal images from Sprint content server (Layton Wedgeworth)
+* fetch original images from Sprint content server (Layton Wedgeworth)
 * ignore Sprint messages when requested content has been purged from their
   content server
 
@@ -39,7 +39,7 @@ Explosion)
 
 == 1.1.7 / 2007-08-25 (Adam Nergal, friend of Skwisgaar, but not Pickles)
 
-* Added suport for Orange of Poland, Orange mmsemail.orange.pl (Zbigniew
+* Added support for Orange of Poland, Orange mmsemail.orange.pl (Zbigniew
   Sobiecki)
 * Cleaned up documentation modifiers
 * Cleaned out non-Ruby code idioms
