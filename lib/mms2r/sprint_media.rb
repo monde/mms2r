@@ -140,7 +140,7 @@ module MMS2R
 
         # if the Sprint content server uses response code 500 when the content is purged
         # the content type will text/html and the body will be the message
-        if res.content_type == 'text/html' && res.code = 500
+        if res.content_type == 'text/html' && res.code == "500"
           @logger.error("Sprint content server returned response code 500") unless @logger.nil?
           next
         end

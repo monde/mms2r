@@ -25,7 +25,7 @@ class BrokenImageServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     raise
     #res['Content-Type'] = "text/html"
-    #res.code = 404
+    #res.code = "404"
     #res.body = '<html><head><title>404 Not Found</title></head><body><h1>Not Found</h1></body></html>'
   end
 end
@@ -33,7 +33,7 @@ end
 class PurgedImageServlet < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     res['Content-Type'] = "text/html"
-    res.code = 500
+    res.code = "500"
     res.body = %q!<html>
 <head>
 <title>Pictures from Sprint: Error</title>
