@@ -569,7 +569,9 @@ module MMS2R
       files = Array.new
       types.each do |t|
         media.keys.each do |k|
-          files.concat(media[k]) if /^#{t}\//.match(k)
+          if t == k || /^#{t}\//.match(k)
+            files.concat(media[k]) 
+          end
         end
       end
       return nil if files.empty?

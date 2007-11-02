@@ -1,0 +1,2 @@
+---
+- !ruby/regexp /^You have a PXT from \d+$/i

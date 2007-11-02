@@ -16,6 +16,7 @@ require 'mms2r/my_cingular_media'
 require 'mms2r/nextel_media'
 require 'mms2r/orange_france_media'
 require 'mms2r/orange_poland_media'
+require 'mms2r/pxt_media'
 require 'mms2r/sprint_media'
 require 'mms2r/sprint_pcs_media'
 require 'mms2r/t_mobile_media'
@@ -42,6 +43,7 @@ module MMS2R
     'messaging.nextel.com' => MMS2R::NextelMedia,
     'orange.fr' => MMS2R::OrangeFranceMedia,
     'mmsemail.orange.pl' => MMS2R::OrangePolandMedia,
+    'pxt.vodafone.net.nz' => MMS2R::PxtMedia,
     'pm.sprint.com' => MMS2R::SprintMedia,
     'messaging.sprintpcs.com' => MMS2R::SprintPcsMedia,
     'tmomail.net' => MMS2R::TMobileMedia,
