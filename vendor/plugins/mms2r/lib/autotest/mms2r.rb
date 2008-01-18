@@ -4,6 +4,7 @@ class Autotest::Mms2r < Autotest
 
   def initialize # :nodoc:
     super
+    @exceptions = /\.svn/
     @test_mappings = {
       %r%^conf/aliases.yml$% => proc { |_, m|
         ["test/test_mms2r_media.rb"]
