@@ -39,7 +39,7 @@ Corpus of carriers currently processed by MMS2R:
 
 * #default_media and #default_text methods return a File that can be used in 
   attachment_fu 
-* #process supports blocks to support enumerating over the content of the MMS
+* #process supports blocks to for enumerating over the content of the MMS
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
 
@@ -103,7 +103,7 @@ Corpus of carriers currently processed by MMS2R:
 == REQUIREMENTS:
 
 * Hpricot
-* Tmail
+* TMail
 
 == INSTALL:
 
