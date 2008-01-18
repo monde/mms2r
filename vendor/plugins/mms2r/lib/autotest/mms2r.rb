@@ -4,30 +4,34 @@ class Autotest::Mms2r < Autotest
 
   def initialize # :nodoc:
     super
-    @exceptions = /\.svn|test\/files|test\/test_helper|doc\/|lib\/vendor|coverage\//
     @test_mappings = {
-      %r%^conf/(mms2r_.*media)_(subject|transform|ignore)\.yml% => proc { |_, m|
-        ["test/test_#{m[1]}.rb"]
+      %r%^conf/aliases.yml$% => proc { |_, m|
+        ["test/test_mms2r_media.rb"]
       },
-      %r%^lib/mms2r/(.+)\.rb$% => proc { |_, m|
-        ["test/test_mms2r_#{m[1]}.rb"]
+      %r%^conf/(.*)\.yml% => proc { |_, m|
+        ["test/test_#{m[1].gsub(/\./,'_')}.rb"]
       },
       %r%^lib/mms2r.rb$% => proc { |_, m|
         ["test/test_mms2r_media.rb"]
       },
-      %r%^test/test_mms2r_.*media\.rb$% => proc { |filename, _|
+      %r%^lib/mms2r/media.rb$% => proc { |_, m|
+        ["test/test_mms2r_media.rb"]
+      },
+      %r%^lib/mms2r/media/sprint.rb$% => proc { |_, m|
+        ["test/test_pm_sprint_com.rb"]
+      },
+      %r%^test/test_.*\.rb$% => proc { |filename, _|
         filename
       }
     }
   end
 
   def path_to_classname(s)
-    f = s.sub(/.*test_mms2r_(.+).rb$/, '\1')
+    sep = File::SEPARATOR
+    f = s.sub(/^test#{sep}/, '').sub(/\.rb$/, '').split(sep)
     f = f.map { |path| path.split(/_/).map { |seg| seg.capitalize }.join }
-    f.unshift("MMS2R")
-    l = f.pop
-    f.push( l =~ /Test$/ ? l : "#{l}Test" )
-    f.join('::')
+    f = f.map { |path| path =~ /^Test/ ? path : "Test#{path}"  }
+    f.join
   end
 
 end

@@ -1,67 +1,63 @@
 = mms2r
 
-  http://mms2r.rubyforge.org/    
+  http://mms2r.rubyforge.org/ 
+  http://rubyforge.org/tracker/?group_id=3065 
 
 == DESCRIPTION:
   
 MMS2R is a library that decodes the parts of an MMS message to disk while 
-stripping out advertising injected by the cellphone carriers.  MMS messages are 
+stripping out advertising injected by the mobile carriers.  MMS messages are 
 multipart email and the carriers often inject branding into these messages.  Use
 MMS2R if you want to get at the real user generated content from a MMS without
 having to deal with the cruft from the carriers.
 
-If MMS2R is not aware of a particular carrier no extra processing is done 
-to the MMS other than decoding and consolidating its media.
+If MMS2R is not aware of a particular carrier no extra processing is done to the 
+MMS other than decoding and consolidating its media.
 
-Contact the author to add additional carriers to be processed by the 
-library.  Suggestions and patches appreciated and welcomed!
+Contact the author to add additional carriers to be processed by the library.  
+Suggestions and patches appreciated and welcomed!
 
 Corpus of carriers currently processed by MMS2R:
 
-* Alltel => message.alltel.com
-* AT&T => mms.att.net
-* AT&T/Cingular => mmode.com
-* Cingular => mms.mycingular.com
-* Cingular => cingularme.com
-* Dobson/Cellular One => mms.dobson.net
-* Helio => mms.myhelio.com
-* Nextel => messaging.nextel.com
-* Orange (Poland) => mmsemail.orange.pl
-* Orange (France) => orange.fr
-* Sprint => pm.sprint.com
-* Sprint => messaging.sprintpcs.com
-* T-Mobile => tmomail.net
-* Verizon => vzwpix.com
-* Verizon => vtext.com
+* Alltel: message.alltel.com
+* AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com, 
+  cingularme.com
+* Dobson/Cellular One: mms.dobson.net
+* Helio: mms.myhelio.com
+* Hutchison 3G UK Ltd: mms.three.co.uk
+* LUXGSM S.A.: mms.luxgsm.lu
+* NetCom (Norway): mms.netcom.no
+* Nextel: messaging.nextel.com
+* O2 Germany: mms.o2online.de
+* Orange & Regional Oranges: orangemms.net, mmsemail.orange.pl, orange.fr
+* PXT New Zealand: pxt.vodafone.net.nz
+* Sprint: pm.sprint.com, messaging.sprintpcs.com
+* T-Mobile: tmomail.net
+* Verizon: vzwpix.com, vtext.com
 
 == FEATURES
 
 * #default_media and #default_text methods return a File that can be used in 
   attachment_fu 
+* #process supports blocks to support enumerating over the content of the MMS
+* #process can be made lazy when :process => :lazy is passed to new
+* logging is enabled when :logger => your_logger is passed to new
 
 == SYNOPSIS:
 
-  # required to use the MMS2R gem proper
   require 'rubygems'
   require 'mms2r'
 
   # required for the example
   require 'tmail'
   require 'fileutils'
-  require 'logger'
 
-  # TMail::Mail.parse is what ActionMailer::Base.receive(email) does, see:
-  # http://wiki.rubyonrails.com/rails/pages/HowToReceiveEmailsWithActionMailer
-  email = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
-  mms = MMS2R::Media.create(email,Logger.new(STDOUT))
+  mail = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
+  mms = MMS2R::Media.new(mail)
 
-  # process finds all the media in a MMS, strips advertsing, then
-  # writes the user generated media to disk in a temporary subdirectory
-  mms.process
+  puts "MMS has default carrier subject" if mms.subject.empty?
 
-  puts "MMS has default carrier subject!" unless mms.subject
-
-  # access the senders phone number
+  # access the sender's phone number
   puts "MMS was from phone #{mms.number}"
 
   # most MMS are either image or video, default_media will return the largest
@@ -69,7 +65,7 @@ Corpus of carriers currently processed by MMS2R:
   file = mms.default_media
   puts "MMS had a media: #{file.inspect}" unless file.nil?
 
-  # text return the largest (non-advertising) text found
+  # finds the largest (non-advertising) text found
   file = mms.default_text
   puts "MMS had some text: #{file.inspect}" unless file.nil?
 
@@ -81,28 +77,33 @@ Corpus of carriers currently processed by MMS2R:
   mms.media['text/plain'].each {|f| puts "#{f}"}
 
   # print the text (assumes MMS had text)
-  text = IO.readlines(mms.media['text/plain'][0]).join
+  text = IO.readlines(mms.media['text/plain'].first).join
   puts text
 
   # save the image (assumes MMS had a jpeg)
-  FileUtils.cp mms.media['image/jpeg'][0], '/some/where/use/ful', :verbose => true
+  FileUtils.cp mms.media['image/jpeg'].first, '/some/where/useful', :verbose => true
 
-  puts "does the MMS have video? #{!mms.media['video/quicktime'].nil?}"
+  puts "does the MMS have quicktime video? #{!mms.media['video/quicktime'].nil?}"
+
+  # Block support, process and receive all media types of video.
+  mms.process do |media_type, files|
+    # assumes a Clip model that is an AttachmentFu
+    Clip.create(:uploaded_data => files.first, :title => "From phone") if media_type =~ /video/
+  end
+
+  # Another AttachmentFu example, Picture model is an AttachmentFu
+  picture = Picture.new
+  picture.title = mms.subject
+  picture.uploaded_data = mms.default_media
+  picture.save!
 
   #remove all the media that was put to temporary disk
   mms.purge
 
-  # Block support, process and receive all media types of video.
-  # Purge is called at the conclusion of the block so be sure
-  # to do something with the bits you are looking for
-  mms.process do |media_type, files|
-    # assumes a Clip model
-    Clip.create(:uploaded_data => files.first, :title => "From phone") if media_type =~ /video/
-  end
-
 == REQUIREMENTS:
 
 * Hpricot
+* Tmail
 
 == INSTALL:
 
@@ -110,16 +111,14 @@ Corpus of carriers currently processed by MMS2R:
 
 == CONTRIBUTE:
 
-If you contribute a patch that we accept then generally we'll
-give you developer rights for the project on RubyForge.  Please
-ensure your work includes 100% test converage.  Your text 
-coverage can be verified with the rcov rake task.  The library
-is ZenTest autotest discovery enabled so running autotest in the
-root of the project is very helpful during development.
+If you contribute a patch that is accepted then you'll get developer rights 
+for the project on RubyForge.  Please ensure your work includes 100% test 
+converage.  The library is ZenTest autotest discovery enabled so running 
+autotest in the root of the project is very helpful during development.
 
 == Authors
 
-Copyright (c) 2007 by Mike Mondragon (blog[http://blog.mondragon.cc/])
+Copyright (c) 2007-2008 by Mike Mondragon (blog[http://blog.mondragon.cc/])
 
 MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 
@@ -133,7 +132,7 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 
 (The MIT License)
 
-Copyright (c) 2007 Mike Mondragon (mikemondragon@gmail.com).
+Copyright (c) 2007, 2008 Mike Mondragon (mikemondragon@gmail.com).
 All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining
