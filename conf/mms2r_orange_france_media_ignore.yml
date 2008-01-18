@@ -1,6 +1,0 @@
---- 
-application/smil:
-- !ruby/regexp /^<smil><head><layout><root-layout height=/
-text/plain: 
-- banniere.txt
-

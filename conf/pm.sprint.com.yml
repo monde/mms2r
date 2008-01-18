@@ -1,0 +1,10 @@
+---
+ignore:
+  text/html:
+  - /We're sorry, this page is not available. We apologize for the inconvenience./mi
+  text/plain: 
+  - /You have new [Picture|Video] Mail!\s+Click Go\/View to see now./mi
+transform: 
+  text/plain: 
+  - - /^You have new Picture Mail!$/i
+    - ""

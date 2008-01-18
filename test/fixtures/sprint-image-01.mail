@@ -1,33 +1,48 @@
-Message-ID: <01234567.9876543210987.JavaMail.jkdos@lalal09>
-From: "someuser@pm.sprint.com" <someuser@pm.sprint.com>
-To: tommytutone@example.com
+Delivered-To: user@example.com
+Received: by 10.78.137.20 with SMTP id k20cs909140hud;
+        Mon, 7 Jan 2008 17:28:39 -0800 (PST)
+Received: by 10.114.112.1 with SMTP id k1mr17184130wac.24.1199755718239;
+        Mon, 07 Jan 2008 17:28:38 -0800 (PST)
+Return-Path: <joesixpack01@pm.sprint.com>
+Received: from smtp04.sun3.lightsurf.net (smtp04.sun3.lightsurf.net [63.215.195.70])
+        by mx.google.com with ESMTP id n22si32781440pof.1.2008.01.07.17.28.37;
+        Mon, 07 Jan 2008 17:28:38 -0800 (PST)
+Received-SPF: neutral (google.com: 63.215.195.70 is neither permitted nor denied by best guess record for domain of joesixpack01@pm.sprint.com) client-ip=63.215.195.70;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 63.215.195.70 is neither permitted nor denied by best guess record for domain of joesixpack01@pm.sprint.com) smtp.mail=joesixpack01@pm.sprint.com
+Received: from pcs-nams006 (smtp.sun3.lightsurf.net [10.0.1.131])
+	by smtp04.sun3.lightsurf.net (8.12.11.20060308/8.12.11) with ESMTP id m081Rc1j028795
+	for <user@example.com>; Mon, 7 Jan 2008 17:28:37 -0800
+Date: Mon, 7 Jan 2008 17:28:37 -0800
+Message-ID: <19565747.1199755717354.JavaMail.lsadm@pcs-nams006>
+From: "joesixpack01@pm.sprint.com" <joesixpack01@pm.sprint.com>
+To: user@example.com
 Subject: You have new Picture Mail!
 MIME-Version: 1.0
 Content-Type: multipart/alternative; 
-	boundary="----=_Part_012345_67890123.4567890123456"
+	boundary="----=_Part_510948_2436840.1199755717353"
 X-Priority: 3
 X-MSMail-Priority: Normal
 Importance: Normal
 
-------=_Part_012345_67890123.4567890123456
+------=_Part_510948_2436840.1199755717353
 Content-Type: text/plain; charset=us-ascii
 Content-Transfer-Encoding: 7bit
 
 You have new Picture Mail!
 
 Click Go/View to see now.
-http://pictures.sprintpcs.com/?mivt=helloworld0123456789&shareName=MMS
+http://pictures.sprintpcs.com/?mivt=PE5rJ5PdYzzwk7V7zoXU&shareName=MMS
 
- _abcedef
+ _frsthgl
 
 
-------=_Part_012345_67890123.4567890123456
+------=_Part_510948_2436840.1199755717353
 Content-Type: text/html
 Content-Transfer-Encoding: 7bit
 
 <html>
 <head><title>You have new Picture Mail!</title>
-<!-- lsPictureMail-Share-helloworld0123456789-comment
+<!-- lsPictureMail-Share-PE5rJ5PdYzzwk7V7zoXU-comment
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF&#45;8&quot;?&gt;
 &lt;shareMessage&gt;
    &lt;messageContents type=&quot;PICTURE&quot;&gt;
@@ -35,18 +50,18 @@ Content-Transfer-Encoding: 7bit
       &lt;mediaItems&gt;
          &lt;mediaItem id=&quot;1&quot;&gt;                        
             &lt;title&gt;&lt;/title&gt;
-            &amp;lt;url&amp;gt;http://pictures.sprintpcs.com/getMMBOXMessageMedia?id=Xw1004H8sLv6S3x76lVPYvc9HWuygho0mqG1a5IEKWLR8s8O0GEqXAmk5gW%2FZUWGqyw0fwJJvr7U%0AtWtQs5%2FZA7tmYNq7KKkBMqlL64JVNH%2BGkNKbb8WqPL%2FsrHZdYUVet3SRzN1GfrfUo%2BpWfjCBBg%3D%3D%0A&amp;lt;/url&amp;gt;
+            &amp;lt;url&amp;gt;http://pictures.sprintpcs.com/getMMBOXMessageMedia?id=Xw1004H8sLv6S3x76lVPYmsnJP2O20g3AloHr3Oyych%2Bdue%2BzJtiIAmk5gW%2FZUWGqyw0fwJJvr5Y%0AKVTdI3xKmmWvH3JStT7pPVTQ1jSDO%2BWGkNKbb8WqPNT0lqyVIDbc%2FzE8fKrRx3LODk9iX0OQLw%3D%3D%0A&amp;lt;/url&amp;gt;
 
-            &lt;urlExpiration&gt;2007&#45;03&#45;11T21:14:27Z&lt;/urlExpiration&gt;
+            &lt;urlExpiration&gt;2008&#45;01&#45;15T01:28:37Z&lt;/urlExpiration&gt;
          &lt;/mediaItem&gt;
       &lt;/mediaItems&gt;
    &lt;/messageContents&gt;
 &lt;/shareMessage&gt;
 
 -->
-<!-- lsPictureMail-UserInfo-helloworld0123456789-comment
+<!-- lsPictureMail-UserInfo-PE5rJ5PdYzzwk7V7zoXU-comment
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF&#45;8&quot;?&gt;
-&lt;UserInfo timestamp=&quot;2007&#45;03&#45;04T21:14:27.96+00:00&quot; originating_from_address=&quot;someuser@pm.sprint.com&quot;&gt;&lt;credential name=&quot;MDN&quot;&gt;2068509247&lt;/credential&gt;&lt;/UserInfo&gt;
+&lt;UserInfo timestamp=&quot;2008&#45;01&#45;08T01:28:37.349+00:00&quot; originating_from_address=&quot;joesixpack01@pm.sprint.com&quot;&gt;&lt;credential name=&quot;MDN&quot;&gt;2068675309&lt;/credential&gt;&lt;/UserInfo&gt;
  -->
 </head>
 <body marginheight="0" marginwidth="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
@@ -64,7 +79,7 @@ Content-Transfer-Encoding: 7bit
    <td VALIGN="top" colspan="2">
         <table border="0" cellpadding="0" cellspacing="0" width="590" bgcolor="#FFFFFF">
             <tr>
-                <td><br/><p><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" width="10"/><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>You have a Picture Mail from someuser@pm.sprint.com</b></font><br/><br/></p></td>
+                <td><br/><p><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" width="10"/><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>You have a Picture Mail from joesixpack01@pm.sprint.com</b></font><br/><br/></p></td>
             </tr>
         </table>
     </td>
@@ -81,7 +96,7 @@ Content-Transfer-Encoding: 7bit
                         <table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="7" style="table-layout:fixed">
                             <tr>
                                 <td align="center">
-                                    <img src="http://localhost:99163/mmps/RECIPIENT/000_0123a01234567890_1/2?inviteToken=helloworld0123456789&amp;limitsize=258,258&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1&amp;HACK=IMAGE"/>
+                                    <img src="http://pictures.sprintpcs.com//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?inviteToken=PE5rJ5PdYzzwk7V7zoXU&amp;limitsize=258,258&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
                                 </td>
                             </tr>
                         </table>
@@ -107,11 +122,11 @@ Content-Transfer-Encoding: 7bit
                                  Options
                                 </div>
                                 <div style="padding:10px; background-color:#f1f1f1; font: normal 10pt trebuchet ms" width="280">
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=MMS&amp;messageState=RETRIEVED">View Picture</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=PRINT">Order Prints and Gifts</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=REPLY">Reply to Sender</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=REPLYTOALL">Reply to All</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=FORWARD">Forward</a><br/><br/>
+                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=PE5rJ5PdYzzwk7V7zoXU&amp;shareName=MMS&amp;messageState=RETRIEVED">View Picture</a><br/>
+                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=PE5rJ5PdYzzwk7V7zoXU&amp;shareName=PRINT">Order Prints and Gifts</a><br/>
+                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=PE5rJ5PdYzzwk7V7zoXU&amp;shareName=REPLY">Reply to Sender</a><br/>
+                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=PE5rJ5PdYzzwk7V7zoXU&amp;shareName=REPLYTOALL">Reply to All</a><br/>
+                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=PE5rJ5PdYzzwk7V7zoXU&amp;shareName=FORWARD">Forward</a><br/><br/>
                                  Send and receive Pictures and Videos through Picture Mail<sup>SM</sup>. For more information go to <a target="_blank" style="color: #148AB2;" href="http://www.sprint.com/picturemail">www.sprint.com/picturemail.</a>
                                 </div>
                            </td>
@@ -192,4 +207,5 @@ Content-Transfer-Encoding: 7bit
 </body>
 </html><!-- picture_mail_arrived -->
 
-------=_Part_012345_67890123.4567890123456--
+------=_Part_510948_2436840.1199755717353--
+

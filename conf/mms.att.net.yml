@@ -1,0 +1,9 @@
+---
+transform: 
+  text/plain: 
+  - - /^Multimedia message$/i
+    - ""
+  - - /\n--\n=+\nThis mobile text message is brought to you by AT&T.*/m
+    - ""
+  - - /\n--\n=+\nBrought to you by, Cingular Wireless Messaging.*/m
+    - ""

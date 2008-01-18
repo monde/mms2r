@@ -1,0 +1,27 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.150.230.20 with SMTP id c20cs102927ybh;
+        Wed, 19 Dec 2007 17:45:24 -0800 (PST)
+Received: by 10.67.19.11 with SMTP id w11mr2853581ugi.89.1198115123916;
+        Wed, 19 Dec 2007 17:45:23 -0800 (PST)
+Return-Path: <5551234@txt.att.net>
+Received: from atlmtaow03.cingularme.com (atlmtaow03.cingularme.com [66.102.165.8])
+        by mx.google.com with ESMTP id z12si7179628gvf.2007.12.19.17.45.22;
+        Wed, 19 Dec 2007 17:45:23 -0800 (PST)
+Received-SPF: neutral (google.com: 66.102.165.8 is neither permitted nor denied by domain of 5551234@txt.att.net) client-ip=66.102.165.8;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 66.102.165.8 is neither permitted nor denied by domain of 5551234@txt.att.net) smtp.mail=5551234@txt.att.net
+Received: from txt.att.net ([10.46.66.13]) by atlmtaow03.cingularme.com
+          (InterMail vM.6.01.04.00 201-2131-118-20041027) with SMTP
+          id <20071220014522.MWOX6162.atlmtaow03.cingularme.com@txt.att.net>
+          for <tommy.tutone@example.com>; Wed, 19 Dec 2007 20:45:22 -0500
+From: 5551234@txt.att.net
+To: tommy.tutone@example.com
+Subject: 
+X-OPWV-Extra-Message-Type: MO
+Message-Id: <20071220014522.MWOX6162.atlmtaow03.cingularme.com@txt.att.net>
+Date: Wed, 19 Dec 2007 20:45:22 -0500
+
+Hello World
+
+--
+==================================================================
+This mobile text message is brought to you by AT&T

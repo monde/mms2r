@@ -3,19 +3,19 @@ X-Account-Key: account6
 X-UIDL: UID2393-1175209464
 X-Mozilla-Status: 0001
 X-Mozilla-Status2: 00000000
-Return-path: <7608070850@mms.myhelio.com>
-Envelope-to: will@willjessup.com
+Return-path: <5551234@mms.myhelio.com>
+Envelope-to: tommy.tutone@example.com
 Delivery-date: Sun, 01 Jul 2007 17:52:46 -0500
 Received: from [209.179.176.17] (helo=mms.myhelio.com)
 	by scratchy.cirtexhosting.com with smtp (Exim 4.63)
-	(envelope-from <7608070850@mms.myhelio.com>)
+	(envelope-from <5551234@mms.myhelio.com>)
 	id 1I58Hc-0006t0-RJ
-	for will@willjessup.com; Sun, 01 Jul 2007 17:52:45 -0500
-Message-ID: <1_nm0339723101_7608070850@mms.myhelio.com>
+	for tommy.tutone@example.com; Sun, 01 Jul 2007 17:52:45 -0500
+Message-ID: <1_nm0339723101_5551234@mms.myhelio.com>
 MIME-Version: 1.0
-From: "MMS Message" <7608070850@mms.myhelio.com>
+From: "MMS Message" <5551234@mms.myhelio.com>
 Date: Sun, 01 Jul 2007 22:52:45 GMT
-To: <will@willjessup.com>
+To: <tommy.tutone@example.com>
 Subject: Test image
 Content-Type: multipart/mixed;
 	boundary="-------InticubeMmsBoundary-BridgeToTheFuture_MIXED.200610"
@@ -328,7 +328,7 @@ Ow==
 Content-Type: image/jpeg;
 	name="0628070005.jpg"
 Content-Transfer-Encoding: base64
-Content-ID: <07062817294276080708500000000000>
+Content-ID: <07062817294255512340000000000>
 Content-Description: 0628070005.jpg
 Content-Disposition: attachment;
 	filename="0628070005.jpg"

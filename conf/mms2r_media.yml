@@ -1,0 +1,6 @@
+---
+ignore:
+ text/plain:
+ - /^\(no subject\)$/i
+ multipart/mixed:
+ - "/^Attachment: /i"

@@ -1,0 +1,8 @@
+---
+ignore:
+  text/plain: 
+  - /\AThis message was sent using PIX-FLIX Messaging service from Verizon Wireless!.*/m
+transform: 
+  text/plain: 
+  - - /\A(.+?)\s+This message was sent using PIX-FLIX Messaging service from Verizon Wireless!.*/m
+    - "\1"

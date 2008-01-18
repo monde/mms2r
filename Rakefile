@@ -2,12 +2,13 @@
 
 require 'rubygems'
 require 'hoe'
+
 begin
   require 'rcov/rcovtask'
 rescue LoadError
 end
 
-$LOAD_PATH.unshift 'lib'
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), "lib")
 require 'mms2r'
 
 Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
@@ -19,7 +20,7 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.url = p.paragraphs_of('README.txt', 1).first.strip
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
   p.extra_deps << ['hpricot', '>= 0.6.0']
-  p.extra_deps << ['mechanize', '>= 0.6.9']
+  p.extra_deps << ['tmail', '>= 1.2.1']
   p.clean_globs << 'coverage'
 end
 

@@ -1,0 +1,12 @@
+---
+ignore:
+  image/gif: 
+  - top.gif
+  - bottom.gif
+  - middle_img.gif
+  text/html: 
+   - /<html>\s+<head>\s+<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=iso-8859-1\">\s+<title>MMS Email<\/title>/im
+transform: 
+  text/plain: 
+  - - /Note:\s{1,2}.*?\s+message:\s{1,2}(.+)$/m
+    - "\1"

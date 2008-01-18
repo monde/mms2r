@@ -1,0 +1,15 @@
+---
+transform: 
+  text/plain: 
+  - - /^You have received a new message$/i
+    - ""
+ignore:
+  image/jpeg: 
+  - images/reb.jpg
+  - images/tpm.jpg
+  image/gif: 
+  - images/vf9.gif
+  text/html: 
+   - /<html><head>.*<title>MMS Message<\/title>/im
+  text/plain: 
+   - /You have received an MMS message.  To see the message correctly, you will need to view this message\s+in a graphical email application./im

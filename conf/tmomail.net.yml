@@ -1,0 +1,16 @@
+---
+ignore:
+  image/jpeg: 
+  - /^masthead.jpg$/i
+  image/gif: 
+  - /^dottedline350.gif$/i
+  - /^dottedline600.gif$/i
+  - /^dottedLine_350.gif$/i
+  - /^dottedLine_600.gif$/i
+  - /^spacer.gif$/i
+  - /^video.gif$/i
+  - /^audio.gif$/i
+  - /^tmobilelogo.gif$/i
+  - /^tmobilespace.gif$/i
+  text/html: 
+   - /<html>\s+<head>\s+<title>T-Mobile<\/title>/m

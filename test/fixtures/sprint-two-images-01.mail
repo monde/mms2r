@@ -1,52 +1,68 @@
-Message-ID: <01264567.13213243210987.JavaMail.jrewqreos@lalal09>
-From: "someuser@pm.sprint.com" <someuser@pm.sprint.com>
-To: tommytutone@example.com
+Delivered-To: user@example.com
+Received: by 10.78.133.4 with SMTP id g4cs708016hud;
+        Fri, 4 Jan 2008 08:40:57 -0800 (PST)
+Received: by 10.114.52.1 with SMTP id z1mr2076829waz.123.1199464855336;
+        Fri, 04 Jan 2008 08:40:55 -0800 (PST)
+Return-Path: <joesixpack01@pm.sprint.com>
+Received: from smtp03.sun3.lightsurf.net (smtp03.sun3.lightsurf.net [63.215.195.69])
+        by mx.google.com with ESMTP id z15si26924204pod.11.2008.01.04.08.40.54;
+        Fri, 04 Jan 2008 08:40:55 -0800 (PST)
+Received-SPF: neutral (google.com: 63.215.195.69 is neither permitted nor denied by best guess record for domain of joesixpack01@pm.sprint.com) client-ip=63.215.195.69;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 63.215.195.69 is neither permitted nor denied by best guess record for domain of joesixpack01@pm.sprint.com) smtp.mail=joesixpack01@pm.sprint.com
+Received: from pcs-nams003 (smtp.sun3.lightsurf.net [10.0.1.131])
+	by smtp03.sun3.lightsurf.net (8.12.11.20060308/8.12.11) with ESMTP id m04GdwqS007797
+	for <user@example.com>; Fri, 4 Jan 2008 08:40:54 -0800
+Date: Fri, 4 Jan 2008 08:40:54 -0800
+Message-ID: <30401305.1199464854208.JavaMail.lsadm@pcs-nams003>
+From: "joesixpack01@pm.sprint.com" <joesixpack01@pm.sprint.com>
+To: user@example.com
 Subject: You have new Picture Mail!
 MIME-Version: 1.0
 Content-Type: multipart/alternative; 
-	boundary="----=_Part_012345_67890123.4567890123456"
+	boundary="----=_Part_448760_32180682.1199464854207"
 X-Priority: 3
 X-MSMail-Priority: Normal
 Importance: Normal
 
-------=_Part_012345_67890123.4567890123456
+------=_Part_448760_32180682.1199464854207
 Content-Type: text/plain; charset=us-ascii
 Content-Transfer-Encoding: 7bit
 
 You have new Picture Mail!
 
 Click Go/View to see now.
-http://pictures.sprintpcs.com/?mivt=helloworld0123456789&shareName=MMS
+http://pictures.sprintpcs.com/?mivt=5E1rJSPk5hYDkUnY7op0&shareName=MMS
 
- _abcedef
+ _frsthgl
 
 
-------=_Part_012345_67890123.4567890123456
+------=_Part_448760_32180682.1199464854207
 Content-Type: text/html
 Content-Transfer-Encoding: 7bit
 
 <html>
 <head><title>You have new Picture Mail!</title>
-<!-- lsPictureMail-Share-helloworld0123456789-comment
+<!-- lsPictureMail-Share-5E1rJSPk5hYDkUnY7op0-comment
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF&#45;8&quot;?&gt;
 &lt;shareMessage&gt;
-   &lt;messageContents type=&quot;PICTURE&quot;&gt;
+   &lt;messageContents type=&quot;MULTI MEDIA&quot;&gt;
       &lt;messageText&gt;&lt;/messageText&gt;
       &lt;mediaItems&gt;
          &lt;mediaItem id=&quot;1&quot;&gt;                        
             &lt;title&gt;&lt;/title&gt;
-            &amp;lt;url&amp;gt;http://pictures.sprintpcs.com/getMMBOXMessageMedia?id=Xw1004H8sLv6S3x76lVPYvc9HWuygho0mqG1a5IEKWLR8s8O0GEqXAmk5gW%2FZUWGqyw0fwJJvr7U%0AtWtQs5%2FZA7tmYNq7KKkBMqlL64JVNH%2BGkNKbb8WqPL%2FsrHZdYUVet3SRzN1GfrfUo%2BpWfjCBBg%3D%3D%0A&amp;lt;/url&amp;gt;
+            &amp;lt;url&amp;gt;http://pictures.sprintpcs.com/getMMBOXMessageMedia?id=Xw1004H8sLv6S3x76lVPYmsnJP2O20g3gCXqZY1Rd4Mw8tdr9CQfmQmk5gW%2FZUWGbAcSsDzAicri%0AmnmZK7fR%2FxZHab%2F9IpvgbgnXyG6nteSGkNKbb8WqPNT0lqyVIDbcgmfLjaxUAyaGXTIycziv0w%3D%3D%0A&amp;lt;/url&amp;gt;
+&amp;lt;url&amp;gt;http://pictures.sprintpcs.com/getMMBOXMessageMedia?id=Xw1004H8sLv6S3x76lVPYmsnJP2O20g3gCXqZY1Rd4Mw8tdr9CQfmQmk5gW%2FZUWGqyw0fwJJvr7i%0AmnmZK7fR%2FxZHab%2F9IpvgbgnXyG6nteSGkNKbb8WqPNT0lqyVIDbcgmfLjaxUAyaGXTIycziv0w%3D%3D%0A&amp;lt;/url&amp;gt;
 
-            &lt;urlExpiration&gt;2007&#45;03&#45;11T21:14:27Z&lt;/urlExpiration&gt;
+            &lt;urlExpiration&gt;2008&#45;01&#45;11T16:40:54Z&lt;/urlExpiration&gt;
          &lt;/mediaItem&gt;
       &lt;/mediaItems&gt;
    &lt;/messageContents&gt;
 &lt;/shareMessage&gt;
 
 -->
-<!-- lsPictureMail-UserInfo-helloworld0123456789-comment
+<!-- lsPictureMail-UserInfo-5E1rJSPk5hYDkUnY7op0-comment
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF&#45;8&quot;?&gt;
-&lt;UserInfo timestamp=&quot;2007&#45;03&#45;04T21:14:27.96+00:00&quot; originating_from_address=&quot;someuser@pm.sprint.com&quot;&gt;&lt;credential name=&quot;MDN&quot;&gt;2068509247&lt;/credential&gt;&lt;/UserInfo&gt;
+&lt;UserInfo timestamp=&quot;2008&#45;01&#45;04T16:40:54.202+00:00&quot; originating_from_address=&quot;joesixpack01@pm.sprint.com&quot;&gt;&lt;credential name=&quot;MDN&quot;&gt;2068675309&lt;/credential&gt;&lt;/UserInfo&gt;
  -->
 </head>
 <body marginheight="0" marginwidth="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
@@ -54,76 +70,92 @@ Content-Transfer-Encoding: 7bit
 <tr>
    <td VALIGN="top" colspan="2" width="100%">
         <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFE100">
+           <tr>
+               <td><a href="http://www.sprintpcs.com"><img src="http://pictures.sprintpcs.com/retailers/PCSNEXTEL/images/logos/togetherWithNextel.gif" alt="" border="0" /></a></td>
+           </tr>
+       </table>
+   </td>
+</tr>
+<tr>
+   <td VALIGN="top" colspan="2">
+        <table border="0" cellpadding="0" cellspacing="0" width="590" bgcolor="#FFFFFF">
             <tr>
-                <td><a href="http://www.sprintpcs.com"><img src="http://pictures.sprintpcs.com/retailers/PCSNEXTEL/images/logos/togetherWithNextel.gif" alt="" border="0" /></a></td>
+                <td><br/><p><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" width="10"/><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>You have a Picture Mail from joesixpack01@pm.sprint.com</b></font><br/><br/></p></td>
             </tr>
         </table>
     </td>
 </tr>
 <tr>
    <td VALIGN="top" colspan="2">
-        <table border="0" cellpadding="0" cellspacing="0" width="590" bgcolor="#FFFFFF">
-            <tr>
-                <td><br/><p><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" width="10"/><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>You have a Picture Mail from someuser@pm.sprint.com</b></font><br/><br/></p></td>
-            </tr>
-        </table>
-    </td>
-</tr>
-<tr>
-    <td colspan="2">
-        <table border="0" width="590" cellpadding="0" cellspacing="0">
-            <tr>
-            <td width="10">&nbsp;</td>
-            <td width="280" valign="top">
-                <table border="0" cellpadding="0" style="border:1px solid #9C9A9C;">
-                <tr>
-                    <td>
-                        <table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="7" style="table-layout:fixed">
+           <table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" width="590">
+               <tr>
+                   <td width="10">&nbsp;</td>
+                   <td align="center" valign="top" width="280">
+                       <table border="0" style="border:1px solid #9C9A9C;" cellpadding="0">
                             <tr>
-                                <td align="center">
-                                    <img src="http://localhost:99163/mmps/RECIPIENT/000_0123a01234567890_1/2.2?inviteToken=helloworld0123456789&amp;limitsize=258,258&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1&amp;HACK=IMAGE"/>
-                                </td>
-                                <td align="center">
-                                    <img src="http://localhost:99163/mmps/RECIPIENT/000_0123a01234567890_1/2.3?inviteToken=helloworld0123456789&amp;limitsize=258,258&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1&amp;HACK=IMAGE"/>
-                                </td>
+                               <td>
+                                   <table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="7">
+                                       <tr>
+                                           <td align="center">
+                                           <img src="http://pictures.sprintpcs.com/mmps/RECIPIENT/001_104058d23d79fb6a_1/2?inviteToken=5E1rJSPk5hYDkUnY7op0&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
+                                           </td>
+                                           <td align="center">
+                                           <img src="http://pictures.sprintpcs.com/mmps/RECIPIENT/001_104058d23d79fb6a_1/3?inviteToken=5E1rJSPk5hYDkUnY7op0&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td align="center">
+                                           <img src="http://pictures.sprintpcs.com/images/x.gif?&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
+                                           </td>
+                                           <td align="center">
+                                           <img src="http://pictures.sprintpcs.com/images/x.gif?&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
+                                           </td>
+                                       </tr>
+                                       <tr>
+                                           <td align="center">
+                                           <img src="http://pictures.sprintpcs.com/images/x.gif?&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
+                                           </td>
+                                           <td align="center">
+                                           <img src="http://pictures.sprintpcs.com/images/x.gif?&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1"/>
+                                           </td>
+                                       </tr>
+                                   </table>
+                               </td>
                             </tr>
                         </table>
-                    </td>
-                </tr>
-                </table>
-            </td>
-            <td width="20">&nbsp;</td>
-             <td VALIGN="top" align="right" width="280">
-                   <table border="0" cellpadding="0" cellspacing="0" width="280" style="table-layout:fixed">
-                       <tr>
-                           <td><p><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>Message:</b></font></p></td>
-                       </tr>
-                       <tr>
-                           <td><pre style="overflow:auto; font:normal 10pt trebuchet ms; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap;  word-wrap: break-word;"></pre></td>
-                       </tr>
-                       <tr>
-                           <td><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" height="15"/></td>
-                       </tr>
-                       <tr>
-                           <td width="280">
-                                <div style="padding-left:10px; padding-top:4px; padding-bottom:4px; color:white; background-color:#59639C; font: bold 10pt trebuchet ms" width="280">
-                                 Options
-                                </div>
-                                <div style="padding:10px; background-color:#f1f1f1; font: normal 10pt trebuchet ms" width="280">
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=MMS&amp;messageState=RETRIEVED">View Picture</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=PRINT">Order Prints and Gifts</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=REPLY">Reply to Sender</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=REPLYTOALL">Reply to All</a><br/>
-                                 <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=helloworld0123456789&amp;shareName=FORWARD">Forward</a><br/><br/>
-                                 Send and receive Pictures and Videos through Picture Mail<sup>SM</sup>. For more information go to <a target="_blank" style="color: #148AB2;" href="http://www.sprint.com/picturemail">www.sprint.com/picturemail.</a>
-                                </div>
-                           </td>
-                       </tr>
-                   </table>
-           </td>
-           </tr>
-       </table>
-   </td>
+                   </td>
+                   <td width="20">&nbsp;</td>
+                   <td VALIGN="top" align="left" width="280">
+                       <table border="0" cellpadding="0" cellspacing="0" width="280" style="table-layout:fixed">
+                           <tr>
+                               <td><p><font face="trebuchet ms, Helvetica, Arial, Verdana" size="2"><b>Message:</b></font></p></td>
+                           </tr>
+                           <tr>
+                               <td><pre style="overflow:auto; font:normal 10pt trebuchet ms; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap;  word-wrap: break-word;"></pre></td>
+                           </tr>
+                           <tr>
+                               <td><img src="http://pictures.sprintpcs.com/images/x.gif" border="0" height="15"/></td>
+                           </tr>
+                           <tr>
+                               <td>
+                                   <div style="padding-left:10px; padding-top:4px; padding-bottom:4px; color:white; background-color:#59639C; font: bold 10pt trebuchet ms" width="280">
+                                     Options
+                                    </div>
+                                    <div style="padding:10px; background-color:#f1f1f1; font: normal 10pt trebuchet ms" width="280">
+                                     <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=5E1rJSPk5hYDkUnY7op0&amp;shareName=MMS&amp;messageState=RETRIEVED">View Slideshow</a><br/>
+                                     <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=5E1rJSPk5hYDkUnY7op0&amp;shareName=PRINT">Order Prints and Gifts</a><br/>
+                                     <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=5E1rJSPk5hYDkUnY7op0&amp;shareName=REPLY">Reply to Sender</a><br/>
+                                     <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=5E1rJSPk5hYDkUnY7op0&amp;shareName=REPLYTOALL">Reply to All</a><br/>
+                                     <a target="_blank" style="color: #148AB2;" href="http://pictures.sprintpcs.com/share.do?invite=5E1rJSPk5hYDkUnY7op0&amp;shareName=FORWARD">Forward</a><br/><br/>
+                                     Send and receive Pictures and Videos through Picture Mail<sup>SM</sup>. For more information go to <a target="_blank" style="color: #148AB2;" href="http://www.sprint.com/picturemail">www.sprint.com/picturemail.</a>
+                                    </div>
+                               </td>
+                           </tr>
+                       </table>
+                   </td>
+               </tr>
+           </table>
+       </td>
    </tr>
     <tr>
        <td colspan="2">
@@ -193,6 +225,7 @@ Content-Transfer-Encoding: 7bit
     </tr>
 </table>
 </body>
-</html><!-- picture_mail_arrived -->
+</html><!-- multi_slide_mail_arrived -->
 
-------=_Part_012345_67890123.4567890123456--
+------=_Part_448760_32180682.1199464854207--
+

@@ -1,0 +1,4 @@
+--- 
+ignore:
+  application/smil: 
+   - /^<smil><head><layout><root-layout width=/i

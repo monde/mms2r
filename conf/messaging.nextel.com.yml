@@ -1,0 +1,10 @@
+---
+ignore:
+  text/plain: 
+  - /^This is an MMS message.  20\d\d Sprint Nextel. All rights reserved./
+  - /^This is an MMS message. Please go to http:\/\/mms.nextel.com\/mms\/anon\/do\/legacy\/viewDirect/
+  - /^This is a multi-part message in MIME format./
+  text/html: 
+   - /^<html><body>\s+<center>This is an MMS message. <br><center> 20\d\d Sprint Nextel. All rights reserved<\/center><br><img/m
+   - /^<html><body>\s+This is an MMS message. <br><center> 20\d\d Sprint Nextel. All rights reserved/m
+   - /^<html><body>\s+This is an MMS message. Please go to <a href="http:\/\/mms.nextel.com\/mms\/anon\/do\/legacy\/viewDirect/m
