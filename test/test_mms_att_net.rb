@@ -40,7 +40,7 @@ class TestMmsAttNet < Test::Unit::TestCase
 
     assert_equal 1, mms.media.size
     assert_not_nil(mms.media['text/plain'])
-    assert_equal "Hello World\n", IO.read(mms.media['text/plain'][0])
+    assert_equal "Hello World", IO.read(mms.media['text/plain'][0])
 
     mms.purge
   end
@@ -52,7 +52,7 @@ class TestMmsAttNet < Test::Unit::TestCase
 
     assert_equal 1, mms.media.size
     assert_not_nil(mms.media['text/plain'])
-    assert_equal "hello world\n", IO.read(mms.media['text/plain'][0])
+    assert_equal "hello world", IO.read(mms.media['text/plain'][0])
 
     mms.purge
   end

@@ -22,6 +22,11 @@
 * testing using mocks and stubs instead of duck raped Net::HTTP
 * fixed typo in name of method #attachement to #attachment
 * fixed broken downloading of Sprint videos
+* default subject back to ""
+* sprint subject
+* new zeland
+* heckled! & flogged!
+* link to Trac
 
 == 1.1.12 / 2007-10-21 (Dr. Ronald von Moldenberg - Endorsement specialist)
 
