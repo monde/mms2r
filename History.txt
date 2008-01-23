@@ -1,4 +1,4 @@
-== 1.2.0 / 2008-01-17 (Skwisgaar Skwigelf - fastest guitarist alive)
+== 1.2.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
 
 * added support for pxt.vodafone.net.nz PXT New Zealand
 * added support for mms.o2online.de  O2 Germany
@@ -22,11 +22,6 @@
 * testing using mocks and stubs instead of duck raped Net::HTTP
 * fixed typo in name of method #attachement to #attachment
 * fixed broken downloading of Sprint videos
-* default subject back to ""
-* sprint subject
-* new zeland
-* heckled! & flogged!
-* link to Trac
 
 == 1.1.12 / 2007-10-21 (Dr. Ronald von Moldenberg - Endorsement specialist)
 
