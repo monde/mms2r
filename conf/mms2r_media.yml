@@ -4,3 +4,11 @@ ignore:
  - /^\(no subject\)$/i
  multipart/mixed:
  - "/^Attachment: /i"
+transform: 
+  text/plain: 
+  - - /^Multimedia message$/i
+    - ""
+  - - /\A(.+?)\s+\w+\/\w+\s+Sent via BlackBerry from T-Mobile$/im
+    - ""
+  - - /\A(.+?)\s+Sent from my iPhone$/im
+    - ""

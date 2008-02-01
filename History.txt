@@ -1,3 +1,7 @@
+== 1.2.1 / 2008-XX-XX (PENDING)
+
+* strip out common blackberry and iPhone signatures
+
 == 1.2.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
 
 * added support for pxt.vodafone.net.nz PXT New Zealand
