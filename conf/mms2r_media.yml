@@ -8,7 +8,7 @@ transform:
   text/plain: 
   - - /^Multimedia message$/i
     - ""
-  - - /\A(.+?)\w+\/\w+\s+Sent via BlackBerry from T-Mobile$/im
+  - - /\A(.*?)\w+\/\w+\s+Sent via BlackBerry from T-Mobile$/im
     - "\1"
   - - /\A(.*?)Sent from my iPhone$/im
     - "\1"
