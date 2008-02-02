@@ -367,7 +367,7 @@ module MMS2R
         type = self.class.part_type?(part)
         content = part.body
       end
-      return type, nil if content.nil?
+      return type, nil if content.nil? || content.empty?
 
       @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
       File.open(file,'w'){ |f| f.write(content) }

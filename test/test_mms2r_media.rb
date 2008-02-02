@@ -464,6 +464,19 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.purge # have to call purge since a file is put to disk as side effect
   end
 
+  def test_process_media_with_empty_text
+    name = 'foo.txt'
+    mms = MMS2R::Media.new(stub_mail())
+    mms.stubs(:transform_text_part).returns(['text/plain', nil])
+    part = stub(:sub_header => name, :content_type => 'text/plain')
+
+    assert_equal ['text/plain', nil], mms.process_media(part)
+
+    mms.stubs(:transform_text_part).returns(['text/plain', ''])
+    assert_equal ['text/plain', nil], mms.process_media(part)
+    mms.purge # have to call purge since a file is put to disk as side effect
+  end
+
   def test_process_media_for_application_smil
     name = 'foo.txt'
     mms = MMS2R::Media.new(stub_mail())
