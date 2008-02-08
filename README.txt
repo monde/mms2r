@@ -25,12 +25,14 @@ Corpus of carriers currently processed by MMS2R:
 * Dobson/Cellular One: mms.dobson.net
 * Helio: mms.myhelio.com
 * Hutchison 3G UK Ltd: mms.three.co.uk
+* INDOSAT M2: mobile.indosat.net.id
 * LUXGSM S.A.: mms.luxgsm.lu
 * NetCom (Norway): mms.netcom.no
 * Nextel: messaging.nextel.com
 * O2 Germany: mms.o2online.de
 * Orange & Regional Oranges: orangemms.net, mmsemail.orange.pl, orange.fr
 * PXT New Zealand: pxt.vodafone.net.nz
+* SaskTel: sms.sasktel.com
 * Sprint: pm.sprint.com, messaging.sprintpcs.com
 * T-Mobile: tmomail.net
 * Verizon: vzwpix.com, vtext.com
