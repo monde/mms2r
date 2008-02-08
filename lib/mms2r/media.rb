@@ -12,6 +12,12 @@ require 'pathname'
 require 'tmpdir'
 require 'yaml'
 
+class TMail::MessageIdHeader #:nodoc:
+  def real_body
+    @body
+  end
+end
+
 ##
 # = Synopsis
 #
@@ -149,7 +155,11 @@ module MMS2R
     def self.create(mail)
       d = lambda{['mms2r.media',MMS2R::Media]} #sets a default to detect
       processor = MMS2R::CARRIERS.detect(d) do |n, c| 
-        domain = mail.from.first.split('@').last rescue nil
+        if mail.header['return-path'] && mail.header['return-path'].to_s.strip =~ /^<.+@([^@]+)>$/
+          domain = $1
+        else
+          domain = mail.from.first.split('@').last rescue nil
+        end
         domain == n
       end
       processor.last
@@ -174,7 +184,11 @@ module MMS2R
       @media_dir = File.join(self.class.tmp_dir(), 
                      self.class.safe_message_id(@mail.message_id))
 
-      @carrier = @mail.from.first.split('@').last rescue 'mms2r.media'
+      if mail.header['return-path'] && mail.header['return-path'].to_s.strip =~ /^<.+@([^@]+)>$/
+        @carrier = $1
+      else
+        @carrier = mail.from.first.split('@').last rescue 'mms2r.media'
+      end
       @media = {}
       @was_processed = false
       @number = nil
@@ -336,8 +350,8 @@ module MMS2R
     def ignore_media?(type,part)
       ignores = config['ignore'][type] || []
       ignore = ignores.detect{|test| filename?(part) == test}
-      ignore ||= ignores.detect{|test| filename?(part) =~ eval(test) rescue nil}
-      ignore ||= ignores.detect{|test| part.body.strip =~ eval(test) rescue nil}
+      ignore ||= ignores.detect{|test| filename?(part) =~ eval(test) if test.index('/') == 0 rescue nil}
+      ignore ||= ignores.detect{|test| part.body.strip =~ eval(test) if test.index('/') == 0 rescue nil}
       ignore ||= (part.body.strip.size == 0 ? true : nil) rescue nil
       ignore.nil? ? false : true
     end
@@ -455,12 +469,18 @@ module MMS2R
     # returns a filename declared for a part, or a default if its not defined
 
     def filename?(part)
-      part.sub_header("content-type", "name") ||
+      name = part.sub_header("content-type", "name") ||
         part.sub_header("content-disposition", "filename") ||
-        (part['content-location'] && part['content-location'].body) ||
-        "#{Time.now.to_f}.#{self.class.default_ext(self.class.part_type?(part))}"
+        (part['content-location'] && part['content-location'].to_s.strip)
+      if (name.nil? || name.empty?)
+        if part['content-id'] && part['content-id'].real_body.strip =~ /^<(.+)>$/
+          name = $1
+        else
+          name = "#{Time.now.to_f}.#{self.class.default_ext(self.class.part_type?(part))}"
+        end
+      end
+      name
     end
-
 
     ##
     # Get the temporary directory where media files are written to.

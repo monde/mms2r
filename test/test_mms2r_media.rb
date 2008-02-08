@@ -42,7 +42,8 @@ class TestMms2rMedia < Test::Unit::TestCase
          :parts => [],
          :content_type => 'text/plain',
          :sub_header => 'message.txt',
-         :body => 'a'
+         :body => 'a',
+         :header => {}
         }.except(keys)
     stub('mail', attrs)
   end
@@ -128,6 +129,7 @@ class TestMms2rMedia < Test::Unit::TestCase
 
   def test_create_with_default_processor
     mail = mock()
+    mail.expects(:header).at_least_once.returns({})
     mail.expects(:from).at_least_once.returns(['joe@unknown.example.com'])
     mms = MMS2R::Media.create(mail)
     assert_equal MMS2R::Media, mms
@@ -136,13 +138,23 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_create_with_special_processor
     MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
     mail = mock()
+    mail.expects(:header).at_least_once.returns({})
     mail.expects(:from).at_least_once.returns(['joe@null.example.com'])
+    mms = MMS2R::Media.create(mail)
+    assert_equal MMS2R::Media::NullCarrier, mms
+  end
+
+  def test_create_with_special_processor_and_return_path
+    MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
+    mail = mock()
+    mail.expects(:header).at_least_once.returns({'return-path' => '<joe@null.example.com>'})
     mms = MMS2R::Media.create(mail)
     assert_equal MMS2R::Media::NullCarrier, mms
   end
 
   def test_create_should_fail_gracefully_with_broken_from
     mail = mock()
+    mail.expects(:header).at_least_once.returns({})
     mail.expects(:from).at_least_once.returns(nil)
     assert_nothing_raised { MMS2R::Media.create(mail) }
   end

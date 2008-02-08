@@ -1,6 +1,8 @@
 == 1.2.1 / 2008-XX-XX (PENDING)
 
 * strip out common blackberry and iPhone signatures
+* handle carriers that use external mail services such as Yahoo! as the From address
+* Add support for mobile.indosat.net.id (and yahoo.co.id) - Jason Haruska
 
 == 1.2.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
 

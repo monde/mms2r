@@ -13,6 +13,7 @@ conf/mms.netcom.no.yml
 conf/mms.o2online.de.yml
 conf/mms.three.co.uk.yml
 conf/mms2r_media.yml
+conf/mobile.indosat.net.id.yml
 conf/orangemms.net.yml
 conf/pm.sprint.com.yml
 conf/pxt.vodafone.net.nz.yml
@@ -23,6 +24,9 @@ dev_tools/debug_sprint_hpricot_parsing.rb
 lib/mms2r.rb
 lib/mms2r/media.rb
 lib/mms2r/media/sprint.rb
+test/.test_mms2r_media.rb.swp
+test/.test_mobile_indosat_net_id.rb.swp
+test/.test_pm_sprint_com.rb.swp
 test/fixtures/alltel-image-01.mail
 test/fixtures/att-image-01.mail
 test/fixtures/att-image-02.mail
@@ -33,6 +37,8 @@ test/fixtures/dobson-image-01.mail
 test/fixtures/dot.jpg
 test/fixtures/helio-image-01.mail
 test/fixtures/helio-message-01.mail
+test/fixtures/indosat-image-01.mail
+test/fixtures/indosat-image-02.mail
 test/fixtures/luxgsm-image-01.mail
 test/fixtures/mmode-image-01.mail
 test/fixtures/mycingular-image-01.mail
@@ -75,6 +81,7 @@ test/test_mms_myhelio_com.rb
 test/test_mms_netcom_no.rb
 test/test_mms_o2online_de.rb
 test/test_mms_three_co_uk.rb
+test/test_mobile_indosat_net_id.rb
 test/test_orangemms_net.rb
 test/test_pm_sprint_com.rb
 test/test_pxt_vodafone_net_nz.rb

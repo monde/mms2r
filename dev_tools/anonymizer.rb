@@ -10,7 +10,7 @@ phone_number = ARGV[1]
 email_address = ARGV[2]
 
 message = File.read(message_file)
-message.gsub!(phone_number, '5551234')
+message.gsub!(phone_number, '2068675309')
 message.gsub!(email_address, 'tommy.tutone@example.com')
 
 out = File.open(message_file, "w")

@@ -180,6 +180,7 @@ class TestPmSprintCom < Test::Unit::TestCase
   def test_sprint_write_file
     require 'tempfile'
     mail = mock(:message_id => 'a')
+    mail.expects(:header).at_least_once.returns({})
     mail.expects(:from).at_least_once.returns(['joe@pm.sprint.com'])
     s = MMS2R::Media::Sprint.new(mail, :process => :lazy)
     type = 'text/plain'
