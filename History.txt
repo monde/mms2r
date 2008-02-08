@@ -1,4 +1,4 @@
-== 2.0.1 / 2008-02-07 (Professor Jerry Gustav Munndig - Child control exper)
+== 2.0.1 / 2008-02-08 (Professor Jerry Gustav Munndig - Child control expert)
 
 * strip out common blackberry and iPhone signatures
 * handle carriers that use external mail services such as Yahoo! as the From address
