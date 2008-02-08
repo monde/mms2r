@@ -1,10 +1,11 @@
-== 1.2.1 / 2008-XX-XX (PENDING)
+== 2.0.1 / 2008-02-07 (Professor Jerry Gustav Munndig - Child control exper)
 
 * strip out common blackberry and iPhone signatures
 * handle carriers that use external mail services such as Yahoo! as the From address
 * Add support for mobile.indosat.net.id (and yahoo.co.id) - Jason Haruska
+* Add support for sms.sasktel.com - Jason Haruska
 
-== 1.2.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
+== 2.0.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
 
 * added support for pxt.vodafone.net.nz PXT New Zealand
 * added support for mms.o2online.de  O2 Germany
@@ -35,7 +36,7 @@
 * ignore Sprint messages when requested content has been purged from their
   content server
 
-== 1.1.11 / 2007-10-20 (Dr. Armand Skagerakk Frederickshaven)
+== 1.1.11 / 2007-10-20 (Dr. Armand Skagerakk Frederickshaven - Mythology expert)
 
 * minor fix for attachment_fu where it might call #path on the cgi temp file
   that is returned by get_attachment
