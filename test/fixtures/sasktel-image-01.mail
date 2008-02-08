@@ -1,0 +1,1913 @@
+From 3062408361@sms.sasktel.com  Thu Jan 24 12:19:21 2008
+Return-Path: <3062408361@sms.sasktel.com>
+X-Original-To: fohnohch@snapmylife.com
+Delivered-To: catch-all@mtagd.com
+Received: from smtp02.prv.sun2.lightsurf.net (smtp02.sun2.lightsurf.net [64.157.6.51])
+	by mail.mobicious.com (Postfix) with ESMTP id 9C3851480C1
+	for <fohnohch@snapmylife.com>; Thu, 24 Jan 2008 12:19:20 -0500 (EST)
+Received: from bwa-back001 (smtp.prv.sun2.lightsurf.net [10.103.1.134])
+	by smtp02.prv.sun2.lightsurf.net (8.12.11.20060308/8.12.10) with ESMTP id m0OH9Z94010729
+	for <fohnohch@snapmylife.com>; Thu, 24 Jan 2008 09:19:20 -0800
+Date: Thu, 24 Jan 2008 09:19:20 -0800
+Message-ID: <10248944.1201195160389.JavaMail.lsadm@bwa-back001>
+From: 3062408361@sms.sasktel.com
+To: fohnohch@snapmylife.com
+Subject: A Picture/Video Message!
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_1226469_5616639.1201195160387"
+
+------=_Part_1226469_5616639.1201195160387
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_1226468_11420061.1201195160387"
+
+------=_Part_1226468_11420061.1201195160387
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You have received a New Message. http://mypictures.sasktel.com:80/share.do?invite=2EJr4pJ12hki37AYo8uk
+
+------=_Part_1226468_11420061.1201195160387
+Content-Type: text/html
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN"
+                      "http://bwa:80/dtd/TR/xhtml-basic/xhtml-basic10.dtd">
+<!-- XHTML Basic 1.0 DTD  ...................................................... -->
+<!-- file: xhtml-basic10.dtd -->
+<!-- XHTML Basic 1.0 DTD
+
+     This is XHTML Basic, a proper subset of XHTML.
+
+     The Extensible HyperText Markup Language (XHTML)
+     Copyright 1998-2005 World Wide Web Consortium
+        (Massachusetts Institute of Technology, European Research Consortium
+         for Informatics and Mathematics, Keio University).
+         All Rights Reserved.
+
+     Permission to use, copy, modify and distribute the XHTML Basic DTD
+     and its accompanying documentation for any purpose and without fee is
+     hereby granted in perpetuity, provided that the above copyright notice
+     and this paragraph appear in all copies.  The copyright holders make
+     no representation about the suitability of the DTD for any purpose.
+
+     It is provided "as is" without expressed or implied warranty.
+
+        Editors:    Murray M. Altheim <mailto:altheim@eng.sun.com>
+                    Peter Stark       <mailto:Peter.Stark@ecs.ericsson.se>
+        Revision:   $Id: xhtml-basic10.dtd,v 1.1 2006/07/05 16:29:53 matthieu Exp $ SMI
+
+-->
+<!-- This is the driver file for version 1.0 of the XHTML Basic DTD.
+
+     This DTD is identified by the PUBLIC and SYSTEM identifiers:
+
+     PUBLIC: "-//W3C//DTD XHTML Basic 1.0//EN"
+     SYSTEM: "/dtd/TR/xhtml-basic/xhtml-basic10.dtd"
+-->
+<!-- Use this URI to identify the default namespace:
+
+         "/dtd/1999/xhtml"
+
+     See the Qualified Names module for information
+     on the use of namespace prefixes in the DTD.
+-->
+<!-- Reserved for use with the XLink namespace:
+-->
+<!-- For example, if you are using XHTML Basic 1.0 directly, use
+     the public identifier in the DOCTYPE declaration, with the namespace
+     declaration on the document element to identify the default namespace:
+
+         <?xml version="1.0"?>
+         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN"
+             "/dtd/TR/xhtml-basic/xhtml-basic10.dtd" >
+         <html xmlns="/dtd/1999/xhtml"
+               xml:lang="en" >
+         ...
+         </html>
+-->
+<!-- reserved for future use with document profiles -->
+<!-- Bidirectional Text features
+     This feature-test entity is used to declare elements
+     and attributes used for bidirectional text support.
+-->
+<?doc type="doctype" role="title" { XHTML Basic 1.0 } ?>
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+<!-- ...................................................................... -->
+<!-- XHTML Modular Framework Module  ...................................... -->
+<!-- file: xhtml-framework-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-framework-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Modular Framework 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-framework-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Modular Framework
+
+     This required module instantiates the modules needed
+     to support the XHTML modularization model, including:
+
+        +  notations
+        +  datatypes
+        +  namespace-qualified names
+        +  common attributes
+        +  document model
+        +  character entities
+
+     The Intrinsic Events module is ignored by default but
+     occurs in this module because it must be instantiated
+     prior to Attributes but after Datatypes.
+-->
+<!-- ...................................................................... -->
+<!-- XHTML Notations Module  .............................................. -->
+<!-- file: xhtml-notations-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-notations-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//NOTATIONS XHTML Notations 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-notations-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Notations
+
+     defines the following notations, many of these imported from
+     other specifications and standards. When an existing FPI is
+     known, it is incorporated here.
+-->
+<!-- XML Notations ..................................... -->
+<!-- SGML and XML Notations ............................ -->
+<!-- W3C XML 1.0 Recommendation -->
+<!-- XML 1.0 CDATA -->
+<!-- SGML Formal Public Identifiers -->
+<!-- XHTML Notations ................................... -->
+<!-- Length defined for cellpadding/cellspacing -->
+<!-- nn for pixels or nn% for percentage length -->
+<!-- space-separated list of link types -->
+<!-- single or comma-separated list of media descriptors -->
+<!-- pixel, percentage, or relative -->
+<!-- one or more digits (NUMBER) -->
+<!-- integer representing length in pixels -->
+<!-- script expression -->
+<!-- textual content -->
+<!-- Imported Notations ................................ -->
+<!-- a single character from [ISO10646] -->
+<!-- a character encoding, as per [RFC2045] -->
+<!-- a space separated list of character encodings, as per [RFC2045] -->
+<!-- media type, as per [RFC2045] -->
+<!-- comma-separated list of media types, as per [RFC2045] -->
+<!-- date and time information. ISO date format -->
+<!-- a language code, as per [RFC3066] -->
+<!-- a Uniform Resource Identifier, see [URI] -->
+<!-- a space-separated list of Uniform Resource Identifiers, see [URI] -->
+<!-- end of xhtml-notations-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Datatypes Module  .............................................. -->
+<!-- file: xhtml-datatypes-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-datatypes-1.mod,v 4.1 2001/04/06 19:23:32 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Datatypes 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-datatypes-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Datatypes
+
+     defines containers for the following datatypes, many of
+     these imported from other specifications and standards.
+-->
+<!-- Length defined for cellpadding/cellspacing -->
+<!-- nn for pixels or nn% for percentage length -->
+<!-- space-separated list of link types -->
+<!-- single or comma-separated list of media descriptors -->
+<!-- pixel, percentage, or relative -->
+<!-- one or more digits (NUMBER) -->
+<!-- integer representing length in pixels -->
+<!-- script expression -->
+<!-- textual content -->
+<!-- Imported Datatypes ................................ -->
+<!-- a single character from [ISO10646] -->
+<!-- a character encoding, as per [RFC2045] -->
+<!-- a space separated list of character encodings, as per [RFC2045] -->
+<!-- Color specification using color name or sRGB (#RRGGBB) values -->
+<!-- media type, as per [RFC2045] -->
+<!-- comma-separated list of media types, as per [RFC2045] -->
+<!-- date and time information. ISO date format -->
+<!-- formal public identifier, as per [ISO8879] -->
+<!-- a language code, as per [RFC3066] or its successor -->
+<!-- a Uniform Resource Identifier, see [URI] -->
+<!-- a space-separated list of Uniform Resource Identifiers, see [URI] -->
+<!-- end of xhtml-datatypes-1.mod -->
+<!-- placeholder for XLink support module -->
+<!-- ....................................................................... -->
+<!-- XHTML Qname Module  ................................................... -->
+<!-- file: xhtml-qname-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-qname-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Qualified Names 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-qname-1.mod"
+
+     Revisions:
+#2000-10-22: added qname declarations for ruby elements
+     ....................................................................... -->
+<!-- XHTML Qname (Qualified Name) Module
+
+     This module is contained in two parts, labeled Section 'A' and 'B':
+
+       Section A declares parameter entities to support namespace-
+       qualified names, namespace declarations, and name prefixing
+       for XHTML and extensions.
+
+       Section B declares parameter entities used to provide
+       namespace-qualified names for all XHTML element types:
+
+         %applet.qname;   the xmlns-qualified name for <applet>
+         %base.qname;     the xmlns-qualified name for <base>
+         ...
+
+     XHTML extensions would create a module similar to this one.
+     Included in the XHTML distribution is a template module
+     ('template-qname-1.mod') suitable for this purpose.
+-->
+<!-- Section A: XHTML XML Namespace Framework :::::::::::::::::::: -->
+<!-- 1. Declare a %XHTML.prefixed; conditional section keyword, used
+        to activate namespace prefixing. The default value should
+        inherit '%NS.prefixed;' from the DTD driver, so that unless
+        overridden, the default behaviour follows the overall DTD
+        prefixing scheme.
+-->
+<!-- By default, we always permit XHTML attribute collections to have
+     namespace-qualified prefixes as well.
+-->
+<!-- By default, we allow the XML Schema attributes on the root
+     element.
+-->
+<!-- 2. Declare a parameter entity (eg., %XHTML.xmlns;) containing
+        the URI reference used to identify the XHTML namespace:
+-->
+<!-- 3. Declare parameter entities (eg., %XHTML.prefix;) containing
+        the default namespace prefix string(s) to use when prefixing
+        is enabled. This may be overridden in the DTD driver or the
+        internal subset of an document instance. If no default prefix
+        is desired, this may be declared as an empty string.
+
+     NOTE: As specified in [XMLNAMES], the namespace prefix serves
+     as a proxy for the URI reference, and is not in itself significant.
+-->
+<!-- 4. Declare parameter entities (eg., %XHTML.pfx;) containing the
+        colonized prefix(es) (eg., '%XHTML.prefix;:') used when
+        prefixing is active, an empty string when it is not.
+-->
+<!-- declare qualified name extensions here ............ -->
+<!-- 5. The parameter entity %XHTML.xmlns.extra.attrib; may be
+        redeclared to contain any non-XHTML namespace declaration
+        attributes for namespaces embedded in XHTML. The default
+        is an empty string.  XLink should be included here if used
+        in the DTD.
+-->
+<!-- The remainder of Section A is only followed in XHTML, not extensions. -->
+<!-- Declare a parameter entity %NS.decl.attrib; containing
+     all XML Namespace declarations used in the DTD, plus the
+     xmlns declaration for XHTML, its form dependent on whether
+     prefixing is active.
+-->
+<!-- Declare a parameter entity %XSI.prefix as a prefix to use for XML
+     Schema Instance attributes.
+-->
+<!-- Declare a parameter entity %XSI.xmlns.attrib as support for the
+     schemaLocation attribute, since this is legal throughout the DTD.
+-->
+<!-- This is a placeholder for future XLink support.
+-->
+<!-- This is the attribute for the XML Schema namespace - XHTML
+     Modularization is also expressed in XML Schema, and it needs to
+	 be legal to declare the XML Schema namespace and the
+	 schemaLocation attribute on the root element of XHTML family
+	 documents.
+-->
+<!-- Declare a parameter entity %NS.decl.attrib; containing all
+     XML namespace declaration attributes used by XHTML, including
+     a default xmlns attribute when prefixing is inactive.
+-->
+<!-- placeholder for qualified name redeclarations -->
+<!-- Section B: XHTML Qualified Names ::::::::::::::::::::::::::::: -->
+<!-- 6. This section declares parameter entities used to provide
+        namespace-qualified names for all XHTML element types.
+-->
+<!-- module:  xhtml-applet-1.mod -->
+<!-- module:  xhtml-base-1.mod -->
+<!-- module:  xhtml-bdo-1.mod -->
+<!-- module:  xhtml-blkphras-1.mod -->
+<!-- module:  xhtml-blkpres-1.mod -->
+<!-- module:  xhtml-blkstruct-1.mod -->
+<!-- module:  xhtml-edit-1.mod -->
+<!-- module:  xhtml-form-1.mod -->
+<!-- module:  xhtml-hypertext-1.mod -->
+<!-- module:  xhtml-image-1.mod -->
+<!-- module:  xhtml-inlphras-1.mod -->
+<!-- module:  xhtml-inlpres-1.mod -->
+<!-- module:  xhtml-inlstruct-1.mod -->
+<!-- module:  xhtml-ismap-1.mod (also csismap, ssismap) -->
+<!-- module:  xhtml-link-1.mod -->
+<!-- module:  xhtml-list-1.mod -->
+<!-- module:  xhtml-meta-1.mod -->
+<!-- module:  xhtml-param-1.mod -->
+<!-- module:  xhtml-object-1.mod -->
+<!-- module:  xhtml-script-1.mod -->
+<!-- module:  xhtml-struct-1.mod -->
+<!-- module:  xhtml-style-1.mod -->
+<!-- module:  xhtml-table-1.mod -->
+<!-- module:  xhtml-ruby-1.mod -->
+<!-- Provisional XHTML 2.0 Qualified Names  ...................... -->
+<!-- module:  xhtml-image-2.mod -->
+<!-- end of xhtml-qname-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Common Attributes Module  ...................................... -->
+<!-- file: xhtml-attribs-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-attribs-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Common Attributes 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-attribs-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Common Attributes
+
+     This module declares many of the common attributes for the XHTML DTD.
+     %NS.decl.attrib; is declared in the XHTML Qname module.
+
+	 Note that this file was extended in XHTML Modularization Second Edition to 
+	 include declarations of "global" versions of the attribute collections.
+	 The global versions of the attributes are for use on elements in other 
+	 namespaces.  The global version of "common" includes the xmlns declaration
+	 for the prefixed version of the xhtml namespace.  If you are only using a
+	 specific attribute or an individual attribute collection, you must also
+	 include the XHTML.xmlns.attrib.prefixed PE on your elements.
+-->
+<!-- intrinsic event attributes declared previously
+-->
+<!-- end of xhtml-attribs-1.mod -->
+<!-- placeholder for content model redeclarations -->
+<!-- instantiate the Document Model module declared in the DTD driver
+-->
+<!-- ....................................................................... -->
+<!-- XHTML Basic 1.0 Document Model Module  .................................... -->
+<!-- file: xhtml-basic10-model-1.mod
+
+     This is XHTML Basic, a proper subset of XHTML.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-basic10-model-1.mod,v 2.8 2000/11/03 14:28:25 mimasa Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Basic 1.0 Document Model 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic10-model-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- XHTML Basic Document Model
+
+     This module describes the groupings of elements that make up
+     common content models for XHTML elements.
+-->
+<!-- Optional Elements in head  .............. -->
+<!-- Miscellaneous Elements  ................. -->
+<!-- Inline Elements  ........................ -->
+<!-- Block Elements  ......................... -->
+<!-- All Content Elements  ................... -->
+<!-- declares all content except tables
+-->
+<!-- end of xhtml-basic10-model-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Character Entities Module  ......................................... -->
+<!-- file: xhtml-charent-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-charent-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Character Entities 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-charent-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Character Entities for XHTML
+
+     This module declares the set of character entities for XHTML,
+     including the Latin 1, Symbol and Special character collections.
+-->
+<!-- Portions (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Character entity set. Typical invocation:
+    <!ENTITY % HTMLlat1 PUBLIC
+       "-//W3C//ENTITIES Latin 1 for XHTML//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent">
+    %HTMLlat1;
+-->
+<!-- no-break space = non-breaking space,
+                                  U+00A0 ISOnum -->
+<!-- inverted exclamation mark, U+00A1 ISOnum -->
+<!-- cent sign, U+00A2 ISOnum -->
+<!-- pound sign, U+00A3 ISOnum -->
+<!-- currency sign, U+00A4 ISOnum -->
+<!-- yen sign = yuan sign, U+00A5 ISOnum -->
+<!-- broken bar = broken vertical bar,
+                                  U+00A6 ISOnum -->
+<!-- section sign, U+00A7 ISOnum -->
+<!-- diaeresis = spacing diaeresis,
+                                  U+00A8 ISOdia -->
+<!-- copyright sign, U+00A9 ISOnum -->
+<!-- feminine ordinal indicator, U+00AA ISOnum -->
+<!-- left-pointing double angle quotation mark
+                                  = left pointing guillemet, U+00AB ISOnum -->
+<!-- not sign = angled dash,
+                                  U+00AC ISOnum -->
+<!-- soft hyphen = discretionary hyphen,
+                                  U+00AD ISOnum -->
+<!-- registered sign = registered trade mark sign,
+                                  U+00AE ISOnum -->
+<!-- macron = spacing macron = overline
+                                  = APL overbar, U+00AF ISOdia -->
+<!-- degree sign, U+00B0 ISOnum -->
+<!-- plus-minus sign = plus-or-minus sign,
+                                  U+00B1 ISOnum -->
+<!-- superscript two = superscript digit two
+                                  = squared, U+00B2 ISOnum -->
+<!-- superscript three = superscript digit three
+                                  = cubed, U+00B3 ISOnum -->
+<!-- acute accent = spacing acute,
+                                  U+00B4 ISOdia -->
+<!-- micro sign, U+00B5 ISOnum -->
+<!-- pilcrow sign = paragraph sign,
+                                  U+00B6 ISOnum -->
+<!-- middle dot = Georgian comma
+                                  = Greek middle dot, U+00B7 ISOnum -->
+<!-- cedilla = spacing cedilla, U+00B8 ISOdia -->
+<!-- superscript one = superscript digit one,
+                                  U+00B9 ISOnum -->
+<!-- masculine ordinal indicator,
+                                  U+00BA ISOnum -->
+<!-- right-pointing double angle quotation mark
+                                  = right pointing guillemet, U+00BB ISOnum -->
+<!-- vulgar fraction one quarter
+                                  = fraction one quarter, U+00BC ISOnum -->
+<!-- vulgar fraction one half
+                                  = fraction one half, U+00BD ISOnum -->
+<!-- vulgar fraction three quarters
+                                  = fraction three quarters, U+00BE ISOnum -->
+<!-- inverted question mark
+                                  = turned question mark, U+00BF ISOnum -->
+<!-- latin capital letter A with grave
+                                  = latin capital letter A grave,
+                                  U+00C0 ISOlat1 -->
+<!-- latin capital letter A with acute,
+                                  U+00C1 ISOlat1 -->
+<!-- latin capital letter A with circumflex,
+                                  U+00C2 ISOlat1 -->
+<!-- latin capital letter A with tilde,
+                                  U+00C3 ISOlat1 -->
+<!-- latin capital letter A with diaeresis,
+                                  U+00C4 ISOlat1 -->
+<!-- latin capital letter A with ring above
+                                  = latin capital letter A ring,
+                                  U+00C5 ISOlat1 -->
+<!-- latin capital letter AE
+                                  = latin capital ligature AE,
+                                  U+00C6 ISOlat1 -->
+<!-- latin capital letter C with cedilla,
+                                  U+00C7 ISOlat1 -->
+<!-- latin capital letter E with grave,
+                                  U+00C8 ISOlat1 -->
+<!-- latin capital letter E with acute,
+                                  U+00C9 ISOlat1 -->
+<!-- latin capital letter E with circumflex,
+                                  U+00CA ISOlat1 -->
+<!-- latin capital letter E with diaeresis,
+                                  U+00CB ISOlat1 -->
+<!-- latin capital letter I with grave,
+                                  U+00CC ISOlat1 -->
+<!-- latin capital letter I with acute,
+                                  U+00CD ISOlat1 -->
+<!-- latin capital letter I with circumflex,
+                                  U+00CE ISOlat1 -->
+<!-- latin capital letter I with diaeresis,
+                                  U+00CF ISOlat1 -->
+<!-- latin capital letter ETH, U+00D0 ISOlat1 -->
+<!-- latin capital letter N with tilde,
+                                  U+00D1 ISOlat1 -->
+<!-- latin capital letter O with grave,
+                                  U+00D2 ISOlat1 -->
+<!-- latin capital letter O with acute,
+                                  U+00D3 ISOlat1 -->
+<!-- latin capital letter O with circumflex,
+                                  U+00D4 ISOlat1 -->
+<!-- latin capital letter O with tilde,
+                                  U+00D5 ISOlat1 -->
+<!-- latin capital letter O with diaeresis,
+                                  U+00D6 ISOlat1 -->
+<!-- multiplication sign, U+00D7 ISOnum -->
+<!-- latin capital letter O with stroke
+                                  = latin capital letter O slash,
+                                  U+00D8 ISOlat1 -->
+<!-- latin capital letter U with grave,
+                                  U+00D9 ISOlat1 -->
+<!-- latin capital letter U with acute,
+                                  U+00DA ISOlat1 -->
+<!-- latin capital letter U with circumflex,
+                                  U+00DB ISOlat1 -->
+<!-- latin capital letter U with diaeresis,
+                                  U+00DC ISOlat1 -->
+<!-- latin capital letter Y with acute,
+                                  U+00DD ISOlat1 -->
+<!-- latin capital letter THORN,
+                                  U+00DE ISOlat1 -->
+<!-- latin small letter sharp s = ess-zed,
+                                  U+00DF ISOlat1 -->
+<!-- latin small letter a with grave
+                                  = latin small letter a grave,
+                                  U+00E0 ISOlat1 -->
+<!-- latin small letter a with acute,
+                                  U+00E1 ISOlat1 -->
+<!-- latin small letter a with circumflex,
+                                  U+00E2 ISOlat1 -->
+<!-- latin small letter a with tilde,
+                                  U+00E3 ISOlat1 -->
+<!-- latin small letter a with diaeresis,
+                                  U+00E4 ISOlat1 -->
+<!-- latin small letter a with ring above
+                                  = latin small letter a ring,
+                                  U+00E5 ISOlat1 -->
+<!-- latin small letter ae
+                                  = latin small ligature ae, U+00E6 ISOlat1 -->
+<!-- latin small letter c with cedilla,
+                                  U+00E7 ISOlat1 -->
+<!-- latin small letter e with grave,
+                                  U+00E8 ISOlat1 -->
+<!-- latin small letter e with acute,
+                                  U+00E9 ISOlat1 -->
+<!-- latin small letter e with circumflex,
+                                  U+00EA ISOlat1 -->
+<!-- latin small letter e with diaeresis,
+                                  U+00EB ISOlat1 -->
+<!-- latin small letter i with grave,
+                                  U+00EC ISOlat1 -->
+<!-- latin small letter i with acute,
+                                  U+00ED ISOlat1 -->
+<!-- latin small letter i with circumflex,
+                                  U+00EE ISOlat1 -->
+<!-- latin small letter i with diaeresis,
+                                  U+00EF ISOlat1 -->
+<!-- latin small letter eth, U+00F0 ISOlat1 -->
+<!-- latin small letter n with tilde,
+                                  U+00F1 ISOlat1 -->
+<!-- latin small letter o with grave,
+                                  U+00F2 ISOlat1 -->
+<!-- latin small letter o with acute,
+                                  U+00F3 ISOlat1 -->
+<!-- latin small letter o with circumflex,
+                                  U+00F4 ISOlat1 -->
+<!-- latin small letter o with tilde,
+                                  U+00F5 ISOlat1 -->
+<!-- latin small letter o with diaeresis,
+                                  U+00F6 ISOlat1 -->
+<!-- division sign, U+00F7 ISOnum -->
+<!-- latin small letter o with stroke,
+                                  = latin small letter o slash,
+                                  U+00F8 ISOlat1 -->
+<!-- latin small letter u with grave,
+                                  U+00F9 ISOlat1 -->
+<!-- latin small letter u with acute,
+                                  U+00FA ISOlat1 -->
+<!-- latin small letter u with circumflex,
+                                  U+00FB ISOlat1 -->
+<!-- latin small letter u with diaeresis,
+                                  U+00FC ISOlat1 -->
+<!-- latin small letter y with acute,
+                                  U+00FD ISOlat1 -->
+<!-- latin small letter thorn,
+                                  U+00FE ISOlat1 -->
+<!-- latin small letter y with diaeresis,
+                                  U+00FF ISOlat1 -->
+<!-- Mathematical, Greek and Symbolic characters for XHTML -->
+<!-- Character entity set. Typical invocation:
+     <!ENTITY % HTMLsymbol PUBLIC
+        "-//W3C//ENTITIES Symbols for XHTML//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml-symbol.ent">
+     %HTMLsymbol;
+-->
+<!-- Portions (C) International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Relevant ISO entity set is given unless names are newly introduced.
+     New names (i.e., not in ISO 8879 list) do not clash with any
+     existing ISO 8879 entity names. ISO 10646 character numbers
+     are given for each character, in hex. values are decimal
+     conversions of the ISO 10646 values and refer to the document
+     character set. Names are Unicode names. 
+-->
+<!-- Latin Extended-B -->
+<!-- latin small letter f with hook = function
+                                    = florin, U+0192 ISOtech -->
+<!-- Greek -->
+<!-- greek capital letter alpha, U+0391 -->
+<!-- greek capital letter beta, U+0392 -->
+<!-- greek capital letter gamma,
+                                    U+0393 ISOgrk3 -->
+<!-- greek capital letter delta,
+                                    U+0394 ISOgrk3 -->
+<!-- greek capital letter epsilon, U+0395 -->
+<!-- greek capital letter zeta, U+0396 -->
+<!-- greek capital letter eta, U+0397 -->
+<!-- greek capital letter theta,
+                                    U+0398 ISOgrk3 -->
+<!-- greek capital letter iota, U+0399 -->
+<!-- greek capital letter kappa, U+039A -->
+<!-- greek capital letter lamda,
+                                    U+039B ISOgrk3 -->
+<!-- greek capital letter mu, U+039C -->
+<!-- greek capital letter nu, U+039D -->
+<!-- greek capital letter xi, U+039E ISOgrk3 -->
+<!-- greek capital letter omicron, U+039F -->
+<!-- greek capital letter pi, U+03A0 ISOgrk3 -->
+<!-- greek capital letter rho, U+03A1 -->
+<!-- there is no Sigmaf, and no U+03A2 character either -->
+<!-- greek capital letter sigma,
+                                    U+03A3 ISOgrk3 -->
+<!-- greek capital letter tau, U+03A4 -->
+<!-- greek capital letter upsilon,
+                                    U+03A5 ISOgrk3 -->
+<!-- greek capital letter phi,
+                                    U+03A6 ISOgrk3 -->
+<!-- greek capital letter chi, U+03A7 -->
+<!-- greek capital letter psi,
+                                    U+03A8 ISOgrk3 -->
+<!-- greek capital letter omega,
+                                    U+03A9 ISOgrk3 -->
+<!-- greek small letter alpha,
+                                    U+03B1 ISOgrk3 -->
+<!-- greek small letter beta, U+03B2 ISOgrk3 -->
+<!-- greek small letter gamma,
+                                    U+03B3 ISOgrk3 -->
+<!-- greek small letter delta,
+                                    U+03B4 ISOgrk3 -->
+<!-- greek small letter epsilon,
+                                    U+03B5 ISOgrk3 -->
+<!-- greek small letter zeta, U+03B6 ISOgrk3 -->
+<!-- greek small letter eta, U+03B7 ISOgrk3 -->
+<!-- greek small letter theta,
+                                    U+03B8 ISOgrk3 -->
+<!-- greek small letter iota, U+03B9 ISOgrk3 -->
+<!-- greek small letter kappa,
+                                    U+03BA ISOgrk3 -->
+<!-- greek small letter lamda,
+                                    U+03BB ISOgrk3 -->
+<!-- greek small letter mu, U+03BC ISOgrk3 -->
+<!-- greek small letter nu, U+03BD ISOgrk3 -->
+<!-- greek small letter xi, U+03BE ISOgrk3 -->
+<!-- greek small letter omicron, U+03BF NEW -->
+<!-- greek small letter pi, U+03C0 ISOgrk3 -->
+<!-- greek small letter rho, U+03C1 ISOgrk3 -->
+<!-- greek small letter final sigma,
+                                    U+03C2 ISOgrk3 -->
+<!-- greek small letter sigma,
+                                    U+03C3 ISOgrk3 -->
+<!-- greek small letter tau, U+03C4 ISOgrk3 -->
+<!-- greek small letter upsilon,
+                                    U+03C5 ISOgrk3 -->
+<!-- greek small letter phi, U+03C6 ISOgrk3 -->
+<!-- greek small letter chi, U+03C7 ISOgrk3 -->
+<!-- greek small letter psi, U+03C8 ISOgrk3 -->
+<!-- greek small letter omega,
+                                    U+03C9 ISOgrk3 -->
+<!-- greek theta symbol,
+                                    U+03D1 NEW -->
+<!-- greek upsilon with hook symbol,
+                                    U+03D2 NEW -->
+<!-- greek pi symbol, U+03D6 ISOgrk3 -->
+<!-- General Punctuation -->
+<!-- bullet = black small circle,
+                                     U+2022 ISOpub  -->
+<!-- bullet is NOT the same as bullet operator, U+2219 -->
+<!-- horizontal ellipsis = three dot leader,
+                                     U+2026 ISOpub  -->
+<!-- prime = minutes = feet, U+2032 ISOtech -->
+<!-- double prime = seconds = inches,
+                                     U+2033 ISOtech -->
+<!-- overline = spacing overscore,
+                                     U+203E NEW -->
+<!-- fraction slash, U+2044 NEW -->
+<!-- Letterlike Symbols -->
+<!-- script capital P = power set
+                                     = Weierstrass p, U+2118 ISOamso -->
+<!-- black-letter capital I = imaginary part,
+                                     U+2111 ISOamso -->
+<!-- black-letter capital R = real part symbol,
+                                     U+211C ISOamso -->
+<!-- trade mark sign, U+2122 ISOnum -->
+<!-- alef symbol = first transfinite cardinal,
+                                     U+2135 NEW -->
+<!-- alef symbol is NOT the same as hebrew letter alef,
+     U+05D0 although the same glyph could be used to depict both characters -->
+<!-- Arrows -->
+<!-- leftwards arrow, U+2190 ISOnum -->
+<!-- upwards arrow, U+2191 ISOnum-->
+<!-- rightwards arrow, U+2192 ISOnum -->
+<!-- downwards arrow, U+2193 ISOnum -->
+<!-- left right arrow, U+2194 ISOamsa -->
+<!-- downwards arrow with corner leftwards
+                                     = carriage return, U+21B5 NEW -->
+<!-- leftwards double arrow, U+21D0 ISOtech -->
+<!-- Unicode does not say that lArr is the same as the 'is implied by' arrow
+    but also does not have any other character for that function. So lArr can
+    be used for 'is implied by' as ISOtech suggests -->
+<!-- upwards double arrow, U+21D1 ISOamsa -->
+<!-- rightwards double arrow,
+                                     U+21D2 ISOtech -->
+<!-- Unicode does not say this is the 'implies' character but does not have 
+     another character with this function so rArr can be used for 'implies'
+     as ISOtech suggests -->
+<!-- downwards double arrow, U+21D3 ISOamsa -->
+<!-- left right double arrow,
+                                     U+21D4 ISOamsa -->
+<!-- Mathematical Operators -->
+<!-- for all, U+2200 ISOtech -->
+<!-- partial differential, U+2202 ISOtech  -->
+<!-- there exists, U+2203 ISOtech -->
+<!-- empty set = null set, U+2205 ISOamso -->
+<!-- nabla = backward difference,
+                                     U+2207 ISOtech -->
+<!-- element of, U+2208 ISOtech -->
+<!-- not an element of, U+2209 ISOtech -->
+<!-- contains as member, U+220B ISOtech -->
+<!-- n-ary product = product sign,
+                                     U+220F ISOamsb -->
+<!-- prod is NOT the same character as U+03A0 'greek capital letter pi' though
+     the same glyph might be used for both -->
+<!-- n-ary summation, U+2211 ISOamsb -->
+<!-- sum is NOT the same character as U+03A3 'greek capital letter sigma'
+     though the same glyph might be used for both -->
+<!-- minus sign, U+2212 ISOtech -->
+<!-- asterisk operator, U+2217 ISOtech -->
+<!-- square root = radical sign,
+                                     U+221A ISOtech -->
+<!-- proportional to, U+221D ISOtech -->
+<!-- infinity, U+221E ISOtech -->
+<!-- angle, U+2220 ISOamso -->
+<!-- logical and = wedge, U+2227 ISOtech -->
+<!-- logical or = vee, U+2228 ISOtech -->
+<!-- intersection = cap, U+2229 ISOtech -->
+<!-- union = cup, U+222A ISOtech -->
+<!-- integral, U+222B ISOtech -->
+<!-- therefore, U+2234 ISOtech -->
+<!-- tilde operator = varies with = similar to,
+                                     U+223C ISOtech -->
+<!-- tilde operator is NOT the same character as the tilde, U+007E,
+     although the same glyph might be used to represent both  -->
+<!-- approximately equal to, U+2245 ISOtech -->
+<!-- almost equal to = asymptotic to,
+                                     U+2248 ISOamsr -->
+<!-- not equal to, U+2260 ISOtech -->
+<!-- identical to, U+2261 ISOtech -->
+<!-- less-than or equal to, U+2264 ISOtech -->
+<!-- greater-than or equal to,
+                                     U+2265 ISOtech -->
+<!-- subset of, U+2282 ISOtech -->
+<!-- superset of, U+2283 ISOtech -->
+<!-- not a subset of, U+2284 ISOamsn -->
+<!-- subset of or equal to, U+2286 ISOtech -->
+<!-- superset of or equal to,
+                                     U+2287 ISOtech -->
+<!-- circled plus = direct sum,
+                                     U+2295 ISOamsb -->
+<!-- circled times = vector product,
+                                     U+2297 ISOamsb -->
+<!-- up tack = orthogonal to = perpendicular,
+                                     U+22A5 ISOtech -->
+<!-- dot operator, U+22C5 ISOamsb -->
+<!-- dot operator is NOT the same character as U+00B7 middle dot -->
+<!-- Miscellaneous Technical -->
+<!-- left ceiling = APL upstile,
+                                     U+2308 ISOamsc  -->
+<!-- right ceiling, U+2309 ISOamsc  -->
+<!-- left floor = APL downstile,
+                                     U+230A ISOamsc  -->
+<!-- right floor, U+230B ISOamsc  -->
+<!-- left-pointing angle bracket = bra,
+                                     U+2329 ISOtech -->
+<!-- lang is NOT the same character as U+003C 'less than sign' 
+     or U+2039 'single left-pointing angle quotation mark' -->
+<!-- right-pointing angle bracket = ket,
+                                     U+232A ISOtech -->
+<!-- rang is NOT the same character as U+003E 'greater than sign' 
+     or U+203A 'single right-pointing angle quotation mark' -->
+<!-- Geometric Shapes -->
+<!-- lozenge, U+25CA ISOpub -->
+<!-- Miscellaneous Symbols -->
+<!-- black spade suit, U+2660 ISOpub -->
+<!-- black here seems to mean filled as opposed to hollow -->
+<!-- black club suit = shamrock,
+                                     U+2663 ISOpub -->
+<!-- black heart suit = valentine,
+                                     U+2665 ISOpub -->
+<!-- black diamond suit, U+2666 ISOpub -->
+<!-- Special characters for XHTML -->
+<!-- Character entity set. Typical invocation:
+     <!ENTITY % HTMLspecial PUBLIC
+        "-//W3C//ENTITIES Special for XHTML//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml-special.ent">
+     %HTMLspecial;
+-->
+<!-- Portions (C) International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Relevant ISO entity set is given unless names are newly introduced.
+     New names (i.e., not in ISO 8879 list) do not clash with any
+     existing ISO 8879 entity names. ISO 10646 character numbers
+     are given for each character, in hex. values are decimal
+     conversions of the ISO 10646 values and refer to the document
+     character set. Names are Unicode names. 
+-->
+<!-- C0 Controls and Basic Latin -->
+<!--  quotation mark, U+0022 ISOnum -->
+<!--  ampersand, U+0026 ISOnum -->
+<!--  less-than sign, U+003C ISOnum -->
+<!--  greater-than sign, U+003E ISOnum -->
+<!--  apostrophe = APL quote, U+0027 ISOnum -->
+<!-- Latin Extended-A -->
+<!--  latin capital ligature OE,
+                                    U+0152 ISOlat2 -->
+<!--  latin small ligature oe, U+0153 ISOlat2 -->
+<!-- ligature is a misnomer, this is a separate character in some languages -->
+<!--  latin capital letter S with caron,
+                                    U+0160 ISOlat2 -->
+<!--  latin small letter s with caron,
+                                    U+0161 ISOlat2 -->
+<!--  latin capital letter Y with diaeresis,
+                                    U+0178 ISOlat2 -->
+<!-- Spacing Modifier Letters -->
+<!--  modifier letter circumflex accent,
+                                    U+02C6 ISOpub -->
+<!--  small tilde, U+02DC ISOdia -->
+<!-- General Punctuation -->
+<!-- en space, U+2002 ISOpub -->
+<!-- em space, U+2003 ISOpub -->
+<!-- thin space, U+2009 ISOpub -->
+<!-- zero width non-joiner,
+                                    U+200C NEW RFC 2070 -->
+<!-- zero width joiner, U+200D NEW RFC 2070 -->
+<!-- left-to-right mark, U+200E NEW RFC 2070 -->
+<!-- right-to-left mark, U+200F NEW RFC 2070 -->
+<!-- en dash, U+2013 ISOpub -->
+<!-- em dash, U+2014 ISOpub -->
+<!-- left single quotation mark,
+                                    U+2018 ISOnum -->
+<!-- right single quotation mark,
+                                    U+2019 ISOnum -->
+<!-- single low-9 quotation mark, U+201A NEW -->
+<!-- left double quotation mark,
+                                    U+201C ISOnum -->
+<!-- right double quotation mark,
+                                    U+201D ISOnum -->
+<!-- double low-9 quotation mark, U+201E NEW -->
+<!-- dagger, U+2020 ISOpub -->
+<!-- double dagger, U+2021 ISOpub -->
+<!-- per mille sign, U+2030 ISOtech -->
+<!-- single left-pointing angle quotation mark,
+                                    U+2039 ISO proposed -->
+<!-- lsaquo is proposed but not yet ISO standardized -->
+<!-- single right-pointing angle quotation mark,
+                                    U+203A ISO proposed -->
+<!-- rsaquo is proposed but not yet ISO standardized -->
+<!-- Currency Symbols -->
+<!--  euro sign, U+20AC NEW -->
+<!-- end of xhtml-charent-1.mod -->
+<!-- end of xhtml-framework-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Text Module  ................................................... -->
+<!-- file: xhtml-text-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-text-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Text 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-text-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Textual Content
+
+     The Text module includes declarations for all core
+     text container elements and their attributes.
+-->
+<!-- ...................................................................... -->
+<!-- XHTML Inline Structural Module  ...................................... -->
+<!-- file: xhtml-inlstruct-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-inlstruct-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Inline Structural 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-inlstruct-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Inline Structural
+
+        br, span
+
+     This module declares the elements and their attributes
+     used to support inline-level structural markup.
+-->
+<!-- br: forced line break ............................. -->
+<!-- end of br.element -->
+<!-- end of br.attlist -->
+<!-- span: generic inline container .................... -->
+<!-- end of span.element -->
+<!-- end of span.attlist -->
+<!-- end of xhtml-inlstruct-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Inline Phrasal Module  ......................................... -->
+<!-- file: xhtml-inlphras-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-inlphras-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Inline Phrasal 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-inlphras-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Inline Phrasal
+
+        abbr, acronym, cite, code, dfn, em, kbd, q, samp, strong, var
+
+     This module declares the elements and their attributes used to
+     support inline-level phrasal markup.
+-->
+<!-- end of abbr.element -->
+<!-- end of abbr.attlist -->
+<!-- end of acronym.element -->
+<!-- end of acronym.attlist -->
+<!-- end of cite.element -->
+<!-- end of cite.attlist -->
+<!-- end of code.element -->
+<!-- end of code.attlist -->
+<!-- end of dfn.element -->
+<!-- end of dfn.attlist -->
+<!-- end of em.element -->
+<!-- end of em.attlist -->
+<!-- end of kbd.element -->
+<!-- end of kbd.attlist -->
+<!-- end of q.element -->
+<!-- end of q.attlist -->
+<!-- end of samp.element -->
+<!-- end of samp.attlist -->
+<!-- end of strong.element -->
+<!-- end of strong.attlist -->
+<!-- end of var.element -->
+<!-- end of var.attlist -->
+<!-- end of xhtml-inlphras-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Block Structural Module  ....................................... -->
+<!-- file: xhtml-blkstruct-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-blkstruct-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Block Structural 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-blkstruct-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Block Structural
+
+        div, p
+
+     This module declares the elements and their attributes used to
+     support block-level structural markup.
+-->
+<!-- end of div.element -->
+<!-- end of div.attlist -->
+<!-- end of p.element -->
+<!-- end of p.attlist -->
+<!-- end of xhtml-blkstruct-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Block Phrasal Module  .......................................... -->
+<!-- file: xhtml-blkphras-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-blkphras-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Block Phrasal 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-blkphras-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Block Phrasal
+
+        address, blockquote, pre, h1, h2, h3, h4, h5, h6
+
+     This module declares the elements and their attributes used to
+     support block-level phrasal markup.
+-->
+<!-- end of address.element -->
+<!-- end of address.attlist -->
+<!-- end of blockquote.element -->
+<!-- end of blockquote.attlist -->
+<!-- end of pre.element -->
+<!-- end of pre.attlist -->
+<!-- ...................  Heading Elements  ................... -->
+<!-- end of h1.element -->
+<!-- end of h1.attlist -->
+<!-- end of h2.element -->
+<!-- end of h2.attlist -->
+<!-- end of h3.element -->
+<!-- end of h3.attlist -->
+<!-- end of h4.element -->
+<!-- end of h4.attlist -->
+<!-- end of h5.element -->
+<!-- end of h5.attlist -->
+<!-- end of h6.element -->
+<!-- end of h6.attlist -->
+<!-- end of xhtml-blkphras-1.mod -->
+<!-- end of xhtml-text-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Hypertext Module  .............................................. -->
+<!-- file: xhtml-hypertext-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-hypertext-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Hypertext 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-hypertext-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Hypertext
+
+        a
+
+     This module declares the anchor ('a') element type, which
+     defines the source of a hypertext link. The destination
+     (or link 'target') is identified via its 'id' attribute
+     rather than the 'name' attribute as was used in HTML.
+-->
+<!-- ............  Anchor Element  ............ -->
+<!-- end of a.element -->
+<!-- end of a.attlist -->
+<!-- end of xhtml-hypertext-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Lists Module  .................................................. -->
+<!-- file: xhtml-list-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-list-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Lists 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-list-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Lists
+
+        dl, dt, dd, ol, ul, li
+
+     This module declares the list-oriented element types
+     and their attributes.
+-->
+<!-- dl: Definition List ............................... -->
+<!-- end of dl.element -->
+<!-- end of dl.attlist -->
+<!-- dt: Definition Term ............................... -->
+<!-- end of dt.element -->
+<!-- end of dt.attlist -->
+<!-- dd: Definition Description ........................ -->
+<!-- end of dd.element -->
+<!-- end of dd.attlist -->
+<!-- ol: Ordered List (numbered styles) ................ -->
+<!-- end of ol.element -->
+<!-- end of ol.attlist -->
+<!-- ul: Unordered List (bullet styles) ................ -->
+<!-- end of ul.element -->
+<!-- end of ul.attlist -->
+<!-- li: List Item ..................................... -->
+<!-- end of li.element -->
+<!-- end of li.attlist -->
+<!-- end of xhtml-list-1.mod -->
+<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+<!-- Image Module  ............................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Images Module  ................................................. -->
+<!-- file: xhtml-image-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Rovision: $Id: xhtml-image-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Images 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-image-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Images
+
+        img
+
+     This module provides markup to support basic image embedding.
+-->
+<!-- To avoid problems with text-only UAs as well as to make
+     image content understandable and navigable to users of
+     non-visual UAs, you need to provide a description with
+     the 'alt' attribute, and avoid server-side image maps.
+-->
+<!-- end of img.element -->
+<!-- end of img.attlist -->
+<!-- end of xhtml-image-1.mod -->
+<!-- Tables Module ............................................... -->
+<!-- ....................................................................... -->
+<!-- XHTML Basic Table Module  ............................................. -->
+<!-- file: xhtml-basic-table-1.mod
+
+     This is XHTML Basic, a proper subset of XHTML.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-basic-table-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Basic Tables 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic-table-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Basic Tables
+
+        table, caption, tr, th, td
+
+     This table module declares elements and attributes defining
+     a table model based fundamentally on features found in the
+     widely-deployed HTML 3.2 table model.  While this module
+     mimics the content model and table attributes of HTML 3.2
+     tables, the element types declared herein also includes all
+     HTML 4 common and most of the HTML 4 table attributes.
+-->
+<!-- declare qualified element type names:
+-->
+<!-- horizontal alignment attributes for cell contents
+-->
+<!-- vertical alignment attributes for cell contents
+-->
+<!-- scope is simpler than axes attribute for common tables
+-->
+<!-- table: Table Element .............................. -->
+<!-- end of table.element -->
+<!-- end of table.attlist -->
+<!-- caption: Table Caption ............................ -->
+<!-- end of caption.element -->
+<!-- end of caption.attlist -->
+<!-- tr: Table Row ..................................... -->
+<!-- end of tr.element -->
+<!-- end of tr.attlist -->
+<!-- th: Table Header Cell ............................. -->
+<!-- th is for header cells, td for data,
+     but for cells acting as both use td
+-->
+<!-- end of th.element -->
+<!-- end of th.attlist -->
+<!-- td: Table Data Cell ............................... -->
+<!-- end of td.element -->
+<!-- end of td.attlist -->
+<!-- end of xhtml-basic-table-1.mod -->
+<!-- Forms Module  ............................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Simplified Forms Module  ....................................... -->
+<!-- file: xhtml-basic-form-1.mod
+
+     This is XHTML Basic, a proper subset of XHTML.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-basic-form-1.mod,v 4.1 2001/04/05 06:57:40 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Basic Forms 1.0//EN"  
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic-form-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Basic Forms
+
+     This forms module is based on the HTML 3.2 forms model, with
+     the WAI-requested addition of the label element. While this 
+     module essentially mimics the content model and attributes of 
+     HTML 3.2 forms, the element types declared herein also include
+     all HTML 4 common attributes.
+
+        form, label, input, select, option, textarea
+-->
+<!-- declare qualified element type names:
+-->
+<!-- %BlkNoForm.mix; includes all non-form block elements,
+     plus %Misc.class;
+-->
+<!-- form: Form Element ................................ -->
+<!-- end of form.element -->
+<!-- end of form.attlist -->
+<!-- label: Form Field Label Text ...................... -->
+<!-- Each label must not contain more than ONE field
+-->
+<!-- end of label.element -->
+<!-- end of label.attlist -->
+<!-- input: Form Control ............................... -->
+<!-- end of input.element -->
+<!-- Basic Forms removes 'button', 'image' and 'file' input types.
+-->
+<!-- attribute name required for all but submit & reset
+-->
+<!-- end of input.attlist -->
+<!-- select: Option Selector ........................... -->
+<!-- end of select.element -->
+<!-- end of select.attlist -->
+<!-- option: Selectable Choice ......................... -->
+<!-- end of option.element -->
+<!-- end of option.attlist -->
+<!-- textarea: Multi-Line Text Field ................... -->
+<!-- end of textarea.element -->
+<!-- end of textarea.attlist -->
+<!-- end of xhtml-basic-form-1.mod -->
+<!-- Link Element Module  ........................................ -->
+<!-- ...................................................................... -->
+<!-- XHTML Link Element Module  ........................................... -->
+<!-- file: xhtml-link-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-link-1.mod,v 4.1 2001/04/05 06:57:40 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Link Element 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-link-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Link element
+
+        link
+
+     This module declares the link element type and its attributes,
+     which could (in principle) be used to define document-level links
+     to external resources such as:
+
+     a) for document specific toolbars/menus, e.g. start, contents,
+        previous, next, index, end, help
+     b) to link to a separate style sheet (rel="stylesheet")
+     c) to make a link to a script (rel="script")
+     d) by style sheets to control how collections of html nodes are
+        rendered into printed documents
+     e) to make a link to a printable version of this document
+        e.g. a postscript or pdf version (rel="alternate" media="print")
+-->
+<!-- link: Media-Independent Link ...................... -->
+<!-- end of link.element -->
+<!-- end of link.attlist -->
+<!-- end of xhtml-link-1.mod -->
+<!-- Document Metainformation Module  ............................ -->
+<!-- ...................................................................... -->
+<!-- XHTML Document Metainformation Module  ............................... -->
+<!-- file: xhtml-meta-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-meta-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Metainformation 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-meta-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Meta Information
+
+        meta
+
+     This module declares the meta element type and its attributes,
+     used to provide declarative document metainformation.
+-->
+<!-- meta: Generic Metainformation ..................... -->
+<!-- end of meta.element -->
+<!-- end of meta.attlist -->
+<!-- end of xhtml-meta-1.mod -->
+<!-- Base Element Module  ........................................ -->
+<!-- ...................................................................... -->
+<!-- XHTML Base Element Module  ........................................... -->
+<!-- file: xhtml-base-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-base-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Base Element 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-base-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Base element
+
+        base
+
+     This module declares the base element type and its attributes,
+     used to define a base URI against which relative URIs in the
+     document will be resolved.
+
+     Note that this module also redeclares the content model for
+     the head element to include the base element.
+-->
+<!-- base: Document Base URI ........................... -->
+<!-- end of base.element -->
+<!-- end of base.attlist -->
+<!-- end of xhtml-base-1.mod -->
+<!-- Param Element Module  ....................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Param Element Module  ..................................... -->
+<!-- file: xhtml-param-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-param-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Param Element 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-param-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Parameters for Java Applets and Embedded Objects
+
+        param
+
+     This module provides declarations for the param element,
+     used to provide named property values for the applet
+     and object elements.
+-->
+<!-- param: Named Property Value ....................... -->
+<!-- end of param.element -->
+<!-- end of param.attlist -->
+<!-- end of xhtml-param-1.mod -->
+<!-- Embedded Object Module  ..................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Embedded Object Module  ........................................ -->
+<!-- file: xhtml-object-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-object-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Embedded Object 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-object-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Embedded Objects
+
+        object
+
+     This module declares the object element type and its attributes, used
+     to embed external objects as part of XHTML pages. In the document,
+     place param elements prior to other content within the object element.
+
+     Note that use of this module requires instantiation of the Param
+     Element Module.
+-->
+<!-- object: Generic Embedded Object ................... -->
+<!-- end of object.element -->
+<!-- end of object.attlist -->
+<!-- end of xhtml-object-1.mod -->
+<!-- Target Attribute Module  .................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Target Module  ................................................. -->
+<!-- file: xhtml-target-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-target-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Target 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-target-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Target 
+
+        target
+
+     This module declares the 'target' attribute used for opening windows
+-->
+<!-- render in this frame -->
+<!-- add 'target' attribute to 'a' element -->
+<!-- add 'target' attribute to 'area' element -->
+<!-- add 'target' attribute to 'link' element -->
+<!-- add 'target' attribute to 'form' element -->
+<!-- add 'target' attribute to 'base' element -->
+<!-- end of xhtml-target-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Structure Module  .............................................. -->
+<!-- file: xhtml-struct-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-struct-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Document Structure 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-struct-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Document Structure
+
+        title, head, body, html
+
+     The Structure Module defines the major structural elements and
+     their attributes.
+
+     Note that the content model of the head element type is redeclared
+     when the Base Module is included in the DTD.
+
+     The parameter entity containing the XML namespace URI value used
+     for XHTML is '%XHTML.xmlns;', defined in the Qualified Names module.
+-->
+<!-- title: Document Title ............................. -->
+<!-- The title element is not considered part of the flow of text.
+     It should be displayed, for example as the page header or
+     window title. Exactly one title is required per document.
+-->
+<!-- end of title.element -->
+<!-- end of title.attlist -->
+<!-- head: Document Head ............................... -->
+<!-- end of head.element -->
+<!-- reserved for future use with document profiles
+-->
+<!-- end of head.attlist -->
+<!-- body: Document Body ............................... -->
+<!-- end of body.element -->
+<!-- end of body.attlist -->
+<!-- html: XHTML Document Element ...................... -->
+<!-- end of html.element -->
+<!-- define a parameter for the XSI schemaLocation attribute -->
+<!-- version attribute value defined in driver
+-->
+<!-- schemaLocation attribute from XML Schema
+-->
+<!-- see the Qualified Names module for information
+     on how to extend XHTML using XML namespaces
+-->
+<!-- end of html.attlist -->
+<!-- end of xhtml-struct-1.mod -->
+<!-- end of XHTML Basic 1.0 DTD  ........................................... -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+    body  Verdana, Arial, sans-serif; font-size: 8pt 
+    td  Verdana, Arial, sans-serif; font-size: 8pt 
+  </style>
+  </head>
+  <body leftmargin="0" topmargin="0">
+    <table border="0" cellpadding="0" cellspacing="0" width="760">
+      <tr>
+        <td style="height:70px;"><img align="left" border="0"
+            height="75px" src="cid:A0.271741902755412">
+        </td></tr>
+      <tr>
+        <td>&nbsp;</td></tr>
+      <tr>
+        <td><table align="center" border="0" cellpadding="0"
+            cellspacing="0" width="100%">
+            <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td rowspan="3"
+                valign="middle" width="300"><p>
+                  <a
+                      href="http://mypictures.sasktel.com:80/shareMessage.do?invite=2EJr4pJ12hki37AYo8uk"><img
+                      border="0" src="cid:A1.8463391017738573">
+                  </a></p>
+              </td><td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr align="left" valign="top">
+              <td>&nbsp;</td><td><p> You have received a message from
+                  3062408361 </p>
+                <p>Lil'ndawg</p>
+                <p>
+                  <img src="cid:A2.7959841022938083">
+                  <a
+                    href="http://mypictures.sasktel.com:80/shareMessage.do?invite=2EJr4pJ12hki37AYo8uk">View Message</a>
+                </p>
+              </td></tr>
+            <tr>
+              <td colspan="3">&nbsp;</td></tr>
+          </table>
+        </td></tr>
+      <tr>
+        <td bgcolor="#FFFFFF" colspan="2"><br>
+        </td></tr>
+      <tr>
+        <td align="center" bgcolor="#007EC3" colspan="2" width="760"><br>
+          <font color="white">         Send and Receive Pictures through
+            Sasktel.<br>         For more information go to <a
+              href="http://www.sasktel.com" style="color: #CCCCCC">www.sasktel.com</a>.<br>
+          </font>
+          <br>
+        </td></tr>
+      <tr>
+        <td bgcolor="#FFFFFF" colspan="2"><br>
+        </td></tr>
+      <tr>
+        <td align="center" bgcolor="#007EC3" colspan="2" width="760"><br>
+          <font color="white">         Copyright &copy; 2007 Sasktel and
+            its licensors. All Rights Reserved.<br>
+          </font>
+          <br>
+        </td></tr>
+    </table>
+  </body>
+</html>
+
+------=_Part_1226468_11420061.1201195160387--
+
+------=_Part_1226469_5616639.1201195160387
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A0.271741902755412>
+
+R0lGODlh+AJQAPcAACgkJfL9/ZTH6m2oz/n09QN/x/78/QN+wfv5+lOk1AKAvdnV1qqnqJqWl/r3
++FyZsoa83v39+7q2t8nGxwCH0fv//wCAx/Lu7mu030ebzYmFhgt5xP37/Nf3/gB/ykGLqAN/v/z9
+/vj/+Nvs+vv77LLh9WllZllVVqTU8/7/+nt3eP799PP89O3y8uz9/Tg1NvXs+Ojm8khERf/7+gGA
+wvz6/RmKxf3++Pb19uL9/tPn75XE3KTC1v3+8PTx8vz8/ACBv+n0+gGCzlyu3/j59/759fT3/hV5
+xxsXGMjb8Onv7w6CwxqJt+Xi4yiKxgl6vvf5/Oz+9TORzziU0ieWyMf2/f/8+vr89snm/DaNvu71
+6gJ+xAd6u/r34v3v4tjy5xV9u+jk5ezp6rHK6d/b3HDC8wV2xv7z7/Hw8CAcHfbz9AJ2vKnU563X
++v375P36/wp1rvb18qbJ7aCtvvb//wN80f37/u7r7P/7/AWBxgR9wiiL1/n+8QR9xPz++wB8zv/6
+//789y0pKgmBvvj8/v/58PD66AR5tfv//Bd4qp+bnM/LzI+LjCya0bCsrf/6+AB+xxuBrguCyQJz
+swl0vPT16fn++7rb4fv8/wB6vQKEt7+7vH98fV9bXPn4809LTO/s7Sx4nPj8++Pt8Ovp6uD0/gJ1
+zQGHvgZ+ugGDwP/2+gx8sgeCwW9rbDKN0AF6wQt9zQh+v/f++QR/zf//9/z79tTQ0T87PBJ0xfP1
+9gd4v8TAwQF9vP75///5/AOP2CQgIfz2/wB5yQB5uwd8yAB7zVRQUQV6xjMvMFZ0cqqomf7+/v3/
+/f/9/vz6+//+///+/P///f7+/Pz4+f35+v7//wOAw/v7+YSAgevm55SRkkRAQQB+w2RgYfv9+rWx
+sujz8f/+/XRwce7489/n6+Pf4MTb3w2H0gB8yQN8xAJ8yQKLyQCHrc/t4QB8wtz78Ad8wgCGxwGC
+xiaCrJG+u//49gBvr6ShohJxrheS2AhvsvDz9QmHwAqHtv///wB/xCH5BAAAAAAALAAAAAD4AlAA
+AAj/AJUJHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmJyVKqXMmypcuX
+MGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qc4CUKNKnUq1qtWrWLNq3cq1q9evYMOK
+HUu2rNmzaNOqXcu2rdu3cOPKnUs3LI27ePPq3cu3r9+/gAMLHky4sOHDiBMrXsy4sePHkCNLnky5
+suXLmDNr3oz4gOfPoEOLHk26tOnTqFOrXs26tevXsGPLnk27tu3buHPr3s27t+/fwIMLf+2huPHj
+yJMrX868ufPn0KNLn069uvXr2LNr3869u/fv4MOL/x9Pvrz58+jTWwfBvr379/Djy59Pv779+/jz
+69/Pv7///wAGKOCABBZo4IEIJqjgggw26OCDEPZnwYQUVmjhhRhmqOGGHHbo4YcghijiiCSWaOKJ
+KKao4oostujiizDGKOOMNNZo440k/qPjjjz26OOPQAYp5JBEFmnkkUgmqeSSTDbp5JNQRinllFRW
+aeWVWGap5ZZcdunll2CGKeaYZJZp5plopqnmmmy26eabcMYp55x01mnnnXjmqeeefPbp55+ABiro
+oIQWauihiCaq6KKMNuroo5BGKumklFZq6aWYZqrpppx26umnoIYq6qikltroFqimquqqrLbq6qur
+cv8jKzfuuAPrrbjmimofvPbKq67A3tqjrP9swQ1e3KRzjDt55LGFPP+4A62p1FZr7bVPcuaXPNx2
+y622hVkj7rjiWjbrsXdZc0AfxKjjgQXybFErN1vkUYA72Oar7777AuHvvwAHLPDABBf8bywIJ4yw
+wQw37LC/qUQsccQPV2wxEAoosMEGZpiRDjepnCIEJBbkwY01eQzD78ost+zpxjDHLPPMNNdsc8w8
+envzzjz3vLEuQAcNdF8+Fw3zK6/oobTSedRRQCr99LPEEbhYAIk8Jh+QBysud+31145mLPbYZJdt
+9tloj7302nqk7fbbcGcsX81x1y32EnjDo8saujz/wY4m3Ahjihm6oFJyHjQckEkmB4Dt+OOQ+0nB
+5JRXbvnlmGeuOeV/dO5555uHLvrokwth+ummk6566MXU4frrs3gghCTwvOLOOr9kkscBzJqcR+TA
+By+8m1wUb/zxyCev/PLMGz/I89Aj3Pz01FdfPCrYZ4/92dZ3b/wp4IefigJHbPAE9rHAQwwqg7DS
+rDX/WDD8/PTX7yU0+Oev//789+////kLgAAHKEAAGvCACMSfKBbIwAUS4oEQfGACJ5g/TEABCphY
+Bib2cYck7CABNjhFPP5gikNwYQmSqBW87MfCFrrQSRGIoQxjKI0aSiMCNYxGNK6Bw2hI4xo6BGIO
+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
+------=_Part_1226469_5616639.1201195160387
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <A1.8463391017738573>
+
+/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEP
+ERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAD6APoDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7Looo
+oAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig
+AooooAKKiFxbnpPF/wB9ilE8J6TR/wDfQouTzR7klFMEsR6SJ/30KXzI/wC+v50XHzLuOopu9P76
+/nS70/vL+dFwuhaKTcv94fnRuX+8PzoC6FopNy/3h+dG5fUfnQMWik3L6j86Ny+o/OgBaKTcvqPz
+o3L6j86AFopNy+o/OjcvqPzoAWik3L6j86Ny+o/OgBaKTcvqPzo3L6j86AFopNy+o/OjcvqPzoAW
+ik3L6j86Ny+o/OgBaKTcvqPzo3L6j86AFopNy/3h+dG5f7w/OgBaKTcv94fnSb0/vr+dAuZDqKTe
+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
+------=_Part_1226469_5616639.1201195160387
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A2.7959841022938083>
+
+R0lGODlhBwAKAIABAJCatf///yH5BAEAAAEALAAAAAAHAAoAAAINjG+AqQjvXgsyrrnyKgA7
+------=_Part_1226469_5616639.1201195160387--
+
