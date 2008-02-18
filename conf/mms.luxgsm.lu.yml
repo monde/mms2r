@@ -6,3 +6,8 @@ ignore:
    - /You have received a picture message from phone number/im
   text/plain: 
    - /You have received a picture message from mobile phone number/im
+number:
+  - from
+  - /^([^\s]+)\s.*/
+  - "\1"
+

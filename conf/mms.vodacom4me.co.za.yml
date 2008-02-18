@@ -6,4 +6,8 @@ transform:
   text/plain:
   - - /\s*This is an MMS message brought to you by Vodacom\. Click here to view online presentation http:\/\/mms.vodacom4me.co.za\/.*$/
     - ""
-    
+number:
+  - from
+  - /^([^\s]+)\s.*/
+  - "\1"
+

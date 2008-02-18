@@ -7,3 +7,8 @@ ignore:
    - /I-Memova - Email Praktis. Cara Taktis. Powered by IM2./i
   image/jpeg:
    - cp__newBanner.jpg
+number:
+  - return-path
+  - /^<([^@]+)@.*/
+  - "\1"
+
