@@ -1,0 +1,4 @@
+---
+ignore:
+  text/html:
+  - mms.smil.txt
