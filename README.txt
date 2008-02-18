@@ -22,6 +22,8 @@ Corpus of carriers currently processed by MMS2R:
 * Alltel: message.alltel.com
 * AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com, 
   cingularme.com
+* Bell South / Suncom: bellsouth.net
+* Cricket Wireless: mms.mycricket.com
 * Dobson/Cellular One: mms.dobson.net
 * Helio: mms.myhelio.com
 * Hutchison 3G UK Ltd: mms.three.co.uk

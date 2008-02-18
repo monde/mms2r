@@ -1,14 +1,14 @@
-== 2.0.2 / 2008-02-16 (xxx - yyy)
+== 2.0.2 / 2008-02-18 (The Jomfru Brothers - proprietors of diefordethklok.com)
 
 * added support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
 * added support for bellsouth.net - Jason Haruska
 * added support for mms.mycricket.com
 * Improved Blackberry and iPhone suport - Jason Haruska
-* added :number key to configuration to provide rules for specifying phone 
-  number location
+* added :number key to configuration to provide rules for specifying
+  alternative phone number location
 * return sender's phone number for mobile.indosat.net.id
 * return sender's phone number for mms.luxgsm.lu
-
+* return sender's phone number for mms.vodacom4me.co.za
 
 == 2.0.1 / 2008-02-08 (Professor Jerry Gustav Munndig - Child control expert)
 
