@@ -6,7 +6,9 @@ ignore:
  - "/^Attachment: /i"
 transform: 
   text/plain: 
-  - - /\A(.*?)\w+\/\w+\s+Sent via BlackBerry from T-Mobile$/im
+  - - /\A(.*?)Sent via BlackBerry (from|by) .*$/im
     - "\1"
+  - - /\A(.*?)Sent from my Verizon Wireless BlackBerry$/im
+    - "\1"  
   - - /\A(.*?)Sent from my iPhone$/im
     - "\1"

@@ -224,7 +224,7 @@ class TestMms2rMedia < Test::Unit::TestCase
 
     # testing the default config
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', 'Sent from my iPhone')
-    assert_equal ['text/plain', ''], mms.transform_text('text/plain', "image/jpeg\nSent via BlackBerry from T-Mobile")
+    assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent via BlackBerry from T-Mobile")
 
     # has a bad regexp
     mms.expects(:config).once.returns({'transform' => {type => [['(hello)', 'world']]}})

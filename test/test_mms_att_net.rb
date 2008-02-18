@@ -89,4 +89,15 @@ class TestMmsAttNet < Test::Unit::TestCase
     assert_equal "Water", IO.read(mms.media['text/plain'][0])
     mms.purge
   end
+  
+  def test_image_from_blackberry
+    mail = TMail::Mail.parse(load_mail('att-blackberry.mail').join)
+    mms = MMS2R::Media.new(mail)
+    
+    assert_not_nil mms.media['text/plain']
+    assert_equal "Hello world", IO.readlines(mms.media['text/plain'].first).join.strip
+    
+    assert_not_nil mms.media['image/jpeg'].first
+    assert_match(/Windows-1252\?B\?QkMtV0FLRS5qcGc/, mms.media['image/jpeg'].first)
+  end
 end
