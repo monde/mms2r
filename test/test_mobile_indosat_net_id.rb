@@ -26,19 +26,13 @@ class TestMobileIndosatNetId < Test::Unit::TestCase
     mms.purge
   end
 
-=begin
-TODO
-From 2068675309@mobile.indosat.net.id  Sat Jan 26 00:00:09 2008
-Return-Path: <2068675309@mobile.indosat.net.id>
-From: mms2r@yahoo.co.id
-  def test_mms_indosat_with_yahoo_service
+  def test_mms_indosat_phone_number_with_yahoo_service
     # mobile.indosat.net.id service
     mail = TMail::Mail.parse(load_mail('indosat-image-01.mail').join)
     mms = MMS2R::Media.new(mail)
     assert_equal "2068675309", mms.number
     mms.purge
   end
-=end
 
   def test_mms_indosat
     # mobile.indosat.net.id service

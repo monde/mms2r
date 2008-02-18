@@ -1,7 +1,11 @@
 == 2.0.2 / 2008-02-16 (xxx - yyy)
 
-* addedd support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
+* added support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
+* added :number key to configuration to provide rules for specifying phone 
+  number location
 * return sender's phone number for mobile.indosat.net.id
+* return sender's phone number for mms.luxgsm.lu
+
 
 == 2.0.1 / 2008-02-08 (Professor Jerry Gustav Munndig - Child control expert)
 

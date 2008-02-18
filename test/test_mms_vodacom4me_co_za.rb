@@ -21,11 +21,6 @@ class TestMmsVodacom4meCoZa < Test::Unit::TestCase
     mms.purge
   end
 
-=begin
-TODO is the phone number always in the from or sender?
-From: "+2068675309" <ASZFZH@mms.vodacom4me.co.za>
-Sender: "+2068675309" <ASZFZH@mms.vodacom4me.co.za>
-
   def test_should_have_phone_number
     mail = TMail::Mail.parse(load_mail('vodacom4me-co-za-01.mail').join)
     mms = MMS2R::Media.new(mail)
@@ -34,7 +29,6 @@ Sender: "+2068675309" <ASZFZH@mms.vodacom4me.co.za>
     
     mms.purge
   end
-=end
   
   def test_image_and_text
     mail = TMail::Mail.parse(load_mail('vodacom4me-co-za-02.mail').join)

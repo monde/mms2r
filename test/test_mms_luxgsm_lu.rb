@@ -17,6 +17,14 @@ class TestMmsLuxgsmLu < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_number
+    mail = TMail::Mail.parse(load_mail('luxgsm-image-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+    assert_equal "+5551234", mms.number
+
+    mms.purge
+  end
+
   def test_image
     mail = TMail::Mail.parse(load_mail('luxgsm-image-01.mail').join)
     mms = MMS2R::Media.new(mail)
