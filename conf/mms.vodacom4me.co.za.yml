@@ -1,0 +1,9 @@
+---
+ignore:
+  text/html:
+  - /.*You have an <b>MMS<\/b> message!.*/m
+transform:
+  text/plain:
+  - - /\s*This is an MMS message brought to you by Vodacom\. Click here to view online presentation http:\/\/mms.vodacom4me.co.za\/.*$/
+    - ""
+    

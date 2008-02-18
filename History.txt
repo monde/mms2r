@@ -1,3 +1,7 @@
+== 2.0.2 / 2008-02-16 (xxx - yyy)
+
+* addedd support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
+
 == 2.0.1 / 2008-02-08 (Professor Jerry Gustav Munndig - Child control expert)
 
 * strip out common blackberry and iPhone signatures
