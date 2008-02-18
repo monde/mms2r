@@ -112,19 +112,20 @@ class TestMms2rMedia < Test::Unit::TestCase
     
     # test defaults shipped in mms2r_media.yml
     assert_not_nil config
-    assert_not_nil config['ignore']
-    assert_not_nil config['ignore']['text/plain']
-    assert_not_nil config['ignore']['text/plain'].detect{|v| v == '/^\(no subject\)$/i'}
-    assert_not_nil config['ignore']['multipart/mixed']
-    assert_not_nil config['ignore']['multipart/mixed'].detect{|v| v == '/^Attachment: /i'}
-    assert_nil config['ignore']['text/plain'].detect{|v| v == '/A TEST/'}
+    assert_equal true, config['ignore'].is_a?(Hash)
+    assert_equal true, config['transform'].is_a?(Hash)
+    assert_equal true, config['number'].is_a?(Array)
   end
 
   def test_initialize_config_contatenation
-    c = {'ignore' => {'text/plain' => ['/A TEST/']} }
+    c = {'ignore' => {'text/plain' => ['/A TEST/']},
+         'transform' => {'text/plain' => ['/FOO/', '']},
+         'number' => ['from', '/^([^\s]+)\s.*/', '\1']
+    }
     config = MMS2R::Media.initialize_config(c)
-    assert_not_nil config['ignore']['text/plain'].detect{|v| v == '/^\(no subject\)$/i'}
     assert_not_nil config['ignore']['text/plain'].detect{|v| v == '/A TEST/'}
+    assert_not_nil config['transform']['text/plain'].detect{|v| v == '/FOO/'}
+    assert_not_nil config['number'].first == 'from'
   end
 
   def test_create_with_default_processor
@@ -199,6 +200,14 @@ class TestMms2rMedia < Test::Unit::TestCase
     mail.stubs(:from).returns(['2068675309@example.com'])
     mms = MMS2R::Media.new(mail)
     assert_equal '2068675309', mms.number
+  end
+  
+  def test_mms_phone_number_from_config
+    mail = stub_mail()
+    mail.stubs(:header).returns({'from' => TMail::AddressHeader.new('from', '"+2068675309" <BCVOZH@mms.vodacom4me.co.za>')})
+    mms = MMS2R::Media.new(mail)
+    mms.expects(:config).once.returns({'number' => ['from', '/^([^\s]+)\s.*/', '\1']})
+    assert_equal '+2068675309', mms.number
   end
 
   def test_mms_phone_number_with_errors
