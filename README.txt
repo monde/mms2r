@@ -1,5 +1,6 @@
 = mms2r
 
+  by Mike Mondragon
   http://mms2r.rubyforge.org/ 
   http://rubyforge.org/tracker/?group_id=3065 
 
@@ -132,6 +133,8 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 * Luke Francl (blog[http://railspikes.com/])
 * Will Jessup (blog[http://www.willjessup.com/])
 * Shane Vitarana (blog[http://www.shanesbrain.net/])
+* Layton Wedgeworth (http://www.beenup2.com/)
+* Jason Haruska (blog[http://software.haruska.com/])
 
 == LICENSE:
 

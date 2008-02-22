@@ -1,4 +1,4 @@
-== 2.0.2 / 2008-02-18 (The Jomfru Brothers - proprietors of diefordethklok.com)
+== 2.0.2 / 2008-02-22 (The Jomfru Brothers - proprietors of diefordethklok.com)
 
 * added support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
 * added support for bellsouth.net - Jason Haruska
