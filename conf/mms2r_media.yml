@@ -12,3 +12,5 @@ transform:
     - "\1"  
   - - /\A(.*?)Sent from my iPhone$/im
     - "\1"
+  - - /\A(.*?)\s+image\/jpeg$/im
+    - "\1"
