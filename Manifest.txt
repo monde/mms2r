@@ -29,9 +29,13 @@ lib/mms2r.rb
 lib/mms2r/media.rb
 lib/mms2r/media/sprint.rb
 test/fixtures/alltel-image-01.mail
+test/fixtures/att-blackberry-02.mail
 test/fixtures/att-blackberry.mail
 test/fixtures/att-image-01.mail
 test/fixtures/att-image-02.mail
+test/fixtures/att-iphone-01.mail
+test/fixtures/att-iphone-02.mail
+test/fixtures/att-iphone-03.mail
 test/fixtures/att-text-01.mail
 test/fixtures/cingularme-text-01.mail
 test/fixtures/cingularme-text-02.mail
@@ -68,6 +72,7 @@ test/fixtures/sprint-video-01.mail
 test/fixtures/sprint.mov
 test/fixtures/suncom-blackberry.mail
 test/fixtures/three-uk-image-01.mail
+test/fixtures/tmobile-blackberry-02.mail
 test/fixtures/tmobile-blackberry.mail
 test/fixtures/tmobile-image-01.mail
 test/fixtures/tmobile-image-02.mail
