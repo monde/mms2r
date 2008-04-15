@@ -306,6 +306,16 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_nil mms.send(:attachment, ['text'])
   end
 
+  def test_type_from_filename(filename)
+    mms = MMS2R::Media.new(stub_mail())
+    assert_equal 'image/jpeg', mms.send(:type_from_filename, "example.jpg")
+  end
+
+  def test_type_from_filename_should_be_nil(filename)
+    mms = MMS2R::Media.new(stub_mail())
+    assert_nil mms.send(:type_from_filename, "example.example")
+  end
+
   def test_attachment_should_return_duck_typed_file
     mms = MMS2R::Media.new(stub_mail())
     temp_big = temp_text_file("hello world")
@@ -514,6 +524,16 @@ class TestMms2rMedia < Test::Unit::TestCase
     result = mms.process_media(part)
     assert_equal 'application/smil', result.first
     assert_equal 'hello world', IO.read(result.last)
+    mms.purge # have to call purge since a file is put to disk as side effect
+  end
+
+  def test_process_media_for_application_octet_stream_when_image
+    name = 'fake.jpg'
+    mms = MMS2R::Media.new(stub_mail())
+    part = stub(:sub_header => name, :content_type => 'application/octet-stream', :body => "data")
+    result = mms.process_media(part)
+    assert_equal 'image/jpeg', result.first
+    assert_match /fake\.jpg$/, result.last
     mms.purge # have to call purge since a file is put to disk as side effect
   end
 

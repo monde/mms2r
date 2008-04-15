@@ -392,6 +392,7 @@ module MMS2R
         type, content = transform_text_part(part)
       else
         type = self.class.part_type?(part)
+        type = type_from_filename(filename?(part)) if type == 'application/octet-stream'
         content = part.body
       end
       return type, nil if content.nil? || content.empty?
@@ -598,6 +599,15 @@ module MMS2R
 
     def config
       @config
+    end
+
+    ##
+    # guess content type from filename
+
+    def type_from_filename(filename)
+      ext = filename.split('.').last
+      ent = MMS2R::EXT.detect{|k,v| v == ext}
+      ent.nil? ? nil : ent.first
     end
 
     ##
