@@ -413,6 +413,20 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal false, mms.ignore_media?(type, part)
   end
 
+  def test_filename
+    name = 'foo.txt'
+    mms = MMS2R::Media.new(stub_mail())
+    part = stub(:sub_header => name, :content_type => 'text/plain')
+    assert_equal 'foo.txt', mms.filename?(part)
+  end
+
+  def test_filename_when_file_extension_missing_part
+    name = 'foo'
+    mms = MMS2R::Media.new(stub_mail())
+    part = stub(:sub_header => name, :content_type => 'text/plain')
+    assert_equal 'foo.txt', mms.filename?(part)
+  end
+
   def test_ignore_media_by_filename_regexp
     name = 'foo.txt'
     regexp = '/foo\.txt/i'

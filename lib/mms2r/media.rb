@@ -493,7 +493,7 @@ module MMS2R
           name = "#{Time.now.to_f}.#{self.class.default_ext(self.class.part_type?(part))}"
         end
       end
-      name
+      name =~ /\./ ? name : "#{name}.#{self.class.default_ext(self.class.part_type?(part))}"
     end
 
     ##
