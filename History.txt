@@ -1,4 +1,5 @@
 == 2.0.3 / 2008-04-15 (Enter Taxman)
+* fix case when part is image/jpeg declared 'application/octet-stream' 
 * file extenstions added to filenames that are missing in the part headers
 * T-Mobile update -  jesse dp
 * AT&T/T-Mobile Blackberrry update - Dave Myron
