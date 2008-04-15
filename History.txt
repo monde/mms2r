@@ -1,7 +1,8 @@
 == 2.0.3 / 2008-04-15 (Enter Taxman)
 * fix case when part is image/jpeg declared 'application/octet-stream' 
 * trim dangling image/jpeg text from blackberry messages
-* file extenstions added to filenames that are missing extensions in part headers
+* file extensions added to filenames that are missing extensions in part headers
+* anonymize images in fixtures to reduce gem size
 * T-Mobile update -  jesse dp
 * AT&T/T-Mobile Blackberrry update - Dave Myron
 
