@@ -1,4 +1,5 @@
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
+
 * fix case when part is image/jpeg declared 'application/octet-stream' 
 * trim dangling image/jpeg text from blackberry messages
 * file extensions added to filenames that are missing extensions in part headers
