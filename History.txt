@@ -1,3 +1,8 @@
+== 2.0.3 / 2008-04-15 (Enter Taxman)
+* file extenstions added to filenames that are missing in the part headers
+* T-Mobile update -  jesse dp
+* AT&T/T-Mobile Blackberrry update - Dave Myron
+
 == 2.0.2 / 2008-02-22 (The Jomfru Brothers - proprietors of diefordethklok.com)
 
 * added support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
