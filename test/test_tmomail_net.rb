@@ -55,4 +55,16 @@ class TestTmobileNet < Test::Unit::TestCase
     assert_match(/Windows-1252\?B\?SU1HMDAyMzkuanBn/, mms.media['image/jpeg'].first)
     mms.purge
   end
+
+  def test_image_from_blackberry2
+    mail = TMail::Mail.parse(load_mail('tmobile-blackberry-02.mail').join)
+    mms = MMS2R::Media.new(mail)
+    
+    assert_equal 1, mms.media.size
+    assert_nil mms.media['text/plain']
+    
+    assert_not_nil mms.media['image/jpeg'].first
+    assert_match(/Windows-1252\?B\?SU1HMDAxNDEuanBn/, mms.media['image/jpeg'].first)
+    mms.purge
+  end
 end
