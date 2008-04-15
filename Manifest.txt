@@ -79,6 +79,7 @@ test/fixtures/tmobile-image-02.mail
 test/fixtures/verizon-blackberry.mail
 test/fixtures/verizon-image-01.mail
 test/fixtures/verizon-image-02.mail
+test/fixtures/verizon-image-03.mail
 test/fixtures/verizon-text-01.mail
 test/fixtures/verizon-video-01.mail
 test/fixtures/vodacom4me-co-za-01.mail

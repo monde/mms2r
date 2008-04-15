@@ -46,6 +46,22 @@ class TestVzwpixCom < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_simple_image_new_message_april_2008
+    # vzwpix.com service
+    mail = TMail::Mail.parse(load_mail('verizon-image-03.mail').join)
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal 1, mms.media.size
+    assert_nil mms.media['text/plain']
+    assert_nil mms.media['text/html']
+    assert_not_nil mms.media['image/jpeg'][0]
+    assert_match(/0414082054.jpg$/, mms.media['image/jpeg'][0])
+
+    assert_file_size mms.media['image/jpeg'][0], 337
+
+    mms.purge
+  end
+
   def test_simple_text
     # vzwpix.com service
     mail = TMail::Mail.parse(load_mail('verizon-text-01.mail').join)
