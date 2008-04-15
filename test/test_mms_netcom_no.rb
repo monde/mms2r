@@ -26,7 +26,7 @@ class TestMmsNetcomNo < Test::Unit::TestCase
     assert_equal 1, mms.media['text/plain'].size
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
-    assert_file_size mms.media['image/jpeg'].first, 28471
+    assert_file_size mms.media['image/jpeg'].first, 337
   
     mms.purge
   end
@@ -35,7 +35,7 @@ class TestMmsNetcomNo < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('netcom-image-01.mail').join)
     mms = MMS2R::Media.new(mail)
     file = mms.default_media
-    assert_equal 28471, file.size
+    assert_equal 337, file.size
     
     mms.purge
   end 

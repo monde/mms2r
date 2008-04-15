@@ -1,0 +1,54 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.65.114.15 with SMTP id r15cs144223qbm;
+        Thu, 13 Mar 2008 09:38:14 -0700 (PDT)
+Received: by 10.114.126.1 with SMTP id y1mr9717246wac.108.1205426288880;
+        Thu, 13 Mar 2008 09:38:08 -0700 (PDT)
+Return-Path: <2068675309>
+Received: from barrierN241.nike.com (barrierm241.nike.com [146.197.27.91])
+        by mx.google.com with ESMTP id k21si26738395waf.31.2008.03.13.09.38.06;
+        Thu, 13 Mar 2008 09:38:08 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of 2068675309 designates 146.197.27.91 as permitted sender) client-ip=146.197.27.91;
+Authentication-Results: mx.google.com; spf=pass (google.com: best guess record for domain of 2068675309 designates 146.197.27.91 as permitted sender) smtp.mail=2068675309
+X-MimeOLE: Produced By Microsoft Exchange V6.5
+Content-class: urn:content-classes:message
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----_=_NextPart_001_01C88528.981CBF2D"
+Subject: IMG00367.jpg
+Date: Thu, 13 Mar 2008 09:37:39 -0700
+Message-ID: <200803131638.m2DGc3Ee028252@barrierN241.nike.com>
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator: 
+Thread-Topic: IMG00367.jpg
+Thread-Index: AciFKJgctMXWfPg5QbejKsyJmyuE8w==
+From: "Simmons, Craig" <2068675309>
+To: <tommy.tutone@example.com>, "User, Joe" <2068675309>,
+        <simmons_michelle@yahoo.com>
+X-OriginalArrivalTime: 13 Mar 2008 16:37:58.0362 (UTC) FILETIME=[987DB3A0:01C88528]
+
+This is a multi-part message in MIME format.
+
+------_=_NextPart_001_01C88528.981CBF2D
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+DQpUZXN0aW5nIG1lbW9yeW1haWwgZnJvbSBteSBibGFja2JlcnJ5IGFuZCBhdCZ0Lg0KDQoNCmlt
+YWdlL2pwZWcNCiANCg==
+
+------_=_NextPart_001_01C88528.981CBF2D
+Content-Type: application/octet-stream;
+	name="IMG00367.jpg"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename="IMG00367.jpg"
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+
+------_=_NextPart_001_01C88528.981CBF2D--

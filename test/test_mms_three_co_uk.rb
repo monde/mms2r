@@ -25,7 +25,7 @@ class TestMmsThreeCoUk < Test::Unit::TestCase
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
     assert_match(/17102007.jpg$/, mms.media['image/jpeg'].first)
-    assert_file_size mms.media['image/jpeg'].first, 29908
+    assert_file_size mms.media['image/jpeg'].first, 337
   
     mms.purge
   end
