@@ -10,7 +10,7 @@ transform:
     - "\1"
   - - /\A(.*?)Sent from my Verizon Wireless BlackBerry$/im
     - "\1"  
-  - - /\A(.*?)Sent from my iPhone$/im
+  - - /\A(.*?)Sent from my iPhone.?$/im
     - "\1"
   - - /\A(.*?)\s+image\/jpeg$/im
     - "\1"

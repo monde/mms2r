@@ -1,7 +1,7 @@
 ---
 ignore:
   image/gif: 
-  - /^Vodafone Logo$/i
+  - /^Vodafone Logo/i
   text/html: 
    - /You have received a picture message from phone number/im
   text/plain: 
