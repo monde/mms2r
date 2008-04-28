@@ -21,7 +21,7 @@ Suggestions and patches appreciated and welcomed!
 Corpus of carriers currently processed by MMS2R:
 
 * 1nbox/Idea: 1nbox.net
-* 3 Ireland / mms.3ireland.ie
+* 3 Ireland: mms.3ireland.ie
 * Alltel: mms.alltel.com
 * AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com, 
   cingularme.com
@@ -33,6 +33,7 @@ Corpus of carriers currently processed by MMS2R:
 * INDOSAT M2: mobile.indosat.net.id
 * LUXGSM S.A.: mms.luxgsm.lu
 * Maroc Telecom / mms.mobileiam.ma
+* MTM South Africa: mms.mtn.co.za
 * NetCom (Norway): mms.netcom.no
 * Nextel: messaging.nextel.com
 * O2 Germany: mms.o2online.de

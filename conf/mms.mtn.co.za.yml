@@ -1,0 +1,13 @@
+---
+ignore:
+  image/bmp:
+  - /^.*logo.bmp$/i
+  text/html:
+  - /.*/
+
+transform:
+
+number:
+  - from
+  - /^([^\/|^@]+).*/
+  - "\1"

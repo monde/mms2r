@@ -5,6 +5,7 @@
 * mms.3ireland.ie / 3 Ireland - Vijay Yellapragada
 * mms.alltel.com / Alltel (reverted message.alltel.com) - Vijay Yellapragada
 * mms.mobileiam.ma / Maroc Telecom - Vijay Yellapragada
+* mms.mtn.co.za / MTM South Africa - Vijay Yellapragada
 
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 
