@@ -6,7 +6,7 @@ require 'mocha'
 gem 'tmail', '>= 1.2.1'
 require 'tmail'
 
-class Test1NBoxNet < Test::Unit::TestCase
+class TestMmsMobileiamMa < Test::Unit::TestCase
   include MMS2R::TestHelper
   
   def test_image_and_number
