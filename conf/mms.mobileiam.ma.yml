@@ -1,0 +1,16 @@
+---
+ignore:
+  image/jpeg:
+  - /^.*html_DEFAULT_SLIDE_header.JPG$/i
+  image/gif:
+  - /^.*footer.gif$/i
+  - /^.*reply.gif$/i
+  text/html:
+  - /.*/
+
+transform:
+
+number:
+  - from
+  - /^([^\/|^@]+).*/
+  - "\1"

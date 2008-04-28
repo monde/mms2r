@@ -1,9 +1,10 @@
 == 2.0.4 / 2008-04-20 (Mr. Selatcia - elder member of The Tribunal)
 
 * updated mms.vodacom4me.co.za Vodacom South Africa - Vijay Yellapragada
-* 1nbox / Idea cellular 1nbox.net - Vijay Yellapragada
+* 1nbox.net / Idea cellular 1nbox.net - Vijay Yellapragada
 * mms.3ireland.ie / 3 Ireland - Vijay Yellapragada
 * mms.alltel.com / Alltel (reverted message.alltel.com) - Vijay Yellapragada
+* mms.mobileiam.ma / Maroc Telecom - Vijay Yellapragada
 
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 

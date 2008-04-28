@@ -32,6 +32,7 @@ Corpus of carriers currently processed by MMS2R:
 * Hutchison 3G UK Ltd: mms.three.co.uk
 * INDOSAT M2: mobile.indosat.net.id
 * LUXGSM S.A.: mms.luxgsm.lu
+* Maroc Telecom / mms.mobileiam.ma
 * NetCom (Norway): mms.netcom.no
 * Nextel: messaging.nextel.com
 * O2 Germany: mms.o2online.de
