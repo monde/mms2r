@@ -1,3 +1,9 @@
+== 2.0.4 / 2008-04-20 (Mr. Selatcia - elder member of The Tribunal)
+
+* updated mms.vodacom4me.co.za Vodacom South Africa - Vijay Yellapragada
+* 1nbox / Idea cellular 1nbox.net - Vijay Yellapragada
+* mms.3ireland.ie / 3 Ireland - Vijay Yellapragada
+
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 
 * fix case when part is image/jpeg declared 'application/octet-stream' 

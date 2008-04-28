@@ -1,0 +1,17 @@
+---
+ignore:
+  image/jpeg:
+  - /^.*tpm.jpg$/i
+  - /^.*vf5.jpg$/i
+  - /^.*reb.jpg$/i
+  image/gif:
+  - /^.*vf9.gif$/i
+  text/plain:
+  - /^You have received an MMS message.  To see the message correctly, you will need to view this message.*/im
+  text/html:
+  - /Yospace Technologies Ltd - MMS-to-Email version 1-0-1-1/im
+
+number:
+  - from
+  - /^([^\s|^\/|^@]+).*/
+  - "\1"
