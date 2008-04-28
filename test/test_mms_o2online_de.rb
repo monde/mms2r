@@ -26,7 +26,7 @@ class TestMmsO2onlineDe < Test::Unit::TestCase
     assert_equal 1, mms.media['text/plain'].size
     assert_not_nil mms.media['image/jpeg']
     assert_equal 2, mms.media['image/jpeg'].size
-    assert mms.media['image/jpeg'].detect{|f| File.size(f) == 10638}
+    assert mms.media['image/jpeg'].detect{|f| File.size(f) == 337}
   
     mms.purge
   end
@@ -35,7 +35,7 @@ class TestMmsO2onlineDe < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('o2-de-image-01.mail').join)
     mms = MMS2R::Media.new(mail)
     file = mms.default_media
-    assert_equal 10638, file.size
+    assert_equal 1275, file.size
     
     mms.purge
   end 

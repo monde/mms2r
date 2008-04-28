@@ -29,7 +29,7 @@ class TestMmsMycricketCom < Test::Unit::TestCase
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/10-26-07_1739.jpg$/, mms.media['image/jpeg'].first)
 
-    assert_file_size mms.media['image/jpeg'].first, 7249
+    assert_file_size mms.media['image/jpeg'].first, 337
 
     mms.purge
   end
@@ -52,7 +52,7 @@ class TestMmsMycricketCom < Test::Unit::TestCase
     assert_match(/Hello World/, text)
 
     assert_match(/02-14-08_2114.jpg$/, mms.media['image/jpeg'].first)
-    assert_file_size mms.media['image/jpeg'].first, 16770
+    assert_file_size mms.media['image/jpeg'].first, 337
 
     mms.purge
   end
