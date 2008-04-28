@@ -1,0 +1,16 @@
+---
+ignore:
+  image/gif:
+  - /^.*$/i
+  text/plain:
+  - /^Uve received a video or picture msg from .*/im
+
+transform:
+  text/plain: 
+  - - /^You have received a Picture Message from your Rogers Wireless/i
+    - ""
+
+number:
+  - from
+  - /^([^\/|^@]+).*/
+  - "\1"

@@ -39,6 +39,7 @@ Corpus of carriers currently processed by MMS2R:
 * O2 Germany: mms.o2online.de
 * Orange & Regional Oranges: orangemms.net, mmsemail.orange.pl, orange.fr
 * PXT New Zealand: pxt.vodafone.net.nz
+* Rogers of Canada: rci.rogers.com
 * SaskTel: sms.sasktel.com
 * Sprint: pm.sprint.com, messaging.sprintpcs.com
 * T-Mobile: tmomail.net
