@@ -1,4 +1,4 @@
-== 2.0.4 / 2008-04-20 (Mr. Selatcia - elder member of The Tribunal)
+== 2.0.4 / 2008-04-28 (Mr. Selatcia - elder member of The Tribunal)
 
 * updated mms.vodacom4me.co.za Vodacom South Africa - Vijay Yellapragada
 * 1nbox.net / Idea cellular 1nbox.net - Vijay Yellapragada
