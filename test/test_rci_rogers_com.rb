@@ -12,17 +12,16 @@ class TestRciRogersCom < Test::Unit::TestCase
   def test_image_and_text_and_number
     mail = TMail::Mail.parse(load_mail('rogers-canada-mms-01.mail').join)
     mms = MMS2R::Media.new(mail)
-    
 
     assert_equal "1234567890", mms.number
     assert_equal "", mms.subject
 
     assert_equal 1, mms.media.size
-    assert_equal 1, mms.media['image/jpeg'].size
+    assert_equal 2, mms.media['image/jpeg'].size
 
-
+    #janky test because there is a verisign logo in the file
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match(/A2.*$/, mms.media['image/jpeg'].first)
+    assert mms.media['image/jpeg'].detect{|f| /A2\./ =~ f}
     mms.purge
   end
 

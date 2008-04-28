@@ -4,10 +4,12 @@ ignore:
   - /^.*$/i
   text/plain:
   - /^Uve received a video or picture msg from .*/im
+  text/html:
+  - /Picture from your Rogers Wireless friend/im
 
 transform:
   text/plain: 
-  - - /^You have received a Picture Message from your Rogers Wireless/i
+  - - /^You have received a Picture Message from your Rogers Wireless.*/i
     - ""
 
 number:
