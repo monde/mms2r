@@ -6,8 +6,26 @@ require 'mocha'
 gem 'tmail', '>= 1.2.1'
 require 'tmail'
 
-class TestMessageAlltelCom < Test::Unit::TestCase
+class TestMmsAlltelCom < Test::Unit::TestCase
   include MMS2R::TestHelper
+
+  def test_subject_number_image
+    mail = TMail::Mail.parse(load_mail('alltel-mms-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal "", mms.subject
+    assert_equal "1234567890", mms.number
+
+    assert_equal 1, mms.media.size
+    assert_equal 2, mms.media['image/jpeg'].size
+
+    first = mms.media['image/jpeg'].detect{|f| /02-19-08_1709\.jpg/ =~ f}
+    second = mms.media['image/jpeg'].detect{|f| /02-19-08_1710\.jpg/ =~ f}
+    assert_equal 337, File.size(first) 
+    assert_equal 337, File.size(second) 
+
+    mms.purge
+  end
 
   def test_alltel_image
     mail = TMail::Mail.parse(load_mail('alltel-image-01.mail').join)

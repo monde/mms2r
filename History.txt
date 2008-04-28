@@ -3,6 +3,7 @@
 * updated mms.vodacom4me.co.za Vodacom South Africa - Vijay Yellapragada
 * 1nbox / Idea cellular 1nbox.net - Vijay Yellapragada
 * mms.3ireland.ie / 3 Ireland - Vijay Yellapragada
+* mms.alltel.com / Alltel (reverted message.alltel.com) - Vijay Yellapragada
 
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 
