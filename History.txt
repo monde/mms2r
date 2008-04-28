@@ -7,6 +7,7 @@
 * mms.mobileiam.ma / Maroc Telecom - Vijay Yellapragada
 * mms.mtn.co.za / MTM South Africa - Vijay Yellapragada
 * rci.rogers.com / Rogers of Canada - Vijay Yellapragada
+* mmsreply.t-mobile.co.uk / T-Mobile UK - Vijay Yellapragada
 
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 

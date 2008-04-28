@@ -42,7 +42,7 @@ Corpus of carriers currently processed by MMS2R:
 * Rogers of Canada: rci.rogers.com
 * SaskTel: sms.sasktel.com
 * Sprint: pm.sprint.com, messaging.sprintpcs.com
-* T-Mobile: tmomail.net
+* T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk
 * Vodacom: mms.vodacom4me.co.za
 * Verizon: vzwpix.com, vtext.com
 

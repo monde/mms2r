@@ -67,4 +67,24 @@ class TestTmobileNet < Test::Unit::TestCase
     assert_match(/Windows-1252\?B\?SU1HMDAxNDEuanBn/, mms.media['image/jpeg'].first)
     mms.purge
   end
+  
+  def test_tmobile_uk_image_and_text_and_number
+    mail = TMail::Mail.parse(load_mail('mmsreply.t-mobile.co.uk-text-image-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal '12345678901', mms.number
+    assert_equal 'mmsreply.t-mobile.co.uk', mms.carrier
+
+    assert_equal 2, mms.media.size
+    assert_equal 1, mms.media['image/jpeg'].size
+    assert_equal 1, mms.media['text/plain'].size
+
+    assert_equal "Do you know this office? Do you know this office? Do \nyou know this office? Do you know this office?", mms.default_text.read
+
+    assert_file_size mms.media['image/jpeg'][0], 337
+    file = mms.default_media
+    assert_equal 'Image002.jpg', file.original_filename
+
+    #mms.purge
+  end
 end
