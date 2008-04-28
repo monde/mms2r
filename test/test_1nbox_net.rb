@@ -13,15 +13,15 @@ class Test1NBoxNet < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('1nbox-2images-01.mail').join)
     mms = MMS2R::Media.new(mail)
     
-  	assert_equal "+919812345678", mms.number
-  	assert_equal 2, mms.media.size
+    assert_equal "+919812345678", mms.number
+    assert_equal 2, mms.media.size
 
-  	assert_not_nil mms.media['text/plain']
-  	assert_equal 1, mms.media['text/plain'].size
+    assert_not_nil mms.media['text/plain']
+    assert_equal 1, mms.media['text/plain'].size
     assert_equal "testing123456789012", open(mms.media['text/plain'].first).read
 
     assert_not_nil mms.media['image/jpeg']
-  	assert_equal 1, mms.media['text/plain'].size
+    assert_equal 1, mms.media['text/plain'].size
     assert_match(/@003\.jpg$/, mms.media['image/jpeg'].first)
 
     mms.purge
@@ -33,8 +33,8 @@ class Test1NBoxNet < Test::Unit::TestCase
     
     assert_nil mms.media['text/plain']
 
-  	assert_equal "+919898765432", mms.number
-  	assert_equal 1, mms.media.size
+    assert_equal "+919898765432", mms.number
+    assert_equal 1, mms.media.size
     
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
@@ -47,7 +47,7 @@ class Test1NBoxNet < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('1nbox-2images-03.mail').join)
     mms = MMS2R::Media.new(mail)
     
-  	assert_equal 1, mms.media.size
+    assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
     
     assert_not_nil mms.media['image/jpeg']
@@ -61,13 +61,13 @@ class Test1NBoxNet < Test::Unit::TestCase
     mail = TMail::Mail.parse(load_mail('1nbox-2images-04.mail').join)
     mms = MMS2R::Media.new(mail)
     
-  	assert_equal 2, mms.media.size
+    assert_equal 2, mms.media.size
 
-  	assert_not_nil mms.media['text/plain']
-  	assert_equal 1, mms.media['text/plain'].size
+    assert_not_nil mms.media['text/plain']
+    assert_equal 1, mms.media['text/plain'].size
     assert_equal "Hi,I'M TESTERS/MALE/23/IND/GOV.SRVC.01234567890.", open(mms.media['text/plain'].first).read
 
-  	assert_equal "1234567890", mms.number
+    assert_equal "1234567890", mms.number
     
     assert_not_nil mms.media['image/gif']
     assert_equal 1, mms.media['image/gif'].size
