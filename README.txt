@@ -45,6 +45,7 @@ Corpus of carriers currently processed by MMS2R:
 * T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk
 * Vodacom: mms.vodacom4me.co.za
 * Verizon: vzwpix.com, vtext.com
+* PLSPICTURES.COM mms hosting: waw.plspictures.com
 
 == FEATURES
 

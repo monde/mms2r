@@ -8,6 +8,7 @@
 * mms.mtn.co.za / MTM South Africa - Vijay Yellapragada
 * rci.rogers.com / Rogers of Canada - Vijay Yellapragada
 * mmsreply.t-mobile.co.uk / T-Mobile UK - Vijay Yellapragada
+* waw.plspictures.com / PLSPICTURES.COM mms hosting service
 
 == 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 

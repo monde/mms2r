@@ -1,0 +1,15 @@
+---
+transform: 
+  text/plain: 
+  - - /^You have received a Multimedia Message$/i
+    - ""
+number:
+  - return-path
+  - /^<([^@]+)@.*/
+  - "\1"
+ignore:
+  text/html: 
+  - /.*/m
+  text/plain:
+  - /\AA New Photo\/Video Message.\s+Click Go\/View to see now http/im
+
