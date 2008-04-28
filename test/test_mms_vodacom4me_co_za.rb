@@ -52,6 +52,8 @@ class TestMmsVodacom4meCoZa < Test::Unit::TestCase
     assert_nil mms.media['text/html']
     assert_equal '+12345678901', mms.number
 
+    assert_equal 1, mms.media.size
+    assert_equal 1, mms.media['image/gif'].size
     assert_not_nil mms.media['image/gif'].first
     assert_match(/127612345678901h5mmqcMPXEMPXE40mms.vodacom4me.co.za-slide-0-image.gif$/, mms.media['image/gif'].first)
     mms.purge
