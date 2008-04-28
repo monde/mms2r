@@ -1,0 +1,13 @@
+---
+ignore:
+  image/jpeg:
+  - /^.*idea_banner.jpg$/i
+  text/html:
+  - /<title>Message from memova<\/title>/im
+
+transform:
+
+number:
+  - from
+  - /^([^\/|^@]+).*/
+  - "\1"
