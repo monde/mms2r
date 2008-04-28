@@ -493,7 +493,8 @@ module MMS2R
           name = "#{Time.now.to_f}.#{self.class.default_ext(self.class.part_type?(part))}"
         end
       end
-      name =~ /\./ ? name : "#{name}.#{self.class.default_ext(self.class.part_type?(part))}"
+      # XXX fwiw, janky look for dot extension 1 to 4 chars long
+      name =~ /\..{1,4}$/ ? name : "#{name}.#{self.class.default_ext(self.class.part_type?(part))}"
     end
 
     ##

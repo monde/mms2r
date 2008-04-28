@@ -428,6 +428,11 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms = MMS2R::Media.new(stub_mail())
     part = stub(:sub_header => name, :content_type => 'text/plain')
     assert_equal 'foo.txt', mms.filename?(part)
+
+    name = 'foo.janky'
+    mms = MMS2R::Media.new(stub_mail())
+    part = stub(:sub_header => name, :content_type => 'text/plain')
+    assert_equal 'foo.janky.txt', mms.filename?(part)
   end
 
   def test_ignore_media_by_filename_regexp

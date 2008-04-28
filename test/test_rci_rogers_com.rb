@@ -21,7 +21,7 @@ class TestRciRogersCom < Test::Unit::TestCase
 
     #janky test because there is a verisign logo in the file
     assert_not_nil mms.media['image/jpeg'].first
-    assert mms.media['image/jpeg'].detect{|f| /A2.2658324049556002$/ =~ f}
+    assert mms.media['image/jpeg'].detect{|f| /A2.2658324049556002.jpg$/ =~ f}
     mms.purge
   end
 
