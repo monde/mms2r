@@ -153,7 +153,7 @@ module MMS2R
     ##
     # Various multi-parts that are bundled into mail
 
-    MULTIPARTS_TO_SPLIT = [ 'multipart/related', 'multipart/alternative', 'multipart/mixed' ]
+    MULTIPARTS_TO_SPLIT = [ 'multipart/related', 'multipart/alternative', 'multipart/mixed', 'multipart/appledouble' ]
 
     ##
     # Factory method that creates MMS2R::Media products based on the domain 

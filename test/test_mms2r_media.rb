@@ -584,6 +584,26 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_process_with_multipart_double_parts
+    mail = TMail::Mail.parse(load_mail('apple-double-image-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+    require 'pp'
+    pp mms.media
+    
+    assert_equal 2, mms.media.size
+
+    assert_not_nil mms.media['application/applefile']
+    assert_equal 1, mms.media['application/applefile'].size
+
+    assert_not_nil mms.media['image/jpeg']
+    assert_equal 1, mms.media['image/jpeg'].size
+    assert_match(/DSCN1715\.jpg$/, mms.media['image/jpeg'].first)
+
+    assert_file_size mms.media['image/jpeg'].first, 337
+
+    mms.purge
+  end
+
   def test_process_with_multipart_alternative_parts
     mail = stub_mail()
     plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :body => 'a')
