@@ -17,7 +17,7 @@ class Test3IrelandIe < Test::Unit::TestCase
     assert_equal 1, mms.media.size
     assert_equal 1, mms.media['image/jpeg'].size
 
-    assert_match /Image013\.jpg$/, mms.media['image/jpeg'].first
+    assert_match(/Image013\.jpg$/, mms.media['image/jpeg'].first)
     assert_equal 337, File.size(mms.media['image/jpeg'].first)
 
     mms.purge

@@ -20,7 +20,7 @@ class TestSmsSasktelCom < Test::Unit::TestCase
     assert_equal 1, mms.media.size
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
-    assert_match /A1.8463391017738573.jpg$/, mms.media['image/jpeg'].first
+    assert_match(/A1.8463391017738573.jpg$/, mms.media['image/jpeg'].first)
     assert_file_size(mms.media['image/jpeg'].first, 337)
     mms.purge
   end

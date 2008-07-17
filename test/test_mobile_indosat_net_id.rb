@@ -20,7 +20,7 @@ class TestMobileIndosatNetId < Test::Unit::TestCase
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match /Foto_14_.jpg/, mms.media['image/jpeg'].first
+    assert_match(/Foto_14_.jpg/, mms.media['image/jpeg'].first)
     assert_file_size(mms.media['image/jpeg'].first, 337)
     assert_equal "Hello World", mms.default_text.read
     mms.purge
@@ -45,7 +45,7 @@ class TestMobileIndosatNetId < Test::Unit::TestCase
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match /6033_small.jpeg/, mms.media['image/jpeg'].first
+    assert_match(/6033_small.jpeg/, mms.media['image/jpeg'].first)
     assert_file_size(mms.media['image/jpeg'].first, 337)
     mms.purge
   end

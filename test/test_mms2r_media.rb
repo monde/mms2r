@@ -555,7 +555,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     part = stub(:sub_header => name, :content_type => 'application/octet-stream', :body => "data")
     result = mms.process_media(part)
     assert_equal 'image/jpeg', result.first
-    assert_match /fake\.jpg$/, result.last
+    assert_match(/fake\.jpg$/, result.last)
     mms.purge # have to call purge since a file is put to disk as side effect
   end
 
@@ -587,8 +587,6 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_process_with_multipart_double_parts
     mail = TMail::Mail.parse(load_mail('apple-double-image-01.mail').join)
     mms = MMS2R::Media.new(mail)
-    require 'pp'
-    pp mms.media
     
     assert_equal 2, mms.media.size
 

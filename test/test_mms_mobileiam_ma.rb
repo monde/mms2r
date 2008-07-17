@@ -18,7 +18,7 @@ class TestMmsMobileiamMa < Test::Unit::TestCase
     assert_equal 1, mms.media.size
 
     assert_equal 1, mms.media['image/gif'].size
-    assert_match /jalwapam\.gif$/, mms.media['image/gif'].first
+    assert_match(/jalwapam\.gif$/, mms.media['image/gif'].first)
     assert_equal 1855, File.size(mms.media['image/gif'].first)
 
     mms.purge
