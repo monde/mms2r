@@ -42,6 +42,7 @@ test/fixtures/3ireland-mms-01.mail
 test/fixtures/alltel-image-01.mail
 test/fixtures/alltel-mms-01.mail
 test/fixtures/alltel-mms-03.mail
+test/fixtures/apple-double-image-01.mail
 test/fixtures/att-blackberry-02.mail
 test/fixtures/att-blackberry.mail
 test/fixtures/att-image-01.mail
