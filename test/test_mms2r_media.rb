@@ -41,6 +41,7 @@ class TestMms2rMedia < Test::Unit::TestCase
          :multipart? => false,
          :parts => [],
          :content_type => 'text/plain',
+         :part_type? => 'text/plain',
          :sub_header => 'message.txt',
          :body => 'a',
          :header => {}
@@ -83,21 +84,13 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal 'test', MMS2R::Media.default_ext('example/test')
   end
 
-  def test_part_type
-    part = stub(:content_type => nil)
-    assert_equal 'text/plain', MMS2R::Media.part_type?(part)
-
-    part = stub(:content_type => 'image/jpeg')
-    assert_equal 'image/jpeg', MMS2R::Media.part_type?(part)
-  end
-
   def test_main_type
-    part = stub(:content_type => 'image/jpeg')
+    part = stub(:content_type => 'image/jpeg', :part_type? => 'image/jpeg')
     assert_equal 'image', MMS2R::Media.main_type?(part)
   end
 
   def test_sub_type
-    part = stub(:content_type => 'image/jpeg')
+    part = stub(:content_type => 'image/jpeg', :part_type? => 'image/jpeg')
     assert_equal 'jpeg', MMS2R::Media.sub_type?(part)
   end
 
@@ -426,12 +419,12 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_filename_when_file_extension_missing_part
     name = 'foo'
     mms = MMS2R::Media.new(stub_mail())
-    part = stub(:sub_header => name, :content_type => 'text/plain')
+    part = stub(:sub_header => name, :content_type => 'text/plain', :part_type? => 'text/plain')
     assert_equal 'foo.txt', mms.filename?(part)
 
     name = 'foo.janky'
     mms = MMS2R::Media.new(stub_mail())
-    part = stub(:sub_header => name, :content_type => 'text/plain')
+    part = stub(:sub_header => name, :content_type => 'text/plain', :part_type? => 'text/plain')
     assert_equal 'foo.janky.txt', mms.filename?(part)
   end
 
@@ -510,7 +503,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     name = 'foo.txt'
     mms = MMS2R::Media.new(stub_mail())
     mms.stubs(:transform_text_part).returns(['text/plain', nil])
-    part = stub(:sub_header => name, :content_type => 'text/plain')
+    part = stub(:sub_header => name, :content_type => 'text/plain', :part_type? => 'text/plain')
 
     assert_equal ['text/plain', nil], mms.process_media(part)
 
@@ -525,7 +518,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     name = 'foo.txt'
     mms = MMS2R::Media.new(stub_mail())
     mms.stubs(:transform_text_part).returns(['text/plain', nil])
-    part = stub(:sub_header => name, :content_type => 'text/plain')
+    part = stub(:sub_header => name, :content_type => 'text/plain', :part_type? => 'text/plain')
 
     assert_equal ['text/plain', nil], mms.process_media(part)
 
@@ -538,7 +531,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     name = 'foo.txt'
     mms = MMS2R::Media.new(stub_mail())
     mms.stubs(:transform_text_part).returns(['application/smil', nil])
-    part = stub(:sub_header => name, :content_type => 'application/smil')
+    part = stub(:sub_header => name, :content_type => 'application/smil', :part_type? => 'application/smil')
 
     assert_equal ['application/smil', nil], mms.process_media(part)
 
@@ -552,7 +545,7 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_process_media_for_application_octet_stream_when_image
     name = 'fake.jpg'
     mms = MMS2R::Media.new(stub_mail())
-    part = stub(:sub_header => name, :content_type => 'application/octet-stream', :body => "data")
+    part = stub(:sub_header => name, :content_type => 'application/octet-stream', :part_type? => 'application/octet-stream', :body => "data")
     result = mms.process_media(part)
     assert_equal 'image/jpeg', result.first
     assert_match(/fake\.jpg$/, result.last)
@@ -562,11 +555,11 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_process_media_for_all_other_media
     name = 'foo.txt'
     mms = MMS2R::Media.new(stub_mail())
-    part = stub(:sub_header => name, :content_type => 'faux/text', :body => nil)
+    part = stub(:sub_header => name, :content_type => 'faux/text', :part_type? => 'faux/text', :body => nil)
 
     assert_equal ['faux/text', nil], mms.process_media(part)
 
-    part = stub(:sub_header => name, :content_type => 'faux/text', :body => 'hello world')
+    part = stub(:sub_header => name, :content_type => 'faux/text', :part_type? => 'faux/text', :body => 'hello world')
     result = mms.process_media(part)
     assert_equal 'faux/text', result.first
     assert_equal 'hello world', IO.read(result.last)
@@ -604,14 +597,15 @@ class TestMms2rMedia < Test::Unit::TestCase
 
   def test_process_with_multipart_alternative_parts
     mail = stub_mail()
-    plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :body => 'a')
-    html = stub(:sub_header => 'message.html', :content_type => 'text/html', :body => 'a')
-    multi = stub(:content_type => 'multipart/alternative', :parts => [plain, html])
+    plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :part_type? => 'text/plain', :body => 'a')
+    html = stub(:sub_header => 'message.html', :content_type => 'text/html', :part_type? => 'text/html', :body => 'a')
+    multi = stub(:content_type => 'multipart/alternative', :part_type? => 'multipart/alternative', :parts => [plain, html])
     mail.stubs(:multipart?).returns(true)
     mail.stubs(:parts).returns([multi])
 
     # the multipart/alternative should get flattend to text and html
     mms = MMS2R::Media.new(mail)
+    assert_equal 2, mms.media.size
     assert_equal 2, mms.media.size
     assert_not_nil mms.media['text/plain']
     assert_not_nil mms.media['text/html']
@@ -628,9 +622,9 @@ class TestMms2rMedia < Test::Unit::TestCase
 
   def test_process_when_media_is_ignored
     mail = stub_mail()
-    plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :body => '')
-    html = stub(:sub_header => 'message.html', :content_type => 'text/html', :body => '')
-    multi = stub(:content_type => 'multipart/alternative', :parts => [plain, html])
+    plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :part_type? => 'text/plain', :body => '')
+    html = stub(:sub_header => 'message.html', :content_type => 'text/html', :part_type? => 'text/html', :body => '')
+    multi = stub(:content_type => 'multipart/alternative', :part_type? => 'multipart/alternative', :parts => [plain, html])
     mail.stubs(:multipart?).returns(true)
     mail.stubs(:parts).returns([multi])
     mms = MMS2R::Media.new(mail, :process => :lazy)
@@ -646,8 +640,8 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_process_when_yielding_to_a_block
     mail = stub_mail()
 
-    plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :body => 'a')
-    html = stub(:sub_header => 'message.html', :content_type => 'text/html', :body => 'b')
+    plain = stub(:sub_header => 'message.txt', :content_type => 'text/plain', :part_type? => 'text/plain', :body => 'a')
+    html = stub(:sub_header => 'message.html', :content_type => 'text/html', :part_type? => 'text/html', :body => 'b')
     mail.stubs(:multipart?).returns(true)
     mail.stubs(:parts).returns([plain, html])
 

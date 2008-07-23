@@ -45,6 +45,15 @@ module MMS2R
 
 end
 
+require 'rubygems'
+gem 'tmail', '>= 1.2.1'
+require 'tmail/mail'
+require 'fileutils'
+require 'pathname'
+require 'tmpdir'
+require 'yaml'
+
+require File.join(File.dirname(__FILE__), 'tmail_ext')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media', 'sprint')
 MMS2R.register('pm.sprint.com', MMS2R::Media::Sprint)
