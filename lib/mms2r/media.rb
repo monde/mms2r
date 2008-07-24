@@ -524,8 +524,8 @@ module MMS2R
     # Returns a default file extension based on a content type
 
     def self.default_ext(content_type)
-      ext = MMS2R::EXT[content_type]
-      ext = content_type.split('/').last if ext.nil? rescue nil
+      ext = MMS2R::EXT[content_type] ||
+            content_type.split('/').last rescue nil
       ext
     end
 
