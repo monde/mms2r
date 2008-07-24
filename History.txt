@@ -1,14 +1,19 @@
-== 2.1.0 / 2008-XX-XX (TBD)
+### 2.1.0 / 2008-07-XX (Dr. Gibbons – Birthday expert and Murderface expert)
 
-* opens up TMail for better query method pattern code
-* English O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
-* Write non text files with binary bit set on Windows - Nobody
+* 1 major enhancement:
 
-== 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)
+  * opens up TMail for improved query method patterned code in MMS2R
+
+* 2 minor enhancements:
+
+  * UK O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
+  * Write non text files with binary bit set on Windows - Nobody
+
+### 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)
 
 * Deal with Apple Mail multipart/appledouble - jesse dp
 
-== 2.0.4 / 2008-04-28 (Mr. Selatcia - elder member of The Tribunal)
+### 2.0.4 / 2008-04-28 (Mr. Selatcia - elder member of The Tribunal)
 
 * updated mms.vodacom4me.co.za Vodacom South Africa - Vijay Yellapragada
 * 1nbox.net / Idea cellular 1nbox.net - Vijay Yellapragada
@@ -20,7 +25,7 @@
 * mmsreply.t-mobile.co.uk / T-Mobile UK - Vijay Yellapragada
 * waw.plspictures.com / PLSPICTURES.COM mms hosting service
 
-== 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
+### 2.0.3 / 2008-04-15 (Enter Taxman - The 1040 MMS Form)
 
 * fix case when part is image/jpeg declared 'application/octet-stream' 
 * trim dangling image/jpeg text from blackberry messages
@@ -29,7 +34,7 @@
 * T-Mobile update -  jesse dp
 * AT&T/T-Mobile Blackberrry update - Dave Myron
 
-== 2.0.2 / 2008-02-22 (The Jomfru Brothers - proprietors of diefordethklok.com)
+### 2.0.2 / 2008-02-22 (The Jomfru Brothers - proprietors of diefordethklok.com)
 
 * added support for mms.vodacom4me.co.za Vodacom South Africa - Jason Haruska
 * added support for bellsouth.net - Jason Haruska
@@ -41,14 +46,14 @@
 * return sender's phone number for mms.luxgsm.lu
 * return sender's phone number for mms.vodacom4me.co.za
 
-== 2.0.1 / 2008-02-08 (Professor Jerry Gustav Munndig - Child control expert)
+### 2.0.1 / 2008-02-08 (Professor Jerry Gustav Munndig - Child control expert)
 
 * strip out common blackberry and iPhone signatures
 * handle carriers that use external mail services such as Yahoo! as the From address
 * Add support for mobile.indosat.net.id (and yahoo.co.id) - Jason Haruska
 * Add support for sms.sasktel.com - Jason Haruska
 
-== 2.0.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
+### 2.0.0 / 2008-01-23 (Skwisgaar Skwigelf - fastest guitarist alive)
 
 * added support for pxt.vodafone.net.nz PXT New Zealand
 * added support for mms.o2online.de  O2 Germany
@@ -73,13 +78,13 @@
 * fixed typo in name of method #attachement to #attachment
 * fixed broken downloading of Sprint videos
 
-== 1.1.12 / 2007-10-21 (Dr. Ronald von Moldenberg - Endorsement specialist)
+### 1.1.12 / 2007-10-21 (Dr. Ronald von Moldenberg - Endorsement specialist)
 
 * fetch original images from Sprint content server (Layton Wedgeworth)
 * ignore Sprint messages when requested content has been purged from their
   content server
 
-== 1.1.11 / 2007-10-20 (Dr. Armand Skagerakk Frederickshaven - Mythology expert)
+### 1.1.11 / 2007-10-20 (Dr. Armand Skagerakk Frederickshaven - Mythology expert)
 
 * minor fix for attachment_fu where it might call #path on the cgi temp file
   that is returned by get_attachment
@@ -95,62 +100,62 @@
 * #get_attachment marked deprecated, use #attachment instead
 * #get_media marked deprecated, use #default_media instead
 
-== 1.1.10 / 2007-09-30 (Face Bones)
+### 1.1.10 / 2007-09-30 (Face Bones)
 
 * fixed a case for a nil match on From in the create method (Luke Francl)
 * added support for Alltel message.alltel.com (Ben Wood)
 
-== 1.1.9 / 2007-09-08 (Rebecca Nightrod - controlling girlfriend of Nathan 
+### 1.1.9 / 2007-09-08 (Rebecca Nightrod - controlling girlfriend of Nathan 
 Explosion)
 
 * fixed broken support for act_as_attachment and attachment_fu
 
-== 1.1.8 / 2007-09-08 (James Grishnack - Head of Behemoth Productions, producer
+### 1.1.8 / 2007-09-08 (James Grishnack - Head of Behemoth Productions, producer
    of Blood Ocean)
 
 * Added support for Orange of France, Orange orange.fr (Julian Biard)
 * purge in the process block removed, purge must be called explicitly
   after processing to clean up extracted temporary media files.
 
-== 1.1.7 / 2007-08-25 (Adam Nergal, friend of Skwisgaar, but not Pickles)
+### 1.1.7 / 2007-08-25 (Adam Nergal, friend of Skwisgaar, but not Pickles)
 
 * Added support for Orange of Poland, Orange mmsemail.orange.pl (Zbigniew
   Sobiecki)
 * Cleaned up documentation modifiers
 * Cleaned out non-Ruby code idioms
  
-== 1.1.6 / 2007-08-11 (Mustakrakish, the Lake Troll part 2)
+### 1.1.6 / 2007-08-11 (Mustakrakish, the Lake Troll part 2)
 
 * Redo of release mistake of 1.1.5
 
-== 1.1.5 / 2007-08-11 (Mustakrakish, the Lake Troll)
+### 1.1.5 / 2007-08-11 (Mustakrakish, the Lake Troll)
 
 * AT&T => mms.att.net not clearing out default "multimedia message"
   subject to nil (Will Jessup)
 * Ignore case on default subject for all carriers in 
   corresponding conf/mms2r_XXX_media_subject.yml
 
-== 1.1.4 / 2007-08-07 (Dr. Rockso)
+### 1.1.4 / 2007-08-07 (Dr. Rockso)
 
 * AT&T => mms.att.net support (thanks Mike Chen and Dave Myron)
 * get_body returns nil when there is not user text (sorry Will!)
 
-== 1.1.3 / 2007-07-10 (Charles Foster Ofdensen)
+### 1.1.3 / 2007-07-10 (Charles Foster Ofdensen)
 
 * Helio support by Will Jessup
 * get_subject returns nil on default carrier subjects 
 
-== 1.1.2 / 2007-06-13 (Dethklok roadie #2)
+### 1.1.2 / 2007-06-13 (Dethklok roadie #2)
 
 * placed versioned hpricot dependency in Hoe's extra_deps (an attempt to 
   appease firebrigade gods or not cause Gem::RemoteInstallationCancelled 
   whichever you prefer)
 
-== 1.1.1 / 2007-06-11 (Dethklok roadie)
+### 1.1.1 / 2007-06-11 (Dethklok roadie)
 
 * rescue rcov non-dependency in Rakefile to make firebrigade happy
 
-== 1.1.0 / 2007-06-08 (Toki Wartooth)
+### 1.1.0 / 2007-06-08 (Toki Wartooth)
 
 * get_body to return body text (Luke Francl)
 * get_subject returns "" for default subjects now
@@ -169,7 +174,7 @@ Explosion)
   of that type if the more than one exits in the media (Luke Francl)
 * added block support to process() method (Shane Vitarana)
 
-== 1.0.7 / 2007-04-27 (Senator Stampingston)
+### 1.0.7 / 2007-04-27 (Senator Stampingston)
 
 * patch submitted by Luke Francl
 * added a get_subject method that returns nil when any MMS has a default
@@ -177,7 +182,7 @@ Explosion)
 * get_subject returns nil for '', 'Multimedia message', '(no subject)', 'You
    have new Picture Mail!'
 
-== 1.0.6 / 2007-04-24 (Pickles the Drummer)
+### 1.0.6 / 2007-04-24 (Pickles the Drummer)
 
 * patch submitted by Luke Francl
 * added support for mms.dobson.net (Dobson aka Cellular One) (Luke)
@@ -188,7 +193,7 @@ Explosion)
 * added get_text instance method that returns first non advertising text
 * File from get_text can be used by/with attachment_fu
 
-== 1.0.5 / 2007-04-10 (William Murderface)
+### 1.0.5 / 2007-04-10 (William Murderface)
 
 * patch submitted by Luke Francl
 * made ignore_media? start its text check from the start of the file (Luke)
@@ -202,7 +207,7 @@ Explosion)
 * added tests for 4 three samples of unique variants of Sprint/Nextel text
 * 100% test coverage!
 
-== 1.0.4 / 2007-04-09 (Metalocalypse)
+### 1.0.4 / 2007-04-09 (Metalocalypse)
 
 * fix teardown in test_mms2r_sprint.rb (shanesbrain.net)
 * clean up Net::HTTP in MMS2R::SprintMedia (shanesbrain.net)
@@ -210,12 +215,12 @@ Explosion)
 * fixed a nil issue with underlying tmp working dir
 * added exception handling around Net::HTTP in MMS2R::SprintMedia
 
-== 1.0.3 / 2007-04-05 (Paper Cut)
+### 1.0.3 / 2007-04-05 (Paper Cut)
 
 * Cleaned up packaging and errors in example found by Shane V. 
   http://shanesbrain.net/
 
-== 1.0.2 / 2007-03-07
+### 1.0.2 / 2007-03-07
 
 * Reorganized tests and fixtures
 * Added carriers:
@@ -223,11 +228,11 @@ Explosion)
 * Nextel => messaging.nextel.com
 * Verizon => vtext.com
 
-== 1.0.1 / 2007-03-07
+### 1.0.1 / 2007-03-07
 
 * Flubbed RubyForge release ... do not use this.
 
-== 1.0.0 / 2007-03-06
+### 1.0.0 / 2007-03-06
 
 * Birthday!
 * AT&T/Cingular => mmode.com

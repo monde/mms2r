@@ -37,6 +37,7 @@ Corpus of carriers currently processed by MMS2R:
 * NetCom (Norway): mms.netcom.no
 * Nextel: messaging.nextel.com
 * O2 Germany: mms.o2online.de
+* O2 UK: mediamessaging.o2.co.uk
 * Orange & Regional Oranges: orangemms.net, mmsemail.orange.pl, orange.fr
 * PXT New Zealand: pxt.vodafone.net.nz
 * Rogers of Canada: rci.rogers.com
@@ -55,7 +56,12 @@ Corpus of carriers currently processed by MMS2R:
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
 
-== SYNOPSIS:
+== BOOKS
+
+MMS2R, Making email useful
+http://peepcode.com/products/mms2r-pdf
+
+== SYNOPSIS
 
   require 'rubygems'
   require 'mms2r'
@@ -112,7 +118,7 @@ Corpus of carriers currently processed by MMS2R:
   #remove all the media that was put to temporary disk
   mms.purge
 
-== REQUIREMENTS:
+== REQUIREMENTS
 
 * Hpricot
 * TMail
@@ -121,28 +127,33 @@ Corpus of carriers currently processed by MMS2R:
 
 * sudo gem install mms2r
 
-== CONTRIBUTE:
+== CONTRIBUTE
 
 If you contribute a patch that is accepted then you'll get developer rights 
 for the project on RubyForge.  Please ensure your work includes 100% test 
 converage.  The library is ZenTest autotest discovery enabled so running 
 autotest in the root of the project is very helpful during development.
 
-== Authors
+== AUTHORS
 
 Copyright (c) 2007-2008 by Mike Mondragon (blog[http://blog.mondragon.cc/])
 
 MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 
-== Contributors
+== CONTRIBUTORS
 
 * Luke Francl (blog[http://railspikes.com/])
 * Will Jessup (blog[http://www.willjessup.com/])
 * Shane Vitarana (blog[http://www.shanesbrain.net/])
 * Layton Wedgeworth (http://www.beenup2.com/)
 * Jason Haruska (blog[http://software.haruska.com/])
+* Dave Myron (company[http://contentfree.com/])
+* Vijay Yellapragada
+* Jesse Dp
+* "Nobody"
+* Jeremy Wilkins
 
-== LICENSE:
+== LICENSE
 
 (The MIT License)
 
