@@ -53,7 +53,7 @@ module MMS2R
               @is_video = (p.body =~ /type=&quot;VIDEO&quot;&gt;/m ? true : false)
             end
           end
-          return if doc.nil? #it was a dud
+          return if doc.nil? # it was a dud
           @is_video ||= false
   
           # break it down
