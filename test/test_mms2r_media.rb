@@ -86,11 +86,6 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal 'test', MMS2R::Media.default_ext('example/test')
   end
 
-  def test_sub_type
-    part = stub(:content_type => 'image/jpeg', :part_type? => 'image/jpeg')
-    assert_equal 'jpeg', MMS2R::Media.sub_type?(part)
-  end
-
   def test_base_initialize_config_tries_to_open_default_config_yaml
     f = File.join(MMS2R::Media.conf_dir, 'mms2r_media.yml')
     YAML.expects(:load_file).once.with(f).returns({})
