@@ -4,7 +4,7 @@
   http://mms2r.rubyforge.org/ 
   http://rubyforge.org/tracker/?group_id=3065 
 
-== DESCRIPTION:
+== DESCRIPTION
   
 MMS2R is a library that decodes the parts of an MMS message to disk while 
 stripping out advertising injected by the mobile carriers.  MMS messages are 
@@ -123,9 +123,14 @@ http://peepcode.com/products/mms2r-pdf
 * Hpricot
 * TMail
 
-== INSTALL:
+== INSTALL
 
 * sudo gem install mms2r
+
+== SOURCE
+
+git clone git://github.com/monde/mms2r.git
+svn co svn://rubyforge.org/var/svn/mms2r/trunk mms2r
 
 == CONTRIBUTE
 
