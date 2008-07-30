@@ -127,14 +127,11 @@ http://peepcode.com/products/mms2r-pdf
 
 * sudo gem install mms2r
 
-<<<<<<< HEAD:README.txt
 == SOURCE
 
 git clone git://github.com/monde/mms2r.git
 svn co svn://rubyforge.org/var/svn/mms2r/trunk mms2r
 
-=======
->>>>>>> dcf89451ea7ba0ff098d0d7ebd8ea16db1cc44ef:README.txt
 == CONTRIBUTE
 
 If you contribute a patch that is accepted then you'll get developer rights 
