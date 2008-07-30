@@ -1,3 +1,7 @@
+== 2.1.0 / 2008-XX-XX (TBD)
+
+* opens up TMail for better query method pattern code
+
 == 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)
 
 * Deal with Apple Mail multipart/appledouble - jesse dp

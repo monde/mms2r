@@ -45,7 +45,7 @@ module MMS2R
           #find the payload html
           doc = nil
           parts.each do |p|
-            next unless self.class.part_type?(p).eql?('text/html')
+            next unless p.part_type? == 'text/html'
             d = Hpricot(p.body)
             title = d.at('title').inner_html
             if title =~ /You have new Picture Mail!/

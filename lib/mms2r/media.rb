@@ -4,20 +4,6 @@
 # Please see the LICENSE file for licensing information
 #++
 
-require 'rubygems'
-gem 'tmail', '>= 1.2.1'
-require 'tmail/mail'
-require 'fileutils'
-require 'pathname'
-require 'tmpdir'
-require 'yaml'
-
-class TMail::MessageIdHeader #:nodoc:
-  def real_body
-    @body
-  end
-end
-
 ##
 # = Synopsis
 #
@@ -324,7 +310,7 @@ module MMS2R
         for i in 1..2
           flat = []
           parts.each do |p|
-            if MULTIPARTS_TO_SPLIT.include?(self.class.part_type?(p))
+            if MULTIPARTS_TO_SPLIT.include?(p.part_type?)
               p.parts.each {|mp| flat << mp }
             else
               flat << p
@@ -335,7 +321,7 @@ module MMS2R
   
         # get to work
         parts.each do |p|
-          t = self.class.part_type?(p)
+          t = p.part_type?
           unless ignore_media?(t,p)
             t,f = process_media(p)
             add_file(t,f) unless t.nil? || f.nil?
@@ -388,11 +374,10 @@ module MMS2R
       case
       when self.class.main_type?(part).eql?('text')
         type, content = transform_text_part(part)
-      when self.class.part_type?(part).eql?('application/smil')
+      when part.part_type? == 'application/smil'
         type, content = transform_text_part(part)
       else
-        type = self.class.part_type?(part)
-        type = type_from_filename(filename?(part)) if type == 'application/octet-stream'
+        type = part.part_type? == 'application/octet-stream' ? type_from_filename(filename?(part)) : part.part_type?
         content = part.body
       end
       return type, nil if content.nil? || content.empty?
@@ -432,7 +417,7 @@ module MMS2R
     # Helper for process_media template method to transform text.
 
     def transform_text_part(part)
-      type = self.class.part_type?(part)
+      type = part.part_type?
       text = part.body.strip
       transform_text(type, text)
     end
@@ -490,11 +475,11 @@ module MMS2R
         if part['content-id'] && part['content-id'].real_body.strip =~ /^<(.+)>$/
           name = $1
         else
-          name = "#{Time.now.to_f}.#{self.class.default_ext(self.class.part_type?(part))}"
+          name = "#{Time.now.to_f}.#{self.class.default_ext(part.part_type?)}"
         end
       end
       # XXX fwiw, janky look for dot extension 1 to 4 chars long
-      name =~ /\..{1,4}$/ ? name : "#{name}.#{self.class.default_ext(self.class.part_type?(part))}"
+      name =~ /\..{1,4}$/ ? name : "#{name}.#{self.class.default_ext(part.part_type?)}"
     end
 
     ##
@@ -543,27 +528,17 @@ module MMS2R
     end
 
     ##
-    # Determines the mime-type of a part.  Guarantees a type is returned.
-
-    def self.part_type?(part)
-      if part.content_type.nil?
-        return 'text/plain'
-      end
-      part.content_type
-    end
-
-    ##
     # Determines the main type of the part's mime-type
 
     def self.main_type?(part)
-      /^([^\/]+)\//.match(self.part_type?(part))[1]
+      /^([^\/]+)\//.match(part.part_type?)[1]
     end
 
     ##
     # Determines the sub type of the part's mime-type
 
     def self.sub_type?(part)
-      /\/([^\/]+)$/.match(self.part_type?(part))[1]
+      /\/([^\/]+)$/.match(part.part_type?)[1]
     end
 
     ##
