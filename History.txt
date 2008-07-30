@@ -1,11 +1,8 @@
 ### 2.1.0 / 2008-07-30 (Dr. Gibbons – Birthday expert and Murderface expert)
 
 * 1 major enhancement:
-
   * opens up TMail for improved query method patterned code in MMS2R
-
 * 2 minor enhancements:
-
   * UK O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
   * Write non text files with binary bit set on Windows - Nobody
   * source hosted on github: git clone git://github.com/monde/mms2r.git
