@@ -1,4 +1,4 @@
-### 2.1.0 / 2008-07-XX (Dr. Gibbons – Birthday expert and Murderface expert)
+### 2.1.0 / 2008-07-30 (Dr. Gibbons – Birthday expert and Murderface expert)
 
 * 1 major enhancement:
 
@@ -8,6 +8,7 @@
 
   * UK O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
   * Write non text files with binary bit set on Windows - Nobody
+  * source hosted on github: git clone git://github.com/monde/mms2r.git
 
 ### 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)
 
