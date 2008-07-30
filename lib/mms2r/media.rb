@@ -530,13 +530,6 @@ module MMS2R
     end
 
     ##
-    # Determines the sub type of the part's mime-type
-
-    def self.sub_type?(part)
-      /\/([^\/]+)$/.match(part.part_type?)[1]
-    end
-
-    ##
     # Joins the generic mms2r configuration with the carrier specific
     # configuration.
 
