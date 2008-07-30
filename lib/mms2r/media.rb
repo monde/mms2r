@@ -260,7 +260,7 @@ module MMS2R
     # Returns nil if there are not any video or image Files found.
 
     def default_media
-      return @default_media ||= attachment(['video', 'image', 'text'])
+      @default_media ||= attachment(['video', 'image', 'text'])
     end
 
     # Returns a File with the most likely candidate that is text, or nil
@@ -272,7 +272,7 @@ module MMS2R
     # Returns nil if there are not any text Files found
 
     def default_text
-      return @default_text ||= attachment(['text'])
+      @default_text ||= attachment(['text'])
     end
 
     ##
@@ -516,8 +516,7 @@ module MMS2R
     # id.
 
     def self.safe_message_id(mid)
-      return "#{Time.now.to_i}" if mid.nil?
-      mid.gsub(/\$|<|>|@|\./, "")
+      mid.nil? ? "#{Time.now.to_i}" : mid.gsub(/\$|<|>|@|\./, "")
     end
 
     ##
