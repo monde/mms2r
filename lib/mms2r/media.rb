@@ -371,13 +371,15 @@ module MMS2R
       # TMail body auto-magically decodes quoted
       # printable for text/html type.
       file = temp_file(part)
-      case
-      when self.class.main_type?(part).eql?('text')
-        type, content = transform_text_part(part)
-      when part.part_type? == 'application/smil'
+      if part.main_type('text') == 'text' || 
+         part.content_type == 'application/smil'
         type, content = transform_text_part(part)
       else
-        type = part.part_type? == 'application/octet-stream' ? type_from_filename(filename?(part)) : part.part_type?
+        if part.content_type == 'application/octet-stream'
+          type = type_from_filename(filename?(part))
+        else
+          type = part.content_type
+        end
         content = part.body
       end
       return type, nil if content.nil? || content.empty?
@@ -525,13 +527,6 @@ module MMS2R
       ext = MMS2R::EXT[content_type]
       ext = content_type.split('/').last if ext.nil? rescue nil
       ext
-    end
-
-    ##
-    # Determines the main type of the part's mime-type
-
-    def self.main_type?(part)
-      /^([^\/]+)\//.match(part.part_type?)[1]
     end
 
     ##

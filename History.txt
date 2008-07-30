@@ -1,6 +1,8 @@
 == 2.1.0 / 2008-XX-XX (TBD)
 
 * opens up TMail for better query method pattern code
+* English O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
+* Write non text files with binary bit set on Windows - Nobody
 
 == 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)
 
