@@ -378,6 +378,20 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal temp_big_video, mms.default_media.local_path
   end
 
+  def test_default_media_treats_gif_and_jpg_equally
+    #it doesn't matter that these are text files, we just need say they are images
+    temp_big = temp_text_file("hello world")
+    temp_small = temp_text_file("hello")
+
+    mms = MMS2R::Media.new(stub_mail())
+    mms.stubs(:media).returns({'image/jpeg' => [temp_big], 'image/gif' => [temp_small]})
+    assert_equal temp_big, mms.default_media.local_path
+
+    mms = MMS2R::Media.new(stub_mail())
+    mms.stubs(:media).returns({'image/gif' => [temp_big], 'image/jpg' => [temp_small]})
+    assert_equal temp_big, mms.default_media.local_path
+  end
+
   def test_purge
     mms = MMS2R::Media.new(stub_mail())
     mms.purge
