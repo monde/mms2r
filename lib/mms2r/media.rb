@@ -585,12 +585,7 @@ module MMS2R
       files = []
       
       types.each do |type|
-        if type =~ /\//
-          type_match = /^#{type}$/
-        else
-          type_match = /^#{type}\/.*$/
-        end
-        media.keys.find_all{|k| k =~ type_match }.each do |key|
+        media.keys.find_all{|k| type.include?("/") ? k == type : k.index(type) == 0 }.each do |key|
           files += media[key]
         end
       end
