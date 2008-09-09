@@ -272,7 +272,7 @@ module MMS2R
     # Returns nil if there are not any text Files found
 
     def default_text
-      @default_text ||= attachment(['text'])
+      @default_text ||= attachment(['text/plain'])
     end
 
     ##
@@ -583,9 +583,11 @@ module MMS2R
 
       # get all the files that are of the major types passed in
       files = []
+      
       types.each do |type|
-        key = media.keys.detect{|k| k.split('/').first == type}
-        files += media[key] if key
+        media.keys.find_all{|k| type.include?("/") ? k == type : k.index(type) == 0 }.each do |key|
+          files += media[key]
+        end
       end
       return nil if files.empty?
 
