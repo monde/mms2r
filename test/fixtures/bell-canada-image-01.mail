@@ -1,0 +1,2273 @@
+From 2068675309@txt.bell.ca  Sun Sep  7 19:50:09 2008
+Return-Path: <2068675309@txt.bell.ca>
+X-Original-To: tommy.tutone@example.com
+Delivered-To: tommy.tutone@example.com
+Received: from smtp01.prv.sun2.lightsurf.net (smtp01.sun2.lightsurf.net [64.157.6.50])
+	by mail01.snapmylife.com (Postfix) with ESMTP id BC0FB1816D
+	for <tommy.tutone@example.com>; Sun,  7 Sep 2008 19:50:08 -0400 (EDT)
+Received: from bell-back002 (smtp.prv.sun2.lightsurf.net [10.103.1.134])
+	by smtp01.prv.sun2.lightsurf.net (8.12.11.20060308/8.12.10) with ESMTP id m87NkPCu009103
+	for <tommy.tutone@example.com>; Sun, 7 Sep 2008 16:49:50 -0700
+Date: Sun, 7 Sep 2008 16:49:50 -0700
+Message-ID: <11287836.1220831395074.JavaMail.lsadm@bell-back002>
+From: 2068675309@txt.bell.ca
+To: tommy.tutone@example.com
+Subject: A Picture/Video Message!
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_84000_18395600.1220831395069"
+
+------=_Part_84000_18395600.1220831395069
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_83999_4375329.1220831395069"
+
+------=_Part_83999_4375329.1220831395069
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+You have received a New Message. http://mypictures.bell.ca/share.do?invite=8ERr4eJYYY7NkL87oLvh
+
+------=_Part_83999_4375329.1220831395069
+Content-Type: text/html
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN"
+                      "http://login-bell:80/dtd/TR/xhtml-basic/xhtml-basic10.dtd">
+<!-- XHTML Basic 1.0 DTD  ...................................................... -->
+<!-- file: xhtml-basic10.dtd -->
+<!-- XHTML Basic 1.0 DTD
+
+     This is XHTML Basic, a proper subset of XHTML.
+
+     The Extensible HyperText Markup Language (XHTML)
+     Copyright 1998-2005 World Wide Web Consortium
+        (Massachusetts Institute of Technology, European Research Consortium
+         for Informatics and Mathematics, Keio University).
+         All Rights Reserved.
+
+     Permission to use, copy, modify and distribute the XHTML Basic DTD
+     and its accompanying documentation for any purpose and without fee is
+     hereby granted in perpetuity, provided that the above copyright notice
+     and this paragraph appear in all copies.  The copyright holders make
+     no representation about the suitability of the DTD for any purpose.
+
+     It is provided "as is" without expressed or implied warranty.
+
+        Editors:    Murray M. Altheim <mailto:altheim@eng.sun.com>
+                    Peter Stark       <mailto:Peter.Stark@ecs.ericsson.se>
+        Revision:   $Id: xhtml-basic10.dtd,v 1.1 2006/07/05 16:29:53 matthieu Exp $ SMI
+
+-->
+<!-- This is the driver file for version 1.0 of the XHTML Basic DTD.
+
+     This DTD is identified by the PUBLIC and SYSTEM identifiers:
+
+     PUBLIC: "-//W3C//DTD XHTML Basic 1.0//EN"
+     SYSTEM: "/dtd/TR/xhtml-basic/xhtml-basic10.dtd"
+-->
+<!-- Use this URI to identify the default namespace:
+
+         "/dtd/1999/xhtml"
+
+     See the Qualified Names module for information
+     on the use of namespace prefixes in the DTD.
+-->
+<!-- Reserved for use with the XLink namespace:
+-->
+<!-- For example, if you are using XHTML Basic 1.0 directly, use
+     the public identifier in the DOCTYPE declaration, with the namespace
+     declaration on the document element to identify the default namespace:
+
+         <?xml version="1.0"?>
+         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN"
+             "/dtd/TR/xhtml-basic/xhtml-basic10.dtd" >
+         <html xmlns="/dtd/1999/xhtml"
+               xml:lang="en" >
+         ...
+         </html>
+-->
+<!-- reserved for future use with document profiles -->
+<!-- Bidirectional Text features
+     This feature-test entity is used to declare elements
+     and attributes used for bidirectional text support.
+-->
+<?doc type="doctype" role="title" { XHTML Basic 1.0 } ?>
+<!-- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+<!-- ...................................................................... -->
+<!-- XHTML Modular Framework Module  ...................................... -->
+<!-- file: xhtml-framework-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-framework-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Modular Framework 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-framework-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Modular Framework
+
+     This required module instantiates the modules needed
+     to support the XHTML modularization model, including:
+
+        +  notations
+        +  datatypes
+        +  namespace-qualified names
+        +  common attributes
+        +  document model
+        +  character entities
+
+     The Intrinsic Events module is ignored by default but
+     occurs in this module because it must be instantiated
+     prior to Attributes but after Datatypes.
+-->
+<!-- ...................................................................... -->
+<!-- XHTML Notations Module  .............................................. -->
+<!-- file: xhtml-notations-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-notations-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//NOTATIONS XHTML Notations 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-notations-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Notations
+
+     defines the following notations, many of these imported from
+     other specifications and standards. When an existing FPI is
+     known, it is incorporated here.
+-->
+<!-- XML Notations ..................................... -->
+<!-- SGML and XML Notations ............................ -->
+<!-- W3C XML 1.0 Recommendation -->
+<!-- XML 1.0 CDATA -->
+<!-- SGML Formal Public Identifiers -->
+<!-- XHTML Notations ................................... -->
+<!-- Length defined for cellpadding/cellspacing -->
+<!-- nn for pixels or nn% for percentage length -->
+<!-- space-separated list of link types -->
+<!-- single or comma-separated list of media descriptors -->
+<!-- pixel, percentage, or relative -->
+<!-- one or more digits (NUMBER) -->
+<!-- integer representing length in pixels -->
+<!-- script expression -->
+<!-- textual content -->
+<!-- Imported Notations ................................ -->
+<!-- a single character from [ISO10646] -->
+<!-- a character encoding, as per [RFC2045] -->
+<!-- a space separated list of character encodings, as per [RFC2045] -->
+<!-- media type, as per [RFC2045] -->
+<!-- comma-separated list of media types, as per [RFC2045] -->
+<!-- date and time information. ISO date format -->
+<!-- a language code, as per [RFC3066] -->
+<!-- a Uniform Resource Identifier, see [URI] -->
+<!-- a space-separated list of Uniform Resource Identifiers, see [URI] -->
+<!-- end of xhtml-notations-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Datatypes Module  .............................................. -->
+<!-- file: xhtml-datatypes-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-datatypes-1.mod,v 4.1 2001/04/06 19:23:32 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Datatypes 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-datatypes-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Datatypes
+
+     defines containers for the following datatypes, many of
+     these imported from other specifications and standards.
+-->
+<!-- Length defined for cellpadding/cellspacing -->
+<!-- nn for pixels or nn% for percentage length -->
+<!-- space-separated list of link types -->
+<!-- single or comma-separated list of media descriptors -->
+<!-- pixel, percentage, or relative -->
+<!-- one or more digits (NUMBER) -->
+<!-- integer representing length in pixels -->
+<!-- script expression -->
+<!-- textual content -->
+<!-- Imported Datatypes ................................ -->
+<!-- a single character from [ISO10646] -->
+<!-- a character encoding, as per [RFC2045] -->
+<!-- a space separated list of character encodings, as per [RFC2045] -->
+<!-- Color specification using color name or sRGB (#RRGGBB) values -->
+<!-- media type, as per [RFC2045] -->
+<!-- comma-separated list of media types, as per [RFC2045] -->
+<!-- date and time information. ISO date format -->
+<!-- formal public identifier, as per [ISO8879] -->
+<!-- a language code, as per [RFC3066] or its successor -->
+<!-- a Uniform Resource Identifier, see [URI] -->
+<!-- a space-separated list of Uniform Resource Identifiers, see [URI] -->
+<!-- end of xhtml-datatypes-1.mod -->
+<!-- placeholder for XLink support module -->
+<!-- ....................................................................... -->
+<!-- XHTML Qname Module  ................................................... -->
+<!-- file: xhtml-qname-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-qname-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Qualified Names 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-qname-1.mod"
+
+     Revisions:
+#2000-10-22: added qname declarations for ruby elements
+     ....................................................................... -->
+<!-- XHTML Qname (Qualified Name) Module
+
+     This module is contained in two parts, labeled Section 'A' and 'B':
+
+       Section A declares parameter entities to support namespace-
+       qualified names, namespace declarations, and name prefixing
+       for XHTML and extensions.
+
+       Section B declares parameter entities used to provide
+       namespace-qualified names for all XHTML element types:
+
+         %applet.qname;   the xmlns-qualified name for <applet>
+         %base.qname;     the xmlns-qualified name for <base>
+         ...
+
+     XHTML extensions would create a module similar to this one.
+     Included in the XHTML distribution is a template module
+     ('template-qname-1.mod') suitable for this purpose.
+-->
+<!-- Section A: XHTML XML Namespace Framework :::::::::::::::::::: -->
+<!-- 1. Declare a %XHTML.prefixed; conditional section keyword, used
+        to activate namespace prefixing. The default value should
+        inherit '%NS.prefixed;' from the DTD driver, so that unless
+        overridden, the default behaviour follows the overall DTD
+        prefixing scheme.
+-->
+<!-- By default, we always permit XHTML attribute collections to have
+     namespace-qualified prefixes as well.
+-->
+<!-- By default, we allow the XML Schema attributes on the root
+     element.
+-->
+<!-- 2. Declare a parameter entity (eg., %XHTML.xmlns;) containing
+        the URI reference used to identify the XHTML namespace:
+-->
+<!-- 3. Declare parameter entities (eg., %XHTML.prefix;) containing
+        the default namespace prefix string(s) to use when prefixing
+        is enabled. This may be overridden in the DTD driver or the
+        internal subset of an document instance. If no default prefix
+        is desired, this may be declared as an empty string.
+
+     NOTE: As specified in [XMLNAMES], the namespace prefix serves
+     as a proxy for the URI reference, and is not in itself significant.
+-->
+<!-- 4. Declare parameter entities (eg., %XHTML.pfx;) containing the
+        colonized prefix(es) (eg., '%XHTML.prefix;:') used when
+        prefixing is active, an empty string when it is not.
+-->
+<!-- declare qualified name extensions here ............ -->
+<!-- 5. The parameter entity %XHTML.xmlns.extra.attrib; may be
+        redeclared to contain any non-XHTML namespace declaration
+        attributes for namespaces embedded in XHTML. The default
+        is an empty string.  XLink should be included here if used
+        in the DTD.
+-->
+<!-- The remainder of Section A is only followed in XHTML, not extensions. -->
+<!-- Declare a parameter entity %NS.decl.attrib; containing
+     all XML Namespace declarations used in the DTD, plus the
+     xmlns declaration for XHTML, its form dependent on whether
+     prefixing is active.
+-->
+<!-- Declare a parameter entity %XSI.prefix as a prefix to use for XML
+     Schema Instance attributes.
+-->
+<!-- Declare a parameter entity %XSI.xmlns.attrib as support for the
+     schemaLocation attribute, since this is legal throughout the DTD.
+-->
+<!-- This is a placeholder for future XLink support.
+-->
+<!-- This is the attribute for the XML Schema namespace - XHTML
+     Modularization is also expressed in XML Schema, and it needs to
+	 be legal to declare the XML Schema namespace and the
+	 schemaLocation attribute on the root element of XHTML family
+	 documents.
+-->
+<!-- Declare a parameter entity %NS.decl.attrib; containing all
+     XML namespace declaration attributes used by XHTML, including
+     a default xmlns attribute when prefixing is inactive.
+-->
+<!-- placeholder for qualified name redeclarations -->
+<!-- Section B: XHTML Qualified Names ::::::::::::::::::::::::::::: -->
+<!-- 6. This section declares parameter entities used to provide
+        namespace-qualified names for all XHTML element types.
+-->
+<!-- module:  xhtml-applet-1.mod -->
+<!-- module:  xhtml-base-1.mod -->
+<!-- module:  xhtml-bdo-1.mod -->
+<!-- module:  xhtml-blkphras-1.mod -->
+<!-- module:  xhtml-blkpres-1.mod -->
+<!-- module:  xhtml-blkstruct-1.mod -->
+<!-- module:  xhtml-edit-1.mod -->
+<!-- module:  xhtml-form-1.mod -->
+<!-- module:  xhtml-hypertext-1.mod -->
+<!-- module:  xhtml-image-1.mod -->
+<!-- module:  xhtml-inlphras-1.mod -->
+<!-- module:  xhtml-inlpres-1.mod -->
+<!-- module:  xhtml-inlstruct-1.mod -->
+<!-- module:  xhtml-ismap-1.mod (also csismap, ssismap) -->
+<!-- module:  xhtml-link-1.mod -->
+<!-- module:  xhtml-list-1.mod -->
+<!-- module:  xhtml-meta-1.mod -->
+<!-- module:  xhtml-param-1.mod -->
+<!-- module:  xhtml-object-1.mod -->
+<!-- module:  xhtml-script-1.mod -->
+<!-- module:  xhtml-struct-1.mod -->
+<!-- module:  xhtml-style-1.mod -->
+<!-- module:  xhtml-table-1.mod -->
+<!-- module:  xhtml-ruby-1.mod -->
+<!-- Provisional XHTML 2.0 Qualified Names  ...................... -->
+<!-- module:  xhtml-image-2.mod -->
+<!-- end of xhtml-qname-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Common Attributes Module  ...................................... -->
+<!-- file: xhtml-attribs-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-attribs-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Common Attributes 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-attribs-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Common Attributes
+
+     This module declares many of the common attributes for the XHTML DTD.
+     %NS.decl.attrib; is declared in the XHTML Qname module.
+
+	 Note that this file was extended in XHTML Modularization Second Edition to 
+	 include declarations of "global" versions of the attribute collections.
+	 The global versions of the attributes are for use on elements in other 
+	 namespaces.  The global version of "common" includes the xmlns declaration
+	 for the prefixed version of the xhtml namespace.  If you are only using a
+	 specific attribute or an individual attribute collection, you must also
+	 include the XHTML.xmlns.attrib.prefixed PE on your elements.
+-->
+<!-- intrinsic event attributes declared previously
+-->
+<!-- end of xhtml-attribs-1.mod -->
+<!-- placeholder for content model redeclarations -->
+<!-- instantiate the Document Model module declared in the DTD driver
+-->
+<!-- ....................................................................... -->
+<!-- XHTML Basic 1.0 Document Model Module  .................................... -->
+<!-- file: xhtml-basic10-model-1.mod
+
+     This is XHTML Basic, a proper subset of XHTML.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-basic10-model-1.mod,v 2.8 2000/11/03 14:28:25 mimasa Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Basic 1.0 Document Model 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic10-model-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- XHTML Basic Document Model
+
+     This module describes the groupings of elements that make up
+     common content models for XHTML elements.
+-->
+<!-- Optional Elements in head  .............. -->
+<!-- Miscellaneous Elements  ................. -->
+<!-- Inline Elements  ........................ -->
+<!-- Block Elements  ......................... -->
+<!-- All Content Elements  ................... -->
+<!-- declares all content except tables
+-->
+<!-- end of xhtml-basic10-model-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Character Entities Module  ......................................... -->
+<!-- file: xhtml-charent-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-charent-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ENTITIES XHTML Character Entities 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-charent-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Character Entities for XHTML
+
+     This module declares the set of character entities for XHTML,
+     including the Latin 1, Symbol and Special character collections.
+-->
+<!-- Portions (C) International Organization for Standardization 1986
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Character entity set. Typical invocation:
+    <!ENTITY % HTMLlat1 PUBLIC
+       "-//W3C//ENTITIES Latin 1 for XHTML//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent">
+    %HTMLlat1;
+-->
+<!-- no-break space = non-breaking space,
+                                  U+00A0 ISOnum -->
+<!-- inverted exclamation mark, U+00A1 ISOnum -->
+<!-- cent sign, U+00A2 ISOnum -->
+<!-- pound sign, U+00A3 ISOnum -->
+<!-- currency sign, U+00A4 ISOnum -->
+<!-- yen sign = yuan sign, U+00A5 ISOnum -->
+<!-- broken bar = broken vertical bar,
+                                  U+00A6 ISOnum -->
+<!-- section sign, U+00A7 ISOnum -->
+<!-- diaeresis = spacing diaeresis,
+                                  U+00A8 ISOdia -->
+<!-- copyright sign, U+00A9 ISOnum -->
+<!-- feminine ordinal indicator, U+00AA ISOnum -->
+<!-- left-pointing double angle quotation mark
+                                  = left pointing guillemet, U+00AB ISOnum -->
+<!-- not sign = angled dash,
+                                  U+00AC ISOnum -->
+<!-- soft hyphen = discretionary hyphen,
+                                  U+00AD ISOnum -->
+<!-- registered sign = registered trade mark sign,
+                                  U+00AE ISOnum -->
+<!-- macron = spacing macron = overline
+                                  = APL overbar, U+00AF ISOdia -->
+<!-- degree sign, U+00B0 ISOnum -->
+<!-- plus-minus sign = plus-or-minus sign,
+                                  U+00B1 ISOnum -->
+<!-- superscript two = superscript digit two
+                                  = squared, U+00B2 ISOnum -->
+<!-- superscript three = superscript digit three
+                                  = cubed, U+00B3 ISOnum -->
+<!-- acute accent = spacing acute,
+                                  U+00B4 ISOdia -->
+<!-- micro sign, U+00B5 ISOnum -->
+<!-- pilcrow sign = paragraph sign,
+                                  U+00B6 ISOnum -->
+<!-- middle dot = Georgian comma
+                                  = Greek middle dot, U+00B7 ISOnum -->
+<!-- cedilla = spacing cedilla, U+00B8 ISOdia -->
+<!-- superscript one = superscript digit one,
+                                  U+00B9 ISOnum -->
+<!-- masculine ordinal indicator,
+                                  U+00BA ISOnum -->
+<!-- right-pointing double angle quotation mark
+                                  = right pointing guillemet, U+00BB ISOnum -->
+<!-- vulgar fraction one quarter
+                                  = fraction one quarter, U+00BC ISOnum -->
+<!-- vulgar fraction one half
+                                  = fraction one half, U+00BD ISOnum -->
+<!-- vulgar fraction three quarters
+                                  = fraction three quarters, U+00BE ISOnum -->
+<!-- inverted question mark
+                                  = turned question mark, U+00BF ISOnum -->
+<!-- latin capital letter A with grave
+                                  = latin capital letter A grave,
+                                  U+00C0 ISOlat1 -->
+<!-- latin capital letter A with acute,
+                                  U+00C1 ISOlat1 -->
+<!-- latin capital letter A with circumflex,
+                                  U+00C2 ISOlat1 -->
+<!-- latin capital letter A with tilde,
+                                  U+00C3 ISOlat1 -->
+<!-- latin capital letter A with diaeresis,
+                                  U+00C4 ISOlat1 -->
+<!-- latin capital letter A with ring above
+                                  = latin capital letter A ring,
+                                  U+00C5 ISOlat1 -->
+<!-- latin capital letter AE
+                                  = latin capital ligature AE,
+                                  U+00C6 ISOlat1 -->
+<!-- latin capital letter C with cedilla,
+                                  U+00C7 ISOlat1 -->
+<!-- latin capital letter E with grave,
+                                  U+00C8 ISOlat1 -->
+<!-- latin capital letter E with acute,
+                                  U+00C9 ISOlat1 -->
+<!-- latin capital letter E with circumflex,
+                                  U+00CA ISOlat1 -->
+<!-- latin capital letter E with diaeresis,
+                                  U+00CB ISOlat1 -->
+<!-- latin capital letter I with grave,
+                                  U+00CC ISOlat1 -->
+<!-- latin capital letter I with acute,
+                                  U+00CD ISOlat1 -->
+<!-- latin capital letter I with circumflex,
+                                  U+00CE ISOlat1 -->
+<!-- latin capital letter I with diaeresis,
+                                  U+00CF ISOlat1 -->
+<!-- latin capital letter ETH, U+00D0 ISOlat1 -->
+<!-- latin capital letter N with tilde,
+                                  U+00D1 ISOlat1 -->
+<!-- latin capital letter O with grave,
+                                  U+00D2 ISOlat1 -->
+<!-- latin capital letter O with acute,
+                                  U+00D3 ISOlat1 -->
+<!-- latin capital letter O with circumflex,
+                                  U+00D4 ISOlat1 -->
+<!-- latin capital letter O with tilde,
+                                  U+00D5 ISOlat1 -->
+<!-- latin capital letter O with diaeresis,
+                                  U+00D6 ISOlat1 -->
+<!-- multiplication sign, U+00D7 ISOnum -->
+<!-- latin capital letter O with stroke
+                                  = latin capital letter O slash,
+                                  U+00D8 ISOlat1 -->
+<!-- latin capital letter U with grave,
+                                  U+00D9 ISOlat1 -->
+<!-- latin capital letter U with acute,
+                                  U+00DA ISOlat1 -->
+<!-- latin capital letter U with circumflex,
+                                  U+00DB ISOlat1 -->
+<!-- latin capital letter U with diaeresis,
+                                  U+00DC ISOlat1 -->
+<!-- latin capital letter Y with acute,
+                                  U+00DD ISOlat1 -->
+<!-- latin capital letter THORN,
+                                  U+00DE ISOlat1 -->
+<!-- latin small letter sharp s = ess-zed,
+                                  U+00DF ISOlat1 -->
+<!-- latin small letter a with grave
+                                  = latin small letter a grave,
+                                  U+00E0 ISOlat1 -->
+<!-- latin small letter a with acute,
+                                  U+00E1 ISOlat1 -->
+<!-- latin small letter a with circumflex,
+                                  U+00E2 ISOlat1 -->
+<!-- latin small letter a with tilde,
+                                  U+00E3 ISOlat1 -->
+<!-- latin small letter a with diaeresis,
+                                  U+00E4 ISOlat1 -->
+<!-- latin small letter a with ring above
+                                  = latin small letter a ring,
+                                  U+00E5 ISOlat1 -->
+<!-- latin small letter ae
+                                  = latin small ligature ae, U+00E6 ISOlat1 -->
+<!-- latin small letter c with cedilla,
+                                  U+00E7 ISOlat1 -->
+<!-- latin small letter e with grave,
+                                  U+00E8 ISOlat1 -->
+<!-- latin small letter e with acute,
+                                  U+00E9 ISOlat1 -->
+<!-- latin small letter e with circumflex,
+                                  U+00EA ISOlat1 -->
+<!-- latin small letter e with diaeresis,
+                                  U+00EB ISOlat1 -->
+<!-- latin small letter i with grave,
+                                  U+00EC ISOlat1 -->
+<!-- latin small letter i with acute,
+                                  U+00ED ISOlat1 -->
+<!-- latin small letter i with circumflex,
+                                  U+00EE ISOlat1 -->
+<!-- latin small letter i with diaeresis,
+                                  U+00EF ISOlat1 -->
+<!-- latin small letter eth, U+00F0 ISOlat1 -->
+<!-- latin small letter n with tilde,
+                                  U+00F1 ISOlat1 -->
+<!-- latin small letter o with grave,
+                                  U+00F2 ISOlat1 -->
+<!-- latin small letter o with acute,
+                                  U+00F3 ISOlat1 -->
+<!-- latin small letter o with circumflex,
+                                  U+00F4 ISOlat1 -->
+<!-- latin small letter o with tilde,
+                                  U+00F5 ISOlat1 -->
+<!-- latin small letter o with diaeresis,
+                                  U+00F6 ISOlat1 -->
+<!-- division sign, U+00F7 ISOnum -->
+<!-- latin small letter o with stroke,
+                                  = latin small letter o slash,
+                                  U+00F8 ISOlat1 -->
+<!-- latin small letter u with grave,
+                                  U+00F9 ISOlat1 -->
+<!-- latin small letter u with acute,
+                                  U+00FA ISOlat1 -->
+<!-- latin small letter u with circumflex,
+                                  U+00FB ISOlat1 -->
+<!-- latin small letter u with diaeresis,
+                                  U+00FC ISOlat1 -->
+<!-- latin small letter y with acute,
+                                  U+00FD ISOlat1 -->
+<!-- latin small letter thorn,
+                                  U+00FE ISOlat1 -->
+<!-- latin small letter y with diaeresis,
+                                  U+00FF ISOlat1 -->
+<!-- Mathematical, Greek and Symbolic characters for XHTML -->
+<!-- Character entity set. Typical invocation:
+     <!ENTITY % HTMLsymbol PUBLIC
+        "-//W3C//ENTITIES Symbols for XHTML//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml-symbol.ent">
+     %HTMLsymbol;
+-->
+<!-- Portions (C) International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Relevant ISO entity set is given unless names are newly introduced.
+     New names (i.e., not in ISO 8879 list) do not clash with any
+     existing ISO 8879 entity names. ISO 10646 character numbers
+     are given for each character, in hex. values are decimal
+     conversions of the ISO 10646 values and refer to the document
+     character set. Names are Unicode names. 
+-->
+<!-- Latin Extended-B -->
+<!-- latin small letter f with hook = function
+                                    = florin, U+0192 ISOtech -->
+<!-- Greek -->
+<!-- greek capital letter alpha, U+0391 -->
+<!-- greek capital letter beta, U+0392 -->
+<!-- greek capital letter gamma,
+                                    U+0393 ISOgrk3 -->
+<!-- greek capital letter delta,
+                                    U+0394 ISOgrk3 -->
+<!-- greek capital letter epsilon, U+0395 -->
+<!-- greek capital letter zeta, U+0396 -->
+<!-- greek capital letter eta, U+0397 -->
+<!-- greek capital letter theta,
+                                    U+0398 ISOgrk3 -->
+<!-- greek capital letter iota, U+0399 -->
+<!-- greek capital letter kappa, U+039A -->
+<!-- greek capital letter lamda,
+                                    U+039B ISOgrk3 -->
+<!-- greek capital letter mu, U+039C -->
+<!-- greek capital letter nu, U+039D -->
+<!-- greek capital letter xi, U+039E ISOgrk3 -->
+<!-- greek capital letter omicron, U+039F -->
+<!-- greek capital letter pi, U+03A0 ISOgrk3 -->
+<!-- greek capital letter rho, U+03A1 -->
+<!-- there is no Sigmaf, and no U+03A2 character either -->
+<!-- greek capital letter sigma,
+                                    U+03A3 ISOgrk3 -->
+<!-- greek capital letter tau, U+03A4 -->
+<!-- greek capital letter upsilon,
+                                    U+03A5 ISOgrk3 -->
+<!-- greek capital letter phi,
+                                    U+03A6 ISOgrk3 -->
+<!-- greek capital letter chi, U+03A7 -->
+<!-- greek capital letter psi,
+                                    U+03A8 ISOgrk3 -->
+<!-- greek capital letter omega,
+                                    U+03A9 ISOgrk3 -->
+<!-- greek small letter alpha,
+                                    U+03B1 ISOgrk3 -->
+<!-- greek small letter beta, U+03B2 ISOgrk3 -->
+<!-- greek small letter gamma,
+                                    U+03B3 ISOgrk3 -->
+<!-- greek small letter delta,
+                                    U+03B4 ISOgrk3 -->
+<!-- greek small letter epsilon,
+                                    U+03B5 ISOgrk3 -->
+<!-- greek small letter zeta, U+03B6 ISOgrk3 -->
+<!-- greek small letter eta, U+03B7 ISOgrk3 -->
+<!-- greek small letter theta,
+                                    U+03B8 ISOgrk3 -->
+<!-- greek small letter iota, U+03B9 ISOgrk3 -->
+<!-- greek small letter kappa,
+                                    U+03BA ISOgrk3 -->
+<!-- greek small letter lamda,
+                                    U+03BB ISOgrk3 -->
+<!-- greek small letter mu, U+03BC ISOgrk3 -->
+<!-- greek small letter nu, U+03BD ISOgrk3 -->
+<!-- greek small letter xi, U+03BE ISOgrk3 -->
+<!-- greek small letter omicron, U+03BF NEW -->
+<!-- greek small letter pi, U+03C0 ISOgrk3 -->
+<!-- greek small letter rho, U+03C1 ISOgrk3 -->
+<!-- greek small letter final sigma,
+                                    U+03C2 ISOgrk3 -->
+<!-- greek small letter sigma,
+                                    U+03C3 ISOgrk3 -->
+<!-- greek small letter tau, U+03C4 ISOgrk3 -->
+<!-- greek small letter upsilon,
+                                    U+03C5 ISOgrk3 -->
+<!-- greek small letter phi, U+03C6 ISOgrk3 -->
+<!-- greek small letter chi, U+03C7 ISOgrk3 -->
+<!-- greek small letter psi, U+03C8 ISOgrk3 -->
+<!-- greek small letter omega,
+                                    U+03C9 ISOgrk3 -->
+<!-- greek theta symbol,
+                                    U+03D1 NEW -->
+<!-- greek upsilon with hook symbol,
+                                    U+03D2 NEW -->
+<!-- greek pi symbol, U+03D6 ISOgrk3 -->
+<!-- General Punctuation -->
+<!-- bullet = black small circle,
+                                     U+2022 ISOpub  -->
+<!-- bullet is NOT the same as bullet operator, U+2219 -->
+<!-- horizontal ellipsis = three dot leader,
+                                     U+2026 ISOpub  -->
+<!-- prime = minutes = feet, U+2032 ISOtech -->
+<!-- double prime = seconds = inches,
+                                     U+2033 ISOtech -->
+<!-- overline = spacing overscore,
+                                     U+203E NEW -->
+<!-- fraction slash, U+2044 NEW -->
+<!-- Letterlike Symbols -->
+<!-- script capital P = power set
+                                     = Weierstrass p, U+2118 ISOamso -->
+<!-- black-letter capital I = imaginary part,
+                                     U+2111 ISOamso -->
+<!-- black-letter capital R = real part symbol,
+                                     U+211C ISOamso -->
+<!-- trade mark sign, U+2122 ISOnum -->
+<!-- alef symbol = first transfinite cardinal,
+                                     U+2135 NEW -->
+<!-- alef symbol is NOT the same as hebrew letter alef,
+     U+05D0 although the same glyph could be used to depict both characters -->
+<!-- Arrows -->
+<!-- leftwards arrow, U+2190 ISOnum -->
+<!-- upwards arrow, U+2191 ISOnum-->
+<!-- rightwards arrow, U+2192 ISOnum -->
+<!-- downwards arrow, U+2193 ISOnum -->
+<!-- left right arrow, U+2194 ISOamsa -->
+<!-- downwards arrow with corner leftwards
+                                     = carriage return, U+21B5 NEW -->
+<!-- leftwards double arrow, U+21D0 ISOtech -->
+<!-- Unicode does not say that lArr is the same as the 'is implied by' arrow
+    but also does not have any other character for that function. So lArr can
+    be used for 'is implied by' as ISOtech suggests -->
+<!-- upwards double arrow, U+21D1 ISOamsa -->
+<!-- rightwards double arrow,
+                                     U+21D2 ISOtech -->
+<!-- Unicode does not say this is the 'implies' character but does not have 
+     another character with this function so rArr can be used for 'implies'
+     as ISOtech suggests -->
+<!-- downwards double arrow, U+21D3 ISOamsa -->
+<!-- left right double arrow,
+                                     U+21D4 ISOamsa -->
+<!-- Mathematical Operators -->
+<!-- for all, U+2200 ISOtech -->
+<!-- partial differential, U+2202 ISOtech  -->
+<!-- there exists, U+2203 ISOtech -->
+<!-- empty set = null set, U+2205 ISOamso -->
+<!-- nabla = backward difference,
+                                     U+2207 ISOtech -->
+<!-- element of, U+2208 ISOtech -->
+<!-- not an element of, U+2209 ISOtech -->
+<!-- contains as member, U+220B ISOtech -->
+<!-- n-ary product = product sign,
+                                     U+220F ISOamsb -->
+<!-- prod is NOT the same character as U+03A0 'greek capital letter pi' though
+     the same glyph might be used for both -->
+<!-- n-ary summation, U+2211 ISOamsb -->
+<!-- sum is NOT the same character as U+03A3 'greek capital letter sigma'
+     though the same glyph might be used for both -->
+<!-- minus sign, U+2212 ISOtech -->
+<!-- asterisk operator, U+2217 ISOtech -->
+<!-- square root = radical sign,
+                                     U+221A ISOtech -->
+<!-- proportional to, U+221D ISOtech -->
+<!-- infinity, U+221E ISOtech -->
+<!-- angle, U+2220 ISOamso -->
+<!-- logical and = wedge, U+2227 ISOtech -->
+<!-- logical or = vee, U+2228 ISOtech -->
+<!-- intersection = cap, U+2229 ISOtech -->
+<!-- union = cup, U+222A ISOtech -->
+<!-- integral, U+222B ISOtech -->
+<!-- therefore, U+2234 ISOtech -->
+<!-- tilde operator = varies with = similar to,
+                                     U+223C ISOtech -->
+<!-- tilde operator is NOT the same character as the tilde, U+007E,
+     although the same glyph might be used to represent both  -->
+<!-- approximately equal to, U+2245 ISOtech -->
+<!-- almost equal to = asymptotic to,
+                                     U+2248 ISOamsr -->
+<!-- not equal to, U+2260 ISOtech -->
+<!-- identical to, U+2261 ISOtech -->
+<!-- less-than or equal to, U+2264 ISOtech -->
+<!-- greater-than or equal to,
+                                     U+2265 ISOtech -->
+<!-- subset of, U+2282 ISOtech -->
+<!-- superset of, U+2283 ISOtech -->
+<!-- not a subset of, U+2284 ISOamsn -->
+<!-- subset of or equal to, U+2286 ISOtech -->
+<!-- superset of or equal to,
+                                     U+2287 ISOtech -->
+<!-- circled plus = direct sum,
+                                     U+2295 ISOamsb -->
+<!-- circled times = vector product,
+                                     U+2297 ISOamsb -->
+<!-- up tack = orthogonal to = perpendicular,
+                                     U+22A5 ISOtech -->
+<!-- dot operator, U+22C5 ISOamsb -->
+<!-- dot operator is NOT the same character as U+00B7 middle dot -->
+<!-- Miscellaneous Technical -->
+<!-- left ceiling = APL upstile,
+                                     U+2308 ISOamsc  -->
+<!-- right ceiling, U+2309 ISOamsc  -->
+<!-- left floor = APL downstile,
+                                     U+230A ISOamsc  -->
+<!-- right floor, U+230B ISOamsc  -->
+<!-- left-pointing angle bracket = bra,
+                                     U+2329 ISOtech -->
+<!-- lang is NOT the same character as U+003C 'less than sign' 
+     or U+2039 'single left-pointing angle quotation mark' -->
+<!-- right-pointing angle bracket = ket,
+                                     U+232A ISOtech -->
+<!-- rang is NOT the same character as U+003E 'greater than sign' 
+     or U+203A 'single right-pointing angle quotation mark' -->
+<!-- Geometric Shapes -->
+<!-- lozenge, U+25CA ISOpub -->
+<!-- Miscellaneous Symbols -->
+<!-- black spade suit, U+2660 ISOpub -->
+<!-- black here seems to mean filled as opposed to hollow -->
+<!-- black club suit = shamrock,
+                                     U+2663 ISOpub -->
+<!-- black heart suit = valentine,
+                                     U+2665 ISOpub -->
+<!-- black diamond suit, U+2666 ISOpub -->
+<!-- Special characters for XHTML -->
+<!-- Character entity set. Typical invocation:
+     <!ENTITY % HTMLspecial PUBLIC
+        "-//W3C//ENTITIES Special for XHTML//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml-special.ent">
+     %HTMLspecial;
+-->
+<!-- Portions (C) International Organization for Standardization 1986:
+     Permission to copy in any form is granted for use with
+     conforming SGML systems and applications as defined in
+     ISO 8879, provided this notice is included in all copies.
+-->
+<!-- Relevant ISO entity set is given unless names are newly introduced.
+     New names (i.e., not in ISO 8879 list) do not clash with any
+     existing ISO 8879 entity names. ISO 10646 character numbers
+     are given for each character, in hex. values are decimal
+     conversions of the ISO 10646 values and refer to the document
+     character set. Names are Unicode names. 
+-->
+<!-- C0 Controls and Basic Latin -->
+<!--  quotation mark, U+0022 ISOnum -->
+<!--  ampersand, U+0026 ISOnum -->
+<!--  less-than sign, U+003C ISOnum -->
+<!--  greater-than sign, U+003E ISOnum -->
+<!--  apostrophe = APL quote, U+0027 ISOnum -->
+<!-- Latin Extended-A -->
+<!--  latin capital ligature OE,
+                                    U+0152 ISOlat2 -->
+<!--  latin small ligature oe, U+0153 ISOlat2 -->
+<!-- ligature is a misnomer, this is a separate character in some languages -->
+<!--  latin capital letter S with caron,
+                                    U+0160 ISOlat2 -->
+<!--  latin small letter s with caron,
+                                    U+0161 ISOlat2 -->
+<!--  latin capital letter Y with diaeresis,
+                                    U+0178 ISOlat2 -->
+<!-- Spacing Modifier Letters -->
+<!--  modifier letter circumflex accent,
+                                    U+02C6 ISOpub -->
+<!--  small tilde, U+02DC ISOdia -->
+<!-- General Punctuation -->
+<!-- en space, U+2002 ISOpub -->
+<!-- em space, U+2003 ISOpub -->
+<!-- thin space, U+2009 ISOpub -->
+<!-- zero width non-joiner,
+                                    U+200C NEW RFC 2070 -->
+<!-- zero width joiner, U+200D NEW RFC 2070 -->
+<!-- left-to-right mark, U+200E NEW RFC 2070 -->
+<!-- right-to-left mark, U+200F NEW RFC 2070 -->
+<!-- en dash, U+2013 ISOpub -->
+<!-- em dash, U+2014 ISOpub -->
+<!-- left single quotation mark,
+                                    U+2018 ISOnum -->
+<!-- right single quotation mark,
+                                    U+2019 ISOnum -->
+<!-- single low-9 quotation mark, U+201A NEW -->
+<!-- left double quotation mark,
+                                    U+201C ISOnum -->
+<!-- right double quotation mark,
+                                    U+201D ISOnum -->
+<!-- double low-9 quotation mark, U+201E NEW -->
+<!-- dagger, U+2020 ISOpub -->
+<!-- double dagger, U+2021 ISOpub -->
+<!-- per mille sign, U+2030 ISOtech -->
+<!-- single left-pointing angle quotation mark,
+                                    U+2039 ISO proposed -->
+<!-- lsaquo is proposed but not yet ISO standardized -->
+<!-- single right-pointing angle quotation mark,
+                                    U+203A ISO proposed -->
+<!-- rsaquo is proposed but not yet ISO standardized -->
+<!-- Currency Symbols -->
+<!--  euro sign, U+20AC NEW -->
+<!-- end of xhtml-charent-1.mod -->
+<!-- end of xhtml-framework-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Text Module  ................................................... -->
+<!-- file: xhtml-text-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-text-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Text 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-text-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Textual Content
+
+     The Text module includes declarations for all core
+     text container elements and their attributes.
+-->
+<!-- ...................................................................... -->
+<!-- XHTML Inline Structural Module  ...................................... -->
+<!-- file: xhtml-inlstruct-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-inlstruct-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Inline Structural 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-inlstruct-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Inline Structural
+
+        br, span
+
+     This module declares the elements and their attributes
+     used to support inline-level structural markup.
+-->
+<!-- br: forced line break ............................. -->
+<!-- end of br.element -->
+<!-- end of br.attlist -->
+<!-- span: generic inline container .................... -->
+<!-- end of span.element -->
+<!-- end of span.attlist -->
+<!-- end of xhtml-inlstruct-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Inline Phrasal Module  ......................................... -->
+<!-- file: xhtml-inlphras-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-inlphras-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Inline Phrasal 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-inlphras-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Inline Phrasal
+
+        abbr, acronym, cite, code, dfn, em, kbd, q, samp, strong, var
+
+     This module declares the elements and their attributes used to
+     support inline-level phrasal markup.
+-->
+<!-- end of abbr.element -->
+<!-- end of abbr.attlist -->
+<!-- end of acronym.element -->
+<!-- end of acronym.attlist -->
+<!-- end of cite.element -->
+<!-- end of cite.attlist -->
+<!-- end of code.element -->
+<!-- end of code.attlist -->
+<!-- end of dfn.element -->
+<!-- end of dfn.attlist -->
+<!-- end of em.element -->
+<!-- end of em.attlist -->
+<!-- end of kbd.element -->
+<!-- end of kbd.attlist -->
+<!-- end of q.element -->
+<!-- end of q.attlist -->
+<!-- end of samp.element -->
+<!-- end of samp.attlist -->
+<!-- end of strong.element -->
+<!-- end of strong.attlist -->
+<!-- end of var.element -->
+<!-- end of var.attlist -->
+<!-- end of xhtml-inlphras-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Block Structural Module  ....................................... -->
+<!-- file: xhtml-blkstruct-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-blkstruct-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Block Structural 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-blkstruct-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Block Structural
+
+        div, p
+
+     This module declares the elements and their attributes used to
+     support block-level structural markup.
+-->
+<!-- end of div.element -->
+<!-- end of div.attlist -->
+<!-- end of p.element -->
+<!-- end of p.attlist -->
+<!-- end of xhtml-blkstruct-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Block Phrasal Module  .......................................... -->
+<!-- file: xhtml-blkphras-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-blkphras-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Block Phrasal 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-blkphras-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Block Phrasal
+
+        address, blockquote, pre, h1, h2, h3, h4, h5, h6
+
+     This module declares the elements and their attributes used to
+     support block-level phrasal markup.
+-->
+<!-- end of address.element -->
+<!-- end of address.attlist -->
+<!-- end of blockquote.element -->
+<!-- end of blockquote.attlist -->
+<!-- end of pre.element -->
+<!-- end of pre.attlist -->
+<!-- ...................  Heading Elements  ................... -->
+<!-- end of h1.element -->
+<!-- end of h1.attlist -->
+<!-- end of h2.element -->
+<!-- end of h2.attlist -->
+<!-- end of h3.element -->
+<!-- end of h3.attlist -->
+<!-- end of h4.element -->
+<!-- end of h4.attlist -->
+<!-- end of h5.element -->
+<!-- end of h5.attlist -->
+<!-- end of h6.element -->
+<!-- end of h6.attlist -->
+<!-- end of xhtml-blkphras-1.mod -->
+<!-- end of xhtml-text-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Hypertext Module  .............................................. -->
+<!-- file: xhtml-hypertext-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-hypertext-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Hypertext 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-hypertext-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Hypertext
+
+        a
+
+     This module declares the anchor ('a') element type, which
+     defines the source of a hypertext link. The destination
+     (or link 'target') is identified via its 'id' attribute
+     rather than the 'name' attribute as was used in HTML.
+-->
+<!-- ............  Anchor Element  ............ -->
+<!-- end of a.element -->
+<!-- end of a.attlist -->
+<!-- end of xhtml-hypertext-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Lists Module  .................................................. -->
+<!-- file: xhtml-list-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-list-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Lists 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-list-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Lists
+
+        dl, dt, dd, ol, ul, li
+
+     This module declares the list-oriented element types
+     and their attributes.
+-->
+<!-- dl: Definition List ............................... -->
+<!-- end of dl.element -->
+<!-- end of dl.attlist -->
+<!-- dt: Definition Term ............................... -->
+<!-- end of dt.element -->
+<!-- end of dt.attlist -->
+<!-- dd: Definition Description ........................ -->
+<!-- end of dd.element -->
+<!-- end of dd.attlist -->
+<!-- ol: Ordered List (numbered styles) ................ -->
+<!-- end of ol.element -->
+<!-- end of ol.attlist -->
+<!-- ul: Unordered List (bullet styles) ................ -->
+<!-- end of ul.element -->
+<!-- end of ul.attlist -->
+<!-- li: List Item ..................................... -->
+<!-- end of li.element -->
+<!-- end of li.attlist -->
+<!-- end of xhtml-list-1.mod -->
+<!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+<!-- Image Module  ............................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Images Module  ................................................. -->
+<!-- file: xhtml-image-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Rovision: $Id: xhtml-image-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Images 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-image-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Images
+
+        img
+
+     This module provides markup to support basic image embedding.
+-->
+<!-- To avoid problems with text-only UAs as well as to make
+     image content understandable and navigable to users of
+     non-visual UAs, you need to provide a description with
+     the 'alt' attribute, and avoid server-side image maps.
+-->
+<!-- end of img.element -->
+<!-- end of img.attlist -->
+<!-- end of xhtml-image-1.mod -->
+<!-- Tables Module ............................................... -->
+<!-- ....................................................................... -->
+<!-- XHTML Basic Table Module  ............................................. -->
+<!-- file: xhtml-basic-table-1.mod
+
+     This is XHTML Basic, a proper subset of XHTML.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-basic-table-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Basic Tables 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic-table-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Basic Tables
+
+        table, caption, tr, th, td
+
+     This table module declares elements and attributes defining
+     a table model based fundamentally on features found in the
+     widely-deployed HTML 3.2 table model.  While this module
+     mimics the content model and table attributes of HTML 3.2
+     tables, the element types declared herein also includes all
+     HTML 4 common and most of the HTML 4 table attributes.
+-->
+<!-- declare qualified element type names:
+-->
+<!-- horizontal alignment attributes for cell contents
+-->
+<!-- vertical alignment attributes for cell contents
+-->
+<!-- scope is simpler than axes attribute for common tables
+-->
+<!-- table: Table Element .............................. -->
+<!-- end of table.element -->
+<!-- end of table.attlist -->
+<!-- caption: Table Caption ............................ -->
+<!-- end of caption.element -->
+<!-- end of caption.attlist -->
+<!-- tr: Table Row ..................................... -->
+<!-- end of tr.element -->
+<!-- end of tr.attlist -->
+<!-- th: Table Header Cell ............................. -->
+<!-- th is for header cells, td for data,
+     but for cells acting as both use td
+-->
+<!-- end of th.element -->
+<!-- end of th.attlist -->
+<!-- td: Table Data Cell ............................... -->
+<!-- end of td.element -->
+<!-- end of td.attlist -->
+<!-- end of xhtml-basic-table-1.mod -->
+<!-- Forms Module  ............................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Simplified Forms Module  ....................................... -->
+<!-- file: xhtml-basic-form-1.mod
+
+     This is XHTML Basic, a proper subset of XHTML.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-basic-form-1.mod,v 4.1 2001/04/05 06:57:40 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Basic Forms 1.0//EN"  
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic-form-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Basic Forms
+
+     This forms module is based on the HTML 3.2 forms model, with
+     the WAI-requested addition of the label element. While this 
+     module essentially mimics the content model and attributes of 
+     HTML 3.2 forms, the element types declared herein also include
+     all HTML 4 common attributes.
+
+        form, label, input, select, option, textarea
+-->
+<!-- declare qualified element type names:
+-->
+<!-- %BlkNoForm.mix; includes all non-form block elements,
+     plus %Misc.class;
+-->
+<!-- form: Form Element ................................ -->
+<!-- end of form.element -->
+<!-- end of form.attlist -->
+<!-- label: Form Field Label Text ...................... -->
+<!-- Each label must not contain more than ONE field
+-->
+<!-- end of label.element -->
+<!-- end of label.attlist -->
+<!-- input: Form Control ............................... -->
+<!-- end of input.element -->
+<!-- Basic Forms removes 'button', 'image' and 'file' input types.
+-->
+<!-- attribute name required for all but submit & reset
+-->
+<!-- end of input.attlist -->
+<!-- select: Option Selector ........................... -->
+<!-- end of select.element -->
+<!-- end of select.attlist -->
+<!-- option: Selectable Choice ......................... -->
+<!-- end of option.element -->
+<!-- end of option.attlist -->
+<!-- textarea: Multi-Line Text Field ................... -->
+<!-- end of textarea.element -->
+<!-- end of textarea.attlist -->
+<!-- end of xhtml-basic-form-1.mod -->
+<!-- Link Element Module  ........................................ -->
+<!-- ...................................................................... -->
+<!-- XHTML Link Element Module  ........................................... -->
+<!-- file: xhtml-link-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-link-1.mod,v 4.1 2001/04/05 06:57:40 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Link Element 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-link-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Link element
+
+        link
+
+     This module declares the link element type and its attributes,
+     which could (in principle) be used to define document-level links
+     to external resources such as:
+
+     a) for document specific toolbars/menus, e.g. start, contents,
+        previous, next, index, end, help
+     b) to link to a separate style sheet (rel="stylesheet")
+     c) to make a link to a script (rel="script")
+     d) by style sheets to control how collections of html nodes are
+        rendered into printed documents
+     e) to make a link to a printable version of this document
+        e.g. a postscript or pdf version (rel="alternate" media="print")
+-->
+<!-- link: Media-Independent Link ...................... -->
+<!-- end of link.element -->
+<!-- end of link.attlist -->
+<!-- end of xhtml-link-1.mod -->
+<!-- Document Metainformation Module  ............................ -->
+<!-- ...................................................................... -->
+<!-- XHTML Document Metainformation Module  ............................... -->
+<!-- file: xhtml-meta-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-meta-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Metainformation 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-meta-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Meta Information
+
+        meta
+
+     This module declares the meta element type and its attributes,
+     used to provide declarative document metainformation.
+-->
+<!-- meta: Generic Metainformation ..................... -->
+<!-- end of meta.element -->
+<!-- end of meta.attlist -->
+<!-- end of xhtml-meta-1.mod -->
+<!-- Base Element Module  ........................................ -->
+<!-- ...................................................................... -->
+<!-- XHTML Base Element Module  ........................................... -->
+<!-- file: xhtml-base-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-base-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Base Element 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-base-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Base element
+
+        base
+
+     This module declares the base element type and its attributes,
+     used to define a base URI against which relative URIs in the
+     document will be resolved.
+
+     Note that this module also redeclares the content model for
+     the head element to include the base element.
+-->
+<!-- base: Document Base URI ........................... -->
+<!-- end of base.element -->
+<!-- end of base.attlist -->
+<!-- end of xhtml-base-1.mod -->
+<!-- Param Element Module  ....................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Param Element Module  ..................................... -->
+<!-- file: xhtml-param-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-param-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Param Element 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-param-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Parameters for Java Applets and Embedded Objects
+
+        param
+
+     This module provides declarations for the param element,
+     used to provide named property values for the applet
+     and object elements.
+-->
+<!-- param: Named Property Value ....................... -->
+<!-- end of param.element -->
+<!-- end of param.attlist -->
+<!-- end of xhtml-param-1.mod -->
+<!-- Embedded Object Module  ..................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Embedded Object Module  ........................................ -->
+<!-- file: xhtml-object-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-object-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Embedded Object 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-object-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Embedded Objects
+
+        object
+
+     This module declares the object element type and its attributes, used
+     to embed external objects as part of XHTML pages. In the document,
+     place param elements prior to other content within the object element.
+
+     Note that use of this module requires instantiation of the Param
+     Element Module.
+-->
+<!-- object: Generic Embedded Object ................... -->
+<!-- end of object.element -->
+<!-- end of object.attlist -->
+<!-- end of xhtml-object-1.mod -->
+<!-- Target Attribute Module  .................................... -->
+<!-- ...................................................................... -->
+<!-- XHTML Target Module  ................................................. -->
+<!-- file: xhtml-target-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-target-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Target 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-target-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Target 
+
+        target
+
+     This module declares the 'target' attribute used for opening windows
+-->
+<!-- render in this frame -->
+<!-- add 'target' attribute to 'a' element -->
+<!-- add 'target' attribute to 'area' element -->
+<!-- add 'target' attribute to 'link' element -->
+<!-- add 'target' attribute to 'form' element -->
+<!-- add 'target' attribute to 'base' element -->
+<!-- end of xhtml-target-1.mod -->
+<!-- ...................................................................... -->
+<!-- XHTML Structure Module  .............................................. -->
+<!-- file: xhtml-struct-1.mod
+
+     This is XHTML, a reformulation of HTML as a modular XML application.
+     Copyright 1998-2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+     Revision: $Id: xhtml-struct-1.mod,v 4.0 2001/04/02 22:42:49 altheim Exp $ SMI
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+       PUBLIC "-//W3C//ELEMENTS XHTML Document Structure 1.0//EN"
+       SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-struct-1.mod"
+
+     Revisions:
+     (none)
+     ....................................................................... -->
+<!-- Document Structure
+
+        title, head, body, html
+
+     The Structure Module defines the major structural elements and
+     their attributes.
+
+     Note that the content model of the head element type is redeclared
+     when the Base Module is included in the DTD.
+
+     The parameter entity containing the XML namespace URI value used
+     for XHTML is '%XHTML.xmlns;', defined in the Qualified Names module.
+-->
+<!-- title: Document Title ............................. -->
+<!-- The title element is not considered part of the flow of text.
+     It should be displayed, for example as the page header or
+     window title. Exactly one title is required per document.
+-->
+<!-- end of title.element -->
+<!-- end of title.attlist -->
+<!-- head: Document Head ............................... -->
+<!-- end of head.element -->
+<!-- reserved for future use with document profiles
+-->
+<!-- end of head.attlist -->
+<!-- body: Document Body ............................... -->
+<!-- end of body.element -->
+<!-- end of body.attlist -->
+<!-- html: XHTML Document Element ...................... -->
+<!-- end of html.element -->
+<!-- define a parameter for the XSI schemaLocation attribute -->
+<!-- version attribute value defined in driver
+-->
+<!-- schemaLocation attribute from XML Schema
+-->
+<!-- see the Qualified Names module for information
+     on how to extend XHTML using XML namespaces
+-->
+<!-- end of html.attlist -->
+<!-- end of xhtml-struct-1.mod -->
+<!-- end of XHTML Basic 1.0 DTD  ........................................... -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+    body  Verdana, Arial, sans-serif; font-size: 8pt 
+    td  Verdana, Arial, sans-serif; font-size: 8pt 
+  </style>
+  </head>
+  <body leftmargin="0" topmargin="0">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td align="center" bgcolor="#000066" rowspan="3" valign="middle"
+            width="161"><img border="0" height="44"
+            src="cid:A0.5963248131961322" width="78">
+        </td><td bgcolor="#626E90"><img alt height="10"
+            src="cid:A1.6143226124770862" width="1">
+        </td></tr>
+      <tr>
+        <td bgcolor="#4D597C" valign="middle" width="90%"><img alt
+            height="30" src="cid:A2.0935416821564106" valign="absmiddle" width="5">
+          <img src="cid:A3.6977913319603006" valign="absmiddle">
+        </td></tr>
+      <tr>
+        <td bgcolor="#626E90"><img alt height="10"
+            src="cid:A4.611986317685563" width="1">
+        </td></tr>
+      <tr>
+        <td colspan="2"><table align="center" border="0" cellpadding="0"
+            cellspacing="0" width="100%">
+            <tr>
+              <td colspan="4">&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td valign="middle"><p>
+                  <a
+                      href="http://mypictures.bell.ca/shareMessage.do?invite=8ERr4eJYYY7NkL87oLvh"><img
+                      border="0" src="cid:A5.664623796618034">
+                  </a></p>
+              </td><td>&nbsp;</td><td valign="middle"><p> You have
+                  received a message from 2068675309 </p>
+                <p></p>
+                <p>
+                  <img src="cid:A6.218821519147072">
+                  <a
+                    href="http://mypictures.bell.ca/shareMessage.do?invite=8ERr4eJYYY7NkL87oLvh">View Message</a>
+                </p>
+              </td><td>&nbsp;</td><td valign="middle"><p>
+                  <!-- ENGLIGH -->
+
+                  <!-- AdJuggler 5 request
+				 Ad Spot: bell_en_email_right_1_140x200
+				 Channel: Undefined
+				 Ad Dimension: 140x200_E-mail
+				 Category: Undefined
+				 Sub-category: Undefined
+				--><a
+                      href="http://bell-banners.sun2.lightsurf.net/servlet/ajrotator/174/0/cc?z=1"><Img
+                      border="0" src="http://bell-banners.sun2.lightsurf.net/servlet/ajrotator/174/0/vc?z=1&dim=98">
+                  </a></p>
+              </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr>
+              <td colspan="4">&nbsp;</td></tr>
+          </table>
+        </td></tr>
+      <tr>
+        <td align="center" bgcolor="#626E90" colspan="2"><br>
+          <font color="white">         Send and Receive Pictures and
+            Video through Bell Mobility.<br>         For more
+            information go to <a href="http://www.bell.ca/mypictures" style="color: #CCCCCC">www.bell.ca/mypictures</a>.<br>
+          </font>
+          <br>
+        </td></tr>
+      <tr>
+        <td bgcolor="#FFFFFF" colspan="2"><br>
+        </td></tr>
+      <tr>
+        <td align="center" bgcolor="#626E90" colspan="2"><br>
+          <font color="white">         Copyright &copy; 2008 Bell
+            Mobility. All Rights Reserved.<br>
+          </font>
+          <br>
+        </td></tr>
+    </table>
+  </body>
+</html>
+
+------=_Part_83999_4375329.1220831395069--
+
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A0.5963248131961322>
+
+R0lGODlhTgAsANUAAAAAZv/////MABANYO+/Br+ZGt+zDc+mEzAmU1BARiAaWY9zLYBmM0AzTXBw
+qXBZOVBQlp+AJiAgeWBgn6+MIDAwg2BNQBAQcO/v9c/P4q+vz7+/2d/f7J+fxUBAjGBgoI+PvH9/
+soCAs5+fxgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAABOACwAAAb/QIBw
+SCwaj8ikcslsOp/QqHRKrVqvQwR2ywUkDNqueLoQLMbo5kCIEBTWafRAoUA0EowFJRI+CBJxWHUJ
+DwwRBQYCigQGBQUMQw9mgVEDDRZ6iASKAo0LDwkNCApwQwluCncJCRYMha+urncNClwIFhEHBpuK
+BhQMFqOlSgUCjATIyJzLnMmMBQthT3UPBbzIB5/SQ3MND7lgRgOJ2Q/mDw3p6ut434icb0wKCRHX
+BREWDcMDCISHuwQOFPiFhIGbYVDKKAKEZAC9RAKyBSsyjwEFXQYORFhgIQEChEYUJGIYJUExARRA
+CkngpxODj0QGYEJ0gAJHWiqXGCwABQGD/5YEGKgcoNCABYQIDkVgkIDUlQGSBOQUMuchpwMPpp5a
+eGTOmJ0WxNnB1bLTo21I2ijCqk8Nv36t9NTSKUBLt1aHeBmzOfFJAwrNGlEYvIBBnsGDDyhOZsDT
+VC8REg1UvMwTqLlT5mDKpWsRtgKKNwJrSmrAGtOm7zzQ05mZZdKP45AaZYeQIQqgATZWrHGBnwWx
+KRVpsGCBI9COIigvFIoWZiEZnwuXh6A6zODcDJyZnkbB2SEWBETgjsQDhAnnIaRHX0HChSQDKAA8
+sIlAgwvq0U+4IGG9hzQVcBDAgAQWOOAGEyjhkGGf1OIBBgRiUAEIBWqQBgQGatCBBhlAWP8gBEi8
+d4QDFQKQQYEJokEhgRuIeIEIBoIohAQOdLDBBhlkoOF+Q3RQoAMSeBgABiKKccGJBIJwwQUVTIDk
+kB0IUYEGQg5ZYAYVACCBgANi4MEHVwJYpYEEZiAjBEJuIGMFGxBooQdXXjBCgSGkAeaVOXJ5YAgD
+VFBlBxM4IKgGBHIgQQgFjnCBngFkiQahLEogqQQTMPolmZgGYGibBE7wYKFFdnFBlXUOcSeBEJwa
+wAYVtCdBe626WqChMBIYJRoYVgiCjYwGYOGWBSK4HgiKAjBBmJwO+EEac2bapY4ODDFlryUCkGwA
+IlRgoKNjQCDot+A6AIEHEhxRgbcidNAgAQiCQuBooN9KCi6P5NVr77345qvvvvz26++/AAdcRRAA
+Ow==
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A1.6143226124770862>
+
+R0lGODlhAQABAIAAAP///////yH5BAUUAAEALAAAAAABAAEAAAICTAEAOw==
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A2.0935416821564106>
+
+R0lGODlhAQABAIAAAP///////yH5BAUUAAEALAAAAAABAAEAAAICTAEAOw==
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A3.6977913319603006>
+
+R0lGODlhvgAMALMAAGVvjZSbsFlkhfP09tve5efp7nF6lqyywri9y4iQqMTI06CmudDT3HyFn///
+/01ZfCwAAAAAvgAMAAAE/zCsucy7gE5wJb/XBI6gFJDC1mnnlTLMIoCLwhwf3ZLNAR+N0uKzSIwy
+uQ4CNiQ5n9CodDplOAiMgaPVcHi9wYc1DPJKrYNZCXyxfhkuLdaxaDsKWfjaoXYpvFgFBSBjFw4D
+FhddZAYEXjADCFSTlJWThQkOel16I4UjZlFuOw8FbGIOZCFXGBcGXjMCfWJadSB/BDk5n4Agiy6m
+CGqylsXGloVdCoqaTp9lDmemBL53qXaqDwGHswCnR3SszGlQvFoHzGELzcft7lRjAgqIzAQN94TX
+oNGiMA6JCGzos7LgXg5HBRJdOHCI1AMEgxwlYiipnD4HBxwZ+fXAkcN3IP9BuvGCg9kXfqiyhSrH
+YJskbw0+jaQDQl7DEesw1hyAbh06VLae8KowYAAAjt9CKnVHsME6cl3s4cNGYqVQOAXSLBgkk45B
+EjlJJdBScVuABtsG2An6wEeLodquINXXhoHCpXjP6HNUh5MzuoZQXn2wLsCAE12z4TzEw4sFRycd
+GFlHLZ8tuA816fvzM7DivKDzheH7wC+JZ4HPwPHGLSVVKF0Ee361Y90yAVp2EHxN84EAyGG60PMc
+uvhpr09ndClA4a0DBBQ4eNHgTA8Cna5RQVdRI0EDR3C+n72e5nof1jMyYbxn6vLFoAa0kGE4oKD6
+z8bxjhyg4EPsN3acFERBZLKJsYkDH3QlIGFaPKKcKV4kJIADy4xA2gMGzFSAc2H01gFgCUAIyF35
+lWjiO1+NYEADJFIhQIrvHNXALCfmFQEAOw==
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A4.611986317685563>
+
+R0lGODlhAQABAIAAAP///////yH5BAUUAAEALAAAAAABAAEAAAICTAEAOw==
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <A5.664623796618034>
+
+/9j/4AAQSkZJRgABAQAAAQABAAD/4U30RXhpZgAATU0AKgAAAAgACQEPAAIAAAAIAAAAngEQAAIA
+AAAJAAAApgESAAMAAAABAAEAAAEaAAUAAAABAAAAsAEbAAUAAAABAAAAuAEoAAMAAAABAAIAAAEx
+AAIAAAANAAAAwAITAAMAAAABAAEAAIdpAAQAAAABAAAAzgAAAjoAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAABNU002NTAwAFNQSC1NNTAwAAAAAABIAAAAAQAAAEgAAAABRVMuTTUw
+MCAgICAgAAAAEYKaAAUAAAABAAAB5JAAAAcAAAAEMDIyMJADAAIAAAAUAAAB7JAEAAIAAAAUAAAC
+AJEBAAcAAAAEAQIDAJIJAAMAAAABAAAAAKAAAAcAAAAEMDEwMKABAAMAAAABAAEAAKACAAQAAAAB
+AAABQKADAAQAAAABAAAA8KAFAAQAAAABAAACHKQBAAMAAAABAAAAAKQCAAMAAAABAAAAAKQDAAMA
+AAABAAEAAKQEAAUAAAABAAACFKQGAAMAAAABAAAAAKQMAAMAAAABAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAAAAVMjAwODowNzoxOCAxMDowNTo1NwAyMDA4OjA3OjE4IDEwOjA1OjU3AAAAQAAAABAA
+AAIAAQACAAAABFI5OAAAAgAHAAAABDAxMDAAAAAAAAYBAwADAAAAAQAGAAABGgAFAAAAAQAAAqAB
+GwAFAAAAAQAAAqgBKAADAAAAAQACAAACAQAEAAAAAQAAArACAgAEAAAAAQAASzwAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAASAAAAAEAAABIAAAAAf/Y/9sAhAADAgIDAgIDAwMDBAMDBAUI
+BQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUUAQMEBAUEBQkF
+BQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/
+xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUS
+ITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4
+ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAA
+AAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJ
+IzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1
+dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY
+2dri4+Tl5ufo6ery8/T19vf4+fr/wAARCADcASYDASEAAhEBAxEB/9oADAMBAAIRAxEAPwD4m8Wr
+jWbs8H943f3r0L9l2ETeLvEvHI01Tj/gVfF4uVsFL0X5o/Q6X++xXm/yZytzF+9k4PJJH50+3UMc
+A7eOvpTb0Olr3i/ZA9OM59fau18CWf2q/vWAyUspW/LFc0mdCV0ev2UElnF5JQrhjU4dsnn3zXzN
+V/vGdMY3SGNK2fWgSHPvWd9NAaVg84j2qNpT3qkJojaXBqNpd3StUwSR4R+0R4vd5rTQLWZlC/vr
+nacZz91T+GT+Irxe31q70V2axup7aWRSjmBypK+hxX3uX0ksNGLW+rPjcdVft3KL2I49W1GbcBc3
+G0nkGQ89Pf2H5Cr51u+mh8me4eVNwcGQ7mUj0J5FepyR7HnxnUV7s+kP2d/E17rmj6hZXty9y1o6
+GJpGLNtYHjJ7Ar+tezQxZxmvhcbFUsTOKR9bhW50IyZfht+f8a17O0O4cU6Luzc6vRtPLMu1c16p
+4F0B769hiEeWdgBX0eDXvI5675Ys+qYIVt4I4lGFRQo+gGKfXvn5q3dthRQI+Pb3Tjc/HG8JOGa5
+nbP0jY11WoWaLa7cEkBiD37f1z+VYOfvSP1ppezpryRyWu6ZlMnbuyBjHXP/ANevNfFloYrK6ULn
+5G+b046fpXkV37ptDVlvwTZEeH4G2kJ5Qbk/7JP+FdpoR36xqj9f3cIz/wB9H+teRVdqBFRas05Z
+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
+ERQeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHv/AABEI
+APoA+gMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMD
+AgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUm
+JygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaX
+mJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4
++fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncA
+AQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6
+Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeo
+qaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhED
+EQA/APsuiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiig
+AooooAKKKKACiiigAorlpfiT8O4nKS+PfCsbDqG1e3BH/j9Pt/iH4AuIJbiDxx4YlhhIEkiatAyo
+T0BIbA/Gp5473K5JbWOmorl/+Fj/AA9/6Hvwt/4N4P8A4ulHxF+H56eOfDH/AINoP/i6OePcfs59
+jp6K5pfiD4DZgq+NvDTEnAA1WDn/AMeqxH4y8ISAmPxVoTgdduoRHH/j1J1ILdh7OfZm7RWL/wAJ
+f4U/6GfRP/A+L/4qk/4S/wAJ/wDQz6J/4Hxf/FUva0/5l94eyn2Zt0Vif8Jf4U/6GfRP/A+L/wCK
+o/4S/wAKf9DPon/gfF/8VR7Wn/MvvD2c+zNuisQ+MPCQ6+KND/8AA+L/AOKpP+Ew8Jf9DRof/gwi
+/wDiqPaw/mQeyn2ZuUVzt3488D2cfm3fjLw7boeN0upwqPzLUyH4g+ApoDPF428NSQgkGRdVgKgj
+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
+------=_Part_84000_18395600.1220831395069
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <A6.218821519147072>
+
+R0lGODlhBwAKAIABAJCatf///yH5BAEAAAEALAAAAAAHAAoAAAINjG+AqQjvXgsyrrnyKgA7
+------=_Part_84000_18395600.1220831395069--
+
