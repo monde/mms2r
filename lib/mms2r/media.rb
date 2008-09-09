@@ -374,7 +374,7 @@ module MMS2R
       if part.main_type('text') == 'text' || 
          part.content_type == 'application/smil'
         type, content = transform_text_part(part)
-        open_bits = 'w'
+        mode = 'w'
       else
         if part.content_type == 'application/octet-stream'
           type = type_from_filename(filename?(part))
@@ -382,12 +382,12 @@ module MMS2R
           type = part.content_type
         end
         content = part.body
-        open_bits = 'wb' # open with binary bit for Windows for non text
+        mode = 'wb' # open with binary bit for Windows for non text
       end
       return type, nil if content.nil? || content.empty?
 
       @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
-      File.open(file,'wb'){ |f| f.write(content) }
+      File.open(file, mode){ |f| f.write(content) }
       return type, file
     end
 
