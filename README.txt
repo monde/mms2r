@@ -25,6 +25,7 @@ Corpus of carriers currently processed by MMS2R:
 * Alltel: mms.alltel.com
 * AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com, 
   cingularme.com
+* Bell Canada: txt.bell.ca
 * Bell South / Suncom: bellsouth.net
 * Cricket Wireless: mms.mycricket.com
 * Dobson/Cellular One: mms.dobson.net
@@ -39,14 +40,16 @@ Corpus of carriers currently processed by MMS2R:
 * O2 Germany: mms.o2online.de
 * O2 UK: mediamessaging.o2.co.uk
 * Orange & Regional Oranges: orangemms.net, mmsemail.orange.pl, orange.fr
+* PLSPICTURES.COM mms hosting: waw.plspictures.com
 * PXT New Zealand: pxt.vodafone.net.nz
 * Rogers of Canada: rci.rogers.com
 * SaskTel: sms.sasktel.com
 * Sprint: pm.sprint.com, messaging.sprintpcs.com
 * T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk
+* TELUS Corporation (Canada): msg.telus.com
+* Unicel: ???
 * Vodacom: mms.vodacom4me.co.za
 * Verizon: vzwpix.com, vtext.com
-* PLSPICTURES.COM mms hosting: waw.plspictures.com
 
 == FEATURES
 

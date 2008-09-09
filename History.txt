@@ -1,3 +1,10 @@
+### 2.1.1 / 2008-XX-XX (Lavona Succuboso, Nathan Explosion uber-groupie)
+
+* 3 minor enhancments
+  * Bell Canada support txt.bell.ca - Matt Conway - http://github.com/wr0ngway
+  * TODO - Unicel support - Michael DelGaudio
+  * TODO - msg.telus.com - TELUS Corporation
+
 ### 2.1.0 / 2008-07-30 (Dr. Gibbons – Birthday expert and Murderface expert)
 
 * 1 major enhancement:
