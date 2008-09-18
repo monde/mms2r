@@ -28,6 +28,7 @@ conf/pxt.vodafone.net.nz.yml
 conf/rci.rogers.com.yml
 conf/sms.sasktel.com.yml
 conf/tmomail.net.yml
+conf/txt.bell.ca.yml
 conf/vzwpix.com.yml
 conf/waw.plspictures.com.yml
 dev_tools/anonymizer.rb
