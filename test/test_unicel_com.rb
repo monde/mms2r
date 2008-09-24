@@ -23,6 +23,10 @@ class TestMmsAlltelCom < Test::Unit::TestCase
     image = mms.media['image/jpeg'].detect{|f| /moto_0002\.jpg/ =~ f}
     assert_equal 337, File.size(image) 
 
+    file = mms.media['text/plain'][0]
+    text = IO.readlines("#{file}").join
+    assert_match(/2068675309/, text)
+
     mms.purge
   end
   
