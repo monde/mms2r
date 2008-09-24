@@ -47,7 +47,7 @@ Corpus of carriers currently processed by MMS2R:
 * Sprint: pm.sprint.com, messaging.sprintpcs.com
 * T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk
 * TELUS Corporation (Canada): msg.telus.com
-* Unicel: ???
+* Unicel: unicel.com (note: mobile number is tucked away in a text part)
 * Vodacom: mms.vodacom4me.co.za
 * Verizon: vzwpix.com, vtext.com
 

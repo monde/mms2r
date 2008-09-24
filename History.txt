@@ -3,9 +3,9 @@
 * 4 minor enhancments
   * Bell Canada support txt.bell.ca - Matt Conway / Snap My Life - 
     http://github.com/wr0ngway, http://github.com/sml
-  * TODO - Unicel support - Michael DelGaudio
-  * TODO - info2go.comi support / Unicel
-  * TODO - msg.telus.com support - TELUS Corporation
+  * TODO - Unicel support unicel.com - Michael DelGaudio
+  * TODO - info2go.com support / Unicel
+  * TODO - TELUS Corporation support msg.telus.com
 * 1 bug fix
   * Iconv utf8 fix - Kai Kai
 
