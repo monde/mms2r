@@ -245,6 +245,22 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal result, mms.transform_text(type, text)
   end
 
+  def test_transform_text_to_utf8
+    mail = TMail::Mail.load(mail_fixture('iconv-fr-text-01.mail'))
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal 2, mms.media.size
+    assert_equal 1, mms.media['text/plain'].size
+    assert_equal 1, mms.media['text/html'].size
+    file = mms.media['text/plain'][0]
+    assert_not_nil file
+    assert_equal true, File::exist?(file)
+    text = IO.readlines("#{file}").join
+    #assert_match(/D'ici un mois Géorgie/, text)
+    assert_match(/D'ici un mois G\303\203\302\251orgie/, text)
+    mms.purge
+  end
+
   def test_subject
     s = 'hello world'
     mail = stub_mail()

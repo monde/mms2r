@@ -1,9 +1,13 @@
 ### 2.1.1 / 2008-XX-XX (Lavona Succuboso, Nathan Explosion uber-groupie)
 
-* 3 minor enhancments
-  * Bell Canada support txt.bell.ca - Matt Conway - http://github.com/wr0ngway
+* 4 minor enhancments
+  * Bell Canada support txt.bell.ca - Matt Conway / Snap My Life - 
+    http://github.com/wr0ngway, http://github.com/sml
   * TODO - Unicel support - Michael DelGaudio
-  * TODO - msg.telus.com - TELUS Corporation
+  * TODO - info2go.comi support / Unicel
+  * TODO - msg.telus.com support - TELUS Corporation
+* 1 bug fix
+  * Iconv utf8 fix - Kai Kai
 
 ### 2.1.0 / 2008-07-30 (Dr. Gibbons – Birthday expert and Murderface expert)
 

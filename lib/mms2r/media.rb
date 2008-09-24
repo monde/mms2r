@@ -396,12 +396,12 @@ module MMS2R
     # See the transform section in the discussion of the built-in 
     # configuration.
 
-    def transform_text(type, text)
+    def transform_text(type, text, original_nencoding = 'ISO-8859-1')
       return type, text unless transforms = config['transform'][type] rescue nil
 
       #convert to UTF-8
       begin
-        c = Iconv.new('ISO-8859-1', 'UTF-8' )
+        c = Iconv.new('UTF-8', original_nencoding )
         utf_t = c.iconv(text)
       rescue Exception => e
         utf_t = text
