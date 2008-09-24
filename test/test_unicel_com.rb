@@ -6,7 +6,7 @@ require 'mocha'
 gem 'tmail', '>= 1.2.1'
 require 'tmail'
 
-class TestMmsAlltelCom < Test::Unit::TestCase
+class TestMmsUnicelCom < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_subject_number_image_unicel
