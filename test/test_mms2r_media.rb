@@ -258,6 +258,8 @@ class TestMms2rMedia < Test::Unit::TestCase
     text = IO.readlines("#{file}").join
     #assert_match(/D'ici un mois Géorgie/, text)
     assert_match(/D'ici un mois G\303\203\302\251orgie/, text)
+    assert_equal("sample email message Fwd: sub D'ici un mois G\303\203\302\251orgie", 
+                 mms.subject)
     mms.purge
   end
 
