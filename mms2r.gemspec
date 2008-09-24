@@ -1,4 +1,3 @@
-(in /home/mike/projects/mms2r.git)
 Gem::Specification.new do |s|
   s.name = %q{mms2r}
   s.version = "2.1.1"
