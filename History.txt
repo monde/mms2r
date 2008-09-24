@@ -5,7 +5,7 @@
     http://github.com/wr0ngway, http://github.com/sml
   * Unicel support unicel.com - Michael DelGaudio
   * info2go.com support / Unicel
-  * TODO - TELUS Corporation support msg.telus.com
+  * TELUS Corporation support mms.telusmobility.com, msg.telus.com
 * 1 bug fix
   * Iconv utf8 fix - Kai Kai
 
