@@ -1,3 +1,4 @@
+.gitignore
 History.txt
 Manifest.txt
 README.txt
@@ -22,6 +23,7 @@ conf/mms.three.co.uk.yml
 conf/mms.vodacom4me.co.za.yml
 conf/mms2r_media.yml
 conf/mobile.indosat.net.id.yml
+conf/msg.telus.com.yml
 conf/orangemms.net.yml
 conf/pm.sprint.com.yml
 conf/pxt.vodafone.net.nz.yml
@@ -29,6 +31,7 @@ conf/rci.rogers.com.yml
 conf/sms.sasktel.com.yml
 conf/tmomail.net.yml
 conf/txt.bell.ca.yml
+conf/unicel.com.yml
 conf/vzwpix.com.yml
 conf/waw.plspictures.com.yml
 dev_tools/anonymizer.rb
@@ -62,8 +65,10 @@ test/fixtures/dobson-image-01.mail
 test/fixtures/dot.jpg
 test/fixtures/helio-image-01.mail
 test/fixtures/helio-message-01.mail
+test/fixtures/iconv-fr-text-01.mail
 test/fixtures/indosat-image-01.mail
 test/fixtures/indosat-image-02.mail
+test/fixtures/info2go-image-01.mail
 test/fixtures/luxgsm-image-01.mail
 test/fixtures/maroctelecom-france-mms-01.mail
 test/fixtures/mediamessaging_o2_co_uk-image-01.mail
@@ -95,11 +100,13 @@ test/fixtures/sprint-two-images-01.mail
 test/fixtures/sprint-video-01.mail
 test/fixtures/sprint.mov
 test/fixtures/suncom-blackberry.mail
+test/fixtures/telus-image-01.mail
 test/fixtures/three-uk-image-01.mail
 test/fixtures/tmobile-blackberry-02.mail
 test/fixtures/tmobile-blackberry.mail
 test/fixtures/tmobile-image-01.mail
 test/fixtures/tmobile-image-02.mail
+test/fixtures/unicel-image-01.mail
 test/fixtures/verizon-blackberry.mail
 test/fixtures/verizon-image-01.mail
 test/fixtures/verizon-image-02.mail
@@ -134,12 +141,14 @@ test/test_mms_o2online_de.rb
 test/test_mms_three_co_uk.rb
 test/test_mms_vodacom4me_co_za.rb
 test/test_mobile_indosat_net_id.rb
+test/test_msg_telus_com.rb
 test/test_orangemms_net.rb
 test/test_pm_sprint_com.rb
 test/test_pxt_vodafone_net_nz.rb
 test/test_rci_rogers_com.rb
 test/test_sms_sasktel_com.rb
 test/test_tmomail_net.rb
+test/test_unicel_com.rb
 test/test_vzwpix_com.rb
 test/test_waw_plspictures_com.rb
 vendor/plugins/mms2r/lib/autotest/discover.rb
