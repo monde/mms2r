@@ -1,3 +1,4 @@
+# based on Trouble shooting section in http://gems.github.com/
 require 'rubygems'
 require 'rubygems/specification'
 data = File.read(File.join(File.dirname(__FILE__), "..", "mms2r.gemspec"))

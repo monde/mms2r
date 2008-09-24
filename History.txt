@@ -6,6 +6,7 @@
   * Unicel support unicel.com - Michael DelGaudio
   * info2go.com support / Unicel
   * TELUS Corporation support mms.telusmobility.com, msg.telus.com
+  * add test to check that gem builds correctly as a github gem
 * 1 bug fix
   * Iconv utf8 fix - Kai Kai
 
