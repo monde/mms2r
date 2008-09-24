@@ -16,7 +16,7 @@
   * opens up TMail for improved query method patterned code in MMS2R
 * 2 minor enhancements:
   * UK O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
-  * Write non text files with binary bit set on Windows - Nobody
+  * Write non text files with binary bit set on Windows - David Alm
   * source hosted on github: git clone git://github.com/monde/mms2r.git
 
 ### 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)

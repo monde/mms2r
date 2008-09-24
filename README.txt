@@ -3,6 +3,7 @@
   by Mike Mondragon
   http://mms2r.rubyforge.org/ 
   http://rubyforge.org/tracker/?group_id=3065 
+  http://github.com/monde/mms2r/tree/master
 
 == DESCRIPTION
   
@@ -129,7 +130,12 @@ http://peepcode.com/products/mms2r-pdf
 
 == INSTALL
 
+conventional
 * sudo gem install mms2r
+
+github
+* gem sources -a http://gems.github.com
+* sudo gem install monde-mms2r
 
 == SOURCE
 
@@ -159,8 +165,11 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 * Dave Myron (company[http://contentfree.com/])
 * Vijay Yellapragada
 * Jesse Dp
-* "Nobody"
+* David Alm
 * Jeremy Wilkins
+* Matt Conway
+* Kai Kai
+* Michael DelGaudio
 
 == LICENSE
 
