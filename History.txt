@@ -1,4 +1,4 @@
-### 2.1.1 / 2008-XX-XX (Lavona Succuboso, Nathan Explosion uber-groupie)
+### 2.1.1 / 2008-09-24 (Lavona Succuboso, Nathan Explosion uber-groupie)
 
 * 4 minor enhancments
   * Bell Canada support txt.bell.ca - Matt Conway / Snap My Life - 
