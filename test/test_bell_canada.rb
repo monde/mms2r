@@ -22,7 +22,23 @@ class TestBellCanada < Test::Unit::TestCase
     assert_equal 1, mms.media['text/html'].size
     assert_equal 1, mms.media['text/plain'].size
 
+    # make sure transform strips out massive dtd at start of doc
+    assert_equal 3331, File.size(mms.media['text/html'].first)
+    
     mms.purge
   end
+
+
+  def test_default_media_should_return_user_generated_content
+    mail = TMail::Mail.parse(load_mail('bell-canada-image-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+    file = mms.default_media
+    
+    # make sure the users jpg is the one that we default to
+    assert_equal 31962, file.size
+    assert_equal '.jpg', File.extname(file.path)
+    
+    mms.purge
+  end 
 
 end

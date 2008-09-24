@@ -1,0 +1,50 @@
+Delivered-To: 2068675309@example.com
+Received: by 10.142.113.15 with SMTP id l15cs32090wfc;
+        Thu, 11 Sep 2008 17:07:26 -0700 (PDT)
+Received: by 10.187.219.6 with SMTP id w6mr487134faq.29.1221178044522;
+        Thu, 11 Sep 2008 17:07:24 -0700 (PDT)
+Received: by 10.187.158.20 with HTTP; Thu, 11 Sep 2008 17:07:24 -0700 (PDT)
+Message-ID: <5b40cfb70809111707s2b7044d3gbfb5ed3c253d0909@mail.gmail.com>
+Date: Thu, 11 Sep 2008 17:07:24 -0700
+From: tommy.tutone@example.com
+Reply-To: tommy.tutone@example.com
+To: "Mike Mondragon" <2068675309@example.com>
+Subject: =?ISO-8859-1?Q?sample_email_message_Fwd:_sub_D'ici_un_mois_G=E9orgie?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_41747_21712304.1221178044508"
+
+------=_Part_41747_21712304.1221178044508
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_41748_5000436.1221178044508"
+
+------=_Part_41748_5000436.1221178044508
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+D'ici un mois G=E9orgie  body
+
+
+Mike, this is the French email message I test against with.
+
+Kai
+
+------=_Part_41748_5000436.1221178044508
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+<div dir=3D"ltr"><div class=3D"gmail_quote"><div dir=3D"ltr"><div class=3D"=
+gmail_quote"><div><div><div dir=3D"ltr"><div class=3D"gmail_quote">D&#39;ic=
+i un mois G=E9orgie&nbsp; body&nbsp;&nbsp;</div><div class=3D"gmail_quote">=
+<div dir=3D"ltr"><br></div><div dir=3D"ltr">
+<br></div><div dir=3D"ltr">Mike, this is the French email message I test ag=
+ainst with.</div><div dir=3D"ltr"><br></div><div dir=3D"ltr">Kai</div>
+</div><br></div>
+</div></div></div><br></div>
+</div><br></div>
+
+------=_Part_41748_5000436.1221178044508--
+
+------=_Part_41747_21712304.1221178044508--

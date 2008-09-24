@@ -1,9 +1,14 @@
-### 2.1.1 / 2008-XX-XX (Lavona Succuboso, Nathan Explosion uber-groupie)
+### 2.1.1 / 2008-09-24 (Lavona Succuboso, Nathan Explosion uber-groupie)
 
-* 3 minor enhancments
-  * Bell Canada support txt.bell.ca - Matt Conway - http://github.com/wr0ngway
-  * TODO - Unicel support - Michael DelGaudio
-  * TODO - msg.telus.com - TELUS Corporation
+* 4 minor enhancments
+  * Bell Canada support txt.bell.ca - Matt Conway / Snap My Life - 
+    http://github.com/wr0ngway, http://github.com/sml
+  * Unicel support unicel.com - Michael DelGaudio
+  * info2go.com support / Unicel
+  * TELUS Corporation support mms.telusmobility.com, msg.telus.com
+  * add test to check that gem builds correctly as a github gem
+* 1 bug fix
+  * Iconv utf8 fix - Kai Kai
 
 ### 2.1.0 / 2008-07-30 (Dr. Gibbons – Birthday expert and Murderface expert)
 
@@ -11,7 +16,7 @@
   * opens up TMail for improved query method patterned code in MMS2R
 * 2 minor enhancements:
   * UK O2 support mediamessaging.o2.co.uk - Jeremy Wilkins
-  * Write non text files with binary bit set on Windows - Nobody
+  * Write non text files with binary bit set on Windows - David Alm
   * source hosted on github: git clone git://github.com/monde/mms2r.git
 
 ### 2.0.5 / 2008-07-17 (Dr. Ralphus Galkensmelter - Psychological death expert)

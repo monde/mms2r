@@ -1,0 +1,89 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.143.15.17 with SMTP id s17cs49532wfi;
+        Fri, 1 Aug 2008 12:56:15 -0700 (PDT)
+Received: by 10.64.242.5 with SMTP id p5mr1182245qbh.33.1217620573911;
+        Fri, 01 Aug 2008 12:56:13 -0700 (PDT)
+Return-Path: <2068675309@mms.telusmobility.com>
+Received: from mmsda.int.eng.telusmobility.com (mms.eng.telusmobility.com [216.198.139.111])
+        by mx.google.com with ESMTP id s30si3336570qbs.8.2008.08.01.12.56.13;
+        Fri, 01 Aug 2008 12:56:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 2068675309@mms.telusmobility.com designates 216.198.139.111 as permitted sender) client-ip=216.198.139.111;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of 2068675309@mms.telusmobility.com designates 216.198.139.111 as permitted sender) smtp.mail=2068675309@mms.telusmobility.com
+Received: from koorb.mms.telusmobility.com ([10.33.238.7])
+          by mmsda.int.eng.telusmobility.com
+          (InterMail vM.7.05.02.00 201-2174-114-20060621) with ESMTP
+          id <20080801195612.UQZW332.mmsda.int.eng.telusmobility.com@koorb.mms.telusmobility.com>
+          for <tommy.tutone@example.com>; Fri, 1 Aug 2008 15:56:12 -0400
+Received: from opwvsmtp ([10.33.238.128]) by mmsra.mms.telusmobility.com
+          (InterMail vM.6.01.05.00 201-2131-123-20050610) with SMTP
+          id <20080801172350.BSAN10761.mmsra.mms.telusmobility.com@opwvsmtp>
+          for <tommy.tutone@example.com>; Fri, 1 Aug 2008 13:23:50 -0400
+Content-Type: multipart/related; boundary="489346a65c46qwerty_0000"; type="multipart/alternative"
+To: <tommy.tutone@example.com>
+Date: Fri, 01 Aug 2008 17:23:50 GMT
+From: 2068675309@msg.telus.com
+Sender: "2068675309" <2068675309@msg.telus.com>
+MIME-Version: 1.0
+Message-Id: <20080801172350.BSAN10761.mmsra.mms.telusmobility.com@opwvsmtp>
+
+This is a multi-part message in MIME format.
+
+--489346a65c46qwerty_0000
+Content-Type: multipart/alternative; boundary="prez_1234567890_ldksjfa"
+
+
+--prez_1234567890_ldksjfa
+Content-Type: text/plain; charset="utf-8"
+
+This is an MMS message. Please go to http://mms.telusmobility.com/do/LegacyLogin to view the message.
+--prez_1234567890_ldksjfa
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+
+<html>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<LINK HREF="http://www.telusmobility.com/css/styles.css" TYPE="text/css" REL="stylesheet">
+</head>
+<body link="#49166D" alink="#A559DD" vlink="#49166D">
+<center> <p><br><p>
+<img src="cid:ORpaXzL8GX.jpg" border="0" alt="Lil%20bud%202.jpg"><p>
+ </center>
+<br>
+<table width="640" border="0" align="center" cellpadding="0">
+  <tr> 
+    <td width="304" valign="top"> <div align="left"><span class="textlevelone">You've received a Message from a TELUS phone.</span>
+        <p class="smalltext3">For more information on TELUS Mobility's Picture or Video Messaging, visit telusmobility.com/snap.
+        <p class="smalltext3">If you don't hear or see the file, <a href="http://www.apple.com/quicktime/download" target="_blank" class="smalltext3">download the Quick Time player</a>.<br>
+        <p class="smalltext3"><img src="http://www.telusmobility.com/images/logos/telusmobitliy_214x60.gif" width="214" height="60"></div></td>
+    <td width="1" class="bgtblgray"><image src="/images/spacer.gif" width="1" height="1"></td>
+    <td width="10" valign="top">&nbsp;</td>
+    <td width="315" valign="top"><span class="textlevelone">Vous avez re&ccedil;u un Message d'un t&eacute;l&eacute;phone TELUS.</span>
+      <p class="smalltext3">Pour obtenir plus d'information sur la messagerie photo ou vid&eacute;o de TELUS, allez &agrave; telusmobilite.com/clic.
+      <p class="smalltext3">Si vous ne voyez ni n'entendez le fichier, <a href="http://www.apple.com/ca/fr/quicktime/" target="_blank" class="smalltext3">veuillez t&eacute;l&eacute;charger QuickTime</a>.
+      <p class="smalltext3"><img src="http://www.telusmobilite.com/images/logos/telusmobitliy_214x60.gif" width="214" height="60"></td>
+  </tr>
+</table>
+</body>
+</html>
+</body></html>
+
+--prez_1234567890_ldksjfa--
+
+--489346a65c46qwerty_0000
+Content-ID: <ORpaXzL8GX.jpg>
+Content-Type: image/jpeg; filename="Lil bud 2.jpg"; name="Lil%20bud%202.jpg"
+Content-Disposition: inline; filename="Lil%2520bud%25202.jpg"
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+
+--489346a65c46qwerty_0000--
+

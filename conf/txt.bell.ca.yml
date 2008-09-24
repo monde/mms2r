@@ -1,0 +1,4 @@
+transform:
+  text/html:
+    - [/.*(<html)/im, "\1"]
+  

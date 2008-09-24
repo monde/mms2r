@@ -9,5 +9,5 @@ transform:
   text/plain: 
   - - /^Orange UK MMS$/i
     - ""
-  - - /^Wiadomość multimedialna.\s*$/i
+  - - /^Wiadomo\303\205\302\233\303\204\302\207 multimedialna\.$/i
     - ""

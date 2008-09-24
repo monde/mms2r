@@ -1,0 +1,43 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.150.147.19 with SMTP id u19cs11331ybd;
+        Wed, 14 May 2008 13:10:38 -0700 (PDT)
+Received: by 10.142.48.14 with SMTP id v14mr603069wfv.14.1210795836194;
+        Wed, 14 May 2008 13:10:36 -0700 (PDT)
+Return-Path: <2068675309@info2go.com>
+Received: from mail.info2go.com (mail.info2go.com [65.168.87.50])
+        by mx.google.com with ESMTP id 32si3572167wfa.18.2008.05.14.13.10.34;
+        Wed, 14 May 2008 13:10:36 -0700 (PDT)
+Received-SPF: pass (google.com: best guess record for domain of 2068675309@info2go.com designates 65.168.87.50 as permitted sender) client-ip=65.168.87.50;
+Authentication-Results: mx.google.com; spf=pass (google.com: best guess record for domain of 2068675309@info2go.com designates 65.168.87.50 as permitted sender) smtp.mail=2068675309@info2go.com
+Received: from md.rcc.ericyhost.com (HELO iw-00) ([63.99.231.53])
+  by mail.info2go.com with ESMTP; 14 May 2008 15:10:34 -0500
+Return-Path: <12068675309@info2go.com>
+Received: from null ([192.168.100.100])
+          by MD2 SMTP SERVER (Message Director SMTP Server v2.39) with SMTP ID 923
+          for <tommy.tutone@example.com>;
+          Wed, 14 May 2008 15:10:33 -0500 (CDT)
+Message-ID: <25058795.1210795833731.JavaMail.root@iw-00>
+Date: Wed, 14 May 2008 15:08:33 -0500 (CDT)
+From: 2068675309@info2go.com
+To: tommy.tutone@example.com
+Mime-Version: 1.0
+Content-Type: image/jpeg; name=Image047.jpeg
+X-Mms-Delivery-Time: Wed, 14 May 08 15:08:33 CDT 
+X-Mms-MMS-Version: 1.0
+X-Mms-Message-Class: Personal
+X-Mms-Message-Type: m-send-req
+X-Mms-Message-Size: 22307
+X-Mms-Transaction-ID: 109@info2go.com
+X-Mms-Message-ID: 20732598@info2go.com
+X-Priority: 3
+Content-Disposition: attachment; filename=Image047.jpeg
+Content-Transfer-Encoding: base64
+X-HostedBy: Ericsson
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
