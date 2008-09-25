@@ -134,7 +134,7 @@ conventional
 * sudo gem install mms2r
 
 github
-* gem sources -a http://gems.github.com
+* sudo gem sources -a http://gems.github.com
 * sudo gem install monde-mms2r
 
 == SOURCE
