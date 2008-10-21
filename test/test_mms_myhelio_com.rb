@@ -15,6 +15,7 @@ class TestMmsMyhelioCom < Test::Unit::TestCase
     assert_equal 2, mms.media.size
     assert_equal 1, mms.media['image/jpeg'].size
     assert_equal 1, mms.media['text/plain'].size
+    mms.purge
   end
 
   def test_only_valid_content_should_be_retained_for_mms_with_text
@@ -22,6 +23,7 @@ class TestMmsMyhelioCom < Test::Unit::TestCase
     mms = MMS2R::Media.new(mail)
     assert_equal 1, mms.media.size
     assert_equal 1, mms.media['text/plain'].size
+    mms.purge
   end
 
   def test_number_should_return_correct_number
