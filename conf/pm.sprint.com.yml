@@ -8,3 +8,5 @@ transform:
   text/plain: 
   - - /^You have new Picture Mail!$/i
     - ""
+  - - /^PictureMail$/i
+    - ""
