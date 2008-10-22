@@ -51,8 +51,9 @@ Corpus of carriers currently processed by MMS2R:
 * TELUS Corporation (Canada): mms.telusmobility.com, msg.telus.com
 * Unicel: unicel.com, info2go.com 
   (note: mobile number is tucked away in a text/plain part for unicel.com)
-* Vodacom: mms.vodacom4me.co.za
 * Verizon: vzwpix.com, vtext.com
+* Virgin Mobile: vmpix.com
+* Vodacom: mms.vodacom4me.co.za
 
 == FEATURES
 

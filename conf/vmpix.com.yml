@@ -1,0 +1,7 @@
+---
+ignore:
+  text/html:
+  - /This message is from\s+a Virgin Mobile user. Enjoy./mi
+  text/plain: 
+  - /^This is an MMS message\.$/i
+
