@@ -1,0 +1,73 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.86.77.15 with SMTP id z15cs516084fga;
+        Wed, 8 Oct 2008 11:34:39 -0700 (PDT)
+Received: by 10.114.73.14 with SMTP id v14mr9547151waa.163.1223490873307;
+        Wed, 08 Oct 2008 11:34:33 -0700 (PDT)
+Return-Path: <2068675309@vmpix.com>
+Received: from vscpsmgw05.vmuprod.local (mail1.vmobl.com [205.239.227.29])
+        by mx.google.com with ESMTP id f20si45293600waf.53.2008.10.08.11.34.32;
+        Wed, 08 Oct 2008 11:34:33 -0700 (PDT)
+Received-SPF: neutral (google.com: 205.239.227.29 is neither permitted nor denied by best guess record for domain of 2068675309@vmpix.com) client-ip=205.239.227.29;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 205.239.227.29 is neither permitted nor denied by best guess record for domain of 2068675309@vmpix.com) smtp.mail=2068675309@vmpix.com
+Received: from vscsmtp.vmobile-corp.com (mail2.vmobl.com [205.239.227.49])
+	by vscpsmgw05.vmuprod.local (Switch-3.3.1/Switch-3.3.1) with ESMTP id m98IYT8I025936
+	for <tommy.tutone@example.com>; Wed, 8 Oct 2008 11:34:29 -0700 (PDT)
+Received: from vscpmms03.vmobile-corp.com (vscpmms03.vmobile-corp.com [205.239.233.166])
+	by vscsmtp.vmobile-corp.com (Switch-3.3.1/Switch-3.3.1) with ESMTP id m98IYQXO006663
+	for <tommy.tutone@example.com>; Wed, 8 Oct 2008 11:34:26 -0700 (PDT)
+Received: from opwvsmtp ([127.0.0.1]) by vscpmms03.vmobile-corp.com
+          (InterMail vM.6.01.05.00 201-2131-123-20050610) with SMTP
+          id <20081008183426.KTIA12469.vscpmms03.vmobile-corp.com@opwvsmtp>
+          for <tommy.tutone@example.com>; Wed, 8 Oct 2008 11:34:26 -0700
+Content-Type: multipart/related; boundary="48ecfd313106qwerty_0000"; type="multipart/alternative"
+Date: Wed, 08 Oct 2008 18:34:25 GMT
+From: 2068675309@vmpix.com
+MIME-Version: 1.0
+Sender: 2068675309@vmpix.com
+Subject: =?utf-8?b?SmFuaSBzbGVlcHk=?=
+To: tommy.tutone@example.com
+X-Priority: 3
+Message-Id: <20081008183426.KTIA12469.vscpmms03.vmobile-corp.com@opwvsmtp>
+X-Spam-Score: 0.00%
+X-MASF: 0.00%
+
+This is a multi-part message in MIME format.
+
+--48ecfd313106qwerty_0000
+Content-Type: multipart/alternative; boundary="prez_1234567890_ldksjfa"
+
+
+--prez_1234567890_ldksjfa
+Content-Type: text/plain; charset="utf-8"
+
+This is an MMS message.
+--prez_1234567890_ldksjfa
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<center>
+<p ALIGN=LEFT><font size=2 color="#cc0000" face=Verdana>This message is from
+a Virgin Mobile user. Enjoy.<br>
+_____________________________________________________________</font></p><p>
+<p><br><p>
+<img src="cid:pic100508_3.jpg" border="0" alt="pic100508_3.jpg"><p>
+</center>
+</body></html>
+
+--prez_1234567890_ldksjfa--
+
+--48ecfd313106qwerty_0000
+Content-Disposition: inline; filename="pic100508_3.jpg"
+Content-ID: <pic100508_3.jpg>
+Content-Transfer-Encoding: base64
+Content-Type: image/jpeg; name="pic100508_3.jpg"
+
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+--48ecfd313106qwerty_0000--
