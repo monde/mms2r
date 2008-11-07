@@ -9,6 +9,7 @@ conf/bellsouth.net.yml
 conf/mediamessaging.o2.co.uk.yml
 conf/messaging.nextel.com.yml
 conf/mms.3ireland.ie.yml
+conf/mms.ae.yml
 conf/mms.alltel.com.yml
 conf/mms.att.net.yml
 conf/mms.dobson.net.yml
@@ -75,6 +76,7 @@ test/fixtures/luxgsm-image-01.mail
 test/fixtures/maroctelecom-france-mms-01.mail
 test/fixtures/mediamessaging_o2_co_uk-image-01.mail
 test/fixtures/mmode-image-01.mail
+test/fixtures/mms.ae-image-01.mail
 test/fixtures/mms.mycricket.com-pic-and-text.mail
 test/fixtures/mms.mycricket.com-pic.mail
 test/fixtures/mmsreply.t-mobile.co.uk-text-image-01.mail
@@ -132,6 +134,7 @@ test/test_messaging_nextel_com.rb
 test/test_messaging_sprintpcs_com.rb
 test/test_mms2r_media.rb
 test/test_mms_3ireland_ie.rb
+test/test_mms_ae.rb
 test/test_mms_alltel_com.rb
 test/test_mms_att_net.rb
 test/test_mms_dobson_net.rb
