@@ -1,0 +1,45 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.150.52.17 with SMTP id z17cs418249ybz;
+        Sun, 19 Oct 2008 08:25:15 -0700 (PDT)
+Received: by 10.67.116.8 with SMTP id t8mr1482898ugm.57.1224429913824;
+        Sun, 19 Oct 2008 08:25:13 -0700 (PDT)
+Return-Path: <+2068675309@mms.ae>
+Received: from domail2.emirates.net.ae (domail2.emirates.net.ae [213.42.1.94])
+        by mx.google.com with ESMTP id k27si2760421ugd.20.2008.10.19.08.25.12;
+        Sun, 19 Oct 2008 08:25:13 -0700 (PDT)
+Received-SPF: softfail (google.com: domain of transitioning +2068675309@mms.ae does not designate 213.42.1.94 as permitted sender) client-ip=213.42.1.94;
+Authentication-Results: mx.google.com; spf=softfail (google.com: domain of transitioning +2068675309@mms.ae does not designate 213.42.1.94 as permitted sender) smtp.mail=+2068675309@mms.ae
+MIME-version: 1.0
+Content-type: multipart/mixed; boundary="Boundary_(ID_p5dJ87KpgxrrG0Dfvu/kYQ)"
+Received: from dpmail4.emirates.net.ae ([213.42.3.217])
+ by domail2.emirates.net.ae (I&ES Mail Server 4.2)
+ with ESMTP id <0K8Z00MO0S48DH00@domail2.emirates.net.ae> for
+ tommy.tutone@example.com; Sun, 19 Oct 2008 19:24:08 +0400 (GST)
+Received: from mms.ae ([195.229.243.167]) by dpmail4.emirates.net.ae
+ (I&ES Mail Server 4.2) with SMTP id <0K8Z00L51ASLJ320@dpmail4.emirates.net.ae>
+ for tommy.tutone@example.com; Sun, 19 Oct 2008 19:24:24 +0400 (GST)
+Date: Sun, 19 Oct 2008 19:24:24 +0400 (GMT)
+From: +2068675309@mms.ae
+To: tommy.tutone@example.com
+Message-id: <48FB5115.006B87.11159@mmrl02>
+X-Mailer: HUAWEI EmailGateway 1.0
+X-Mms-Message-ID: 101919242497100101339
+X-Mms-Message-Class: Personal
+X-Mms-Priority: Normal
+
+
+--Boundary_(ID_p5dJ87KpgxrrG0Dfvu/kYQ)
+Content-type: image/jpeg; name=19102008.jpg
+Content-transfer-encoding: Base64
+Content-disposition: inline; filename=19102008.jpg
+Content-Location: 19102008.jpg
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+
+--Boundary_(ID_p5dJ87KpgxrrG0Dfvu/kYQ)--
