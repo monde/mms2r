@@ -2,10 +2,12 @@
 
 * X new features
   * MMS2R::Media#is_mobile? best guess if the sender was a mobile device
+  * MMS2R::Media#device_type? best guess of the mobile device type
 
 * X minor enchancements
-  * legacy support for mobile.mycingular.com, pics.cingularme.com
   * support for text service messaging.sprintpcs.com
+  * additional BlackBerry coverage from tmo.blackberry.net provider
+  * legacy support for mobile.mycingular.com, pics.cingularme.com
 
 * 1 bug fix
   * iPhone default subject - jesse dp
