@@ -7,3 +7,5 @@ transform:
     - "\1"
   - - /\A(.+?)\s+--\s+=+\s+Brought to you by, Cingular Wireless Messaging.*/im
     - "\1"
+  - - /\A(.+?)\s+--\s+Mobile Email from a Cingular Wireless Customer.*/im
+    - "\1"

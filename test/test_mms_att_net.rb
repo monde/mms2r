@@ -113,4 +113,30 @@ class TestMmsAttNet < Test::Unit::TestCase
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/IMG00367.jpg/, mms.media['image/jpeg'].first)
   end
+
+  def test_mobile_mycingular_com
+    # mobile.mycingular.com service
+    mail = TMail::Mail.parse(load_mail('mobile.mycingular.com-text-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal 'mobile.mycingular.com', mms.carrier
+    assert_equal 1, mms.media.size
+    assert_not_nil(mms.media['text/plain'])
+    assert_equal "I hate people that send text messages about skateboarding.", IO.read(mms.media['text/plain'][0])
+
+    mms.purge
+  end
+
+  def test_pics_cingularme_com
+    # pics.cingularme.com service
+    mail = TMail::Mail.parse(load_mail('pics.cingularme.com-image-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+
+
+    # TODO this fixture is either mailformed or exposes a tmail problem
+    # since its legacy content fix if necessary
+    assert_equal 'pics.cingularme.com', mms.carrier
+
+    mms.purge
+  end
 end

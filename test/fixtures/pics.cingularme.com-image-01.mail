@@ -1,0 +1,44 @@
+X-Gmail-Received: 58ec38dd448cbbe3fa2ca3cc92bc3384a1c0442e
+Delivered-To: tommy.tutone@example.com
+Received: by 10.35.116.17 with SMTP id t17cs497674pym;
+        Wed, 25 Oct 2006 17:03:38 -0700 (PDT)
+Received: by 10.65.180.7 with SMTP id h7mr1899344qbp;
+        Wed, 25 Oct 2006 17:03:38 -0700 (PDT)
+Return-Path: <2068675309@pics.cingularme.com>
+Received: from atlmtaow01.cingularme.com (atlmtaow01.cingularme.com [66.102.165.6])
+
+        Wed, 25 Oct 2006 17:03:38 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 2068675309@pics.cingularme.com designates 66.102.165.6 as permitted sender)
+X-Mms-MMS-Version: 18
+Date: Wed, 25 Oct 2006 20:03:37 -0400
+X-Nokia-Ag-Internal: ; smiltype=true; internaldate=1161821017233
+Content-Type: multipart/mixed;  boundary="----=_Part_773748_29039988.1161821017355"
+X-Mms-Delivery-Report: 0
+Received: from alpagw01 ([209.183.34.196]) by atlmtaow01.cingularme.com (InterMail vM.6.01.04.00 201-2131-118-20041027) with ESMTP id <20061026000337.PKXW18952.atlmtaow01.cingularme.com@alpagw01> for <tommy.tutone@example.com>; Wed, 25 Oct 2006 20:03:37 -0400
+X-Mms-Transaction-ID: E0FE5F627738A9
+From: <2068675309@pics.cingularme.com>
+To: tommy.tutone@example.com
+X-Mms-Message-Class: 0
+X-Mms-Read-Reply: 1
+Mime-Version: 1.0
+Message-ID: <22965942.1161821017378.JavaMail.wluser@alpagw01>
+X-Mms-Priority: 1
+X-Mms-Message-Type: 0
+Subject: Multimedia message
+X-Nokia-Ag-Version: 2.0
+
+------=_Part_773748_29039988.1161821017355
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: 10252006.jpg
+Content-Disposition: inline
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+------=_Part_773748_29039988.1161821017355--
+
