@@ -416,6 +416,13 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_filename
+    name = 'x' * 300 + '.txt'
+    mms = MMS2R::Media.new(stub_mail())
+    part = stub(:sub_header => name, :content_type => 'text/plain')
+    assert_equal 'x' * 251 + '.txt', mms.filename?(part)
+  end
+
+  def test_long_filename
     name = 'foo.txt'
     mms = MMS2R::Media.new(stub_mail())
     part = stub(:sub_header => name, :content_type => 'text/plain')
