@@ -297,7 +297,9 @@ class TestMms2rMedia < Test::Unit::TestCase
     mail = stub_mail()
     mail.stubs(:subject).returns(s)
     mms = MMS2R::Media.new(mail)
-    mms.stubs(:config).returns({'transform' => {'text/plain' => [['/Default Subject: (.+)/', '\1']]}})
+    mms.stubs(:config).returns(
+      { 'ignore' => {},
+        'transform' => {'text/plain' => [['/Default Subject: (.+)/', '\1']]}})
     assert_equal 'hello world', mms.subject
   end
 
@@ -424,13 +426,13 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.stubs(:config).returns({'ignore' => {type => [name]}})
 
     # type is not in the ingore
-    part = stub(:sub_header => name)
+    part = stub(:sub_header => name, :body => 'a')
     assert_equal false, mms.ignore_media?('text/test', part)
     # type and filename are in the ingore
     part = stub(:sub_header => name)
     assert_equal true, mms.ignore_media?(type, part)
     # type but not file name are in the ignore
-    part = stub(:sub_header => 'bar.txt')
+    part = stub(:sub_header => 'bar.txt', :body => 'a')
     assert_equal false, mms.ignore_media?(type, part)
   end
 
@@ -468,13 +470,13 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.stubs(:config).returns({'ignore' => {type => [regexp, 'nil.txt']}})
 
     # type is not in the ingore
-    part = stub(:sub_header => name)
+    part = stub(:sub_header => name, :body => 'a')
     assert_equal false, mms.ignore_media?('text/test', part)
     # type and regexp for the filename are in the ingore
     part = stub(:sub_header => name)
     assert_equal true, mms.ignore_media?(type, part)
     # type but not regexp for filename are in the ignore
-    part = stub(:sub_header => 'bar.txt')
+    part = stub(:sub_header => 'bar.txt', :body => 'a')
     assert_equal false, mms.ignore_media?(type, part)
   end
 
@@ -716,10 +718,6 @@ class TestMms2rMedia < Test::Unit::TestCase
     mail.expects(:from).at_least_once.returns(['joe@example.com'])
     domain = MMS2R::Media.domain(mail)
     assert_equal 'example.com', domain
-  end
-
-  def test_get_rid_for_permiscuous_resuces
-    fail
   end
 
   def test_conf_dir

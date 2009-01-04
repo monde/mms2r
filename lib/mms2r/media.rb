@@ -242,8 +242,8 @@ module MMS2R
     def number
       unless @number
         params = config['number']
-        if params
-          @number = mail.header[params[0]].to_s.gsub(eval(params[1]), params[2]) rescue nil
+        if params && (header = mail.header[params[0]])
+          @number = header.to_s.gsub(eval(params[1]), params[2])
         end
       end
       @number ||= mail.from.first.split('@').first rescue ""
@@ -257,7 +257,7 @@ module MMS2R
 
       unless @subject
         subject = mail.subject.strip rescue ""
-        ignores = config['ignore']['text/plain'] rescue nil
+        ignores = config['ignore']['text/plain']
         if ignores && ignores.detect{|s| s == subject}
           @subject = ""
         else
@@ -377,9 +377,9 @@ module MMS2R
     def ignore_media?(type,part)
       ignores = config['ignore'][type] || []
       ignore = ignores.detect{|test| filename?(part) == test}
-      ignore ||= ignores.detect{|test| filename?(part) =~ eval(test) if test.index('/') == 0 rescue nil}
-      ignore ||= ignores.detect{|test| part.body.strip =~ eval(test) if test.index('/') == 0 rescue nil}
-      ignore ||= (part.body.strip.size == 0 ? true : nil) rescue nil
+      ignore ||= ignores.detect{|test| filename?(part) =~ eval(test) if test.index('/') == 0 }
+      ignore ||= ignores.detect{|test| part.body.strip =~ eval(test) if test.index('/') == 0 }
+      ignore ||= (part.body.strip.size == 0 ? true : nil) 
       ignore.nil? ? false : true
     end
 
@@ -425,7 +425,7 @@ module MMS2R
     # configuration.
 
     def transform_text(type, text, original_nencoding = 'ISO-8859-1')
-      return type, text unless transforms = config['transform'][type] rescue nil
+      return type, text unless transforms = config['transform'][type] 
 
       #convert to UTF-8
       begin
@@ -562,9 +562,11 @@ module MMS2R
     # Returns a default file extension based on a content type
 
     def self.default_ext(content_type)
-      ext = MMS2R::EXT[content_type] ||
-            content_type.split('/').last rescue nil
-      ext
+      if MMS2R::EXT[content_type]
+        MMS2R::EXT[content_type]
+      elsif content_type
+        content_type.split('/').last 
+      end
     end
 
     ##
@@ -649,7 +651,7 @@ module MMS2R
         if File.size(f) > size
           size = File.size(f)
           file = File.new(f)
-          mime_type = media.detect{|type,files| files.detect{|fl| fl == f}}[0] rescue nil
+          mime_type = media.detect{|type,files| files.detect{|fl| fl == f}}[0] 
         end
       end
 
