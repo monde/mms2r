@@ -720,12 +720,4 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal 'example.com', domain
   end
 
-  def test_conf_dir
-    fail
-  end
-
-  def test_too_many_selfs
-    fail
-  end
-
 end

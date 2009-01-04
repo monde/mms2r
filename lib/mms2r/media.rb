@@ -211,8 +211,8 @@ module MMS2R
       log("#{self.class} created", :info)
       @carrier = opts[:domain]
       @dir_count = 0
-      @media_dir = File.join(self.class.tmp_dir(), 
-                     self.class.safe_message_id(@mail.message_id))
+      @media_dir = File.join(self.tmp_dir(), 
+                     self.safe_message_id(@mail.message_id))
       @media = {}
       @was_processed = false
       @number = nil
@@ -507,11 +507,11 @@ module MMS2R
         if part['content-id'] && part['content-id'].real_body.strip =~ /^<(.+)>$/
           name = $1
         else
-          name = "#{Time.now.to_f}.#{self.class.default_ext(part.part_type?)}"
+          name = "#{Time.now.to_f}.#{self.default_ext(part.part_type?)}"
         end
       end
       # XXX fwiw, janky look for dot extension 1 to 4 chars long
-      name = (name =~ /\..{1,4}$/ ? name : "#{name}.#{self.class.default_ext(part.part_type?)}")
+      name = (name =~ /\..{1,4}$/ ? name : "#{name}.#{self.default_ext(part.part_type?)}")
 
       # handle excessively large filenames
       if name.size > 255
@@ -605,6 +605,34 @@ module MMS2R
     
     def conf_dir
       self.class.conf_dir
+    end
+
+    ##
+    # convenience accessor for self.class.conf_dir
+
+    def tmp_dir
+      self.class.tmp_dir
+    end
+
+    ##
+    # convenience accessor for self.class.default_ext
+
+    def default_ext(type)
+      self.class.default_ext(type)
+    end
+
+    ##
+    # convenience accessor for self.class.safe_message_id
+    
+    def safe_message_id(message_id)
+      self.class.safe_message_id(message_id)
+    end
+
+    ##
+    # convenience accessor for self.class.initialize_confg
+  
+    def initialize_config(config)
+      self.class.initialize_config(config)
     end
 
     private
