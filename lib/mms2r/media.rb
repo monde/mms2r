@@ -107,8 +107,9 @@ module MMS2R
       # alias new so that we can use ::create to select the media processor and
       # then initialize the new object
       alias orig_new new
-      def new(mail, opts=nil)
-        klass = MMS2R::Media.create(mail)
+      def new(mail, opts = {})
+        klass, carrier = MMS2R::Media.create(mail)
+        opts[:domain] = carrier
         klass.orig_new(mail, opts)
       end
     end
@@ -147,17 +148,51 @@ module MMS2R
     # object.
 
     def self.create(mail)
-      d = lambda{['mms2r.media',MMS2R::Media]} #sets a default to detect
-      processor = MMS2R::CARRIERS.detect(d) do |n, c| 
-        if mail.header['return-path'] && mail.header['return-path'].to_s.strip =~ /^<.+@([^@]+)>$/
-          domain = $1
-        else
-          domain = mail.from.first.split('@').last rescue nil
-        end
-        domain == n
+      d = lambda{ ['mms2r.media', MMS2R::Media] } #sets a default to detect
+      from_domain = self.domain(mail)
+      processor = MMS2R::CARRIERS.detect(d) do |domain, klass| 
+        return klass, domain if from_domain == domain
       end
-      processor.last
+      [MMS2R::Media, from_domain]
     end
+
+    ##
+    # Determine if return-path or from is going to be used to desiginate the
+    # origin carrier.  If the domain in the From header is listed in 
+    # conf/from.yaml then that is the carrier domain.  Else if there is a 
+    # Return-Path header its address's domain is the carrier doamin, else
+    # use From header's address domain.
+
+    def self.domain(mail)
+      return_path = case
+        when mail.header['return-path']
+          matched = /^<.+@([^@]+)>$/.match(mail.header['return-path'].to_s.strip)
+          matched ? matched[1] : ''
+        else
+          ''
+        end
+
+      from_domain = case
+        when mail.from && mail.from.first
+          mail.from.first.split('@').last
+        else
+          ''
+        end
+
+      f = File.join(self.conf_dir(), "from.yml")
+      from = YAML::load_file(f) rescue {}
+
+      ret = case
+        when from.include?(from_domain)
+          from_domain
+        when return_path.any?
+          return_path
+        else
+          from_domain
+        end
+      ret
+    end
+
 
     ##
     # Initialize a new MMS2R::Media comprised of a mail.
@@ -172,17 +207,12 @@ module MMS2R
     def initialize(mail, opts={})
 
       @mail = mail
-      @logger = opts[:logger] rescue nil
-      @logger.info("#{self.class} created") unless @logger.nil?
+      @logger = opts[:logger]
+      log("#{self.class} created", :info)
+      @carrier = opts[:domain]
       @dir_count = 0
       @media_dir = File.join(self.class.tmp_dir(), 
                      self.class.safe_message_id(@mail.message_id))
-
-      if mail.header['return-path'] && mail.header['return-path'].to_s.strip =~ /^<.+@([^@]+)>$/
-        @carrier = $1
-      else
-        @carrier = mail.from.first.split('@').last rescue 'mms2r.media'
-      end
       @media = {}
       @was_processed = false
       @number = nil
@@ -191,13 +221,11 @@ module MMS2R
       @default_media = nil
       @default_text = nil
       
-      f = File.join(self.class.conf_dir(), "aliases.yml")
+      f = File.join(self.conf_dir(), "aliases.yml")
       @aliases = YAML::load_file(f) rescue {}
 
-      conf = @aliases[@carrier]
-      conf ||= @carrier
-      conf += ".yml"
-      f = File.join(self.class.conf_dir(), conf)
+      conf = "#{@aliases[@carrier] || @carrier}.yml"
+      f = File.join(self.conf_dir(), conf)
       c = YAML::load_file(f) rescue {}
       @config = self.class.initialize_config(c)
 
@@ -213,7 +241,7 @@ module MMS2R
 
     def number
       unless @number
-        params = config['number'] rescue nil
+        params = config['number']
         if params
           @number = mail.header[params[0]].to_s.gsub(eval(params[1]), params[2]) rescue nil
         end
@@ -300,7 +328,7 @@ module MMS2R
 
     def process() # :yields: media_type, file
       unless @was_processed
-        @logger.info("#{self.class} processing") unless @logger.nil?
+        log("#{self.class} processing", :info)
   
         parts = mail.multipart? ? mail.parts : [mail]
   
@@ -386,7 +414,7 @@ module MMS2R
       end
       return type, nil if content.nil? || content.empty?
 
-      @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
+      log("#{self.class} writing file #{file}", :info)
       File.open(file, mode){ |f| f.write(content) }
       return type, file
     end
@@ -445,7 +473,7 @@ module MMS2R
     # for this producer and all of the media that it contains.
 
     def purge()
-      @logger.info("#{self.class} purging #{@media_dir} and all its contents") unless @logger.nil?
+      log("#{self.class} purging #{@media_dir} and all its contents", :info)
       FileUtils.rm_rf(@media_dir)
     end
 
@@ -546,7 +574,7 @@ module MMS2R
     def self.initialize_config(c)
       f = File.join(self.conf_dir(), "mms2r_media.yml")
       conf = YAML::load_file(f) rescue {}
-      conf['ignore'] = {} unless conf['ignore']
+      conf['ignore'] ||= {} unless conf['ignore']
       conf['transform'] = {} unless conf['transform']
       conf['number'] = [] unless conf['number']
       return conf unless c
@@ -564,6 +592,17 @@ module MMS2R
       conf['number'] = c['number'] if c['number']
 
       conf
+    end
+
+    def log(message, level = :info)
+      @logger.send(level, message) unless @logger.nil?
+    end
+
+    ##
+    # convenience accessor for self.class.conf_dir
+    
+    def conf_dir
+      self.class.conf_dir
     end
 
     private
