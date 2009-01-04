@@ -6,6 +6,7 @@ Rakefile
 conf/1nbox.net.yml
 conf/aliases.yml
 conf/bellsouth.net.yml
+conf/from.yml
 conf/mediamessaging.o2.co.uk.yml
 conf/messaging.nextel.com.yml
 conf/mms.3ireland.ie.yml
@@ -66,6 +67,7 @@ test/fixtures/cingularme-text-01.mail
 test/fixtures/cingularme-text-02.mail
 test/fixtures/dobson-image-01.mail
 test/fixtures/dot.jpg
+test/fixtures/generic.mail
 test/fixtures/helio-image-01.mail
 test/fixtures/helio-message-01.mail
 test/fixtures/iconv-fr-text-01.mail
@@ -80,6 +82,7 @@ test/fixtures/mms.ae-image-01.mail
 test/fixtures/mms.mycricket.com-pic-and-text.mail
 test/fixtures/mms.mycricket.com-pic.mail
 test/fixtures/mmsreply.t-mobile.co.uk-text-image-01.mail
+test/fixtures/mobile.mycingular.com-text-01.mail
 test/fixtures/mtn-southafrica-mms.mail
 test/fixtures/mycingular-image-01.mail
 test/fixtures/netcom-image-01.mail
@@ -92,6 +95,7 @@ test/fixtures/orange-uk-image-01.mail
 test/fixtures/orangefrance-text-and-image.mail
 test/fixtures/orangepoland-text-01.mail
 test/fixtures/orangepoland-text-02.mail
+test/fixtures/pics.cingularme.com-image-01.mail
 test/fixtures/pxt-image-01.mail
 test/fixtures/rogers-canada-mms-01.mail
 test/fixtures/sasktel-image-01.mail
@@ -106,6 +110,7 @@ test/fixtures/sprint.mov
 test/fixtures/suncom-blackberry.mail
 test/fixtures/telus-image-01.mail
 test/fixtures/three-uk-image-01.mail
+test/fixtures/tmo.blackberry.net-image-01.mail
 test/fixtures/tmobile-blackberry-02.mail
 test/fixtures/tmobile-blackberry.mail
 test/fixtures/tmobile-image-01.mail
@@ -118,6 +123,7 @@ test/fixtures/verizon-image-03.mail
 test/fixtures/verizon-text-01.mail
 test/fixtures/verizon-video-01.mail
 test/fixtures/virgin-mobile-image-01.mail
+test/fixtures/virgin.ca-text-01.mail
 test/fixtures/vodacom4me-co-za-01.mail
 test/fixtures/vodacom4me-co-za-02.mail
 test/fixtures/vodacom4me-southafrica-mms-01.mail
