@@ -118,7 +118,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     mail.expects(:header).at_least_once.returns({})
     mail.expects(:from).at_least_once.returns(['joe@unknown.example.com'])
     mms = MMS2R::Media.create(mail)
-    assert_equal MMS2R::Media, mms
+    assert_equal [MMS2R::Media, 'unknown.example.com'] , mms
   end
 
   def test_create_with_special_processor
@@ -127,15 +127,16 @@ class TestMms2rMedia < Test::Unit::TestCase
     mail.expects(:header).at_least_once.returns({})
     mail.expects(:from).at_least_once.returns(['joe@null.example.com'])
     mms = MMS2R::Media.create(mail)
-    assert_equal MMS2R::Media::NullCarrier, mms
+    assert_equal [MMS2R::Media::NullCarrier, 'null.example.com'], mms
   end
 
   def test_create_with_special_processor_and_return_path
     MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
     mail = mock()
     mail.expects(:header).at_least_once.returns({'return-path' => '<joe@null.example.com>'})
+    mail.expects(:from).at_least_once.returns([])
     mms = MMS2R::Media.create(mail)
-    assert_equal MMS2R::Media::NullCarrier, mms
+    assert_equal [MMS2R::Media::NullCarrier, 'null.example.com'], mms
   end
 
   def test_create_should_fail_gracefully_with_broken_from
@@ -689,6 +690,26 @@ class TestMms2rMedia < Test::Unit::TestCase
       assert_equal true, File::exist?(files.first)
     end
     mms.purge
+  end
+
+  def test_logger
+    fail
+  end
+
+  def test_domain
+    fail
+  end
+
+  def test_get_rid_for_permiscuous_resuces
+    fail
+  end
+
+  def test_conf_dir
+    fail
+  end
+
+  def test_too_many_selfs
+    fail
   end
 
 end

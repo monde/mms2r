@@ -38,7 +38,7 @@ module MMS2R
 
       def process
         unless @was_processed
-          @logger.info("#{self.class} processing") unless @logger.nil?
+          log("#{self.class} processing", :info)
           #sprint MMS are multipart
           parts = @mail.parts
 
@@ -141,14 +141,14 @@ module MMS2R
 
             res = Net::HTTP.get_response(url)
           rescue StandardError => err
-            @logger.error("#{self.class} processing error, #{$!}") unless @logger.nil?
+            log("#{self.class} processing error, #{$!}", :error)
             next
           end
 
           # if the Sprint content server uses response code 500 when the content is purged
           # the content type will text/html and the body will be the message
           if res.content_type == 'text/html' && res.code == "500"
-            @logger.error("Sprint content server returned response code 500") unless @logger.nil?
+            log("Sprint content server returned response code 500", :error)
             next
           end
 
@@ -179,7 +179,7 @@ module MMS2R
 
       def sprint_write_file(type, content, file = nil)
         file = sprint_temp_file(type) if file.nil?
-        @logger.info("#{self.class} writing file #{file}") unless @logger.nil?
+        log("#{self.class} writing file #{file}", :info)
         File.open(file,'w'){ |f| f.write(content) }
         return type, file
       end
