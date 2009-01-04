@@ -483,7 +483,16 @@ module MMS2R
         end
       end
       # XXX fwiw, janky look for dot extension 1 to 4 chars long
-      name =~ /\..{1,4}$/ ? name : "#{name}.#{self.class.default_ext(part.part_type?)}"
+      name = (name =~ /\..{1,4}$/ ? name : "#{name}.#{self.class.default_ext(part.part_type?)}")
+
+      # handle excessively large filenames
+      if name.size > 255
+        ext = File.extname(name)
+        base = File.basename(name, ext)
+        name = "#{base[0, 255 - ext.size]}#{ext}"
+      end
+      
+      name
     end
 
     ##
