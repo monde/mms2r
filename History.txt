@@ -1,10 +1,10 @@
-### 2.2.0 / 2008-12-XX (Rikki Kixx - owner of a franchise of rehab centers)
+### 2.2.0 / 2009-01-04 (Rikki Kixx - owner of a franchise of rehab centers)
 
 * 3 new features
   * MMS2R::Media#is_mobile? best guess if the sender was a mobile device
   * MMS2R::Media#device_type? best guess of the mobile device type.  Simple
     heuristics thus far for :blackberry :iphone :handset :unknown
-    could be expanded for exif probing or shifting mail header schemes
+    could be expanded for exif probing or additinal shifting of mail header
   * from array in conf/from.yml to provide granularity to determine carrier 
     domain (caused by tmo.blackberry.net)
 
