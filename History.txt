@@ -1,20 +1,20 @@
 ### 2.2.0 / 2008-12-XX (Rikki Kixx - owner of a franchise of rehab centers)
 
-* X new features
+* 3 new features
   * MMS2R::Media#is_mobile? best guess if the sender was a mobile device
   * MMS2R::Media#device_type? best guess of the mobile device type.  Simple
-    heuristics thus far for blackberry/iphone, could be expanded for exif
-    probing or shifting mail header schemes
-  * from array in conf/from.yml to support granularity to determin carrier 
+    heuristics thus far for :blackberry :iphone :handset :unknown
+    could be expanded for exif probing or shifting mail header schemes
+  * from array in conf/from.yml to provide granularity to determine carrier 
     domain (caused by tmo.blackberry.net)
 
-* X minor enchancements
+* 4 minor enhancements
   * support for Virgin Canada messaging service vmobile.ca
   * support for text service messaging.sprintpcs.com
   * additional BlackBerry coverage from T-Mobile tmo.blackberry.net provider
   * legacy support for mobile.mycingular.com, pics.cingularme.com
 
-* X bug fixes
+* 3 bug fixes
   * iPhone default subject - jesse dp
     http://rubyforge.org/tracker/?func=detail&atid=11789&aid=22951&group_id=3065
   * add sprintpcs.com to pm.sprint.com aliases

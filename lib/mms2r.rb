@@ -39,14 +39,14 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '2.1.3'
+    VERSION = '2.2.0'
 
   end
 
 end
 
 require 'rubygems'
-gem 'tmail', '>= 1.2.1'
+gem 'tmail', '>= 1.2.3'
 require 'tmail/mail'
 require 'fileutils'
 require 'pathname'
