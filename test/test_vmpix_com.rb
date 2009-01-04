@@ -43,4 +43,13 @@ class TestVmpixCom < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_only_valid_content_should_be_retained_for_virgin_canada_text
+    mail = TMail::Mail.parse(load_mail('virgin.ca-text-01.mail').join)
+    mms = MMS2R::Media.new(mail)
+    assert_equal 1, mms.media.size
+    assert_equal 1, mms.media['text/plain'].size
+    assert_equal "Hello World", IO.read(mms.media['text/plain'][0]).strip
+    mms.purge
+  end
+
 end
