@@ -720,4 +720,31 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal 'example.com', domain
   end
 
+  def test_unknown_device_type
+    mail = TMail::Mail.load(mail_fixture('generic.mail'))
+    mms = MMS2R::Media.new(mail)
+    assert_equal :unknown, mms.device_type?
+  end
+
+  def test_iphone_device_type
+    mail = TMail::Mail.load(mail_fixture('att-iphone-01.mail'))
+    mms = MMS2R::Media.new(mail)
+    assert_equal :iphone, mms.device_type?
+  end
+
+  def test_blackberry_device_type
+    berries = ['att-blackberry.mail',
+               'suncom-blackberry.mail',
+               'tmobile-blackberry-02.mail',
+               'tmobile-blackberry.mail',
+               'tmo.blackberry.net-image-01.mail',
+               'verizon-blackberry.mail',
+               'verizon-blackberry.mail']
+    berries.each do |berry|
+      mail = TMail::Mail.load(mail_fixture(berry))
+      mms = MMS2R::Media.new(mail)
+      assert_equal :blackberry, mms.device_type?, "fixture #{berry} was not a blackberrry"
+    end
+  end
+
 end

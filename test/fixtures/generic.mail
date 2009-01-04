@@ -1,0 +1,50 @@
+Delivered-To: someone@gmail.com
+Received: by 10.143.32.12 with SMTP id k12cs339474wfj;
+        Mon, 1 Dec 2008 11:21:47 -0800 (PST)
+Received: by 10.100.168.18 with SMTP id q18mr6081458ane.7.1228159306677;
+        Mon, 01 Dec 2008 11:21:46 -0800 (PST)
+Return-Path: <noreply@rubyforge.org>
+Received: from rubyforge.org (rubyforge.org [205.234.109.19])
+        by mx.google.com with ESMTP id d21si5824438and.26.2008.12.01.11.21.46;
+        Mon, 01 Dec 2008 11:21:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@rubyforge.org designates 205.234.109.19 as permitted sender) client-ip=205.234.109.19;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of noreply@rubyforge.org designates 205.234.109.19 as permitted sender) smtp.mail=noreply@rubyforge.org
+Received: by rubyforge.org (Postfix, from userid 502)
+	id 037671588057; Mon,  1 Dec 2008 14:21:45 -0500 (EST)
+To: noreply@rubyforge.org
+From:  <noreply@rubyforge.org> 
+Subject: [ mms2r-Patches-22951 ] iPhone default subject line varient
+Content-type: text/plain; charset=UTF-8
+Message-Id: <20081201192146.037671588057@rubyforge.org>
+Date: Mon,  1 Dec 2008 14:21:45 -0500 (EST)
+
+Patches item #22951, was opened at 2008-11-23 14:47
+You can respond by visiting: 
+http://rubyforge.org/tracker/?func=detail&atid=11789&aid=22951&group_id=3065
+
+Category: None
+Group: None
+Status: Open
+Resolution: None
+Priority: 3
+Submitted By: jesse dp (jessedp)
+>Assigned to: Mike Mondragon (mikemondragon)
+Summary: iPhone default subject line varient
+
+Initial Comment:
+On line 13 of conf/mms2r_media.yml, we've changed:
+
+  - - /\A(.*?)Sent from my iPhone.?$/im
+
+to:
+
+  - - /\A(.*?)Sent from (my|your) iPhone.?$/im
+
+
+b/c apparently that's a variation of their default subject too
+
+
+----------------------------------------------------------------------
+
+You can respond by visiting: 
+http://rubyforge.org/tracker/?func=detail&atid=11789&aid=22951&group_id=3065

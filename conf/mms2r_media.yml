@@ -14,3 +14,11 @@ transform:
     - "\1"
   - - /\A(.*?)\s+image\/jpeg$/im
     - "\1"
+device_types: 
+  headers: 
+    X-Mailer: 
+    - !ruby/regexp /^iPhone Mail/i
+    - :iphone
+    X-rim-org-msg-ref-id:
+    - !ruby/regexp /.+/
+    - :blackberry

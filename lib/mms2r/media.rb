@@ -524,6 +524,23 @@ module MMS2R
     end
 
     ##
+    # Best guess of the mobile device type.  Simple heuristics thus far for 
+    # :iphone :blackberry :handset :unknown could be expanded for exif probing 
+    # or shifting mail header schemes
+
+    def device_type?
+      headers = config['device_types']['headers'] rescue {}
+      headers.keys.each do |header|
+        if mail.header[header.downcase]
+          regex, type = headers[header]
+          return type if mail.header[header.downcase].to_s =~ regex
+        end
+      end
+      
+      :unknown
+    end
+
+    ##
     # Get the temporary directory where media files are written to.
 
     def self.tmp_dir
