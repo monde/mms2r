@@ -523,10 +523,14 @@ module MMS2R
       name
     end
 
+    def aliases
+      @aliases
+    end
+
     ##
     # Best guess of the mobile device type.  Simple heuristics thus far for 
-    # :iphone :blackberry :handset :unknown could be expanded for exif probing 
-    # or shifting mail header schemes
+    # :iphone :blackberry :handset :unknown .  Could be expanded for exif 
+    # probing or shifting mail header schemes
 
     def device_type?
       headers = config['device_types']['headers'] rescue {}
@@ -536,8 +540,18 @@ module MMS2R
           return type if mail.header[header.downcase].to_s =~ regex
         end
       end
+
+      return :handset if File.exist?(File.join(self.conf_dir,
+                                     "#{self.aliases[self.carrier] || self.carrier}.yml"))
       
       :unknown
+    end
+
+    ##
+    # The source of the MMS was some sort of mobile or smart phone
+    
+    def is_mobile?
+      self.device_type? != :unknown
     end
 
     ##
