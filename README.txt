@@ -54,7 +54,7 @@ Corpus of carriers currently processed by MMS2R:
   (note: mobile number is tucked away in a text/plain part for unicel.com)
 * Verizon: vzwpix.com, vtext.com
 * Virgin Mobile: vmpix.com
-* Virgin Mobile of Canada: virgin.ca
+* Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
 
 == FEATURES

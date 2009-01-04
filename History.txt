@@ -9,7 +9,7 @@
     domain (caused by tmo.blackberry.net)
 
 * X minor enchancements
-  * support for Virgin Canada messaging service virgin.ca
+  * support for Virgin Canada messaging service vmobile.ca
   * support for text service messaging.sprintpcs.com
   * additional BlackBerry coverage from T-Mobile tmo.blackberry.net provider
   * legacy support for mobile.mycingular.com, pics.cingularme.com
