@@ -26,7 +26,7 @@ Corpus of carriers currently processed by MMS2R:
 * 3 Ireland: mms.3ireland.ie
 * Alltel: mms.alltel.com
 * AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com, 
-  cingularme.com
+  cingularme.com, mobile.mycingular.com pics.cingularme.com
 * Bell Canada: txt.bell.ca
 * Bell South / Suncom: bellsouth.net
 * Cricket Wireless: mms.mycricket.com

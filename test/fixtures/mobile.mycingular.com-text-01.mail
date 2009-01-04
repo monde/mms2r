@@ -1,0 +1,25 @@
+X-Gmail-Received: 7105037d3e995bef64ac4dc4c60acf6ebb21ffca
+Delivered-To: tommy.tutone@example.com
+Received: by 10.36.78.1 with SMTP id a1cs107902nzb;
+        Mon, 3 Jul 2006 19:40:19 -0700 (PDT)
+Received: by 10.70.128.8 with SMTP id a8mr6891405wxd;
+        Mon, 03 Jul 2006 19:40:19 -0700 (PDT)
+Return-Path: <2068675309@mobile.mycingular.com>
+Received: from wcmta2.mycingular.net (wcmta2.mycingular.net [66.102.172.232])
+        by mx.gmail.com with ESMTP id i20si5782410wxd.2006.07.03.19.40.19;
+        Mon, 03 Jul 2006 19:40:19 -0700 (PDT)
+Received-SPF: neutral (gmail.com: 66.102.172.232 is neither permitted nor denied by best guess record for domain of 2068675309@mobile.mycingular.com)
+Received: from mobile.mycingular.com (wcmmg1.mycingular.net [10.46.26.18])
+	by wcmta2.mycingular.net (8.12.11/8.12.11) with SMTP id k642eI4M028656
+	for tommy.tutone@example.com; Mon, 3 Jul 2006 21:40:18 -0500 (CDT)
+	(envelope-from 2068675309@mobile.mycingular.com)
+Date: Mon, 3 Jul 2006 21:40:18 -0500 (CDT)
+Message-Id: <200607040240.k642eI4M028656@wcmta2.mycingular.net>
+FROM: 2068675309@mobile.mycingular.com
+TO: tommy.tutone@example.com
+
+I hate people that send text messages about skateboarding.
+
+--
+
+Mobile Email from a Cingular Wireless Customer http://www.cingular.com
