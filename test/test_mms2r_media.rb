@@ -692,12 +692,30 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_logger
-    fail
+  def test_domain_from_return_path
+    mail = mock()
+    mail.expects(:header).at_least_once.returns({'return-path' => '<joe@null.example.com>'})
+    mail.expects(:from).at_least_once.returns([])
+    domain = MMS2R::Media.domain(mail)
+    assert_equal 'null.example.com', domain
   end
 
-  def test_domain
-    fail
+  def test_domain_from_from
+    mail = mock()
+    mail.expects(:header).at_least_once.returns({})
+    mail.expects(:from).at_least_once.returns(['joe@null.example.com'])
+    domain = MMS2R::Media.domain(mail)
+    assert_equal 'null.example.com', domain
+  end
+
+  def test_domain_from_from_yaml
+    f = File.join(MMS2R::Media.conf_dir, 'from.yml')
+    YAML.expects(:load_file).once.with(f).returns(['example.com'])
+    mail = mock()
+    mail.expects(:header).at_least_once.returns({'return-path' => '<joe@null.example.com>'})
+    mail.expects(:from).at_least_once.returns(['joe@example.com'])
+    domain = MMS2R::Media.domain(mail)
+    assert_equal 'example.com', domain
   end
 
   def test_get_rid_for_permiscuous_resuces
