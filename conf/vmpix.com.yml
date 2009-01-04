@@ -5,3 +5,7 @@ ignore:
   text/plain: 
   - /^This is an MMS message\.$/i
 
+transform: 
+  text/plain: 
+  - - /(.*?)-+\s+Sent by Text Messaging from a mobile device.*/im
+    - "\1"
