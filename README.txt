@@ -46,14 +46,15 @@ Corpus of carriers currently processed by MMS2R:
 * PXT New Zealand: pxt.vodafone.net.nz
 * Rogers of Canada: rci.rogers.com
 * SaskTel: sms.sasktel.com
-* Sprint: pm.sprint.com, messaging.sprintpcs.com
-* T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk
+* Sprint: pm.sprint.com, messaging.sprintpcs.com, sprintpcs.com
+* T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk, tmo.blackberry.net
 * TELUS Corporation (Canada): mms.telusmobility.com, msg.telus.com
 * UAE MMS: mms.ae
 * Unicel: unicel.com, info2go.com 
   (note: mobile number is tucked away in a text/plain part for unicel.com)
 * Verizon: vzwpix.com, vtext.com
 * Virgin Mobile: vmpix.com
+* Virgin Mobile of Canada: virgin.ca
 * Vodacom: mms.vodacom4me.co.za
 
 == FEATURES
