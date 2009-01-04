@@ -6,13 +6,14 @@
 
 * X minor enchancements
   * support for text service messaging.sprintpcs.com
-  * additional BlackBerry coverage from tmo.blackberry.net provider
+  * additional BlackBerry coverage from T-Mobile tmo.blackberry.net provider
   * legacy support for mobile.mycingular.com, pics.cingularme.com
 
-* 1 bug fix
+* 3 bug fixes
   * iPhone default subject - jesse dp
     http://rubyforge.org/tracker/?func=detail&atid=11789&aid=22951&group_id=3065
   * add sprintpcs.com to pm.sprint.com aliases
+  * fix OS X long filename issues - Matt Conway
 
 ### 2.1.3 / 2008-11-06 (Dr. Ramonolith Chesterfield - Military pharmaceutical psychotropic drug manufacturing expert
 
