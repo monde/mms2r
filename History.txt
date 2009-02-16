@@ -1,3 +1,8 @@
+### 2.2.X marking for next official release
+* 1 new feature
+  * make MMS2R Rails 2.2.X gem packaging friendly - Scott Taylor a.k.a. 
+    smtlaissezfaire
+
 ### 2.2.0 / 2009-01-04 (Rikki Kixx - owner of a franchise of rehab centers)
 
 * 3 new features
