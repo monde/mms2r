@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mms2r}
-  s.version = "2.2.0"
+  s.version = "2.2.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Mondragon", "Brendan G. Lim"]
