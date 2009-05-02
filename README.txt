@@ -79,53 +79,55 @@ http://peepcode.com/products/mms2r-pdf
   require 'tmail'
   require 'fileutils'
 
-  mail = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
-  mms = MMS2R::Media.new(mail)
+  mail = MMS2R.parse mail
+  # mail = MMS2R.parse File.read('some_saved_mail.file')
 
-  puts "MMS has default carrier subject" if mms.subject.empty?
+  puts "mail has default carrier subject" if mail.subject.empty?
 
   # access the sender's phone number
-  puts "MMS was from phone #{mms.number}"
+  puts "mail was from phone #{mail.number}"
 
-  # most MMS are either image or video, default_media will return the largest
+  # most mail are either image or video, default_media will return the largest
   # (non-advertising) video or image found
-  file = mms.default_media
-  puts "MMS had a media: #{file.inspect}" unless file.nil?
+  file = mail.default_media
+  puts "mail had a media: #{file.inspect}" unless file.nil?
 
   # finds the largest (non-advertising) text found
-  file = mms.default_text
-  puts "MMS had some text: #{file.inspect}" unless file.nil?
+  file = mail.default_text
+  puts "mail had some text: #{file.inspect}" unless file.nil?
 
-  # mms.media is a hash that is indexed by mime-type.
+  # mail.media is a hash that is indexed by mime-type.
   # The mime-type key returns an array of filepaths
-  # to media that were extract from the MMS and
+  # to media that were extract from the mail and
   # are of that type
-  mms.media['image/jpeg'].each {|f| puts "#{f}"}
-  mms.media['text/plain'].each {|f| puts "#{f}"}
+  mail.media['image/jpeg'].each {|f| puts "#{f}"}
+  mail.media['text/plain'].each {|f| puts "#{f}"}
 
-  # print the text (assumes MMS had text)
-  text = IO.readlines(mms.media['text/plain'].first).join
+  # print the text (assumes mail had text)
+  text = IO.readlines(mail.media['text/plain'].first).join
   puts text
 
-  # save the image (assumes MMS had a jpeg)
-  FileUtils.cp mms.media['image/jpeg'].first, '/some/where/useful', :verbose => true
+  # save the image (assumes mail had a jpeg)
+  FileUtils.cp mail.media['image/jpeg'].first, '/some/where/useful', :verbose => true
 
-  puts "does the MMS have quicktime video? #{!mms.media['video/quicktime'].nil?}"
+  puts "does the mail have quicktime video? #{!mail.media['video/quicktime'].nil?}"
+  
+  puts "plus run anything that TMail provides, e.g. #{mail.to.inspect}"
 
   # Block support, process and receive all media types of video.
-  mms.process do |media_type, files|
+  mail.process do |media_type, files|
     # assumes a Clip model that is an AttachmentFu
     Clip.create(:uploaded_data => files.first, :title => "From phone") if media_type =~ /video/
   end
 
   # Another AttachmentFu example, Picture model is an AttachmentFu
   picture = Picture.new
-  picture.title = mms.subject
-  picture.uploaded_data = mms.default_media
+  picture.title = mail.subject
+  picture.uploaded_data = mail.default_media
   picture.save!
 
   #remove all the media that was put to temporary disk
-  mms.purge
+  mail.purge
 
 == REQUIREMENTS
 
@@ -174,6 +176,7 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 * Matt Conway
 * Kai Kai
 * Michael DelGaudio
+* Sai Emrys (http://saizai.com)
 
 == LICENSE
 

@@ -43,6 +43,14 @@ module MMS2R
 
   end
 
+  # Simple convenience function to make it a one-liner:
+  # MMS2R.parse raw_mail or MMS2R.parse File.load(raw_mail)
+  # Combined w/ the method_missing delegation, this should behave as an enhanced TMail object, more or less.
+  def parse raw_mail
+    mail = TMail::Mail.parse raw_mail
+    MMS2R::Media.new(mail)
+  end
+
 end
 
 require 'rubygems'
