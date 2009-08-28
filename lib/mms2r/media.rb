@@ -294,7 +294,7 @@ module MMS2R
     # Returns nil if there are not any video or image Files found.
 
     def default_media
-      @default_media ||= attachment(['video', 'image', 'text'])
+      @default_media ||= attachment(['video', 'image', 'application', 'text'])
     end
 
     # Returns a File with the most likely candidate that is text, or nil
