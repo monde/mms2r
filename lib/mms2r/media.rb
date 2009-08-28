@@ -113,7 +113,13 @@ module MMS2R
         klass.orig_new(mail, opts)
       end
     end
-
+    
+    # Pass off everything we don't do to the TMail object
+    # TODO: refactor to explicit addition a la http://blog.jayfields.com/2008/02/ruby-replace-methodmissing-with-dynamic.html
+    def method_missing method, *args, &block
+      mail.send method, *args, &block
+    end
+    
     ##
     # TMail object that the media files were derived from.
 
