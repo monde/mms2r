@@ -1,7 +1,8 @@
-### 2.2.X marking for next official release
-* 1 new feature
+### 2.3.0 / 2008-08-30 (Snakes And Barrels Greatest Hits)
+* 2 new feature
   * make MMS2R Rails 2.2.X gem packaging friendly - Scott Taylor a.k.a. 
     smtlaissezfaire
+  * Add init.rb so that it will work as a rails plugin - smtlaissezfaire
 
 ### 2.2.0 / 2009-01-04 (Rikki Kixx - owner of a franchise of rehab centers)
 
