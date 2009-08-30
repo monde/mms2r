@@ -177,6 +177,7 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 * Kai Kai
 * Michael DelGaudio
 * Sai Emrys (http://saizai.com)
+* Brendan Lim
 
 == LICENSE
 
