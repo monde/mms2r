@@ -1,10 +1,12 @@
 ### 2.3.0 / 2008-08-30 (Snakes And Barrels Greatest Hits)
-* 3 new features
+* 4 new features
   * make MMS2R Rails gem packaging friendly - Scott Taylor 
     a.k.a. smtlaissezfaire
   * Add init.rb so that it will work as a rails plugin - smtlaissezfaire
   * delegate missing methods to mms2r's tmail object so that mms2r behaves as 
     if it were a tmail object - saizai
+  * default_media can return an attachment of application content type
+    Brendan Lim - brendanlim
 
 * 1 minor enhancements
   * make examples more 'mail' specific to enforce the fact that an mms is a
