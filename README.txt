@@ -1,7 +1,7 @@
 = mms2r
 
+  http://mms2r.rubyforge.org/
   by Mike Mondragon
-  http://mms2r.rubyforge.org/ 
   http://rubyforge.org/tracker/?group_id=3065 
   http://github.com/monde/mms2r/tree/master
   http://peepcode.com/products/mms2r-pdf
