@@ -9,9 +9,10 @@
   * MMS2R.parse(raw_mail) convenience class method that parses and returns an
     mms2r from a mail file - saizai
 
-* 1 minor enhancements
+* 2 minor enhancements
   * make examples more 'mail' specific to enforce the fact that an mms is a
     multipart email - saizai
+  * update for text in vzwpix.com default carrier message
 
 ### 2.2.0 / 2009-01-04 (Rikki Kixx - owner of a franchise of rehab centers)
 
