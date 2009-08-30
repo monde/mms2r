@@ -40,6 +40,7 @@ conf/waw.plspictures.com.yml
 dev_tools/anonymizer.rb
 dev_tools/debug_sprint_hpricot_parsing.rb
 dev_tools/github.rb
+init.rb
 lib/mms2r.rb
 lib/mms2r/media.rb
 lib/mms2r/media/sprint.rb
@@ -129,6 +130,7 @@ test/fixtures/vodacom4me-co-za-02.mail
 test/fixtures/vodacom4me-southafrica-mms-01.mail
 test/fixtures/vodacom4me-southafrica-mms-04.mail
 test/fixtures/vtext-text-01.mail
+test/fixtures/vzwpix.com-image-01.mail
 test/fixtures/waw.plspictures.com-image-01.mail
 test/test_1nbox_net.rb
 test/test_bell_canada.rb
