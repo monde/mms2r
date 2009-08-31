@@ -542,8 +542,13 @@ module MMS2R
       headers = config['device_types']['headers'] rescue {}
       headers.keys.each do |header|
         if mail.header[header.downcase]
-          regex, type = headers[header]
-          return type if mail.header[header.downcase].to_s =~ regex
+          # headers[header] refers to a hash of smart phone types with regex values
+          # that if they match the header signals the type should be returned
+          headers[header].each do |type, regex|
+            # HACK to get at the full value of the header before TMail parses according to spec
+            # see @body in and ensure_parsed in lib/tmail/header.rb
+            return type if mail.header[header.downcase].instance_variable_get(:@body) =~ regex
+          end
         end
       end
 

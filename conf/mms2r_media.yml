@@ -1,9 +1,9 @@
 ---
 ignore:
- text/plain:
- - /^\(no subject\)$/i
- multipart/mixed:
- - "/^Attachment: /i"
+  text/plain:
+  - /^\(no subject\)$/i
+  multipart/mixed:
+  - "/^Attachment: /i"
 transform: 
   text/plain: 
   - - /\A(.*?)Sent via BlackBerry (from|by) .*$/im
@@ -15,10 +15,11 @@ transform:
   - - /\A(.*?)\s+image\/jpeg$/im
     - "\1"
 device_types: 
-  headers: 
-    X-Mailer: 
-    - !ruby/regexp /^iPhone Mail/i
-    - :iphone
-    X-rim-org-msg-ref-id:
-    - !ruby/regexp /.+/
-    - :blackberry
+  headers:
+    x-mailer:
+      :iphone: !ruby/regexp /iPhone Mail/i
+      :blackberry: !ruby/regexp /Palm webOS/i
+    mime-version:
+      :iphone: !ruby/regexp /iPhone Mail/i
+    x-rim-org-msg-ref-id:
+      :blackberry: !ruby/regexp /.+/
