@@ -1,5 +1,7 @@
 ### 2.3.0 / 2008-08-30 (Snakes And Barrels Greatest Hits)
-* 4 new features
+* 5 new features
+  * detect smartphone status/type based on model metadata from jpeg and tiff
+    exif data using exifr gem, access exif MMS2R::Media#exif
   * make MMS2R Rails gem packaging friendly with an init.rb - Scott Taylor,
     smtlaissezfaire
   * delegate missing methods to mms2r's tmail object so that mms2r behaves as
