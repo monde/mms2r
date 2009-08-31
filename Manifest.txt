@@ -75,6 +75,7 @@ test/fixtures/iconv-fr-text-01.mail
 test/fixtures/indosat-image-01.mail
 test/fixtures/indosat-image-02.mail
 test/fixtures/info2go-image-01.mail
+test/fixtures/iphone-image-01.mail
 test/fixtures/luxgsm-image-01.mail
 test/fixtures/maroctelecom-france-mms-01.mail
 test/fixtures/mediamessaging_o2_co_uk-image-01.mail
