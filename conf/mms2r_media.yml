@@ -2,6 +2,10 @@
 ignore:
   text/plain:
   - /^\(no subject\)$/i
+  - /\ASent via BlackBerry (from|by) .*$/im
+  - /\ASent from my Verizon Wireless BlackBerry$/im
+  - /\ASent from (my|your) iPhone.?$/im
+  - /\ASent on the Sprint.* Now Network.*$/im
   multipart/mixed:
   - "/^Attachment: /i"
 transform: 
@@ -13,6 +17,8 @@ transform:
   - - /\A(.*?)Sent from (my|your) iPhone.?$/im
     - "\1"
   - - /\A(.*?)\s+image\/jpeg$/im
+    - "\1"
+  - - /\A(.*?)Sent on the Sprint.* Now Network.*$/im
     - "\1"
 device_types: 
   headers:
