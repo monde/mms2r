@@ -1,7 +1,7 @@
-### 2.3.0 / 2008-08-30 (Snakes And Barrels Greatest Hits)
+### 2.3.0 / 2008-08-30 (Snakes 'n' Barrels Greatest Hits)
 * 5 new features
   * detect smartphone status/type based on model metadata from jpeg and tiff
-    exif data using exifr gem, access exif MMS2R::Media#exif
+    exif data using exifr gem, access exif data with MMS2R::Media#exif
   * make MMS2R Rails gem packaging friendly with an init.rb - Scott Taylor,
     smtlaissezfaire
   * delegate missing methods to mms2r's tmail object so that mms2r behaves as
@@ -11,12 +11,13 @@
   * MMS2R.parse(raw_mail) convenience class method that parses and returns an
     mms2r from a mail file - saizai
 
-* 3 minor enhancements
+* 4 minor enhancements
   * make examples more 'mail' specific to enforce the fact that an mms is a
     multipart email - saizai
   * update for text in vzwpix.com default carrier message
-  * detecting smartphone (blackberries and iphones for now) is more versatile 
+  * detecting smartphone (blackberries and iphones for now) is more versatile
     from reading mail headers
+  * expanded filtering of carrier advertising text in mms from smartphones
 
 ### 2.2.0 / 2009-01-04 (Rikki Kixx - owner of a franchise of rehab centers)
 
