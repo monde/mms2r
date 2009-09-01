@@ -1,0 +1,50 @@
+Delivered-To: tommy.tutone@example.com
+Received: by 10.216.17.137 with SMTP id j9cs56753wej;
+        Thu, 27 Aug 2009 21:38:29 -0700 (PDT)
+Received: by 10.220.107.99 with SMTP id a35mr202579vcp.45.1251434307135;
+        Thu, 27 Aug 2009 21:38:27 -0700 (PDT)
+Return-Path: <2068675309@vzwpix.com>
+Received: from njbrspamp5.vtext.com (njbrspamp5.vtext.com [69.78.129.150])
+        by mx.google.com with ESMTP id 34si1359074vws.96.2009.08.27.21.38.23;
+        Thu, 27 Aug 2009 21:38:27 -0700 (PDT)
+Received-SPF: neutral (google.com: 69.78.129.150 is neither permitted nor denied by domain of 2068675309@vzwpix.com) client-ip=69.78.129.150;
+Authentication-Results: mx.google.com; spf=neutral (google.com: 69.78.129.150 is neither permitted nor denied by domain of 2068675309@vzwpix.com) smtp.mail=2068675309@vzwpix.com
+Received: from 24.sub-69-78-130.myvzw.com (HELO m11.vzwpix.com) ([69.78.130.24])
+  by njbrspamp5.vtext.com with SMTP; 28 Aug 2009 04:38:23 +0000
+X-Priority:3
+Importance:Normal
+From:2068675309@vzwpix.com
+To:tommy.tutone@example.com
+Subject:
+Message-ID: <212118194303829751@-212118194303829752>
+Date: Thu, 28 Aug 2009 04:38:23 +0000
+MIME-Version:1.0
+Content-Type: multipart/mixed;
+ type="application/smil";
+ boundary="__CONTENT_64564_PART_BOUNDARY__33243242__"
+
+--__CONTENT_64564_PART_BOUNDARY__33243242__
+Content-Type: text/plain
+
+This message was sent using the Picture and Video Messaging service from Verizon Wireless!
+
+To learn how you can snap pictures and capture videos with your wireless phone visit www.verizonwireless.com/picture.
+
+Note: To play video messages sent to email, QuickTime® 6.5 or higher is required.
+
+--__CONTENT_64564_PART_BOUNDARY__33243242__
+Content-Type: image/jpeg;
+ name="0827092137.jpg"
+Content-ID: <0827092137.jpg>
+Content-Location: 0827092137.jpg
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+--__CONTENT_64564_PART_BOUNDARY__33243242__--
+

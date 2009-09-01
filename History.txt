@@ -1,7 +1,23 @@
-### 2.2.X marking for next official release
-* 1 new feature
-  * make MMS2R Rails 2.2.X gem packaging friendly - Scott Taylor a.k.a. 
+### 2.3.0 / 2008-08-30 (Snakes 'n' Barrels Greatest Hits)
+* 5 new features
+  * detect smartphone status/type based on model metadata from jpeg and tiff
+    exif data using exifr gem, access exif data with MMS2R::Media#exif
+  * make MMS2R Rails gem packaging friendly with an init.rb - Scott Taylor,
     smtlaissezfaire
+  * delegate missing methods to mms2r's tmail object so that mms2r behaves as
+    if it were a tmail object - Sai Emrys, saizai
+  * default_media can return an attachment of application content type -
+    Brendan Lim, brendanlim
+  * MMS2R.parse(raw_mail) convenience class method that parses and returns an
+    mms2r from a mail file - saizai
+
+* 4 minor enhancements
+  * make examples more 'mail' specific to enforce the fact that an mms is a
+    multipart email - saizai
+  * update for text in vzwpix.com default carrier message
+  * detecting smartphone (blackberries and iphones for now) is more versatile
+    from reading mail headers
+  * expanded filtering of carrier advertising text in mms from smartphones
 
 ### 2.2.0 / 2009-01-04 (Rikki Kixx - owner of a franchise of rehab centers)
 
