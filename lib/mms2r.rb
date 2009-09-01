@@ -1,5 +1,5 @@
 #--
-# Copyright (c) 2007, 2008 by Mike Mondragon (mikemondragon@gmail.com)
+# Copyright (c) 2007-2010 by Mike Mondragon (mikemondragon@gmail.com)
 #
 # Please see the LICENSE file for licensing information.
 #++
@@ -39,8 +39,16 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '2.2.0'
+    VERSION = '2.3.0'
 
+  end
+
+  # Simple convenience function to make it a one-liner:
+  # MMS2R.parse raw_mail or MMS2R.parse File.load(raw_mail)
+  # Combined w/ the method_missing delegation, this should behave as an enhanced TMail object, more or less.
+  def self.parse raw_mail
+    mail = TMail::Mail.parse raw_mail
+    MMS2R::Media.new(mail)
   end
 
 end

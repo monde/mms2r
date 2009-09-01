@@ -728,10 +728,14 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_iphone_device_type
-    mail = TMail::Mail.load(mail_fixture('att-iphone-01.mail'))
-    mms = MMS2R::Media.new(mail)
-    assert_equal :iphone, mms.device_type?
-    assert_equal true, mms.is_mobile?
+    iphones = ['att-iphone-01.mail',
+               'iphone-image-01.mail']
+    iphones.each do |iphone|
+      mail = TMail::Mail.load(mail_fixture(iphone))
+      mms = MMS2R::Media.new(mail)
+      assert_equal :iphone, mms.device_type?, "fixture #{iphone} was not a iphone"
+      assert_equal true, mms.is_mobile?
+    end
   end
 
   def test_blackberry_device_type

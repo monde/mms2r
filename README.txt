@@ -1,23 +1,23 @@
 = mms2r
 
+  http://mms2r.rubyforge.org/
   by Mike Mondragon
-  http://mms2r.rubyforge.org/ 
-  http://rubyforge.org/tracker/?group_id=3065 
+  http://rubyforge.org/tracker/?group_id=3065
   http://github.com/monde/mms2r/tree/master
   http://peepcode.com/products/mms2r-pdf
 
 == DESCRIPTION
-  
-MMS2R is a library that decodes the parts of an MMS message to disk while 
-stripping out advertising injected by the mobile carriers.  MMS messages are 
+
+MMS2R is a library that decodes the parts of an MMS message to disk while
+stripping out advertising injected by the mobile carriers.  MMS messages are
 multipart email and the carriers often inject branding into these messages.  Use
 MMS2R if you want to get at the real user generated content from a MMS without
 having to deal with the cruft from the carriers.
 
-If MMS2R is not aware of a particular carrier no extra processing is done to the 
+If MMS2R is not aware of a particular carrier no extra processing is done to the
 MMS other than decoding and consolidating its media.
 
-Contact the author to add additional carriers to be processed by the library.  
+Contact the author to add additional carriers to be processed by the library.
 Suggestions and patches appreciated and welcomed!
 
 Corpus of carriers currently processed by MMS2R:
@@ -25,7 +25,7 @@ Corpus of carriers currently processed by MMS2R:
 * 1nbox/Idea: 1nbox.net
 * 3 Ireland: mms.3ireland.ie
 * Alltel: mms.alltel.com
-* AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com, 
+* AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com,
   cingularme.com, mobile.mycingular.com pics.cingularme.com
 * Bell Canada: txt.bell.ca
 * Bell South / Suncom: bellsouth.net
@@ -50,7 +50,7 @@ Corpus of carriers currently processed by MMS2R:
 * T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk, tmo.blackberry.net
 * TELUS Corporation (Canada): mms.telusmobility.com, msg.telus.com
 * UAE MMS: mms.ae
-* Unicel: unicel.com, info2go.com 
+* Unicel: unicel.com, info2go.com
   (note: mobile number is tucked away in a text/plain part for unicel.com)
 * Verizon: vzwpix.com, vtext.com
 * Virgin Mobile: vmpix.com
@@ -59,8 +59,8 @@ Corpus of carriers currently processed by MMS2R:
 
 == FEATURES
 
-* #default_media and #default_text methods return a File that can be used in 
-  attachment_fu 
+* #default_media and #default_text methods return a File that can be used in
+  attachment_fu
 * #process supports blocks to for enumerating over the content of the MMS
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
@@ -79,58 +79,74 @@ http://peepcode.com/products/mms2r-pdf
   require 'tmail'
   require 'fileutils'
 
-  mail = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
-  mms = MMS2R::Media.new(mail)
+  mail = MMS2R.parse mail
+  # mail = MMS2R.parse File.read('some_saved_mail.file')
 
-  puts "MMS has default carrier subject" if mms.subject.empty?
+  puts "mail has default carrier subject" if mail.subject.empty?
 
   # access the sender's phone number
-  puts "MMS was from phone #{mms.number}"
+  puts "mail was from phone #{mail.number}"
 
-  # most MMS are either image or video, default_media will return the largest
+  # most mail are either image or video, default_media will return the largest
   # (non-advertising) video or image found
-  file = mms.default_media
-  puts "MMS had a media: #{file.inspect}" unless file.nil?
+  file = mail.default_media
+  puts "mail had a media: #{file.inspect}" unless file.nil?
 
   # finds the largest (non-advertising) text found
-  file = mms.default_text
-  puts "MMS had some text: #{file.inspect}" unless file.nil?
+  file = mail.default_text
+  puts "mail had some text: #{file.inspect}" unless file.nil?
 
-  # mms.media is a hash that is indexed by mime-type.
+  # mail.media is a hash that is indexed by mime-type.
   # The mime-type key returns an array of filepaths
-  # to media that were extract from the MMS and
+  # to media that were extract from the mail and
   # are of that type
-  mms.media['image/jpeg'].each {|f| puts "#{f}"}
-  mms.media['text/plain'].each {|f| puts "#{f}"}
+  mail.media['image/jpeg'].each {|f| puts "#{f}"}
+  mail.media['text/plain'].each {|f| puts "#{f}"}
 
-  # print the text (assumes MMS had text)
-  text = IO.readlines(mms.media['text/plain'].first).join
+  # print the text (assumes mail had text)
+  text = IO.readlines(mail.media['text/plain'].first).join
   puts text
 
-  # save the image (assumes MMS had a jpeg)
-  FileUtils.cp mms.media['image/jpeg'].first, '/some/where/useful', :verbose => true
+  # save the image (assumes mail had a jpeg)
+  FileUtils.cp mail.media['image/jpeg'].first, '/some/where/useful', :verbose => true
 
-  puts "does the MMS have quicktime video? #{!mms.media['video/quicktime'].nil?}"
+  puts "does the mail have quicktime video? #{!mail.media['video/quicktime'].nil?}"
+
+  puts "plus run anything that TMail provides, e.g. #{mail.to.inspect}"
+
+  # check if the mail is from a mobile phone
+  puts "mail is from a mobile phone #{mail.is_mobile?}"
+
+  # inspect default media's exif data if exifr gem is installed and default
+  # media is a jpeg or tiff
+  puts "mail is from a mobile phone #{mail.is_mobile?}"
+  puts "mail's default media's exif data is:"
+  puts mms.exif.inspect
 
   # Block support, process and receive all media types of video.
-  mms.process do |media_type, files|
+  mail.process do |media_type, files|
     # assumes a Clip model that is an AttachmentFu
     Clip.create(:uploaded_data => files.first, :title => "From phone") if media_type =~ /video/
   end
 
   # Another AttachmentFu example, Picture model is an AttachmentFu
   picture = Picture.new
-  picture.title = mms.subject
-  picture.uploaded_data = mms.default_media
+  picture.title = mail.subject
+  picture.uploaded_data = mail.default_media
   picture.save!
 
   #remove all the media that was put to temporary disk
-  mms.purge
+  mail.purge
 
 == REQUIREMENTS
 
 * Hpricot
 * TMail
+
+== OPTIONAL
+
+* exifr - install exifr for exif access on default jpeg or tiff media, and
+          smart phone detection
 
 == INSTALL
 
@@ -145,13 +161,6 @@ github
 
 git clone git://github.com/monde/mms2r.git
 svn co svn://rubyforge.org/var/svn/mms2r/trunk mms2r
-
-== CONTRIBUTE
-
-If you contribute a patch that is accepted then you'll get developer rights 
-for the project on RubyForge.  Please ensure your work includes 100% test 
-converage.  The library is ZenTest autotest discovery enabled so running 
-autotest in the root of the project is very helpful during development.
 
 == AUTHORS
 
@@ -174,6 +183,8 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 * Matt Conway
 * Kai Kai
 * Michael DelGaudio
+* Sai Emrys (blog[http://saizai.com])
+* Brendan Lim (github profile[http://github.com/brendanlim])
 
 == LICENSE
 
