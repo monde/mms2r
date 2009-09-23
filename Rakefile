@@ -21,6 +21,7 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
   p.extra_deps << ['hpricot']
   p.extra_deps << ['tmail']
+  p.extra_deps << ['uuidtools']
   p.clean_globs << 'coverage'
 end
 

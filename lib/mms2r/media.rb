@@ -218,7 +218,7 @@ module MMS2R
       @carrier = opts[:domain]
       @dir_count = 0
       @media_dir = File.join(self.tmp_dir(),
-                     self.safe_message_id(@mail.message_id))
+                     "#{self.safe_message_id(@mail.message_id)}_#{UUIDTools::UUID.random_create}")
       @media = {}
       @was_processed = false
       @number = nil
