@@ -568,6 +568,8 @@ module MMS2R
               return :iphone
             when/BlackBerry/i
               return :blackberry
+            when/T-Mobile Dash/i
+              return :dash
             end
           end
         end
