@@ -6,7 +6,7 @@
 
 require 'net/http'
 require 'rubygems'
-require 'hpricot'
+require 'nokogiri'
 require 'cgi'
 
 module MMS2R
@@ -46,7 +46,7 @@ module MMS2R
           doc = nil
           parts.each do |p|
             next unless p.part_type? == 'text/html'
-            d = Hpricot(p.body)
+            d = Nokogiri(p.body)
             title = d.at('title').inner_html
             if title =~ /You have new Picture Mail!/
               doc = d
@@ -115,6 +115,8 @@ module MMS2R
         imgs = doc.search("/html/body//img")
         imgs.each do |i|
           src = i.attributes['src']
+          next unless src
+          src = src.text
           # we don't want to double fetch content and we only
           # want to fetch media from the content server, you get
           # a clue about that as there is a RECIPIENT in the URI path
