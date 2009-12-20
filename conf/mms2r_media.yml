@@ -36,6 +36,10 @@ device_types:
   # Motorola Phone, Omni_vision-9650, Pre,
   # Seoul Electronics & Telecom SIM120B 1.3M, SGH-T729, SGH-T819,
   # SPH-M540, SPH-M800, SYSTEMLSI S5K4BAFB 2.0 MP, VX-9700
+  #
+  # NOTE: These model strings are stored in the exif model header of an image file
+  # created and sent by the device, the regex is used by mms2r to detect the
+  # model string
   models:
     :iphone: !ruby/regexp /iPhone/i
     :blackberry: !ruby/regexp /BlackBerry/i
