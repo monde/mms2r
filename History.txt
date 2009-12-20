@@ -4,7 +4,7 @@
   * replace Hpricot with Nokogiri for html parsing of Sprint data
 
 * 3 minor enhancements
-  * smartphone identities stored :
+  * smartphone identities stored in conf/mms2r_media.yml
   * identify Motorola Droid as a smartphone
   * identify T-Mobile Dash as a smartphone
   * use uuidtools for naming temp directories - kbaum
