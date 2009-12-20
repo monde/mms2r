@@ -547,13 +547,9 @@ module MMS2R
         if file
           original = file.original_filename
           @exif = case original
-                  when /\.jpg$/i
+                  when /\.je?pg$/i
                     EXIFR::JPEG.new(file)
-                  when /\.jepg$/i
-                    EXIFR::JPEG.new(file)
-                  when /\.tif$/i
-                    EXIFR::TIFF.new(file)
-                  when /\.tiff$/i
+                  when /\.tiff?$/i
                     EXIFR::TIFF.new(file)
                   end
           if @exif

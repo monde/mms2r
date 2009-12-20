@@ -22,24 +22,28 @@ module MMS2R
       "#{File.dirname(__FILE__)}/fixtures/#{file}"
     end
 
-    def smart_phone_mock(model_text = 'iPhone')
+    def smart_phone_mock(model_text = 'iPhone', jpeg = true)
       mail = mock('mail')
       mail.expects(:header).at_least_once.returns({'return-path' => '<joe@null.example.com>'})
       mail.expects(:from).at_least_once.returns(['joe@example.com'])
       mail.expects(:message_id).returns('abcd0123')
       mail.expects(:multipart?).returns(true)
       part = mock('part')
-      part.expects(:part_type?).at_least_once.returns('image/jpeg')
+      part.expects(:part_type?).at_least_once.returns("image/#{jpeg ? 'jpeg' : 'tiff'}")
       part.expects(:sub_header).with('content-type', 'name').returns(nil)
       part.expects(:sub_header).with('content-disposition', 'filename').returns(nil)
-      part.expects("[]".to_sym).with('content-location').at_least_once.returns('Photo_12.jpg')
+      part.expects("[]".to_sym).with('content-location').at_least_once.returns("Photo_12.#{jpeg ? 'jpg' : 'tif'}")
       part.expects(:main_type).with('text').returns(nil)
-      part.expects(:content_type).at_least_once.returns('image/jpeg')
+      part.expects(:content_type).at_least_once.returns("image/#{jpeg ? 'jpeg' : 'tiff'}")
       part.expects(:body).at_least_once.returns('abc')
       mail.expects(:parts).returns([part])
       exif = mock('exif')
       exif.expects(:model).at_least_once.returns(model_text)
-      EXIFR::JPEG.expects(:new).at_least_once.returns(exif)
+      if jpeg
+        EXIFR::JPEG.expects(:new).at_least_once.returns(exif)
+      else
+        EXIFR::TIFF.expects(:new).at_least_once.returns(exif)
+      end
       mail
     end
   end

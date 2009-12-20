@@ -51,6 +51,11 @@ class TestMms2rMedia < Test::Unit::TestCase
     stub('mail', attrs)
   end
 
+  def test_class_parse
+    mms = MMS2R.parse(load_mail('generic.mail').join)
+    assert_equal ['noreply@rubyforge.org'], mms.from
+  end
+
   def temp_text_file(text)
     tf = Tempfile.new("test" + Time.now.to_f.to_s)
     tf.puts(text)
@@ -94,7 +99,18 @@ class TestMms2rMedia < Test::Unit::TestCase
 
   def test_base_initialize_config
     config = MMS2R::Media.initialize_config(nil)
-    
+
+    # test defaults shipped in mms2r_media.yml
+    assert_not_nil config
+    assert_equal true, config['ignore'].is_a?(Hash)
+    assert_equal true, config['transform'].is_a?(Hash)
+    assert_equal true, config['number'].is_a?(Array)
+  end
+
+  def test_instance_initialize_config
+    mms = MMS2R::Media.new(stub_mail())
+    config = mms.initialize_config(nil)
+
     # test defaults shipped in mms2r_media.yml
     assert_not_nil config
     assert_equal true, config['ignore'].is_a?(Hash)
@@ -738,8 +754,28 @@ class TestMms2rMedia < Test::Unit::TestCase
     end
   end
 
+  def test_exif
+    mail = smart_phone_mock('iPhone')
+    mms = MMS2R::Media.new(mail)
+    assert_equal 'iPhone', mms.exif.model
+  end
+
+  def test_exif_load_error
+    mms = MMS2R::Media.new(stub_mail())
+    mms.expects(:require).with('exifr').raises(LoadError)
+
+    assert_equal :unknown, mms.device_type?
+  end
+
   def test_iphone_device_type_by_exif
     mail = smart_phone_mock('iPhone')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :iphone, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_faux_tiff_iphone_device_type_by_exif
+    mail = smart_phone_mock('iPhone', jpeg = false)
     mms = MMS2R::Media.new(mail)
     assert_equal :iphone, mms.device_type?
     assert_equal true, mms.is_mobile?
