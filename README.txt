@@ -3,7 +3,7 @@
   http://mms2r.rubyforge.org/
   by Mike Mondragon
   http://rubyforge.org/tracker/?group_id=3065
-  http://github.com/monde/mms2r/tree/master
+  http://github.com/monde/mms2r
   http://peepcode.com/products/mms2r-pdf
 
 == DESCRIPTION
@@ -16,6 +16,9 @@ having to deal with the cruft from the carriers.
 
 If MMS2R is not aware of a particular carrier no extra processing is done to the
 MMS other than decoding and consolidating its media.
+
+MMS2R can be used to process any multipart email to conveniently access the
+parts the mail is comprised of.
 
 Contact the author to add additional carriers to be processed by the library.
 Suggestions and patches appreciated and welcomed!
@@ -64,6 +67,10 @@ Corpus of carriers currently processed by MMS2R:
 * #process supports blocks to for enumerating over the content of the MMS
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
+* an mms instance acts like a tmail object, any methods not defined on the
+  instance are delegated to its underlying tmail object
+* #device_type? returns a symbol representing a device or smartphone type
+  Known smartphones thus far: iPhone, BlackBerry, T-Mobile Dash, Droid
 
 == BOOKS
 
@@ -117,9 +124,11 @@ http://peepcode.com/products/mms2r-pdf
   # check if the mail is from a mobile phone
   puts "mail is from a mobile phone #{mail.is_mobile?}"
 
+  # determine the device type of the phone
+  puts "mail is from a mobile phone of type #{mail.device_type?}"
+
   # inspect default media's exif data if exifr gem is installed and default
   # media is a jpeg or tiff
-  puts "mail is from a mobile phone #{mail.is_mobile?}"
   puts "mail's default media's exif data is:"
   puts mms.exif.inspect
 
@@ -140,8 +149,9 @@ http://peepcode.com/products/mms2r-pdf
 
 == REQUIREMENTS
 
-* Hpricot
 * TMail
+* Nokogiri (for mms from Sprint)
+* UUIDTools
 
 == OPTIONAL
 
@@ -150,17 +160,11 @@ http://peepcode.com/products/mms2r-pdf
 
 == INSTALL
 
-conventional
 * sudo gem install mms2r
-
-github
-* sudo gem sources -a http://gems.github.com
-* sudo gem install monde-mms2r
 
 == SOURCE
 
 git clone git://github.com/monde/mms2r.git
-svn co svn://rubyforge.org/var/svn/mms2r/trunk mms2r
 
 == AUTHORS
 
@@ -177,14 +181,17 @@ MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 * Jason Haruska (blog[http://software.haruska.com/])
 * Dave Myron (company[http://contentfree.com/])
 * Vijay Yellapragada
-* Jesse Dp
+* Jesse Dp (github profile[http://github.com/jessedp])
 * David Alm
 * Jeremy Wilkins
-* Matt Conway
+* Matt Conway (github profile[http://github.com/wr0ngway])
 * Kai Kai
 * Michael DelGaudio
 * Sai Emrys (blog[http://saizai.com])
 * Brendan Lim (github profile[http://github.com/brendanlim])
+* Scott Taylor (github profile[http://github.com/smtlaissezfaire])
+* Jaap van der Meer (github profile[http://github.com/japetheape])
+* Karl Baum (github profile[http://github.com/kbaum])
 
 == LICENSE
 

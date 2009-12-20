@@ -1,4 +1,15 @@
-### 2.3.0 / 2008-08-30 (Snakes 'n' Barrels Greatest Hits)
+### 2.4.0 / 2009-12-20 (Dr. Nanemiltred Philtendrieden - specialist on celebrity death)
+
+* 1 new feature
+  * replace Hpricot with Nokogiri for html parsing of Sprint data
+
+* 3 minor enhancements
+  * smartphone identities stored :
+  * identify Motorola Droid as a smartphone
+  * identify T-Mobile Dash as a smartphone
+  * use uuidtools for naming temp directories - kbaum
+
+### 2.3.0 / 2009-08-30 (Snakes 'n' Barrels Greatest Hits)
 * 5 new features
   * detect smartphone status/type based on model metadata from jpeg and tiff
     exif data using exifr gem, access exif data with MMS2R::Media#exif
