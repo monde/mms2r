@@ -59,6 +59,7 @@ require 'fileutils'
 require 'pathname'
 require 'tmpdir'
 require 'yaml'
+require 'uuidtools'
 
 require File.join(File.dirname(__FILE__), 'tmail_ext')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media')
