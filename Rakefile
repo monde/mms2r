@@ -16,9 +16,9 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.author = ['Mike Mondragon']
   p.email = ['mikemondragon@gmail.com']
   p.summary = 'Extract user media from MMS (and not carrier cruft)'
-  p.description = p.paragraphs_of('README.txt', 2..7).join("\n\n")
+  p.description = p.paragraphs_of('README.txt', 2..5).join("\n\n")
   p.url = p.paragraphs_of('README.txt', 1).first.strip
-  p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
+  p.changes = p.paragraphs_of('History.txt', 0..2).join("\n\n")
   p.extra_deps << ['nokogiri']
   p.extra_deps << ['tmail']
   p.extra_deps << ['uuidtools']

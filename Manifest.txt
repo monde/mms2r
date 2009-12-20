@@ -38,8 +38,9 @@ conf/vmpix.com.yml
 conf/vzwpix.com.yml
 conf/waw.plspictures.com.yml
 dev_tools/anonymizer.rb
-dev_tools/debug_sprint_hpricot_parsing.rb
+dev_tools/debug_sprint_nokogiri_parsing.rb
 dev_tools/github.rb
+email.txt
 init.rb
 lib/mms2r.rb
 lib/mms2r/media.rb
