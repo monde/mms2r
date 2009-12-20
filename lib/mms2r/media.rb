@@ -534,9 +534,13 @@ module MMS2R
     end
 
     ##
-    # Best guess of the mobile device type.  Simple heuristics thus far for
-    # :iphone :blackberry :handset :unknown .  Could be expanded for exif
-    # probing or shifting mail header schemes
+    # Best guess of the mobile device type.  Simple heuristics thus far by 
+    # inspecting mail headers and jpeg/tiff exif metadata.
+    # Smart phone types are
+    # :iphone :blackberry :dash :droid
+    # If the message is from a carrier known to MMS2R, and not a smart phone
+    # its type is returned as :handset
+    # Otherwise device type is :unknown
 
     def device_type?
 
@@ -553,23 +557,9 @@ module MMS2R
                     EXIFR::TIFF.new(file)
                   end
           if @exif
-            # TODO do something about the assortment of camera models that have 
-            # been seen:
-            # 1.3 Megapixel, 2.0 Megapixel, BlackBerry, CU920, G'z One TYPE-S,
-            # Hermes, iPhone, LG8700, LSI_S5K4AAFA, Micron MT9M113 1.3MP YUV,
-            # Motorola Phone, Omni_vision-9650, Pre,
-            # Seoul Electronics & Telecom SIM120B 1.3M, SGH-T729, SGH-T819,
-            # SPH-M540, SPH-M800, SYSTEMLSI S5K4BAFB 2.0 MP, VX-9700
-
-            case @exif.model
-            when/iPhone/i
-              return :iphone
-            when/BlackBerry/i
-              return :blackberry
-            when/T-Mobile Dash/i
-              return :dash
-            when/Droid/i
-              return :droid
+            models = config['device_types']['models'] rescue {}
+            models.each do |model, regex|
+              return model if @exif.model =~ regex
             end
           end
         end
