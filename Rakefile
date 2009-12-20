@@ -19,7 +19,7 @@ Hoe.new('mms2r', MMS2R::Media::VERSION) do |p|
   p.description = p.paragraphs_of('README.txt', 2..7).join("\n\n")
   p.url = p.paragraphs_of('README.txt', 1).first.strip
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
-  p.extra_deps << ['hpricot']
+  p.extra_deps << ['nokogiri']
   p.extra_deps << ['tmail']
   p.extra_deps << ['uuidtools']
   p.clean_globs << 'coverage'
