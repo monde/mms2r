@@ -2,6 +2,7 @@ require 'set'
 require 'net/http'
 require 'net/https'
 require 'pp'
+require 'exifr'
 begin require 'redgreen'; rescue LoadError; end
 
 module MMS2R
@@ -19,6 +20,27 @@ module MMS2R
 
     def mail_fixture(file)
       "#{File.dirname(__FILE__)}/fixtures/#{file}"
+    end
+
+    def smart_phone_mock(model_text = 'iPhone')
+      mail = mock('mail')
+      mail.expects(:header).at_least_once.returns({'return-path' => '<joe@null.example.com>'})
+      mail.expects(:from).at_least_once.returns(['joe@example.com'])
+      mail.expects(:message_id).returns('abcd0123')
+      mail.expects(:multipart?).returns(true)
+      part = mock('part')
+      part.expects(:part_type?).at_least_once.returns('image/jpeg')
+      part.expects(:sub_header).with('content-type', 'name').returns(nil)
+      part.expects(:sub_header).with('content-disposition', 'filename').returns(nil)
+      part.expects("[]".to_sym).with('content-location').at_least_once.returns('Photo_12.jpg')
+      part.expects(:main_type).with('text').returns(nil)
+      part.expects(:content_type).at_least_once.returns('image/jpeg')
+      part.expects(:body).at_least_once.returns('abc')
+      mail.expects(:parts).returns([part])
+      exif = mock('exif')
+      exif.expects(:model).at_least_once.returns(model_text)
+      EXIFR::JPEG.expects(:new).at_least_once.returns(exif)
+      mail
     end
   end
 end

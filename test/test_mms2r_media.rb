@@ -727,7 +727,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal false, mms.is_mobile?
   end
 
-  def test_iphone_device_type
+  def test_iphone_device_type_by_header
     iphones = ['att-iphone-01.mail',
                'iphone-image-01.mail']
     iphones.each do |iphone|
@@ -736,6 +736,34 @@ class TestMms2rMedia < Test::Unit::TestCase
       assert_equal :iphone, mms.device_type?, "fixture #{iphone} was not a iphone"
       assert_equal true, mms.is_mobile?
     end
+  end
+
+  def test_iphone_device_type_by_exif
+    mail = smart_phone_mock('iPhone')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :iphone, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_blackberry_device_type_by_exif
+    mail = smart_phone_mock('BlackBerry')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :blackberry, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_dash_device_type_by_exif
+    mail = smart_phone_mock('T-Mobile Dash')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :dash, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_droid_device_type_by_exif
+    mail = smart_phone_mock('Droid')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :droid, mms.device_type?
+    assert_equal true, mms.is_mobile?
   end
 
   def test_blackberry_device_type

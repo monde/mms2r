@@ -539,6 +539,7 @@ module MMS2R
     # probing or shifting mail header schemes
 
     def device_type?
+
       begin
         # rely on native exif first with exifr gem if its loaded
         require 'exifr'
@@ -563,6 +564,7 @@ module MMS2R
             # Motorola Phone, Omni_vision-9650, Pre,
             # Seoul Electronics & Telecom SIM120B 1.3M, SGH-T729, SGH-T819,
             # SPH-M540, SPH-M800, SYSTEMLSI S5K4BAFB 2.0 MP, VX-9700
+
             case @exif.model
             when/iPhone/i
               return :iphone
@@ -570,6 +572,8 @@ module MMS2R
               return :blackberry
             when/T-Mobile Dash/i
               return :dash
+            when/Droid/i
+              return :droid
             end
           end
         end

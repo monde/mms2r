@@ -16,7 +16,7 @@ class TestPmSprintCom < Test::Unit::TestCase
     res.expects(:content_type).at_least_once.returns('image/jpeg')
     res.expects(:body).once.returns(body)
     res.expects(:code).never
-    Net::HTTP.expects(:get_response).once.with(uri).returns res
+    Net::HTTP.expects(:get_response).once.returns res
   end
 
   def mock_sprint_purged_image(message_id)
@@ -26,7 +26,7 @@ class TestPmSprintCom < Test::Unit::TestCase
     res.expects(:content_type).once.returns('text/html')
     res.expects(:code).once.returns('500')
     res.expects(:body).never
-    Net::HTTP.expects(:get_response).once.with(uri).returns res
+    Net::HTTP.expects(:get_response).once.returns res
   end
 
   def test_mms_should_have_text
@@ -60,7 +60,7 @@ class TestPmSprintCom < Test::Unit::TestCase
     res.expects(:content_type).at_least_once.returns('video/quicktime')
     res.expects(:body).once.returns(body)
     res.expects(:code).never
-    Net::HTTP.expects(:get_response).once.with(uri).returns res
+    Net::HTTP.expects(:get_response).once.returns res
 
     mms = MMS2R::Media.new(mail)
 
@@ -127,7 +127,7 @@ class TestPmSprintCom < Test::Unit::TestCase
     res1.expects(:content_type).at_least_once.returns('image/jpeg')
     res1.expects(:body).once.returns(body1)
     res1.expects(:code).never
-    Net::HTTP.expects(:get_response).once.with(uri1).returns res1
+    Net::HTTP.expects(:get_response).returns res1
 
     uri2 = URI.parse('http://pictures.sprintpcs.com/mmps/RECIPIENT/001_104058d23d79fb6a_1/3?wm=1&ext=.jpg&iconifyVideo=true&inviteToken=5E1rJSPk5hYDkUnY7op0&outquality=90')
 
@@ -136,7 +136,7 @@ class TestPmSprintCom < Test::Unit::TestCase
     res2.expects(:content_type).at_least_once.returns('image/jpeg')
     res2.expects(:body).once.returns(body2)
     res2.expects(:code).never
-    Net::HTTP.expects(:get_response).once.with(uri2).returns res2
+    Net::HTTP.expects(:get_response).returns res2
     mms = MMS2R::Media.new(mail)
 
     assert_equal 1, mms.media.size
