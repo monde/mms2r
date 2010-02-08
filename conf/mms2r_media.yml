@@ -45,3 +45,4 @@ device_types:
     :blackberry: !ruby/regexp /BlackBerry/i
     :dash: !ruby/regexp /T-Mobile Dash/i
     :droid: !ruby/regexp /Droid/i
+    :htc: !ruby/regexp /Eris|HERO200/i

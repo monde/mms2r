@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mms2r}
-  s.version = "2.4.0"
+  s.version = "2.4.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mike Mondragon"]
@@ -40,17 +40,17 @@ parts the mail is comprised of.}
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
       s.add_runtime_dependency(%q<tmail>, [">= 0"])
       s.add_runtime_dependency(%q<uuidtools>, [">= 0"])
-      s.add_development_dependency(%q<hoe>, [">= 2.4.0"])
+      s.add_development_dependency(%q<hoe>, [">= 2.4.1"])
     else
       s.add_dependency(%q<nokogiri>, [">= 0"])
       s.add_dependency(%q<tmail>, [">= 0"])
       s.add_dependency(%q<uuidtools>, [">= 0"])
-      s.add_dependency(%q<hoe>, [">= 2.4.0"])
+      s.add_dependency(%q<hoe>, [">= 2.4.1"])
     end
   else
     s.add_dependency(%q<nokogiri>, [">= 0"])
     s.add_dependency(%q<tmail>, [">= 0"])
     s.add_dependency(%q<uuidtools>, [">= 0"])
-    s.add_dependency(%q<hoe>, [">= 2.4.0"])
+    s.add_dependency(%q<hoe>, [">= 2.4.1"])
   end
 end

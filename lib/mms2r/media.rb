@@ -517,7 +517,7 @@ module MMS2R
         end
       end
       # XXX fwiw, janky look for dot extension 1 to 4 chars long
-      name = (name =~ /\..{1,4}$/ ? name : "#{name}.#{self.default_ext(part.part_type?)}")
+      name = (name =~ /\..{1,4}$/ ? name : "#{name}.#{self.default_ext(part.part_type?)}").strip
 
       # handle excessively large filenames
       if name.size > 255

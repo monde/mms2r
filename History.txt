@@ -1,3 +1,10 @@
+### 2.4.1 / 2010-02-07 (Vater Orlaag - political and spiritual specialist)
+
+* 3 minor enhancements
+  * make sure filename is free of new lines - laurynas
+  * recognize HTC HERO200 as a smart phone
+  * recognize HTC Eris as a smart phone
+
 ### 2.4.0 / 2009-12-20 (Dr. Nanemiltred Philtendrieden - specialist on celebrity death)
 
 * 1 new feature

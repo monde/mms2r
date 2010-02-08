@@ -802,6 +802,20 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal true, mms.is_mobile?
   end
 
+  def test_htc_eris_device_type_by_exif
+    mail = smart_phone_mock('Eris')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :htc, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_htc_hero_device_type_by_exif
+    mail = smart_phone_mock('HERO200')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :htc, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
   def test_blackberry_device_type
     berries = ['att-blackberry.mail',
                'suncom-blackberry.mail',
