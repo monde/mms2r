@@ -60,6 +60,12 @@ Corpus of carriers currently processed by MMS2R:
 * Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
 
+Corpus of smart phones known to MMS2R:
+* Blackberry variants
+* Droid variants
+* HTC variants (T-Mobile Dash, Sprint HERO)
+* Apple iPhone variants
+
 == FEATURES
 
 * #default_media and #default_text methods return a File that can be used in
@@ -67,8 +73,8 @@ Corpus of carriers currently processed by MMS2R:
 * #process supports blocks to for enumerating over the content of the MMS
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
-* an mms instance acts like a tmail object, any methods not defined on the
-  instance are delegated to its underlying tmail object
+* an mms instance acts like a Mail object, any methods not defined on the
+  instance are delegated to its underlying Mail object
 * #device_type? returns a symbol representing a device or smartphone type
   Known smartphones thus far: iPhone, BlackBerry, T-Mobile Dash, Droid
 
@@ -83,12 +89,9 @@ http://peepcode.com/products/mms2r-pdf
   require 'mms2r'
 
   # required for the example
-  require 'tmail'
   require 'fileutils'
 
-  mail = MMS2R.parse mail
-  # mail = MMS2R.parse File.read('some_saved_mail.file')
-
+  mail = MMS2R.new(Mail.read('some_saved_mail.file'))
   puts "mail has default carrier subject" if mail.subject.empty?
 
   # access the sender's phone number
@@ -119,7 +122,7 @@ http://peepcode.com/products/mms2r-pdf
 
   puts "does the mail have quicktime video? #{!mail.media['video/quicktime'].nil?}"
 
-  puts "plus run anything that TMail provides, e.g. #{mail.to.inspect}"
+  puts "plus run anything that Mail provides, e.g. #{mail.to.inspect}"
 
   # check if the mail is from a mobile phone
   puts "mail is from a mobile phone #{mail.is_mobile?}"
@@ -149,7 +152,7 @@ http://peepcode.com/products/mms2r-pdf
 
 == REQUIREMENTS
 
-* TMail
+* Mail
 * Nokogiri (for mms from Sprint)
 * UUIDTools
 

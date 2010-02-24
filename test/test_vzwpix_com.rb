@@ -1,10 +1,4 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
 require File.join(File.dirname(__FILE__), "test_helper")
-require 'test/unit'
-require 'rubygems'
-require 'mocha'
-gem 'tmail', '>= 1.2.1'
-require 'tmail'
 
 class TestVzwpixCom < Test::Unit::TestCase
   include MMS2R::TestHelper
@@ -24,8 +18,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_simple_video
     # vzwpix.com service
-    mail = TMail::Mail.parse(load_mail('verizon-video-01.mail').join)
+    mail = mail('verizon-video-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'vzwpix.com', mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -40,8 +36,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_simple_image
     # vzwpix.com service
-    mail = TMail::Mail.parse(load_mail('verizon-image-01.mail').join)
+    mail = mail('verizon-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'vzwpix.com', mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -56,8 +54,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_simple_image_new_message_april_2008
     # vzwpix.com service
-    mail = TMail::Mail.parse(load_mail('verizon-image-03.mail').join)
+    mail = mail('verizon-image-03.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'vzwpix.com', mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -72,8 +72,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_simple_text
     # vzwpix.com service
-    mail = TMail::Mail.parse(load_mail('verizon-text-01.mail').join)
+    mail = mail('verizon-text-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'vzwpix.com', mms.carrier
 
     assert_equal 1, mms.media.size
     assert_not_nil mms.media['text/plain']
@@ -88,8 +90,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_image_with_body_text
     # vzwpix.com service
-    mail = TMail::Mail.parse(load_mail('verizon-image-02.mail').join)
+    mail = mail('verizon-image-02.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "7018675309", mms.number
+    assert_equal 'vzwpix.com', mms.carrier
 
     assert_equal 2, mms.media.size
     assert_not_nil mms.media['text/plain']
@@ -112,8 +116,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_new_vzpix_com_image_with_body_text
     # vzwpix.com service
-    mail = TMail::Mail.parse(load_mail('vzwpix.com-image-01.mail').join)
+    mail = mail('vzwpix.com-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'vzwpix.com', mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -128,8 +134,10 @@ www.verizonwireless.com/getitnow/getpix.}
 
   def test_simple_text_vtext
     # vtext.com service
-    mail = TMail::Mail.parse(load_mail('vtext-text-01.mail').join)
+    mail = mail('vtext-text-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'vtext.com', mms.carrier
 
     assert_not_nil mms.media['text/plain']
     file = mms.media['text/plain'][0]
@@ -141,8 +149,10 @@ www.verizonwireless.com/getitnow/getpix.}
   end
 
   def test_image_from_blackberry
-    mail = TMail::Mail.parse(load_mail('verizon-blackberry.mail').join)
+    mail = mail('verizon-blackberry.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal 'yahoo.com', mms.carrier
 
     assert_not_nil mms.media['text/plain']
     assert_equal "Wonderful picture!", IO.readlines(mms.media['text/plain'].first).join.strip

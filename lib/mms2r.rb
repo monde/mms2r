@@ -39,29 +39,31 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '2.4.1'
+    VERSION = '3.0.0'
 
   end
 
   # Simple convenience function to make it a one-liner:
   # MMS2R.parse raw_mail or MMS2R.parse File.load(raw_mail)
-  # Combined w/ the method_missing delegation, this should behave as an enhanced TMail object, more or less.
+  # Combined w/ the method_missing delegation, this should behave as an enhanced Mail object, more or less.
   def self.parse raw_mail
-    mail = TMail::Mail.parse raw_mail
+    mail = Mail.new raw_mail
     MMS2R::Media.new(mail)
   end
 
 end
 
 require 'rubygems'
-require 'tmail/mail'
+require 'mail'
+gem 'mail', '>= 2.1.2'
 require 'fileutils'
 require 'pathname'
 require 'tmpdir'
 require 'yaml'
 require 'uuidtools'
+require 'iconv'
 
-require File.join(File.dirname(__FILE__), 'tmail_ext')
+require File.join(File.dirname(__FILE__), 'mail_ext')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media', 'sprint')
 MMS2R.register('pm.sprint.com', MMS2R::Media::Sprint)

@@ -3,11 +3,11 @@ Received: by 10.114.126.6 with SMTP id y6cs662518wac;
         Wed, 18 Apr 2007 17:30:16 -0700 (PDT)
 Received: by 10.70.37.12 with SMTP id k12mr2098583wxk.1176942615765;
         Wed, 18 Apr 2007 17:30:15 -0700 (PDT)
-Return-Path: <19075551234@mms.dobson.net>
+Return-Path: <2068675309@mms.dobson.net>
 Received: from mms.dobson.net ([12.168.76.27])
         by mx.google.com with SMTP id h13si2340383wxd.2007.04.18.17.30.14;
         Wed, 18 Apr 2007 17:30:15 -0700 (PDT)
-Received-SPF: neutral (google.com: 12.168.76.27 is neither permitted nor denied by best guess record for domain of 19075551234@mms.dobson.net)
+Received-SPF: neutral (google.com: 12.168.76.27 is neither permitted nor denied by best guess record for domain of 2068675309@mms.dobson.net)
 Received: (qmail 4243 invoked from network); 19 Apr 2007 00:30:14 -0000
 Received: from unknown (HELO mmsc1be1.dobson.net) (172.23.1.158)
   by 0 with SMTP; 19 Apr 2007 00:30:14 -0000
@@ -17,7 +17,7 @@ Content-Type: multipart/related;boundary=1_4626B816_9F1690;Type="application/smi
 Subject: Subject
 Date: Thu, 19 Apr 2007 00:30:14 GMT
 To: luke@example.com
-From: 19075551234@mms.dobson.net
+From: 2068675309@mms.dobson.net
 Message-ID: <AVTD2MlE05dRftqAJ@mmsc1be1.dobson.net>
 Mime-Version: 1.0
 X-Mms-Message-Type: m-send-req

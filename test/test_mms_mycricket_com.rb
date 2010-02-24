@@ -1,26 +1,24 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
 require File.join(File.dirname(__FILE__), "test_helper")
-require 'test/unit'
-require 'rubygems'
-require 'mocha'
-gem 'tmail', '>= 1.2.1'
-require 'tmail'
 
 class TestMmsMycricketCom < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_subject
     # mms.mycricket.com service
-    mail = TMail::Mail.parse(load_mail('mms.mycricket.com-pic.mail').join)
+    mail = mail('mms.mycricket.com-pic.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "mms.mycricket.com", mms.carrier
     assert_equal "", mms.subject
     mms.purge
   end
 
   def test_image
     # mms.mycricket.com service
-    mail = TMail::Mail.parse(load_mail('mms.mycricket.com-pic.mail').join)
+    mail = mail('mms.mycricket.com-pic.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "mms.mycricket.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -36,8 +34,10 @@ class TestMmsMycricketCom < Test::Unit::TestCase
 
   def test_image_and_text
     # mms.mycricket.com service
-    mail = TMail::Mail.parse(load_mail('mms.mycricket.com-pic-and-text.mail').join)
+    mail = mail('mms.mycricket.com-pic-and-text.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "mms.mycricket.com", mms.carrier
 
     assert_equal 2, mms.media.size
     assert_nil mms.media['text/html']

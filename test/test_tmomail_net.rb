@@ -1,17 +1,13 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
 require File.join(File.dirname(__FILE__), "test_helper")
-require 'test/unit'
-require 'rubygems'
-require 'mocha'
-gem 'tmail', '>= 1.2.1'
-require 'tmail'
 
 class TestTmomailNet < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_ignore_simple_image
-    mail = TMail::Mail.parse(load_mail('tmobile-image-01.mail').join)
+    mail = mail('tmobile-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "tmomail.net", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -23,53 +19,59 @@ class TestTmomailNet < Test::Unit::TestCase
 
     mms.purge
   end
-  
+
   def test_message_with_body_text
-    mail = TMail::Mail.parse(load_mail('tmobile-image-02.mail').join)
+    mail = mail('tmobile-image-02.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "16128675309", mms.number
+    assert_equal "tmomail.net", mms.carrier
+
     assert_equal 2, mms.media.size
     assert_not_nil mms.media['text/plain']
     assert_nil mms.media['text/html']
     assert_not_nil mms.media['image/jpeg'][0]
     assert_match(/07-25-05_0935.jpg$/, mms.media['image/jpeg'][0])
-    
+
     assert_file_size mms.media['image/jpeg'][0], 337
-    
+
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert File::exist?(file), "file #{file} does not exist"
     text = IO.readlines("#{file}").join
     assert_equal "Lillies", text.strip
-    
+
     mms.purge
   end
-  
+
   def test_image_from_blackberry
-    mail = TMail::Mail.parse(load_mail('tmobile-blackberry.mail').join)
+    mail = mail('tmobile-blackberry.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "2068675309", mms.number
+    assert_equal "srs.bis.na.blackberry.com", mms.carrier
+
     assert_nil mms.media['text/plain']
-    
+
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/Windows-1252\?B\?SU1HMDAyMzkuanBn/, mms.media['image/jpeg'].first)
     mms.purge
   end
 
   def test_image_from_blackberry2
-    mail = TMail::Mail.parse(load_mail('tmobile-blackberry-02.mail').join)
+    mail = mail('tmobile-blackberry-02.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "2068675309", mms.number
+    assert_equal "example.com", mms.carrier
+
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
-    
+
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/Windows-1252\?B\?SU1HMDAxNDEuanBn/, mms.media['image/jpeg'].first)
     mms.purge
   end
-  
+
   def test_tmobile_uk_image_and_text_and_number
-    mail = TMail::Mail.parse(load_mail('mmsreply.t-mobile.co.uk-text-image-01.mail').join)
+    mail = mail('mmsreply.t-mobile.co.uk-text-image-01.mail')
     mms = MMS2R::Media.new(mail)
 
     assert_equal '12345678901', mms.number
@@ -89,7 +91,7 @@ class TestTmomailNet < Test::Unit::TestCase
   end
 
   def test_tmo_blackberry_net
-    mail = TMail::Mail.parse(load_mail('tmo.blackberry.net-image-01.mail').join)
+    mail = mail('tmo.blackberry.net-image-01.mail')
     mms = MMS2R::Media.new(mail)
 
     assert_equal '2068675309', mms.number

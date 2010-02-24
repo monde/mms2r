@@ -6,7 +6,6 @@ Received: by 10.65.180.7 with SMTP id h7mr1899344qbp;
         Wed, 25 Oct 2006 17:03:38 -0700 (PDT)
 Return-Path: <2068675309@pics.cingularme.com>
 Received: from atlmtaow01.cingularme.com (atlmtaow01.cingularme.com [66.102.165.6])
-
         Wed, 25 Oct 2006 17:03:38 -0700 (PDT)
 Received-SPF: pass (google.com: domain of 2068675309@pics.cingularme.com designates 66.102.165.6 as permitted sender)
 X-Mms-MMS-Version: 18

@@ -23,7 +23,7 @@
 #
 #  require 'rubygems'
 #  require 'mms2r'
-#  mail = TMail::Mail.parse(IO.readlines("sample-MMS.file").join)
+#  mail = Mail.read("sample-MMS.file")
 #  mms = MMS2R::Media.new(mail)
 #  subject = mms.subject
 #  number = mms.number
@@ -114,14 +114,14 @@ module MMS2R
       end
     end
 
-    # Pass off everything we don't do to the TMail object
+    # Pass off everything we don't do to the Mail object
     # TODO: refactor to explicit addition a la http://blog.jayfields.com/2008/02/ruby-replace-methodmissing-with-dynamic.html
     def method_missing method, *args, &block
       mail.send method, *args, &block
     end
 
     ##
-    # TMail object that the media files were derived from.
+    # Mail object that the media files were derived from.
 
     attr_reader :mail
 
@@ -144,13 +144,8 @@ module MMS2R
     attr_reader :media_dir
 
     ##
-    # Various multi-parts that are bundled into mail
-
-    MULTIPARTS_TO_SPLIT = [ 'multipart/related', 'multipart/alternative', 'multipart/mixed', 'multipart/appledouble' ]
-
-    ##
     # Factory method that creates MMS2R::Media products based on the domain
-    # name of the carrier from which the MMS originated.  mail is a TMail
+    # name of the carrier from which the MMS originated.  mail is a Mail
     # object.
 
     def self.create(mail)
@@ -171,9 +166,8 @@ module MMS2R
 
     def self.domain(mail)
       return_path = case
-        when mail.header['return-path']
-          matched = /^<.+@([^@]+)>$/.match(mail.header['return-path'].to_s.strip)
-          matched ? matched[1] : ''
+        when mail.return_path
+          mail.return_path ? mail.return_path.split('@').last : ''
         else
           ''
         end
@@ -248,11 +242,15 @@ module MMS2R
     def number
       unless @number
         params = config['number']
-        if params && (header = mail.header[params[0]])
+        if params && params.any? && (header = mail.header[params[0]])
           @number = header.to_s.gsub(eval(params[1]), params[2])
         end
+        if @number.nil? || @number.blank?
+          @number = mail.from.first.split(/@|\//).first rescue ""
+        end
       end
-      @number ||= mail.from.first.split('@').first rescue ""
+
+      @number
     end
 
     ##
@@ -344,7 +342,7 @@ module MMS2R
         for i in 1..2
           flat = []
           parts.each do |p|
-            if MULTIPARTS_TO_SPLIT.include?(p.part_type?)
+            if p.multipart?
               p.parts.each {|mp| flat << mp }
             else
               flat << p
@@ -380,12 +378,12 @@ module MMS2R
     # true for media such as images that are advertising, carrier logos, etc.
     # See the ignore section in the discussion of the built-in configuration.
 
-    def ignore_media?(type,part)
+    def ignore_media?(type, part)
       ignores = config['ignore'][type] || []
-      ignore = ignores.detect{|test| filename?(part) == test}
-      ignore ||= ignores.detect{|test| filename?(part) =~ eval(test) if test.index('/') == 0 }
-      ignore ||= ignores.detect{|test| part.body.strip =~ eval(test) if test.index('/') == 0 }
-      ignore ||= (part.body.strip.size == 0 ? true : nil)
+      ignore   = ignores.detect{ |test| filename?(part) == test}
+      ignore ||= ignores.detect{ |test| filename?(part) =~ eval(test) if test.index('/') == 0 }
+      ignore ||= ignores.detect{ |test| part.body.decoded.strip =~ eval(test) if test.index('/') == 0 }
+      ignore ||= (part.body.decoded.strip.size == 0 ? true : nil)
       ignore.nil? ? false : true
     end
 
@@ -402,20 +400,20 @@ module MMS2R
     # Returns a tuple of content type, file path
 
     def process_media(part)
-      # TMail body auto-magically decodes quoted
+      # Mail body auto-magically decodes quoted
       # printable for text/html type.
       file = temp_file(part)
-      if part.main_type('text') == 'text' ||
-         part.content_type == 'application/smil'
+      if part.part_type? =~ /^text\// ||
+         part.part_type? == 'application/smil'
         type, content = transform_text_part(part)
         mode = 'w'
       else
-        if part.content_type == 'application/octet-stream'
+        if part.part_type? == 'application/octet-stream'
           type = type_from_filename(filename?(part))
         else
-          type = part.content_type
+          type = part.part_type?
         end
-        content = part.body
+        content = part.body.decoded
         mode = 'wb' # open with binary bit for Windows for non text
       end
       return type, nil if content.nil? || content.empty?
@@ -456,7 +454,7 @@ module MMS2R
 
     def transform_text_part(part)
       type = part.part_type?
-      text = part.body.strip
+      text = part.body.decoded.strip
       transform_text(type, text)
     end
 
@@ -506,11 +504,9 @@ module MMS2R
     # returns a filename declared for a part, or a default if its not defined
 
     def filename?(part)
-      name = part.sub_header("content-type", "name") ||
-        part.sub_header("content-disposition", "filename") ||
-        (part['content-location'] && part['content-location'].to_s.strip)
+      name = part.filename
       if (name.nil? || name.empty?)
-        if part['content-id'] && part['content-id'].real_body.strip =~ /^<(.+)>$/
+        if part.content_id && part.content_id.strip =~ /^<(.+)>$/
           name = $1
         else
           name = "#{Time.now.to_f}.#{self.default_ext(part.part_type?)}"
@@ -570,11 +566,9 @@ module MMS2R
       headers.keys.each do |header|
         if mail.header[header.downcase]
           # headers[header] refers to a hash of smart phone types with regex values
-          # that if they match the header signals the type should be returned
+          # that if they match, the header signals the type should be returned
           headers[header].each do |type, regex|
-            # HACK to get at the full value of the header before TMail parses according to spec
-            # see @body in and ensure_parsed in lib/tmail/header.rb
-            return type if mail.header[header.downcase].instance_variable_get(:@body) =~ regex
+            return type if mail.header[header.downcase].decoded =~ regex
           end
         end
       end

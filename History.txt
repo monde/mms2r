@@ -1,3 +1,8 @@
+### 3.0.0 / 2010-02-24 (General Crozier - Chairman of the Joint Chiefs of Staff)
+
+* 1 new feature
+  * dependence upon Mail gem rather than TMail gem
+
 ### 2.4.1 / 2010-02-07 (Vater Orlaag - political and spiritual specialist)
 
 * 3 minor enhancements

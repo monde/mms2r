@@ -1,5 +1,5 @@
-From 98765432101@mms.mobileiam.ma  Fri Mar  7 21:03:00 2008
-Return-Path: <98765432101@mms.mobileiam.ma>
+From 98206867309@mms.mobileiam.ma  Fri Mar  7 21:03:00 2008
+Return-Path: <98206867309@mms.mobileiam.ma>
 X-Original-To: test@example.com
 Delivered-To: test@example.com
 Received: from mmsemail1.mms.mobileiam.ma (ll212-2-46-54-217-212.ll212-2.iam.net.ma [212.217.54.46])
@@ -13,8 +13,8 @@ Received: from tgw.mms.mobileiam.ma (tgw.mms.mobileiam.ma [212.217.54.54])
 	for <test@example.com>; Sat, 8 Mar 2008 01:45:49 GMT
 Message-ID: <3180046.1204941944434.JavaMail.jboss@mmsemail1>
 Date: Sat, 8 Mar 2008 01:45:48 +0000
-From: 98765432101@mms.mobileiam.ma
-Reply-To: 98765432101 <98765432101_266617381204940748578@mms.mobileiam.ma>
+From: 98206867309@mms.mobileiam.ma
+Reply-To: 98206867309 <98206867309@mms.mobileiam.ma>
 To: test@example.com
 Subject: Multimedia message
 Mime-Version: 1.0

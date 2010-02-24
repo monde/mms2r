@@ -9,6 +9,6 @@ ignore:
    - cp__newBanner.jpg
 number:
   - return-path
-  - /^<([^@]+)@.*/
+  - /^([^@]+)@.*/
   - "\1"
 

@@ -3,11 +3,11 @@ Received: by 10.35.66.7 with SMTP id t7cs256749pyk;
         Tue, 24 Apr 2007 16:40:50 -0700 (PDT)
 Received: by 10.64.143.12 with SMTP id q12mr104771qbd.1177458050520;
         Tue, 24 Apr 2007 16:40:50 -0700 (PDT)
-Return-Path: <3105550101@mms.mycingular.com>
+Return-Path: <2068675309@mms.mycingular.com>
 Received: from iad2.emailsrvr.com (iad2.emailsrvr.com [207.97.227.212])
         by mx.google.com with ESMTP id 7si86743nzn.2007.04.24.16.40.46;
         Tue, 24 Apr 2007 16:40:50 -0700 (PDT)
-Received-SPF: neutral (google.com: 207.97.227.212 is neither permitted nor denied by best guess record for domain of 3105550101@mms.mycingular.com)
+Received-SPF: neutral (google.com: 207.97.227.212 is neither permitted nor denied by best guess record for domain of 2068675309@mms.mycingular.com)
 Received: by mail41a.mail.iad.mlsrvr.com (SMTP Server, from userid 5000)
 	id 0B65D514083; Tue, 24 Apr 2007 19:40:45 -0400 (EDT)
 Received: from gate16.gate.iad.mlsrvr.com (gate16.gate.iad.mlsrvr.com [192.168.1.36])
@@ -31,7 +31,7 @@ Content-Type: multipart/mixed;  boundary="----=_Part_2944038_406917.117745804379
 X-Mms-Delivery-Report: 1
 Received: from alpagw02 ([209.183.34.196]) by atlmtaow02.cingularme.com (InterMail vM.6.01.04.00 201-2131-118-20041027) with ESMTP id <20070424234043.EHXN2345.atlmtaow02.cingularme.com@alpagw02> for <go@example.com>; Tue, 24 Apr 2007 19:40:43 -0400
 X-Mms-Transaction-ID: 1-5190f9
-From: <3105550101@mms.mycingular.com>
+From: <2068675309@mms.mycingular.com>
 To: go@example.com
 X-Mms-Message-Class: 0
 X-Mms-Read-Reply: 1

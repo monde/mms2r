@@ -15,12 +15,12 @@ module MMS2R
     ##
     # Sprint version of MMS2R::Media
     #
-    # Sprint is an annoying carrier because they don't actually transmit user 
-    # generated content (like images or videos) directly in the MMS message.  
-    # Instead, they hijack the media that is sent from the cellular subscriber 
-    # and place that content on a content server.  In place of the media 
-    # the recipient receives a HTML message with unsolicited Sprint 
-    # advertising and links back to their content server.  The recipient has 
+    # Sprint is an annoying carrier because they don't actually transmit user
+    # generated content (like images or videos) directly in the MMS message.
+    # Instead, they hijack the media that is sent from the cellular subscriber
+    # and place that content on a content server.  In place of the media
+    # the recipient receives a HTML message with unsolicited Sprint
+    # advertising and links back to their content server.  The recipient has
     # to click through Sprint more pages to view the content.
     #
     # The default subject on these messages from the
@@ -29,11 +29,11 @@ module MMS2R
     class Sprint < MMS2R::Media
 
       ##
-      # Override process() because Sprint doesn't attach media (images, video, 
-      # etc.) to its MMS.  Media such as images and videos are hosted on a 
-      # Sprint content server.   MMS2R::Media::Sprint has to pick apart an 
-      # HTML attachment to find the URL to the media on Sprint's content 
-      # server and download each piece of content.  Any text message part of 
+      # Override process() because Sprint doesn't attach media (images, video,
+      # etc.) to its MMS.  Media such as images and videos are hosted on a
+      # Sprint content server.   MMS2R::Media::Sprint has to pick apart an
+      # HTML attachment to find the URL to the media on Sprint's content
+      # server and download each piece of content.  Any text message part of
       # the MMS if it exists is embedded in the html.
 
       def process
@@ -46,21 +46,21 @@ module MMS2R
           doc = nil
           parts.each do |p|
             next unless p.part_type? == 'text/html'
-            d = Nokogiri(p.body)
+            d = Nokogiri(p.body.decoded)
             title = d.at('title').inner_html
             if title =~ /You have new Picture Mail!/
               doc = d
-              @is_video = (p.body =~ /type=&quot;VIDEO&quot;&gt;/m ? true : false)
+              @is_video = (p.body.decoded =~ /type=&quot;VIDEO&quot;&gt;/m ? true : false)
             end
           end
           return if doc.nil? # it was a dud
           @is_video ||= false
-  
+
           # break it down
           sprint_phone_number(doc)
           sprint_process_text(doc)
           sprint_process_media(doc)
-        
+
           @was_processed = true
         end
 
@@ -90,8 +90,8 @@ module MMS2R
 
       def sprint_process_text(doc)
         # there is at least one <pre> with MMS text if text has been included by
-        # the user.  (note) we'll have to verify that if they attach multiple texts 
-        # to the MMS then Sprint stacks it up in multiple <pre>'s.  The only <pre> 
+        # the user.  (note) we'll have to verify that if they attach multiple texts
+        # to the MMS then Sprint stacks it up in multiple <pre>'s.  The only <pre>
         # tag in the document is for text from the user.
         doc.search("/html/body//pre").each do |pre|
           type = 'text/plain'
@@ -110,7 +110,7 @@ module MMS2R
         srcs = Array.new
         # collect all the images in the document, even though
         # they are <img> tag some might actually refer to video.
-        # To know the link refers to vide one must look at the 
+        # To know the link refers to vide one must look at the
         # content type on the http GET response.
         imgs = doc.search("/html/body//img")
         imgs.each do |i|
@@ -130,7 +130,7 @@ module MMS2R
         cnt = 0
         srcs.each do |src|
           begin
-            
+
             url = URI.parse(CGI.unescapeHTML(src))
             unless @is_video
               query={}

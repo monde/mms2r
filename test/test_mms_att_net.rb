@@ -1,18 +1,14 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
 require File.join(File.dirname(__FILE__), "test_helper")
-require 'test/unit'
-require 'rubygems'
-require 'mocha'
-gem 'tmail', '>= 1.2.1'
-require 'tmail'
 
 class TestMmsAttNet < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_mms_att_net
     # mms.att.net service
-    mail = TMail::Mail.parse(load_mail('att-image-01.mail').join)
+    mail = mail('att-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "12068675309", mms.number
+    assert_equal "mms.att.net", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_not_nil mms.media['image/jpeg']
@@ -26,8 +22,10 @@ class TestMmsAttNet < Test::Unit::TestCase
   def test_mms_att_net_subject
     # mms.att.net service
 
-    mail = TMail::Mail.parse(load_mail('att-image-02.mail').join)
+    mail = mail('att-image-02.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "12068675309", mms.number
+    assert_equal "mms.att.net", mms.carrier
 
     assert_equal "", mms.subject
     mms.purge
@@ -35,8 +33,10 @@ class TestMmsAttNet < Test::Unit::TestCase
 
   def test_txt_att_net
     # txt.att.net service
-    mail = TMail::Mail.parse(load_mail('att-text-01.mail').join)
+    mail = mail('att-text-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "5551234", mms.number
+    assert_equal "txt.att.net", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_not_nil(mms.media['text/plain'])
@@ -47,8 +47,10 @@ class TestMmsAttNet < Test::Unit::TestCase
 
   def test_cingularme_com
     # cingularme.com service
-    mail = TMail::Mail.parse(load_mail('cingularme-text-01.mail').join)
+    mail = mail('cingularme-text-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "cingularme.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_not_nil(mms.media['text/plain'])
@@ -59,8 +61,10 @@ class TestMmsAttNet < Test::Unit::TestCase
 
   def test_mmode_com
     # mmode.com service
-    mail = TMail::Mail.parse(load_mail('mmode-image-01.mail').join)
+    mail = mail('mmode-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "12068675309", mms.number
+    assert_equal "mmode.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_not_nil mms.media['image/jpeg']
@@ -73,8 +77,10 @@ class TestMmsAttNet < Test::Unit::TestCase
 
   def test_mms_mycingular_com
     # mms.mycingular.com service
-    mail = TMail::Mail.parse(load_mail('mycingular-image-01.mail').join)
+    mail = mail('mycingular-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "mms.mycingular.com", mms.carrier
 
     assert_equal 2, mms.media.size
     assert_not_nil mms.media['text/plain']
@@ -89,37 +95,42 @@ class TestMmsAttNet < Test::Unit::TestCase
     assert_equal "Water", IO.read(mms.media['text/plain'][0])
     mms.purge
   end
-  
+
   def test_image_from_blackberry
-    mail = TMail::Mail.parse(load_mail('att-blackberry.mail').join)
+    mail = mail('att-blackberry.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "2068675309", mms.number
+    assert_equal "example.com", mms.carrier
+
     assert_not_nil mms.media['text/plain']
     assert_equal "Hello world", IO.readlines(mms.media['text/plain'].first).join.strip
-    
+
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/Windows-1252\?B\?QkMtV0FLRS5qcGc/, mms.media['image/jpeg'].first)
   end
 
   def test_image_from_blackberry2
-    mail = TMail::Mail.parse(load_mail('att-blackberry-02.mail').join)
+    mail = mail('att-blackberry-02.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "2068675309", mms.number
+    assert_equal "mms.att.net", mms.carrier
+
     assert_equal 2, mms.media.size
 
     assert_not_nil mms.media['text/plain']
     assert_match(/^Testing memorymail from my blackberry and at&t.$/, IO.readlines(mms.media['text/plain'].first).join.strip)
-    
+
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/IMG00367.jpg/, mms.media['image/jpeg'].first)
   end
 
   def test_mobile_mycingular_com
     # mobile.mycingular.com service
-    mail = TMail::Mail.parse(load_mail('mobile.mycingular.com-text-01.mail').join)
+    mail = mail('mobile.mycingular.com-text-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "mobile.mycingular.com", mms.carrier
 
-    assert_equal 'mobile.mycingular.com', mms.carrier
     assert_equal 1, mms.media.size
     assert_not_nil(mms.media['text/plain'])
     assert_equal "I hate people that send text messages about skateboarding.", IO.read(mms.media['text/plain'][0])
@@ -129,13 +140,10 @@ class TestMmsAttNet < Test::Unit::TestCase
 
   def test_pics_cingularme_com
     # pics.cingularme.com service
-    mail = TMail::Mail.parse(load_mail('pics.cingularme.com-image-01.mail').join)
+    mail = mail('pics.cingularme.com-image-01.mail')
     mms = MMS2R::Media.new(mail)
-
-
-    # TODO this fixture is either mailformed or exposes a tmail problem
-    # since its legacy content fix if necessary
-    assert_equal 'pics.cingularme.com', mms.carrier
+    assert_equal "2068675309", mms.number
+    assert_equal "pics.cingularme.com", mms.carrier
 
     mms.purge
   end

@@ -1,17 +1,13 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
 require File.join(File.dirname(__FILE__), "test_helper")
-require 'test/unit'
-require 'rubygems'
-require 'mocha'
-gem 'tmail', '>= 1.2.1'
-require 'tmail'
 
 class TestMessagingNextelCom < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def test_simple_text_is_nil
-    mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
+    mail = mail('nextel-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "messaging.nextel.com", mms.carrier
 
     assert_nil mms.default_text
 
@@ -19,8 +15,10 @@ class TestMessagingNextelCom < Test::Unit::TestCase
   end
 
   def test_simple_default_media
-    mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
+    mail = mail('nextel-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "messaging.nextel.com", mms.carrier
 
     file = mms.default_media
     assert_file_size file, 337
@@ -32,8 +30,10 @@ class TestMessagingNextelCom < Test::Unit::TestCase
   end
 
   def test_simple_image1
-    mail = TMail::Mail.parse(load_mail('nextel-image-01.mail').join)
+    mail = mail('nextel-image-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "messaging.nextel.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -47,8 +47,10 @@ class TestMessagingNextelCom < Test::Unit::TestCase
   end
 
   def test_simple_image2
-    mail = TMail::Mail.parse(load_mail('nextel-image-02.mail').join)
+    mail = mail('nextel-image-02.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "messaging.nextel.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -62,8 +64,10 @@ class TestMessagingNextelCom < Test::Unit::TestCase
   end
 
   def test_simple_image3
-    mail = TMail::Mail.parse(load_mail('nextel-image-03.mail').join)
+    mail = mail('nextel-image-03.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "messaging.nextel.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']
@@ -77,8 +81,10 @@ class TestMessagingNextelCom < Test::Unit::TestCase
   end
 
   def test_simple_image4
-    mail = TMail::Mail.parse(load_mail('nextel-image-04.mail').join)
+    mail = mail('nextel-image-04.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "2068675309", mms.number
+    assert_equal "messaging.nextel.com", mms.carrier
 
     assert_equal 1, mms.media.size
     assert_nil mms.media['text/plain']

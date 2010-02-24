@@ -5,7 +5,7 @@ transform:
     - ""
 number:
   - return-path
-  - /^<([^@]+)@.*/
+  - /^([^@]+)@.*/
   - "\1"
 ignore:
   text/html: 

@@ -44,7 +44,7 @@ init.rb
 lib/mms2r.rb
 lib/mms2r/media.rb
 lib/mms2r/media/sprint.rb
-lib/tmail_ext.rb
+lib/mail_ext.rb
 mms2r.gemspec
 test/fixtures/1nbox-2images-01.mail
 test/fixtures/1nbox-2images-02.mail

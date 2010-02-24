@@ -1,56 +1,55 @@
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
 require File.join(File.dirname(__FILE__), "test_helper")
-require 'test/unit'
-require 'rubygems'
-require 'mocha'
-gem 'tmail', '>= 1.2.1'
-require 'tmail'
 
 class TestMmsVodacom4meCoZa < Test::Unit::TestCase
   include MMS2R::TestHelper
-  
+
   def test_image_only
-    mail = TMail::Mail.parse(load_mail('vodacom4me-co-za-01.mail').join)
+    mail = mail('vodacom4me-co-za-01.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "+2068675309", mms.number
+    assert_equal "mms.vodacom4me.co.za", mms.carrier
+
     assert_nil mms.media['text/plain']
     assert_nil mms.media['text/html']
-    
+
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/Ugly\.jpg$/, mms.media['image/jpeg'].first)
     mms.purge
   end
 
   def test_should_have_phone_number
-    mail = TMail::Mail.parse(load_mail('vodacom4me-co-za-01.mail').join)
+    mail = mail('vodacom4me-co-za-01.mail')
     mms = MMS2R::Media.new(mail)
+    assert_equal "+2068675309", mms.number
+    assert_equal "mms.vodacom4me.co.za", mms.carrier
 
-    assert_equal '+2068675309', mms.number
-    
     mms.purge
   end
-  
+
   def test_image_and_text
-    mail = TMail::Mail.parse(load_mail('vodacom4me-co-za-02.mail').join)
+    mail = mail('vodacom4me-co-za-02.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "+2068675309", mms.number
+    assert_equal "mms.vodacom4me.co.za", mms.carrier
+
     assert_not_nil mms.media['text/plain']
     assert_equal "Hello World", open(mms.media['text/plain'].first).read
-    
+
     assert_nil mms.media['text/html']
-    
+
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/DSC00184\.JPG$/, mms.media['image/jpeg'].first)
     mms.purge
   end
 
   def test_new_image_and_number
-    mail = TMail::Mail.parse(load_mail('vodacom4me-southafrica-mms-01.mail').join)
+    mail = mail('vodacom4me-southafrica-mms-01.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "+12345678901", mms.number
+    assert_equal "mms.vodacom4me.co.za", mms.carrier
+
     assert_nil mms.media['text/plain']
     assert_nil mms.media['text/html']
-    assert_equal '+12345678901', mms.number
 
     assert_equal 1, mms.media.size
     assert_equal 1, mms.media['image/gif'].size
@@ -60,12 +59,13 @@ class TestMmsVodacom4meCoZa < Test::Unit::TestCase
   end
 
   def test_new_lots_of_images
-    mail = TMail::Mail.parse(load_mail('vodacom4me-southafrica-mms-04.mail').join)
+    mail = mail('vodacom4me-southafrica-mms-04.mail')
     mms = MMS2R::Media.new(mail)
-    
+    assert_equal "+12345678901", mms.number
+    assert_equal "mms.vodacom4me.co.za", mms.carrier
+
     assert_nil mms.media['text/plain']
     assert_nil mms.media['text/html']
-    assert_equal '+12345678901', mms.number
 
     assert_not_nil mms.media['image/gif'].at(0)
     assert_match(/ZedLandingMedium\.gif$/, mms.media['image/gif'].at(0))

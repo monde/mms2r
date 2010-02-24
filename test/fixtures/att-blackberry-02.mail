@@ -3,12 +3,12 @@ Received: by 10.65.114.15 with SMTP id r15cs144223qbm;
         Thu, 13 Mar 2008 09:38:14 -0700 (PDT)
 Received: by 10.114.126.1 with SMTP id y1mr9717246wac.108.1205426288880;
         Thu, 13 Mar 2008 09:38:08 -0700 (PDT)
-Return-Path: <2068675309>
+Return-Path: <2068675309@mms.att.net>
 Received: from barrierN241.nike.com (barrierm241.nike.com [146.197.27.91])
         by mx.google.com with ESMTP id k21si26738395waf.31.2008.03.13.09.38.06;
         Thu, 13 Mar 2008 09:38:08 -0700 (PDT)
-Received-SPF: pass (google.com: best guess record for domain of 2068675309 designates 146.197.27.91 as permitted sender) client-ip=146.197.27.91;
-Authentication-Results: mx.google.com; spf=pass (google.com: best guess record for domain of 2068675309 designates 146.197.27.91 as permitted sender) smtp.mail=2068675309
+Received-SPF: pass (google.com: best guess record for domain of 2068675309@mms.att.net designates 146.197.27.91 as permitted sender) client-ip=146.197.27.91;
+Authentication-Results: mx.google.com; spf=pass (google.com: best guess record for domain of 2068675309@mms.att.net designates 146.197.27.91 as permitted sender) smtp.mail=2068675309@mms.att.net
 X-MimeOLE: Produced By Microsoft Exchange V6.5
 Content-class: urn:content-classes:message
 MIME-Version: 1.0
@@ -21,9 +21,8 @@ X-MS-Has-Attach: yes
 X-MS-TNEF-Correlator: 
 Thread-Topic: IMG00367.jpg
 Thread-Index: AciFKJgctMXWfPg5QbejKsyJmyuE8w==
-From: "Simmons, Craig" <2068675309>
-To: <tommy.tutone@example.com>, "User, Joe" <2068675309>,
-        <simmons_michelle@yahoo.com>
+From: "User, Joe" <2068675309@mms.att.net>
+To: <tommy.tutone@example.com>, "User, Joe" <2068675309@mms.att.net>
 X-OriginalArrivalTime: 13 Mar 2008 16:37:58.0362 (UTC) FILETIME=[987DB3A0:01C88528]
 
 This is a multi-part message in MIME format.
