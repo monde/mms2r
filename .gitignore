@@ -3,4 +3,5 @@ coverage/
 pkg/
 email.txt
 coverage.info
+mkmf.log
 doc/

@@ -2,8 +2,8 @@
 
   http://mms2r.rubyforge.org/
   by Mike Mondragon
-  http://rubyforge.org/tracker/?group_id=3065
   http://github.com/monde/mms2r
+  http://github.com/monde/mms2r/issues
   http://peepcode.com/products/mms2r-pdf
 
 == DESCRIPTION
