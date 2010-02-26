@@ -20,9 +20,9 @@ Hoe.spec('mms2r') do |p|
   p.description    = p.paragraphs_of('README.txt', 2..5).join("\n\n")
   p.url            = p.paragraphs_of('README.txt', 1).first.strip
   p.changes        = p.paragraphs_of('History.txt', 0..1).join("\n\n")
-  p.extra_deps << ['nokogiri']
-  p.extra_deps << ['mail']
-  p.extra_deps << ['uuidtools']
+  p.extra_deps << ['nokogiri', '>= 1.4.0']
+  p.extra_deps << ['mail', '>= 2.1.0']
+  p.extra_deps << ['uuidtools', '>= 2.1.0']
   p.clean_globs << 'coverage'
 end
 
