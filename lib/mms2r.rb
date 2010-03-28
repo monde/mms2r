@@ -54,8 +54,8 @@ module MMS2R
 end
 
 require 'rubygems'
+gem 'mail', '>= 2.1.5'
 require 'mail'
-gem 'mail', '>= 2.1.2'
 require 'fileutils'
 require 'pathname'
 require 'tmpdir'
