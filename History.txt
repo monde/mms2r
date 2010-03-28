@@ -1,3 +1,8 @@
+### 3.0.1 / 2010-03-28 (Lavona Succuboso - leader of "Succuboso Explosion")
+
+* 1 minor enhancement
+  * support for U.S. Cellular
+
 ### 3.0.0 / 2010-02-24 (General Crozier - Chairman of the Joint Chiefs of Staff)
 
 * 1 new feature

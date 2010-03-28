@@ -1,0 +1,8 @@
+---
+ignore:
+  text/plain: 
+  - /\AThank you for using Picture and Video Messaging by U\.S\. Cellular.*/m
+transform: 
+  text/plain: 
+  - - /\A(.+?)\s+Thank you for using Picture and Video Messaging by U\.S\. Cellular.*/m
+    - "\1"

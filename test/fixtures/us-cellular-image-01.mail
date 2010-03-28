@@ -1,0 +1,55 @@
+Return-Path: <5418675309@mms.uscc.net>
+Delivered-To: unknown
+Received: from imap.gmail.com (74.125.95.109) by ntk with IMAP4-SSL; 16 Mar
+  2010 02:25:04 -0000
+Delivered-To: joe@example.com
+Received: by 10.231.12.76 with SMTP id w12cs198243ibw;
+        Mon, 15 Mar 2010 19:23:32 -0700 (PDT)
+Received: by 10.87.59.28 with SMTP id m28mr8974373fgk.11.1268706211480;
+        Mon, 15 Mar 2010 19:23:31 -0700 (PDT)
+Received: from a.mx.uscc.net ([166.182.112.1])
+        by mx.google.com with ESMTP id d8si1073115fga.14.2010.03.15.19.23.28;
+        Mon, 15 Mar 2010 19:23:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 5418675309@mms.uscc.net designates 166.182.112.1 as permitted sender) client-ip=166.182.112.1;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of 5418675309@mms.uscc.net designates 166.182.112.1 as permitted sender) smtp.mail=5418675309@mms.uscc.net
+Received: from unknown (HELO mmscknxv1.uscc.net) ([166.182.127.115])
+  by tnknox01-csnmx-01.uscc.com with SMTP; 16 Mar 2010 02:23:24 +0000
+X-Priority: 3
+Importance: Normal
+From: 5418675309@mms.uscc.net
+To: joe@example.com
+Subject: 
+Message-ID: <212135466205024569@-212135466205024570>
+Date: Mon, 16 Mar 2010 02:23:25 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ type="application/smil";
+ boundary="__CONTENT_64564_PART_BOUNDARY__33243242__"
+
+--__CONTENT_64564_PART_BOUNDARY__33243242__
+Content-Type: text/plain;
+ charset=utf-8;
+ name="TEXT95952701533.txt"
+Content-ID: <TEXT95952701533.txt>
+Content-Location: TEXT95952701533.txt
+
+This is what i do at work most the day
+
+Thank you for using Picture and Video Messaging by U.S. Cellular.  See www.uscellular.com for info.
+
+--__CONTENT_64564_PART_BOUNDARY__33243242__
+Content-Type: image/jpeg;
+ name="0315001513.jpg"
+Content-ID: <0315001513.jpg>
+Content-Location: 0315001513.jpg
+Content-Transfer-Encoding: base64
+
+/9j/4AAQSkZJRgABAQEASABIAAD/4QAWRXhpZgAATU0AKgAAAAgAAAAAAAD//gAXQ3JlYXRl
+ZCB3aXRoIFRoZSBHSU1Q/9sAQwAFAwQEBAMFBAQEBQUFBgcMCAcHBwcPCwsJDBEPEhIRDxER
+ExYcFxMUGhURERghGBodHR8fHxMXIiQiHiQcHh8e/9sAQwEFBQUHBgcOCAgOHhQRFB4eHh4e
+Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e/8AAEQgAAQAB
+AwEiAAIRAQMRAf/EABUAAQEAAAAAAAAAAAAAAAAAAAAH/8QAFBABAAAAAAAAAAAAAAAAAAAA
+AP/EABUBAQEAAAAAAAAAAAAAAAAAAAcI/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQAC
+EQMRAD8AlgA6WW//2Q==
+--__CONTENT_64564_PART_BOUNDARY__33243242__--
+
