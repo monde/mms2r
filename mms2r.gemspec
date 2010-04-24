@@ -38,14 +38,14 @@ parts the mail is comprised of.}
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.0"])
-      s.add_runtime_dependency(%q<mail>, [">= 2.1.0"])
+      s.add_runtime_dependency(%q<mail>, [">= 2.2.0"])
       s.add_runtime_dependency(%q<uuidtools>, [">= 2.1.0"])
       s.add_development_dependency(%q<rubyforge>, [">= 2.0.3"])
       s.add_development_dependency(%q<gemcutter>, [">= 0.4.1"])
       s.add_development_dependency(%q<hoe>, [">= 2.5.0"])
     else
       s.add_dependency(%q<nokogiri>, [">= 1.4.0"])
-      s.add_dependency(%q<mail>, [">= 2.1.0"])
+      s.add_dependency(%q<mail>, [">= 2.2.0"])
       s.add_dependency(%q<uuidtools>, [">= 2.1.0"])
       s.add_dependency(%q<rubyforge>, [">= 2.0.3"])
       s.add_dependency(%q<gemcutter>, [">= 0.4.1"])
@@ -53,7 +53,7 @@ parts the mail is comprised of.}
     end
   else
     s.add_dependency(%q<nokogiri>, [">= 1.4.0"])
-    s.add_dependency(%q<mail>, [">= 2.1.0"])
+    s.add_dependency(%q<mail>, [">= 2.2.0"])
     s.add_dependency(%q<uuidtools>, [">= 2.1.0"])
     s.add_dependency(%q<rubyforge>, [">= 2.0.3"])
     s.add_dependency(%q<gemcutter>, [">= 0.4.1"])
