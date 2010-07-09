@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.0.1'
+    VERSION = '3.1.0'
 
   end
 
@@ -54,7 +54,7 @@ module MMS2R
 end
 
 require 'rubygems'
-gem 'mail', '>= 2.1.5'
+gem 'mail', '= 2.2.5'
 require 'mail'
 require 'fileutils'
 require 'pathname'
@@ -62,6 +62,7 @@ require 'tmpdir'
 require 'yaml'
 require 'uuidtools'
 require 'iconv'
+require 'exifr'
 
 require File.join(File.dirname(__FILE__), 'mail_ext')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media')

@@ -21,6 +21,7 @@ Mime-Version: 1.0
 Content-Type: multipart/mixed; 
 	boundary="----=_Part_3189_7839582.1195059640065"
 
+
 ------=_Part_3189_7839582.1195059640065
 Content-Type: multipart/alternative; 
 	boundary="----=_Part_3191_16589396.1195059640154"
@@ -168,7 +169,7 @@ ECkC/IANDMCEog5xBQZAA8yD2gQpICXmLxwiegyI4J6n0qrWOU1XzNJhQPbE8YPkLY8Uc1iwPJiX
 KnTogk/B47AlMLHlPq3DeNdYBwXFI9A6m6dFDGBATTiR6eUYhzky6TQDWOCST5e61BIYNamZIxE6
 W/okohUipbf76i/K2lSoqrU7b10qjQjEIcAOtrCFzWtcKyMgADs=
 ------=_Part_3189_7839582.1195059640065
-Content-Type: IMAGE/GIF; name=Drinks.gif
+Content-Type: image/gif; name=Drinks.gif
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename=Drinks.gif
 Content-Description: Drinks.gif

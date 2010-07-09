@@ -185,7 +185,7 @@ module MMS2R
       ret = case
         when from.include?(from_domain)
           from_domain
-        when return_path.any?
+        when return_path.present?
           return_path
         else
           from_domain
@@ -218,6 +218,7 @@ module MMS2R
       @number = nil
       @subject = nil
       @body = nil
+      @exif = nil
       @default_media = nil
       @default_text = nil
 
@@ -428,12 +429,13 @@ module MMS2R
     # See the transform section in the discussion of the built-in
     # configuration.
 
-    def transform_text(type, text, original_nencoding = 'ISO-8859-1')
-      return type, text unless transforms = config['transform'][type]
+    def transform_text(type, text, original_encoding = 'ISO-8859-1')
+
+      return type, text if !config['transform'] || !(transforms = config['transform'][type])
 
       #convert to UTF-8
       begin
-        c = Iconv.new('UTF-8', original_nencoding )
+        c = Iconv.new('UTF-8', original_encoding )
         utf_t = c.iconv(text)
       rescue Exception => e
         utf_t = text
@@ -540,26 +542,25 @@ module MMS2R
 
     def device_type?
 
-      begin
-        # rely on native exif first with exifr gem if its loaded
-        require 'exifr'
-        file = attachment(['image'])
-        if file
-          original = file.original_filename
-          @exif = case original
-                  when /\.je?pg$/i
-                    EXIFR::JPEG.new(file)
-                  when /\.tiff?$/i
-                    EXIFR::TIFF.new(file)
-                  end
-          if @exif
-            models = config['device_types']['models'] rescue {}
-            models.each do |model, regex|
-              return model if @exif.model =~ regex
-            end
+      file = attachment(['image'])
+      if file
+        original = file.original_filename
+        @exif = case original
+                when /\.je?pg$/i
+                  EXIFR::JPEG.new(file)
+                when /\.tiff?$/i
+                  EXIFR::TIFF.new(file)
+                end
+        if @exif
+          models = config['device_types']['models'] rescue {}
+          models.each do |model, regex|
+            return model if @exif.model =~ regex
+          end
+          makes = config['device_types']['makes'] rescue {}
+          makes.each do |make, regex|
+            return make if @exif.make =~ regex
           end
         end
-      rescue LoadError => err
       end
 
       headers = config['device_types']['headers'] rescue {}
@@ -746,11 +747,13 @@ module MMS2R
       mime_type = nil
 
       #get the largest file
-      files.each do |f|
-        if File.size(f) > size
-          size = File.size(f)
-          file = File.new(f)
-          mime_type = media.detect{|type,files| files.detect{|fl| fl == f}}[0]
+      files.each do |path|
+        if File.size(path) > size
+          size = File.size(path)
+          file = File.new(path)
+          media.each do |type,files|
+            mime_type = type if files.detect{ |_path| _path == path }
+          end
         end
       end
 

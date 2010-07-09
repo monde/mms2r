@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "test_helper")
+require File.join(File.expand_path(File.dirname(__FILE__)), "test_helper")
 
 class TestMms2rMedia < Test::Unit::TestCase
   include MMS2R::TestHelper
@@ -232,24 +232,24 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', " \n\nimage/jpeg")
 
     # has a bad regexp
-    mms.expects(:config).once.returns({'transform' => {type => [['(hello)', 'world']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [['(hello)', 'world']]}})
     assert_equal result, mms.transform_text(type, text)
 
     # matches in config
-    mms.expects(:config).once.returns({'transform' => {type => [['/(hello)/', 'world']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [["/(hello)/", 'world']]}})
     assert_equal [type, 'world'], mms.transform_text(type, text)
 
-    mms.expects(:config).once.returns({'transform' => {type => [['/^Ignore this part, (.+)/', '\1']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [['/^Ignore this part, (.+)/', '\1']]}})
     assert_equal [type, text], mms.transform_text(type, "Ignore this part, " + text)
 
     # chaining transforms
-    mms.expects(:config).once.returns({'transform' => {type => [['/(hello)/', 'world'], 
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [['/(hello)/', 'world'], 
                                                                 ['/(world)/', 'mars']]}})
     assert_equal [type, 'mars'], mms.transform_text(type, text)
 
     # has a Iconv problem
     Iconv.expects(:new).raises
-    mms.expects(:config).once.returns({'transform' => {type => [['(hello)', 'world']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [['(hello)', 'world']]}})
     assert_equal result, mms.transform_text(type, text)
   end
 
@@ -264,7 +264,6 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_not_nil file
     assert_equal true, File::exist?(file)
     text = IO.readlines("#{file}").join
-    #assert_match(/D'ici un mois Géorgie/, text)
     assert_match(/D'ici un mois G\303\251orgie/, text)
     assert_match(/D'ici un mois Géorgie/, text)
     assert_equal("sample email message Fwd: sub D'ici un mois G\303\251orgie", mms.subject)
@@ -323,12 +322,12 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_nil mms.send(:attachment, ['text'])
   end
 
-  def test_type_from_filename(filename)
+  def test_type_from_filename
     mms = MMS2R::Media.new stub_mail
     assert_equal 'image/jpeg', mms.send(:type_from_filename, "example.jpg")
   end
 
-  def test_type_from_filename_should_be_nil(filename)
+  def test_type_from_filename_should_be_nil
     mms = MMS2R::Media.new stub_mail
     assert_nil mms.send(:type_from_filename, "example.example")
   end
@@ -766,65 +765,67 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_exif
-    mail = smart_phone_mock('iPhone')
+    mail = smart_phone_mock
     mms = MMS2R::Media.new(mail)
     assert_equal 'iPhone', mms.exif.model
   end
 
-  def test_exif_load_error
-    mms = MMS2R::Media.new stub_mail
-    mms.expects(:require).with('exifr').raises(LoadError)
-
-    assert_equal :unknown, mms.device_type?
-  end
-
   def test_iphone_device_type_by_exif
-    mail = smart_phone_mock('iPhone')
+    mail = smart_phone_mock
     mms = MMS2R::Media.new(mail)
     assert_equal :iphone, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
   def test_faux_tiff_iphone_device_type_by_exif
-    mail = smart_phone_mock('iPhone', jpeg = false)
+    mail = smart_phone_mock('Apple', 'iPhone', jpeg = false)
     mms = MMS2R::Media.new(mail)
     assert_equal :iphone, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
   def test_blackberry_device_type_by_exif
-    mail = smart_phone_mock('BlackBerry')
+    mail = smart_phone_mock('Research In Motion', 'BlackBerry')
     mms = MMS2R::Media.new(mail)
     assert_equal :blackberry, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
   def test_dash_device_type_by_exif
-    mail = smart_phone_mock('T-Mobile Dash')
+    mail = smart_phone_mock('T-Mobile Dash', 'T-Mobile Dash')
     mms = MMS2R::Media.new(mail)
     assert_equal :dash, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
   def test_droid_device_type_by_exif
-    mail = smart_phone_mock('Droid')
+    mail = smart_phone_mock('Motorola', 'Droid')
     mms = MMS2R::Media.new(mail)
     assert_equal :droid, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
   def test_htc_eris_device_type_by_exif
-    mail = smart_phone_mock('Eris')
+    mail = smart_phone_mock('HTC', 'Eris')
     mms = MMS2R::Media.new(mail)
     assert_equal :htc, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
   def test_htc_hero_device_type_by_exif
-    mail = smart_phone_mock('HERO200')
+    mail = smart_phone_mock('HTC', 'HERO200')
     mms = MMS2R::Media.new(mail)
     assert_equal :htc, mms.device_type?
     assert_equal true, mms.is_mobile?
+  end
+
+  def test_handsets_by_exif
+    handsets = YAML.load_file(fixture('handsets.yml'))
+    handsets.each do |handset|
+      mail = smart_phone_mock(handset.first, handset.last)
+      mms = MMS2R::Media.new(mail)
+      assert_equal true, mms.is_mobile?, "mms with make #{mms.exif.make}, and model #{mms.exif.model}, should be considered a mobile device"
+    end
   end
 
   def test_blackberry_device_type

@@ -3,11 +3,10 @@ require 'set'
 require 'net/http'
 require 'net/https'
 require 'pp'
-require 'exifr'
 require 'tempfile'
 require 'test/unit'
 require 'mocha'
-require File.join(File.dirname(__FILE__), "..", "lib", "mms2r")
+require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'mms2r')
 
 begin require 'redgreen'; rescue LoadError; end
 
@@ -20,30 +19,34 @@ module MMS2R
       assert(File::size(file) == size, "file #{file} is #{File::size(file)} bytes, not #{size} bytes")
     end
 
+    def fixture(file)
+      File.join(File.expand_path(File.dirname(__FILE__)), "fixtures", file)
+    end
+
     def mail_fixture(file)
-      "#{File.dirname(__FILE__)}/fixtures/#{file}"
+      fixture(file)
     end
 
     def mail(name)
       Mail.read(mail_fixture(name))
     end
 
-    def smart_phone_mock(model_text = 'iPhone', jpeg = true)
-      mail = mock('mail')
-      mail.expects(:from).at_least_once.returns(['joe@example.com'])
-      mail.expects(:return_path).at_least_once.returns('<joe@example.com>')
-      mail.expects(:message_id).returns('abcd0123')
-      mail.expects(:multipart?).returns(true)
+    def smart_phone_mock(make_text = 'Apple', model_text = 'iPhone', jpeg = true)
+      mail = stub('mail',
+                  :from => ['joe@example.com'],
+                  :return_path => '<joe@example.com>',
+                  :message_id => 'abcd0123',
+                  :multipart? => true,
+                  :header => {})
 
-      part = mock('part')
-      part.expects(:part_type?).at_least_once.returns("image/#{jpeg ? 'jpeg' : 'tiff'}")
-      part.expects(:body).at_least_once.returns(Mail::Body.new('abc'))
-      part.expects(:multipart?).at_least_once.returns(false)
-      part.expects(:filename).returns("foo.#{jpeg ? 'jpg' : 'tif'}")
+      part = stub('part',
+                  :part_type? => "image/#{jpeg ? 'jpeg' : 'tiff'}",
+                  :body => Mail::Body.new('abc'),
+                  :multipart? => false,
+                  :filename => "foo.#{jpeg ? 'jpg' : 'tif'}" )
 
-      mail.expects(:parts).returns([part])
-      exif = mock('exif')
-      exif.expects(:model).at_least_once.returns(model_text)
+      mail.stubs(:parts).returns([part])
+      exif = stub('exif', :make => make_text, :model => model_text)
       if jpeg
         EXIFR::JPEG.expects(:new).at_least_once.returns(exif)
       else

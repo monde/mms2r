@@ -1,3 +1,16 @@
+### 3.1.0 / 2010-07-09 (Dick "Magic Ears" Knubbler - music producer)
+* 8 minor enhancements
+  * Detects additional Bell/AT&T domain sbcglobal.net as a handset
+  * Detects additional Virgin mobile domains pixmbl.com vmobl.com as a handset
+  * Expanded mobile phone detection for handset makers by : Casio, Google Nexus
+    One, LG Electronics, Motorola, Pantech, Qualcom, Samsung, Sprint, UTStarCom
+  * EXIF Reader (exifr) is integral to MMS2R and is now a required gem
+  * upgrade Mail to 2.2.5
+  * depend on latest gems
+  * corrected example - Jason Hooper
+  * added As Seen On The Internet to README that lists sites known to be using
+    MMS2R in some fashion
+
 ### 3.0.1 / 2010-03-28 (Lavona Succuboso - leader of "Succuboso Explosion")
 
 * 1 minor enhancement

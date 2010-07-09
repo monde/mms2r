@@ -71,6 +71,7 @@ test/fixtures/cingularme-text-02.mail
 test/fixtures/dobson-image-01.mail
 test/fixtures/dot.jpg
 test/fixtures/generic.mail
+test/fixtures/handsets.yml
 test/fixtures/helio-image-01.mail
 test/fixtures/helio-message-01.mail
 test/fixtures/iconv-fr-text-01.mail

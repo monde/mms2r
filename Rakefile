@@ -21,18 +21,22 @@ Hoe.spec('mms2r') do |p|
   p.url            = p.paragraphs_of('README.txt', 1).first.strip
   p.changes        = p.paragraphs_of('History.txt', 0..1).join("\n\n")
   p.extra_deps << ['nokogiri', '>= 1.4.0']
-  p.extra_deps << ['mail', '>= 2.2.0']
-  p.extra_deps << ['uuidtools', '>= 2.1.0']
+  p.extra_deps << ['mail', '>= 2.2.5']
+  p.extra_deps << ['uuidtools', '>= 2.1.1']
+  p.extra_deps << ['exifr', '>= 1.0.1']
   p.clean_globs << 'coverage'
 end
 
 begin
-  Rcov::RcovTask.new do |t|
-    t.test_files = FileList['test/test*.rb']
-    t.verbose = true
-    t.rcov_opts << "--exclude rcov.rb,hpricot.rb,hpricot/.*\.rb"
+  require 'rcov/rcovtask'
+  Rcov::RcovTask.new do |rcov|
+    rcov.pattern = 'test/**/test_*.rb'
+    rcov.verbose = true
+    rcov.rcov_opts << "--exclude rcov.rb"
   end
-rescue NameError
+rescue
+  task :rcov => :check_dependencies
 end
+
 
 # vim: syntax=Ruby

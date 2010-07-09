@@ -31,7 +31,7 @@ Corpus of carriers currently processed by MMS2R:
 * AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com,
   cingularme.com, mobile.mycingular.com pics.cingularme.com
 * Bell Canada: txt.bell.ca
-* Bell South / Suncom: bellsouth.net
+* Bell South / Suncom / SBC Global: bellsouth.net, sbcglobal.net
 * Cricket Wireless: mms.mycricket.com
 * Dobson/Cellular One: mms.dobson.net
 * Helio: mms.myhelio.com
@@ -57,27 +57,48 @@ Corpus of carriers currently processed by MMS2R:
 * Unicel: unicel.com, info2go.com
   (note: mobile number is tucked away in a text/plain part for unicel.com)
 * Verizon: vzwpix.com, vtext.com
-* Virgin Mobile: vmpix.com
+* Virgin Mobile: vmpix.com, pixmbl.com, vmobl.com
 * Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
 
 Corpus of smart phones known to MMS2R:
-* Blackberry variants
-* Droid variants
-* HTC variants (T-Mobile Dash, Sprint HERO)
 * Apple iPhone variants
+* Blackberry / Research In Motion variants
+* Casio variants
+* Droid variants
+* Google / Nexus One variants
+* HTC variants (T-Mobile Dash, Sprint HERO)
+* LG Electronics variants
+* Motorola variants
+* Pantech variants
+* Qualcom variants
+* Samsung variants
+* Sprint variants
+* UTStarCom variants
+
+As Seen On The Internets - sites known to be using MMS2R in some fashion
+
+* twitpic.com [http://www.twitpic.com/]
+* fanchatter.com [http://www.fanchatter.com/]
+* camura.com [http://www.camura.com/]
+* eachday.com [http://www.eachday.com/]
+* beenup2.com [http://www.beenup2.com/]
+* snapmylife.com [http://www.snapmylife.com/]
+* email the author to be listed here
+
 
 == FEATURES
 
 * #default_media and #default_text methods return a File that can be used in
-  attachment_fu
-* #process supports blocks to for enumerating over the content of the MMS
+  attachment_fu or Paperclip
+* #process supports blocks for enumerating over the content of the MMS
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
 * an mms instance acts like a Mail object, any methods not defined on the
-  instance are delegated to its underlying Mail object
+  instance are delegated to it's underlying Mail object
 * #device_type? returns a symbol representing a device or smartphone type
-  Known smartphones thus far: iPhone, BlackBerry, T-Mobile Dash, Droid
+  Known smartphones thus far: iPhone, BlackBerry, T-Mobile Dash, Droid,
+  Samsung
 
 == BOOKS
 
@@ -92,7 +113,7 @@ http://peepcode.com/products/mms2r-pdf
   # required for the example
   require 'fileutils'
 
-  mail = MMS2R.new(Mail.read('some_saved_mail.file'))
+  mail = MMS2R::Media.new(Mail.read('some_saved_mail.file'))
   puts "mail has default carrier subject" if mail.subject.empty?
 
   # access the sender's phone number
@@ -153,14 +174,10 @@ http://peepcode.com/products/mms2r-pdf
 
 == REQUIREMENTS
 
-* Mail
-* Nokogiri (for mms from Sprint)
-* UUIDTools
-
-== OPTIONAL
-
-* exifr - install exifr for exif access on default jpeg or tiff media, and
-          smart phone detection
+* Mail (mail)
+* Nokogiri (nokogiri)
+* UUIDTools (uuidtools)
+* EXIF Reader (exif)
 
 == INSTALL
 
@@ -172,7 +189,7 @@ git clone git://github.com/monde/mms2r.git
 
 == AUTHORS
 
-Copyright (c) 2007-2008 by Mike Mondragon (blog[http://blog.mondragon.cc/])
+Copyright (c) 2007-2010 by Mike Mondragon (blog[http://plasti.cx/])
 
 MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
 
