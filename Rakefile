@@ -11,6 +11,7 @@ end
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "lib")
 require 'mms2r'
 
+Hoe.plugin :bundler
 Hoe.spec('mms2r') do |p|
   p.version        = MMS2R::Media::VERSION
   p.rubyforge_name = 'mms2r'

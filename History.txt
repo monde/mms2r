@@ -1,4 +1,10 @@
+### 3.X.X - TODO
+
+* 1 minor enhancement
+  * bundler assimilated
+
 ### 3.1.0 / 2010-07-09 (Dick "Magic Ears" Knubbler - music producer)
+
 * 8 minor enhancements
   * Detects additional Bell/AT&T domain sbcglobal.net as a handset
   * Detects additional Virgin mobile domains pixmbl.com vmobl.com as a handset
