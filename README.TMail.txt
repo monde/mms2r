@@ -9,3 +9,35 @@ publish point releases for 2.4.X.  But I may not so don't count on it.  Version
 the Mail gem.
 Thank you
 Mike
+
+7/24/2010
+If you want to use Mail instead of TMail in an Rails 2.3 or lower ActionMailer
+this is one way to do it:
+
+http://gist.github.com/486883
+
+
+class MailReceiver < ActionMailer::Base
+
+  # patch ActionMailer::Base to put a ActionMailer::Base#raw_email 
+  # accessor on the created instance
+  class << self
+    alias :old_receive :receive
+    def receive(raw_email)
+      send(:define_method, :raw_email) { raw_email }
+      self.old_receive(raw_email)
+    end
+  end
+
+  ##
+  # Injest email/MMS here
+
+  def receive(tmail)
+    # completely ignore the tmail object rails passes in Rails 2.*
+
+    mail = Mail.new(self.raw_email)
+    mms = MMS2R::Media.new(mail, :logger => Rails.logger)
+
+    # do something
+  end
+end
