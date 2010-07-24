@@ -38,5 +38,11 @@ rescue
   task :rcov => :check_dependencies
 end
 
+RDoc::Task.new do |rdoc|
+  rdoc.title    = "mms2r-#{MMS2R::Media::VERSION}"
+  rdoc.rdoc_dir = 'doc'
+  rdoc.options << '-f' << 'horo'
+  rdoc.options << '--main' << 'README.txt'
+end
 
 # vim: syntax=Ruby
