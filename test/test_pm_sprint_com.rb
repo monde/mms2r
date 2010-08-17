@@ -191,7 +191,6 @@ class TestPmSprintCom < Test::Unit::TestCase
   end
 
   def test_sprint_write_file
-    require 'tempfile'
     mail = mock(:message_id => 'a')
     mail.expects(:from).at_least_once.returns(['joe@pm.sprint.com'])
     mail.expects(:return_path).at_least_once.returns('joe@pm.sprint.com')

@@ -1,14 +1,27 @@
-require 'rubygems'
-require 'set'
-require 'net/http'
-require 'net/https'
-require 'pp'
-require 'tempfile'
-require 'test/unit'
-require 'mocha'
-require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'mms2r')
+# do it like rake http://ozmm.org/posts/do_it_like_rake.html
+begin
+  gem 'test-unit', '= 1.2.3'
+  require 'test/unit'
+rescue NoMethodError
+  require 'rubygems'
+  gem 'test-unit', '= 1.2.3'
+  require 'test/unit'
+end
 
+%W{ set net/http net/https pp tempfile mocha }.each do |g|
+  begin
+    require g
+  rescue LoadError
+    require 'rubygems'
+    require g
+  end
+end
+
+# NOTE when we upgrade to test-unit 2.x.x or greater we'll not need redgreen,
+# it's baked into test-unit
 begin require 'redgreen'; rescue LoadError; end
+
+require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'mms2r')
 
 module MMS2R
   module TestHelper
