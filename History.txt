@@ -1,7 +1,9 @@
-### 3.X.X - TODO
+### 3.2.0 / 2010-08-17 (Antonio "Tony" DiMarco Thunderbottom - bassist)
 
-* 1 minor enhancement
+* 3 minor enhancements
+  * updated readme with latest sites known to use mms2r
   * bundler assimilated
+  * loading rubygems only if it's required, like rake
 
 ### 3.1.0 / 2010-07-09 (Dick "Magic Ears" Knubbler - music producer)
 
