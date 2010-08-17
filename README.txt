@@ -107,8 +107,12 @@ http://peepcode.com/products/mms2r-pdf
 
 == SYNOPSIS
 
-  require 'rubygems'
-  require 'mms2r'
+  begin
+    require 'mms2r'
+  rescue LoadError
+    require 'rubygems'
+    require 'mms2r'
+  end
 
   # required for the example
   require 'fileutils'

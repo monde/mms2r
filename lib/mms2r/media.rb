@@ -21,8 +21,12 @@
 #
 # == Stand Alone Example
 #
-#  require 'rubygems'
-#  require 'mms2r'
+#  begin
+#    require 'mms2r'
+#  rescue LoadError
+#    require 'rubygems'
+#    require 'mms2r'
+#  end
 #  mail = Mail.read("sample-MMS.file")
 #  mms = MMS2R::Media.new(mail)
 #  subject = mms.subject

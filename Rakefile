@@ -1,7 +1,11 @@
 # -*- ruby -*-
 
-require 'rubygems'
-require 'hoe'
+begin
+  require 'hoe'
+rescue LoadError
+  require 'rubygems'
+  require 'hoe'
+end
 
 begin
   require 'rcov/rcovtask'

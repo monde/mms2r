@@ -53,16 +53,15 @@ module MMS2R
 
 end
 
-require 'rubygems'
-gem 'mail', '= 2.2.5'
-require 'mail'
-require 'fileutils'
-require 'pathname'
-require 'tmpdir'
-require 'yaml'
-require 'uuidtools'
-require 'iconv'
-require 'exifr'
+%W{ mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|
+  begin
+    gem 'mail', '= 2.2.5' if g == 'mail'
+    require g
+  rescue LoadError
+    require 'rubygems'
+    require g
+  end
+end
 
 require File.join(File.dirname(__FILE__), 'mail_ext')
 require File.join(File.dirname(__FILE__), 'mms2r', 'media')

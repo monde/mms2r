@@ -5,7 +5,6 @@
 #++
 
 require 'net/http'
-require 'rubygems'
 require 'nokogiri'
 require 'cgi'
 
