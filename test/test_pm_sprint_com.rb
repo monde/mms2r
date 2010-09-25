@@ -213,4 +213,12 @@ class TestPmSprintCom < Test::Unit::TestCase
     assert_equal "", mms.subject
   end
 
+  def test_new_subject
+    mail = mail('sprint-new-image-01.mail')
+    mms = MMS2R::Media.new(mail)
+    assert_equal '2068675309', mms.number
+    assert_equal "pm.sprint.com", mms.carrier
+    assert_equal "", mms.subject
+  end
+
 end
