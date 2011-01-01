@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.3.0'
+    VERSION = '3.3.1'
 
   end
 
