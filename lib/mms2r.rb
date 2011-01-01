@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.2.0'
+    VERSION = '3.3.0'
 
   end
 
@@ -55,7 +55,7 @@ end
 
 %W{ mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|
   begin
-    gem 'mail', '= 2.2.5' if g == 'mail'
+    gem 'mail', '= 2.2.13' if g == 'mail'
     require g
   rescue LoadError
     require 'rubygems'

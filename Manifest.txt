@@ -1,4 +1,6 @@
 .gitignore
+Gemfile
+Gemfile.lock
 History.txt
 Manifest.txt
 README.TMail.txt
@@ -106,6 +108,7 @@ test/fixtures/rogers-canada-mms-01.mail
 test/fixtures/sasktel-image-01.mail
 test/fixtures/sprint-broken-image-01.mail
 test/fixtures/sprint-image-01.mail
+test/fixtures/sprint-new-image-01.mail
 test/fixtures/sprint-pcs-text-01.mail
 test/fixtures/sprint-purged-image-01.mail
 test/fixtures/sprint-text-01.mail

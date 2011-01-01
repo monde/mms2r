@@ -1,7 +1,14 @@
-### 3.2.X / 2010-XX-XX (XXX)
+### 3.3.0 / 2010-12-31 (Charles Foster Offdensen - CFO, dethklok)
+
+* 1 major enhancement
+  * MMS2R::Media::Sprint is now a module that is extended in for processing
+    Sprint content rather than being child class of MMS2R::Media
+    Extension is the strategy to use for overwriting template methods now
 
 * 1 minor enhancement
   * process new Sprint subject - Jason Hooper
+  * new SaskTel mms/sms domain alias sasktel.com
+  * new Virgin Mobile mms/sms domain alias yrmobl.com
 
 ### 3.2.0 / 2010-08-17 (Antonio "Tony" DiMarco Thunderbottom - bassist)
 

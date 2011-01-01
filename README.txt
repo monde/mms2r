@@ -159,7 +159,7 @@ http://peepcode.com/products/mms2r-pdf
   # inspect default media's exif data if exifr gem is installed and default
   # media is a jpeg or tiff
   puts "mail's default media's exif data is:"
-  puts mms.exif.inspect
+  puts mail.exif.inspect
 
   # Block support, process and receive all media types of video.
   mail.process do |media_type, files|
