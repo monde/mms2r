@@ -194,13 +194,13 @@ class TestPmSprintCom < Test::Unit::TestCase
     mail = mock(:message_id => 'a')
     mail.expects(:from).at_least_once.returns(['joe@pm.sprint.com'])
     mail.expects(:return_path).at_least_once.returns('joe@pm.sprint.com')
-    s = MMS2R::Media::Sprint.new(mail, :process => :lazy)
+    mms = MMS2R::Media.new(mail, :process => :lazy)
     type = 'text/plain'
     content = 'foo'
     file = Tempfile.new('sprint')
     file.close
 
-    type, file = s.send(:sprint_write_file, type, content, file.path)
+    type, file = mms.send(:sprint_write_file, type, content, file.path)
     assert_equal 'text/plain', type
     assert_equal content, IO.read(file)
   end

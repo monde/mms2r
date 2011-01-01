@@ -107,17 +107,6 @@ module MMS2R
 
   class MMS2R::Media
 
-    class << self #:nodoc:
-      # alias new so that we can use ::create to select the media processor and
-      # then initialize the new object
-      alias orig_new new
-      def new(mail, opts = {})
-        klass, carrier = MMS2R::Media.create(mail)
-        opts[:domain] = carrier
-        klass.orig_new(mail, opts)
-      end
-    end
-
     # Pass off everything we don't do to the Mail object
     # TODO: refactor to explicit addition a la http://blog.jayfields.com/2008/02/ruby-replace-methodmissing-with-dynamic.html
     def method_missing method, *args, &block
@@ -148,20 +137,6 @@ module MMS2R
     attr_reader :media_dir
 
     ##
-    # Factory method that creates MMS2R::Media products based on the domain
-    # name of the carrier from which the MMS originated.  mail is a Mail
-    # object.
-
-    def self.create(mail)
-      d = lambda{ ['mms2r.media', MMS2R::Media] } #sets a default to detect
-      from_domain = self.domain(mail)
-      processor = MMS2R::CARRIERS.detect(d) do |domain, klass|
-        return klass, domain if from_domain == domain
-      end
-      [MMS2R::Media, from_domain]
-    end
-
-    ##
     # Determine if return-path or from is going to be used to desiginate the
     # origin carrier.  If the domain in the From header is listed in
     # conf/from.yaml then that is the carrier domain.  Else if there is a
@@ -183,7 +158,7 @@ module MMS2R
           ''
         end
 
-      f = File.join(self.conf_dir(), "from.yml")
+      f = File.expand_path(File.join(self.conf_dir(), "from.yml"))
       from = YAML::load_file(f) rescue {}
 
       ret = case
@@ -213,10 +188,11 @@ module MMS2R
       @mail = mail
       @logger = opts[:logger]
       log("#{self.class} created", :info)
-      @carrier = opts[:domain]
+      @carrier = self.class.domain(mail)
       @dir_count = 0
-      @media_dir = File.join(self.tmp_dir(),
-                     "#{self.safe_message_id(@mail.message_id)}_#{UUIDTools::UUID.random_create}")
+      @media_dir = File.expand_path(
+                     File.join(self.tmp_dir(),
+                     "#{self.safe_message_id(@mail.message_id)}_#{UUIDTools::UUID.random_create}"))
       @media = {}
       @was_processed = false
       @number = nil
@@ -226,13 +202,16 @@ module MMS2R
       @default_media = nil
       @default_text = nil
 
-      f = File.join(self.conf_dir(), "aliases.yml")
+      f = File.expand_path(File.join(self.conf_dir(), "aliases.yml"))
       @aliases = YAML::load_file(f) rescue {}
 
       conf = "#{@aliases[@carrier] || @carrier}.yml"
-      f = File.join(self.conf_dir(), conf)
+      f = File.expand_path(File.join(self.conf_dir(), conf))
       c = YAML::load_file(f) rescue {}
       @config = self.class.initialize_config(c)
+
+      processor_module = MMS2R::CARRIERS[@carrier]
+      extend processor_module if processor_module
 
       lazy = (opts[:process] == :lazy) rescue false
       self.process() unless lazy
@@ -475,7 +454,7 @@ module MMS2R
 
     def temp_file(part)
       file_name = filename?(part)
-      File.join(msg_tmp_dir(),File.basename(file_name))
+      File.expand_path(File.join(msg_tmp_dir(),File.basename(file_name)))
     end
 
     ##
@@ -501,7 +480,7 @@ module MMS2R
 
     def msg_tmp_dir()
       @dir_count += 1
-      dir = File.join(@media_dir, "#{@dir_count}")
+      dir = File.expand_path(File.join(@media_dir, "#{@dir_count}"))
       FileUtils.mkdir_p(dir)
       dir
     end
@@ -578,8 +557,9 @@ module MMS2R
         end
       end
 
-      return :handset if File.exist?(File.join(self.conf_dir,
-                                     "#{self.aliases[self.carrier] || self.carrier}.yml"))
+      return :handset if File.exist?( File.expand_path(
+                             File.join(self.conf_dir, "#{self.aliases[self.carrier] || self.carrier}.yml")
+                         ) )
 
       :unknown
     end
@@ -603,7 +583,7 @@ module MMS2R
     # Get the temporary directory where media files are written to.
 
     def self.tmp_dir
-      @@tmp_dir ||= File.join(Dir.tmpdir, (ENV['USER'].nil? ? '':ENV['USER']), 'mms2r')
+      @@tmp_dir ||= File.expand_path(File.join(Dir.tmpdir, (ENV['USER'].nil? ? '':ENV['USER']), 'mms2r'))
     end
 
     ##
@@ -616,7 +596,7 @@ module MMS2R
     # Get the directory where conf files are stored.
 
     def self.conf_dir
-      @@conf_dir ||= File.join(File.dirname(__FILE__), '..', '..', 'conf')
+      @@conf_dir ||= File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'conf'))
     end
 
     ##
@@ -650,7 +630,7 @@ module MMS2R
     # configuration.
 
     def self.initialize_config(c)
-      f = File.join(self.conf_dir(), "mms2r_media.yml")
+      f = File.expand_path(File.join(self.conf_dir(), "mms2r_media.yml"))
       conf = YAML::load_file(f) rescue {}
       conf['ignore'] ||= {} unless conf['ignore']
       conf['transform'] = {} unless conf['transform']

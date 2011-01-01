@@ -3,8 +3,6 @@ require File.join(File.expand_path(File.dirname(__FILE__)), "test_helper")
 class TestMms2rMedia < Test::Unit::TestCase
   include MMS2R::TestHelper
 
-  class MMS2R::Media::NullCarrier < MMS2R::Media; end
-
   def use_temp_dirs
     MMS2R::Media.tmp_dir = @tmpdir
     MMS2R::Media.conf_dir = @confdir
@@ -121,50 +119,6 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_not_nil config['number'].first == 'from'
   end
 
-  def test_create_with_default_processor
-    mail = mock()
-    mail.expects(:from).at_least_once.returns(['joe@unknown.example.com'])
-    mail.expects(:return_path).at_least_once.returns('joe@unknown.example.com')
-    mms = MMS2R::Media.create(mail)
-    assert_equal [MMS2R::Media, 'unknown.example.com'] , mms
-  end
-
-  def test_create_with_special_processor
-    MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
-    mail = mock()
-    mail.expects(:from).at_least_once.returns(['joe@null.example.com'])
-    mail.expects(:return_path).at_least_once.returns('joe@null.example.com')
-    mms = MMS2R::Media.create(mail)
-    assert_equal [MMS2R::Media::NullCarrier, 'null.example.com'], mms
-  end
-
-  def test_create_with_special_processor_and_return_path
-    MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
-    mail = mock()
-    mail.expects(:from).at_least_once.returns([])
-    mail.expects(:return_path).at_least_once.returns('joe@null.example.com')
-    mms = MMS2R::Media.create(mail)
-    assert_equal [MMS2R::Media::NullCarrier, 'null.example.com'], mms
-  end
-
-  def test_create_should_fail_gracefully_with_broken_from
-    mail = mock()
-    mail.expects(:from).at_least_once.returns(nil)
-    mail.expects(:return_path).at_least_once.returns('joe@unknown.example.com')
-    assert_nothing_raised { MMS2R::Media.create(mail) }
-  end
-
-  def test_aliased_new_returns_custom_processor_instance
-    MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
-    mail = stub_mail
-    mail.expects(:from).at_least_once.returns(['joe@null.example.com'])
-
-    mms = MMS2R::Media.new(mail)
-    assert_not_nil mms
-    assert_equal MMS2R::Media::NullCarrier, mms.class
-    assert_equal true, mms.respond_to?(:process)
-  end
-
   def test_aliased_new_returns_default_processor_instance
     mms = MMS2R::Media.new stub_mail
     assert_not_nil mms
@@ -184,8 +138,14 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_default_processor_initialize_tries_to_open_config_for_carrier
-    f = File.join(MMS2R::Media.conf_dir, 'example.com.yml')
-    YAML.expects(:load_file).once.with(f)
+    mms_yaml = File.expand_path(File.join(MMS2R::Media.conf_dir, 'mms2r_media.yml'))
+    aliases_yaml = File.expand_path(File.join(MMS2R::Media.conf_dir, 'aliases.yml'))
+    from_yaml = File.expand_path(File.join(MMS2R::Media.conf_dir, 'from.yml'))
+    example_yaml = File.expand_path(File.join(MMS2R::Media.conf_dir, 'example.com.yml'))
+    YAML.expects(:load_file).at_least_once.with(mms_yaml).returns({})
+    YAML.expects(:load_file).at_least_once.with(aliases_yaml).returns({})
+    YAML.expects(:load_file).at_least_once.with(from_yaml).returns([])
+    YAML.expects(:load_file).at_least_once.with(example_yaml)
     mms = MMS2R::Media.new stub_mail
   end
 
@@ -519,7 +479,6 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_add_file
-    MMS2R.register('null.example.com', MMS2R::Media::NullCarrier)
     mail = stub_mail
     mail.stubs(:from).returns(['joe@null.example.com'])
 

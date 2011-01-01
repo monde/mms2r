@@ -25,7 +25,7 @@ module MMS2R
     # The default subject on these messages from the
     # carrier is "You have new Picture Mail!"
 
-    class Sprint < MMS2R::Media
+    module Sprint
 
       ##
       # Override process() because Sprint doesn't attach media (images, video,
