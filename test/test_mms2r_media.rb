@@ -321,6 +321,13 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal "hello world", mms.body
   end
 
+  def test_body_when_html
+    mms = MMS2R::Media.new stub_mail(:body => '')
+    temp_big = temp_text_file("<html><head><title>hello</title></head><body><p>world</p><p>teapot</p><body></html>")
+    mms.stubs(:default_html).returns(File.new(temp_big))
+    assert_equal "hello world teapot", mms.body
+  end
+
   def test_default_text
     mms = MMS2R::Media.new stub_mail
     temp_big = temp_text_file("hello world")
@@ -332,6 +339,19 @@ class TestMms2rMedia < Test::Unit::TestCase
     # second time through shouldn't setup the @default_text by calling attachment
     mms.expects(:attachment).never
     assert_equal temp_big, mms.default_text.local_path
+  end
+
+  def test_default_html
+    mms = MMS2R::Media.new stub_mail(:body => '')
+    temp_big = temp_text_file("<html><head><title>hello</title></head><body><p>world</p><p>teapot</p><body></html>")
+    temp_small = temp_text_file("<html><head><title>hello</title></head><body>world<body></html>")
+    mms.stubs(:media).returns({'text/html' => [temp_small, temp_big]})
+
+    assert_equal temp_big, mms.default_html.local_path
+
+    # second time through shouldn't setup the @default_text by calling attachment
+    mms.expects(:attachment).never
+    assert_equal temp_big, mms.default_html.local_path
   end
 
   def test_default_media

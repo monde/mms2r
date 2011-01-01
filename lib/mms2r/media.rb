@@ -201,6 +201,7 @@ module MMS2R
       @exif = nil
       @default_media = nil
       @default_text = nil
+      @default_html = nil
 
       f = File.expand_path(File.join(self.conf_dir(), "aliases.yml"))
       @aliases = YAML::load_file(f) rescue {}
@@ -257,12 +258,17 @@ module MMS2R
     end
 
     # Convenience method that returns a string including all the text of the
-    # first text/plain file found.  Returns empty string if no body text
-    # is found.
+    # default text/plain file found.  If the plain text is blank then it returns
+    # stripped down version of the title and body of default text/html.  Returns
+    # empty string if no body text is found.
 
     def body
       text_file = default_text
       @body = text_file ? IO.readlines(text_file.path).join.strip : ""
+      if @body.blank? && html_file = default_html
+        html = Nokogiri::HTML(IO.read(html_file.path))
+        @body = (html.xpath("//head/title").map(&:text) + html.xpath("//body/*").map(&:text)).join(" ")
+      end
       @body
     end
 
@@ -289,6 +295,18 @@ module MMS2R
 
     def default_text
       @default_text ||= attachment(['text/plain'])
+    end
+
+    # Returns a File with the most likely candidate that is html, or nil
+    # otherwise.  It also adds singleton methods to the File object so it can be
+    # used in place of a CGI upload (local_path, original_filename, size, and
+    # content_type) such as in conjunction with AttachmentFu.  The largest file
+    # found in terms of bytes is returned.
+    #
+    # Returns nil if there are not any text Files found
+
+    def default_html
+      @default_html ||= attachment(['text/html'])
     end
 
     ##

@@ -10,9 +10,9 @@ module MMS2R
   # A hash of MMS2R processors keyed by MMS carrier domain.
 
   CARRIERS = {}
-  
+
   ##
-  # Registers a class as a processor for a MMS domain.  Should only be 
+  # Registers a class as a processor for a MMS domain.  Should only be
   # used in special cases such as MMS2R::Media::Sprint for 'pm.sprint.com'
 
   def self.register(domain, processor_class)
@@ -48,9 +48,22 @@ module MMS2R
   # Combined w/ the method_missing delegation, this should behave as an enhanced Mail object, more or less.
   def self.parse raw_mail
     mail = Mail.new raw_mail
-    MMS2R::Media.new(mail)
-  end
+    MMS2R::Media.new(mail) end
 
+end
+
+unless Object.respond_to?(:blank?)
+  class Object
+    def blank?
+      if respond_to?(:empty?) && respond_to?(:strip)
+        empty? or strip.empty?
+      elsif respond_to?(:empty?)
+        empty?
+      else
+        !self
+      end
+    end
+  end
 end
 
 %W{ mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|

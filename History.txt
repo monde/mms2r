@@ -1,3 +1,9 @@
+### 3.3.1 / 2011-01-01 (Reverend Aslaug Wartooth (deceased), Toki's dad)
+
+* 2 minor enhancements
+  * new method #default_html returns the default html attachment
+  * #body will return the default plain text, or default stripped html text
+
 ### 3.3.0 / 2010-12-31 (Charles Foster Offdensen - CFO, dethklok)
 
 * 1 major enhancement
