@@ -79,6 +79,7 @@ Corpus of smart phones known to MMS2R:
 As Seen On The Internets - sites known to be using MMS2R in some fashion
 
 * twitpic.com [http://www.twitpic.com/]
+* Simplton [http://simplton.com/]
 * fanchatter.com [http://www.fanchatter.com/]
 * camura.com [http://www.camura.com/]
 * eachday.com [http://www.eachday.com/]
