@@ -1,6 +1,6 @@
 ---
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /^You have received a Multimedia Message$/i
     - ""
 number:
@@ -8,7 +8,7 @@ number:
   - /^([^@]+)@.*/
   - "\1"
 ignore:
-  text/html: 
+  text/html:
   - /.*/m
   text/plain:
   - /\AA New Photo\/Video Message.\s+Click Go\/View to see now http/im

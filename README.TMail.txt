@@ -19,7 +19,7 @@ http://gist.github.com/486883
 
 class MailReceiver < ActionMailer::Base
 
-  # patch ActionMailer::Base to put a ActionMailer::Base#raw_email 
+  # patch ActionMailer::Base to put a ActionMailer::Base#raw_email
   # accessor on the created instance
   class << self
     alias :old_receive :receive

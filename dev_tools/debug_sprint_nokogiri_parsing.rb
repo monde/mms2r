@@ -26,7 +26,7 @@ puts "NUMBER: #{number}"
 text = doc.search("/html/body//pre").first.inner_html
 puts "TEXT: #{text}"
 
-# just see what they say this MMS is it really doesn't mean anything, the 
+# just see what they say this MMS is it really doesn't mean anything, the
 # content is in faux image with a RECIPIENT in its URI path
 text = doc.search("/html/body//tr[2]/td//b")
 case text.text

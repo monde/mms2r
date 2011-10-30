@@ -22,7 +22,7 @@ X-Mms-MMS-Version: 1.0
 X-Mailer: Yospace Technologies Ltd. EZReply 1-0-1-1
 
 ------=_Part_19636_8754046.1203776456769
-Content-Type: multipart/alternative; 
+Content-Type: multipart/alternative;
 	boundary="----=_Part_19635_7860350.1203776456754"
 
 ------=_Part_19635_7860350.1203776456754
@@ -113,14 +113,14 @@ font-style: normal;
 font-weight: normal;
 }
 </style>
-</head><body>      
+</head><body>
 <table width="670" border="0" bgcolor="#999999" cellspacing="1" cellpadding="0">
 <tr>
-<td> 
-<img border="0" height="104" width="670" alt="Your picture message." src="cid:images/tpm.jpg">      
+<td>
+<img border="0" height="104" width="670" alt="Your picture message." src="cid:images/tpm.jpg">
 <table width="100%" bgcolor="white" border="0" cellspacing"0" cellpadding="8">
 <tr>
-<td> 
+<td>
 <table cellpadding="0" cellspacing="0" border="0">
 <tr>
 <td><img border="0" alt="" height="10" width="1" src="cid:images/vf9.gif"></td>
@@ -173,9 +173,9 @@ You can use the once-only free reply within 5 days from the date of this message
 <br>
 <br>
 If you're a 3 customer you can find more information about sending and receiving picture, video and audio messages from your video mobile by visiting <a href="http://www.three.co.uk">www.three.co.uk</a> or <a href="http://www.three.ie">www.three.ie</a>.
-</div>      
-</td> </tr> </table> 
-</td> </tr> </table> 
+</div>
+</td> </tr> </table>
+</td> </tr> </table>
 <div style="display:none">
 <img src="cid:images/vf5.jpg"></div>
     </body>

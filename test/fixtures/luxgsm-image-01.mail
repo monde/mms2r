@@ -18,12 +18,12 @@ From: +5551234 <+5551234/TYPE=PLMN@mms.luxgsm.lu>
 To: tommy.tutone@example.com
 Subject: MMS2R - LUXGSM
 Mime-Version: 1.0
-Content-Type: multipart/mixed; 
+Content-Type: multipart/mixed;
 	boundary="----=_Part_3189_7839582.1195059640065"
 
 
 ------=_Part_3189_7839582.1195059640065
-Content-Type: multipart/alternative; 
+Content-Type: multipart/alternative;
 	boundary="----=_Part_3191_16589396.1195059640154"
 
 ------=_Part_3191_16589396.1195059640154
@@ -35,7 +35,7 @@ Vodafone MMS-to-Email Service
 You have received a picture message from mobile phone number +5551234
 
 Subject: MMS2R - LUXGSM
-CC:  
+CC:
 
 
 [picture inserted -- see Drinks.gif in the attachments]
@@ -47,7 +47,7 @@ To send a reply, <a href="http://composer.luxgsm.lu">click here to visit our on-
 ------=_Part_3191_16589396.1195059640154--
 
 ------=_Part_3189_7839582.1195059640065
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_3190_25162319.1195059640153"
 
 ------=_Part_3190_25162319.1195059640153

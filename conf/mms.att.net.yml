@@ -1,6 +1,6 @@
 ---
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /^Multimedia message$/i
     - ""
   - - /\A(.+?)\s+--\s+=+\s+This mobile text message is brought to you by AT&T.*/im

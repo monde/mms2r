@@ -18,7 +18,7 @@ Received: from gate1.gate.sat.mlsrvr.com (gate.sat.emailsrvr.com [66.216.121.101
 	for <go@example.com>; Tue, 24 Apr 2007 19:40:44 -0400 (EDT)
 X-Virus-Scanned: OK, w
 X-Spam-Score: -
-X-Spam-Level: 
+X-Spam-Level:
 X-Spam-Status: No, score=x tagged_above=-100 required=10 WHITELISTED tests=[]
 Received: from atlmtaow02.cingularme.com (atlmtaow02.cingularme.com [66.102.165.7])
 	by gate1.gate.sat.mlsrvr.com (SMTP Server) with ESMTP id 4C1F71B4006

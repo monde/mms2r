@@ -533,7 +533,7 @@ module MMS2R
     end
 
     ##
-    # Best guess of the mobile device type.  Simple heuristics thus far by 
+    # Best guess of the mobile device type.  Simple heuristics thus far by
     # inspecting mail headers and jpeg/tiff exif metadata.
     # Smart phone types are
     # :iphone :blackberry :dash :droid

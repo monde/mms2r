@@ -5,7 +5,7 @@ ignore:
   text/html:
    - mms.smil.txt
    - /<html>\s+<head>\s+<title>Picture Messaging<\/title>/m
-  image/gif: 
+  image/gif:
   - spacer.gif
   - header.gif
   - bluebar.gif

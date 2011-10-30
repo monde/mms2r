@@ -20,11 +20,11 @@ Subject: You have a PXT from 55512345
 Mime-Version: 1.0
 Content-Type: multipart/mixed;
 	boundary="----=_Part_173135_8335622.1193696731615"
-X-Spam-Checker-Version: SpamAssassin 3.0.0 (2004-09-13) on 
+X-Spam-Checker-Version: SpamAssassin 3.0.0 (2004-09-13) on
 	ismx03ftc.vodafone.co.nz
 X-Spam-Level: *
 X-Spam-Status: No, score=1.2 required=5.0 tests=ALL_TRUSTED,AWL,BAYES_50,
-	FROM_ALL_NUMS,HTML_MESSAGE,HTML_TAG_EXIST_TBODY,SUBJ_HAS_UNIQ_ID 
+	FROM_ALL_NUMS,HTML_MESSAGE,HTML_TAG_EXIST_TBODY,SUBJ_HAS_UNIQ_ID
 	autolearn=no version=3.0.0
 
 ------=_Part_173135_8335622.1193696731615
@@ -46,22 +46,22 @@ Content-Transfer-Encoding: 7bit
           <TD bgColor=#ffffff>
             <P></P>
             <CENTER></CENTER>
-            <P align=left><BR><FONT face="Arial, Helvetica, sans-serif" 
-            size=2>You've received either a PXT or video PXT. To view your PXT 
+            <P align=left><BR><FONT face="Arial, Helvetica, sans-serif"
+            size=2>You've received either a PXT or video PXT. To view your PXT
             simply open the attached files, each item will be attached separately.
-            For example, if you have received a PXT containing a picture and 
+            For example, if you have received a PXT containing a picture and
             a text message you will have two files attached.</FONT></P>
 
-            <P align=left><BR><FONT face="Arial, Helvetica, sans-serif" 
-            size=2>If your message is a PXT in most cases any media player 
-            should be able to open it. If you've received a video PXT 
-            (this will have the ending ".3gp"), 
-            or if you have received a sound or image file ending in .amr, .wbmp, .iMelody, or .gif 
+            <P align=left><BR><FONT face="Arial, Helvetica, sans-serif"
+            size=2>If your message is a PXT in most cases any media player
+            should be able to open it. If you've received a video PXT
+            (this will have the ending ".3gp"),
+            or if you have received a sound or image file ending in .amr, .wbmp, .iMelody, or .gif
             you will need to install a special media player to play it.</FONT></P>
 
-            <P align=left><BR><FONT face="Arial, Helvetica, sans-serif" 
-            size=2>In the case of .3gp, .amr or .gif files you can <A 
-            href="http://www.apple.com/quicktime/player">download QuickTime</A> free of charge, 
+            <P align=left><BR><FONT face="Arial, Helvetica, sans-serif"
+            size=2>In the case of .3gp, .amr or .gif files you can <A
+            href="http://www.apple.com/quicktime/player">download QuickTime</A> free of charge,
             which is compatible with both PC and Mac computers.  </FONT></P>
             <P align=center><BR></P></TD></TR>
         <TR>

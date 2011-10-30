@@ -1,9 +1,9 @@
 ---
 ignore:
-  image/jpeg: 
+  image/jpeg:
   - /^masthead.jpg$/i
   - /^logo.jpg$/i
-  image/gif: 
+  image/gif:
   - /^dottedline350.gif$/i
   - /^dottedline600.gif$/i
   - /^dottedLine_350.gif$/i
@@ -13,7 +13,7 @@ ignore:
   - /^audio.gif$/i
   - /^tmobilelogo.gif$/i
   - /^tmobilespace.gif$/i
-  text/html: 
+  text/html:
    - /<html>\s+<head>\s+<title>T-Mobile<\/title>/m
    - /<title>MMS E-Mail<\/title>/m
 
@@ -22,7 +22,7 @@ number:
   - /^"?([^\/|^@]+).*/
   - "\1"
 
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /.*\s+Text:\s+(.*?)\s+-+\s.*/im
     - "\1"

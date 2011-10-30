@@ -4,7 +4,7 @@ To: hello@example.com
 Message-Id: <6636176.4567095920490.JavaMail.wluser@xyzab01>
 Subject: Multimedia message
 Mime-Version: 1.0
-Content-Type: multipart/mixed; 
+Content-Type: multipart/mixed;
 	boundary=mimepart_46b78c9dd2de6_3f318b82120
 Delivery-Date: Thu, 02 Aug 2007 23:05:30 +0000
 X-Mms-Priority: 1

@@ -12,14 +12,14 @@ Authentication-Results: mx.google.com; spf=pass (google.com: domain of noreply@r
 Received: by rubyforge.org (Postfix, from userid 502)
 	id 037671588057; Mon,  1 Dec 2008 14:21:45 -0500 (EST)
 To: noreply@rubyforge.org
-From:  <noreply@rubyforge.org> 
+From:  <noreply@rubyforge.org>
 Subject: [ mms2r-Patches-22951 ] iPhone default subject line varient
 Content-type: text/plain; charset=UTF-8
 Message-Id: <20081201192146.037671588057@rubyforge.org>
 Date: Mon,  1 Dec 2008 14:21:45 -0500 (EST)
 
 Patches item #22951, was opened at 2008-11-23 14:47
-You can respond by visiting: 
+You can respond by visiting:
 http://rubyforge.org/tracker/?func=detail&atid=11789&aid=22951&group_id=3065
 
 Category: None
@@ -46,5 +46,5 @@ b/c apparently that's a variation of their default subject too
 
 ----------------------------------------------------------------------
 
-You can respond by visiting: 
+You can respond by visiting:
 http://rubyforge.org/tracker/?func=detail&atid=11789&aid=22951&group_id=3065

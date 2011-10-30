@@ -63,7 +63,7 @@ Content-Type: text/html;charset="utf-8"
             <tr>
               <td bgcolor="#FFFFFF">
                 <table width="100%" border="0" align="center" cellpadding="1" cellspacing="20">
-                  
+
                   <tr>
                     <td width="100%" bgcolor="#999999">
                       <table width="100%" border="0" align="center" cellpadding="2" cellspacing="5" bgcolor="#FFFFFF">
@@ -75,8 +75,8 @@ Content-Type: text/html;charset="utf-8"
                       </table>
                     </td>
                   </tr>
-                  
-                  
+
+
                 </table>
               </td>
             </tr>

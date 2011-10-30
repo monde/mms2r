@@ -2,10 +2,10 @@
 ignore:
   text/html:
   - /This message is from\s+a Virgin Mobile user. Enjoy./mi
-  text/plain: 
+  text/plain:
   - /^This is an MMS message\.$/i
 
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /(.*?)-+\s+Sent by Text Messaging from a mobile device.*/im
     - "\1"

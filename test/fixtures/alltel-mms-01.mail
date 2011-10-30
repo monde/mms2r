@@ -18,10 +18,10 @@ Date: Sun, 24 Feb 2008 13:43:41 -0600 (CST)
 From: 1234567890@message.alltel.com
 To: test@example.com
 Mime-Version: 1.0
-Content-Type: multipart/mixed; 
+Content-Type: multipart/mixed;
 	boundary="----=_Part_422757_991002.1203882226618"
 X-Mms-Delivery-Report: no
-X-Mms-Delivery-Time: Sun, 24 Feb 08 13:43:41 CST 
+X-Mms-Delivery-Time: Sun, 24 Feb 08 13:43:41 CST
 X-Mms-MMS-Version: 1.0
 X-Mms-Message-Class: Personal
 X-Mms-Message-Type: m-send-req
@@ -35,11 +35,11 @@ X-Original-From: 1234567890@mms.alltel.com
 X-Original-Return-Path: <11234567890@mms.alltel.com>
 
 ------=_Part_422757_991002.1203882226618
-Content-Type: multipart/related; type="application/smil"; 
+Content-Type: multipart/related; type="application/smil";
 	boundary="----=_Part_674446_6968293.1203882225898"; start="<mms.smil.txt>"
 
 ------=_Part_674446_6968293.1203882225898
-Content-Type: multipart/alternative; name=mms; 
+Content-Type: multipart/alternative; name=mms;
 	boundary="----=_Part_422756_23361344.1203882226615"
 Content-Disposition: attachment; filename=mms
 
@@ -49,7 +49,7 @@ Content-Transfer-Encoding: 7bit
 
 <html>
 	<head>
-		<title>Picture Messaging</title> 
+		<title>Picture Messaging</title>
 		<style>
 		  body {
 			margin: 0px;
@@ -98,7 +98,7 @@ Content-Transfer-Encoding: 7bit
 						<tr>
 							<td width="333" colspan="3"><img src="cid:divider.gif" width="333"></td>
 						</tr>
-						
+
 
 						<tr>
 							<td width="333" colspan="4"><img src="cid:spacer.gif" width="333" height="1"></td>
@@ -114,7 +114,7 @@ Content-Transfer-Encoding: 7bit
 			</tr>
 			<tr>
 				<td> <img src="cid:spacer.gif" width="125" height="1" alt=""></td>
-				<td> <img src="cid:spacer.gif" width="208" height="1" alt=""></td> 
+				<td> <img src="cid:spacer.gif" width="208" height="1" alt=""></td>
 				<td> <img src="cid:spacer.gif" width="301" height="1" alt=""></td>
 			</tr>
 	</table>
@@ -248,7 +248,7 @@ FKYpTFKYpTFKYpTFKYpTFKYpTFKYpTFKYpTFKYpTFKYpTFKYpTFKYpX/2Q==
 ------=_Part_674446_6968293.1203882225898--
 
 ------=_Part_422757_991002.1203882226618
-Content-Type: multipart/mixed; 
+Content-Type: multipart/mixed;
 	boundary="----=_Part_422755_28689369.1203882226576"
 
 ------=_Part_422755_28689369.1203882226576

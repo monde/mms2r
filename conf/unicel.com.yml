@@ -1,6 +1,6 @@
 ---
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /^Unicel$/i
     - ""
 

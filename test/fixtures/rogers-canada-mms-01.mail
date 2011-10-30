@@ -15,11 +15,11 @@ To: tester@example.com
 Subject: You have received a Picture Message from your Rogers Wireless
  friend, mobile number 1234567890.
 MIME-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_212382_5518036.1203977554669"
 
 ------=_Part_212382_5518036.1203977554669
-Content-Type: multipart/alternative; 
+Content-Type: multipart/alternative;
 	boundary="----=_Part_212381_7544934.1203977554669"
 
 ------=_Part_212381_7544934.1203977554669

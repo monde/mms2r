@@ -1,8 +1,8 @@
 ---
 ignore:
-  text/html: 
+  text/html:
    - /Diese Nachricht wurde Ihnen von einem Handy mit der Nummer/im
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /.*bermittelt.\s+(.+)\s+Wenn Sie mehr.*/im
     - "\1"

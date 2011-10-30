@@ -18,7 +18,7 @@ Reply-To: 98206867309 <98206867309@mms.mobileiam.ma>
 To: test@example.com
 Subject: Multimedia message
 Mime-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_334330_22142165.1204940748519"
 X-Mms-MMS-Version: 16
 X-Mms-Priority: 1

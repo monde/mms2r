@@ -15,8 +15,8 @@ Reply-To: 22222222222__32906847.3348371204910134256.JavaMail.mmsfdj0dtrl@mms.mtn
 To: test@example.com
 Message-ID: <4518285.3348401204910134268.JavaMail.mms@mms5.mms.mtn.co.za>
 MIME-Version: 1.0
-Content-Type: multipart/related; 
-	boundary="----=_Part_110824_23402415.1204910134255"; 
+Content-Type: multipart/related;
+	boundary="----=_Part_110824_23402415.1204910134255";
 	type="text/html"
 Importance: Normal
 X-MMS-Message-Type: MM4_forward.REQ

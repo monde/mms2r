@@ -1,12 +1,12 @@
 ---
 ignore:
-  text/html: 
+  text/html:
   - /.*/im
-  text/plain: 
+  text/plain:
   - /^You have received a New Message/i
-  image/gif: 
+  image/gif:
   - /.*/im
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /^A Picture\/Video Message!$/i
     - ""

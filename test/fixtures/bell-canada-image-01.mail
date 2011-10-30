@@ -14,11 +14,11 @@ From: 2068675309@txt.bell.ca
 To: tommy.tutone@example.com
 Subject: A Picture/Video Message!
 MIME-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_84000_18395600.1220831395069"
 
 ------=_Part_84000_18395600.1220831395069
-Content-Type: multipart/alternative; 
+Content-Type: multipart/alternative;
 	boundary="----=_Part_83999_4375329.1220831395069"
 
 ------=_Part_83999_4375329.1220831395069
@@ -365,9 +365,9 @@ Content-Transfer-Encoding: 7bit
      This module declares many of the common attributes for the XHTML DTD.
      %NS.decl.attrib; is declared in the XHTML Qname module.
 
-	 Note that this file was extended in XHTML Modularization Second Edition to 
+	 Note that this file was extended in XHTML Modularization Second Edition to
 	 include declarations of "global" versions of the attribute collections.
-	 The global versions of the attributes are for use on elements in other 
+	 The global versions of the attributes are for use on elements in other
 	 namespaces.  The global version of "common" includes the xmlns declaration
 	 for the prefixed version of the xhtml namespace.  If you are only using a
 	 specific attribute or an individual attribute collection, you must also
@@ -641,7 +641,7 @@ Content-Transfer-Encoding: 7bit
      existing ISO 8879 entity names. ISO 10646 character numbers
      are given for each character, in hex. values are decimal
      conversions of the ISO 10646 values and refer to the document
-     character set. Names are Unicode names. 
+     character set. Names are Unicode names.
 -->
 <!-- Latin Extended-B -->
 <!-- latin small letter f with hook = function
@@ -761,7 +761,7 @@ Content-Transfer-Encoding: 7bit
 <!-- upwards double arrow, U+21D1 ISOamsa -->
 <!-- rightwards double arrow,
                                      U+21D2 ISOtech -->
-<!-- Unicode does not say this is the 'implies' character but does not have 
+<!-- Unicode does not say this is the 'implies' character but does not have
      another character with this function so rArr can be used for 'implies'
      as ISOtech suggests -->
 <!-- downwards double arrow, U+21D3 ISOamsa -->
@@ -832,11 +832,11 @@ Content-Transfer-Encoding: 7bit
 <!-- right floor, U+230B ISOamsc  -->
 <!-- left-pointing angle bracket = bra,
                                      U+2329 ISOtech -->
-<!-- lang is NOT the same character as U+003C 'less than sign' 
+<!-- lang is NOT the same character as U+003C 'less than sign'
      or U+2039 'single left-pointing angle quotation mark' -->
 <!-- right-pointing angle bracket = ket,
                                      U+232A ISOtech -->
-<!-- rang is NOT the same character as U+003E 'greater than sign' 
+<!-- rang is NOT the same character as U+003E 'greater than sign'
      or U+203A 'single right-pointing angle quotation mark' -->
 <!-- Geometric Shapes -->
 <!-- lozenge, U+25CA ISOpub -->
@@ -865,7 +865,7 @@ Content-Transfer-Encoding: 7bit
      existing ISO 8879 entity names. ISO 10646 character numbers
      are given for each character, in hex. values are decimal
      conversions of the ISO 10646 values and refer to the document
-     character set. Names are Unicode names. 
+     character set. Names are Unicode names.
 -->
 <!-- C0 Controls and Basic Latin -->
 <!--  quotation mark, U+0022 ISOnum -->
@@ -1260,7 +1260,7 @@ Content-Transfer-Encoding: 7bit
 
      This DTD module is identified by the PUBLIC and SYSTEM identifiers:
 
-       PUBLIC "-//W3C//ELEMENTS XHTML Basic Forms 1.0//EN"  
+       PUBLIC "-//W3C//ELEMENTS XHTML Basic Forms 1.0//EN"
        SYSTEM "http://www.w3.org/MarkUp/DTD/xhtml-basic-form-1.mod"
 
      Revisions:
@@ -1269,8 +1269,8 @@ Content-Transfer-Encoding: 7bit
 <!-- Basic Forms
 
      This forms module is based on the HTML 3.2 forms model, with
-     the WAI-requested addition of the label element. While this 
-     module essentially mimics the content model and attributes of 
+     the WAI-requested addition of the label element. While this
+     module essentially mimics the content model and attributes of
      HTML 3.2 forms, the element types declared herein also include
      all HTML 4 common attributes.
 
@@ -1482,7 +1482,7 @@ Content-Transfer-Encoding: 7bit
      Revisions:
      (none)
      ....................................................................... -->
-<!-- Target 
+<!-- Target
 
         target
 
@@ -1555,8 +1555,8 @@ Content-Transfer-Encoding: 7bit
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <style type="text/css">
-    body  Verdana, Arial, sans-serif; font-size: 8pt 
-    td  Verdana, Arial, sans-serif; font-size: 8pt 
+    body  Verdana, Arial, sans-serif; font-size: 8pt
+    td  Verdana, Arial, sans-serif; font-size: 8pt
   </style>
   </head>
   <body leftmargin="0" topmargin="0">

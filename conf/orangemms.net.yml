@@ -2,11 +2,11 @@
 ignore:
   application/smil:
   - /\A<smil><head><layout><root-layout height=/m
-  text/plain: 
+  text/plain:
   - banniere.txt
   - /\A--\s+This Orange Multi Media Message was sent wirefree from an Orange MMS.*/mi
-transform: 
-  text/plain: 
+transform:
+  text/plain:
   - - /^Orange UK MMS$/i
     - ""
   - - /^Wiadomo\303\205\302\233\303\204\302\207 multimedialna\.$/i

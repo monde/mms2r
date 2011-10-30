@@ -3,7 +3,7 @@ From: "someuser@pm.sprint.com" <someuser@pm.sprint.com>
 To: tommytutone@example.com
 Subject: You have new Picture Mail!
 MIME-Version: 1.0
-Content-Type: multipart/alternative; 
+Content-Type: multipart/alternative;
 	boundary="----=_Part_012345_67890123.4567890123456"
 X-Priority: 3
 X-MSMail-Priority: Normal
@@ -33,7 +33,7 @@ Content-Transfer-Encoding: 7bit
    &lt;messageContents type=&quot;PICTURE&quot;&gt;
       &lt;messageText&gt;&lt;/messageText&gt;
       &lt;mediaItems&gt;
-         &lt;mediaItem id=&quot;1&quot;&gt;                        
+         &lt;mediaItem id=&quot;1&quot;&gt;
             &lt;title&gt;&lt;/title&gt;
             &amp;lt;url&amp;gt;http://pictures.sprintpcs.com/getMMBOXMessageMedia?id=Xw1004H8sLv6S3x76lVPYvc9HWuygho0mqG1a5IEKWLR8s8O0GEqXAmk5gW%2FZUWGqyw0fwJJvr7U%0AtWtQs5%2FZA7tmYNq7KKkBMqlL64JVNH%2BGkNKbb8WqPL%2FsrHZdYUVet3SRzN1GfrfUo%2BpWfjCBBg%3D%3D%0A&amp;lt;/url&amp;gt;
 

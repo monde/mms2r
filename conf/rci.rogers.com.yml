@@ -8,7 +8,7 @@ ignore:
   - /Picture from your Rogers Wireless friend/im
 
 transform:
-  text/plain: 
+  text/plain:
   - - /^You have received a Picture Message from your Rogers Wireless.*/i
     - ""
 

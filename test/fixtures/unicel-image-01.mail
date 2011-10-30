@@ -9,7 +9,7 @@ Received: from mail.rccw.com (mail.unicel.com [63.109.157.69])
         Sun, 21 Sep 2008 14:22:51 -0700 (PDT)
 Received-SPF: pass (google.com: best guess record for domain of joeexample@unicel.com designates 63.109.157.69 as permitted sender) client-ip=63.109.157.69;
 Authentication-Results: mx.google.com; spf=pass (google.com: best guess record for domain of joeexample@unicel.com designates 63.109.157.69 as permitted sender) smtp.mail=joeexample@unicel.com
-X-IronPort-AV: E=Sophos;i="4.32,442,1217826000"; 
+X-IronPort-AV: E=Sophos;i="4.32,442,1217826000";
    d="jpg'145?scan'145,208,145";a="94699573"
 Received: from unknown (HELO rccsmwtx.intrcc.com) ([10.41.4.152])
   by mail.intrcc.com with ESMTP; 21 Sep 2008 16:22:48 -0500

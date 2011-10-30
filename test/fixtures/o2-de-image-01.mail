@@ -18,7 +18,7 @@ From: o2.5551234@mms.o2online.de
 To: tommy.tutone@example.com
 Subject: this is a subject
 Mime-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_18025_26740874.1195061691966"
 X-Mms-MMS-Version: 18
 X-Mms-Priority: 1
@@ -34,7 +34,7 @@ X-Send-From: o2.5551234@mms.o2online.de
 Reply-To: o2.5551234@mms.o2online.de
 
 ------=_Part_18025_26740874.1195061691966
-Content-Type: multipart/alternative; 
+Content-Type: multipart/alternative;
 	boundary="----=_Part_18024_255140.1195061691966"
 
 ------=_Part_18024_255140.1195061691966
@@ -63,8 +63,8 @@ Content-Transfer-Encoding: 7bit
 <table>
 <tr>
 <td vAlign=center><font size=-1 face="arial,helvetica">
-Diese Nachricht wurde Ihnen von einem Handy mit der Nummer +5551234 durch o2 
-&uuml;bermittelt. 
+Diese Nachricht wurde Ihnen von einem Handy mit der Nummer +5551234 durch o2
+&uuml;bermittelt.
 </font>
 </td>
 <td vAlign=center>
@@ -79,12 +79,12 @@ Diese Nachricht wurde Ihnen von einem Handy mit der Nummer +5551234 durch o2
 <font face="arial,helvetica">This is text before the image. Thank you!<p><p><hr size=1><p><center><IMG src="cid:23abc@pc27-100" width="800" border=1></center><p>
 <p><p><p><hr size=1><p>
 <font size=-1 face="arial,helvetica">
-Wenn Sie mehr &uuml;ber das Fotoversenden bei o2 erfahren m&ouml;chten, 
-gehen Sie im Internet auf <a href="http://www.o2online.de/goto/mmsinfo"> 
-www.o2online.de/goto/mmsinfo</a>. M&ouml;chten Sie mehr &uuml;ber o2 erfahren, sind 
+Wenn Sie mehr &uuml;ber das Fotoversenden bei o2 erfahren m&ouml;chten,
+gehen Sie im Internet auf <a href="http://www.o2online.de/goto/mmsinfo">
+www.o2online.de/goto/mmsinfo</a>. M&ouml;chten Sie mehr &uuml;ber o2 erfahren, sind
 aber kein o2 Kunde, dann finden Sie
-<a href="http://www.o2online.de/o2/interessenten/startseite/index.html">hier</a> viele 
-Informationen. 
+<a href="http://www.o2online.de/o2/interessenten/startseite/index.html">hier</a> viele
+Informationen.
 </font>
 </p>
 </html>
