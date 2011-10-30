@@ -1,4 +1,4 @@
-require File.join(File.expand_path(File.dirname(__FILE__)), "test_helper")
+require "test_helper"
 
 class TestMms2rMedia < Test::Unit::TestCase
   include MMS2R::TestHelper
@@ -224,10 +224,10 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_not_nil file
     assert_equal true, File::exist?(file)
     text = IO.readlines("#{file}").join
-    assert_match(/D'ici un mois G\303\251orgie/, text)
-    assert_match(/D'ici un mois Géorgie/, text)
-    assert_equal("sample email message Fwd: sub D'ici un mois G\303\251orgie", mms.subject)
-    assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
+    #assert_match(/D'ici un mois G\303\251orgie/, text)
+    assert_match(/#{Regexp.escape(fixture_data('dici_un_mois_georgie.txt').strip)}/, text)
+    #assert_equal("sample email message Fwd: sub D'ici un mois G\303\251orgie", mms.subject)
+    assert_equal("sample email message Fwd: sub #{fixture_data('dici_un_mois_georgie.txt').strip}", mms.subject)
     mms.purge
   end
 

@@ -4,11 +4,7 @@ class TestVzwpixCom < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def setup
-    @ad_new = %q{This message was sent using the Picture and Video Messaging service from Verizon Wireless!
-
-To learn how you can snap pictures and capture videos with your wireless phone visit www.verizonwireless.com/picture.
-
-Note: To play video messages sent to email, QuickTime® 6.5 or higher is required.}
+    @ad_new = fixture_data('ad_new.txt')
 
     @ad_old = %q{This message was sent using PIX-FLIX Messaging service from Verizon Wireless!
 To learn how you can snap pictures with your wireless phone visit
