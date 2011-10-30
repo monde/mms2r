@@ -1,10 +1,10 @@
 # do it like rake http://ozmm.org/posts/do_it_like_rake.html
 begin
-  gem 'test-unit', '= 1.2.3'
+  gem 'test-unit'
   require 'test/unit'
 rescue NoMethodError
   require 'rubygems'
-  gem 'test-unit', '= 1.2.3'
+  gem 'test-unit'
   require 'test/unit'
 end
 
@@ -34,6 +34,10 @@ module MMS2R
 
     def fixture(file)
       File.join(File.expand_path(File.dirname(__FILE__)), "fixtures", file)
+    end
+
+    def fixture_data(name)
+      open(fixture(name)).read
     end
 
     def mail_fixture(file)
