@@ -52,16 +52,17 @@ module MMS2R
 
 end
 
-unless Object.respond_to?(:blank?)
-  class Object
+class Object
+
+  unless defined?(:blank?)
     def blank?
-      if respond_to?(:empty?) && respond_to?(:strip)
-        empty? or strip.empty?
-      elsif respond_to?(:empty?)
-        empty?
-      else
-        !self
-      end
+      respond_to?(:empty?) ? empty? : !self
+    end
+  end
+
+  unless defined?(:present?)
+    def present?
+      !blank?
     end
   end
 end

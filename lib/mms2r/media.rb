@@ -509,13 +509,13 @@ module MMS2R
     def filename?(part)
       name = part.filename
       if (name.nil? || name.empty?)
-        if part.content_id && part.content_id.strip =~ /^<(.+)>$/
-          name = $1
+        if part.content_id && (matched = /^<(.+)>$/.match(part.content_id))
+          name = matched[1]
         else
           name = "#{Time.now.to_f}.#{self.default_ext(part.part_type?)}"
         end
       end
-      # XXX fwiw, janky look for dot extension 1 to 4 chars long
+      # FIXME FWIW, janky look for dot extension 1 to 4 chars long
       name = (name =~ /\..{1,4}$/ ? name : "#{name}.#{self.default_ext(part.part_type?)}").strip
 
       # handle excessively large filenames
@@ -753,8 +753,8 @@ module MMS2R
         if File.size(path) > size
           size = File.size(path)
           file = File.new(path)
-          media.each do |type,files|
-            mime_type = type if files.detect{ |_path| _path == path }
+          media.each do |type,_files|
+            mime_type = type if _files.detect{ |_path| _path == path }
           end
         end
       end
