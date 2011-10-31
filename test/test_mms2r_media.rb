@@ -769,10 +769,24 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_faux_tiff_iphone_device_type_by_exif
-    mail = smart_phone_mock('Apple', 'iPhone', nil, jpeg = false)
+    mail = smart_phone_mock('Apple', 'iPhone', nil, nil, jpeg = false)
     mms = MMS2R::Media.new(mail)
     assert_equal :iphone, mms.device_type?
     assert_equal true, mms.is_mobile?
+  end
+
+  def test_iphone_device_type_by_filename_jpg
+    mail = smart_phone_mock('Hipstamatic', '201')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :apple, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_iphone_device_type_by_filename_png
+    mail = mail('iphone-image-02.mail')
+    mms = MMS2R::Media.new(mail)
+    assert_equal true, mms.is_mobile?
+    assert_equal :iphone, mms.device_type?
   end
 
   def test_blackberry_device_type_by_exif_make_model

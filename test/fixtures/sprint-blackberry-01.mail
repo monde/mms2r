@@ -2,7 +2,7 @@ Return-Path: <tommy.tutone@example.com>
 Delivered-To: unknown
 Received: from imap.gmail.com (209.85.225.109) by ntk with IMAP4-SSL; 30 Oct
   2011 06:10:03 -0000
-Delivered-To: cellphotobot@gmail.com
+Delivered-To: foo@example.com
 Received: by 10.216.10.213 with SMTP id 63cs4880wev;
         Sat, 29 Oct 2011 23:07:11 -0700 (PDT)
 Received: by 10.224.189.7 with SMTP id dc7mr8092483qab.90.1319954829144;
@@ -21,7 +21,7 @@ Content-Type: multipart/mixed;
 	boundary="_99db4215-8df5-4407-9408-286fd34bd3a9_"
 MIME-Version: 1.0
 From: "tommy tutone " <tommy.tutone@example.com>
-To: "Cellphotobot " <cellphotobot@gmail.com>
+To: foo@example.com
 Date: Sun, 30 Oct 2011 06:07:08 +0000
 Subject: Washington-20111030-00056.jpg
 X-OriginalArrivalTime: 30 Oct 2011 06:07:08.0134 (UTC) FILETIME=[27BFC060:01CC96CA]

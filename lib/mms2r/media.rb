@@ -537,10 +537,20 @@ module MMS2R
     end
 
     ##
-    # Best guess of the mobile device type.  Simple heuristics thus far by 
-    # inspecting mail headers and jpeg/tiff exif metadata.
-    # Smart phone types are
-    # :iphone :blackberry :dash :droid
+    # Best guess of the mobile device type.  Simple heuristics thus far by
+    # inspecting mail headers and jpeg/tiff exif metadata, and file name.
+    # Known smart phone types thus far are
+    #
+    # * :blackberry
+    # * :dash
+    # * :droid
+    # * :htc
+    # * :iphone
+    # * :lge
+    # * :motorola
+    # * :pantech
+    # * :samsung
+    #
     # If the message is from a carrier known to MMS2R, and not a smart phone
     # its type is returned as :handset
     # Otherwise device type is :unknown
@@ -558,16 +568,16 @@ module MMS2R
                 end
         if @exif
           models = config['device_types']['models'] rescue {}
-          models.each do |model, regex|
-            return model if @exif.model =~ regex
+          models.each do |type, regex|
+            return type if @exif.model =~ regex
           end
           makes = config['device_types']['makes'] rescue {}
-          makes.each do |make, regex|
-            return make if @exif.make =~ regex
+          makes.each do |type, regex|
+            return type if @exif.make =~ regex
           end
-          softwares = config['device_types']['software'] rescue {}
-          softwares.each do |software, regex|
-            return software if @exif.software =~ regex
+          software = config['device_types']['software'] rescue {}
+          software.each do |type, regex|
+            return type if @exif.software =~ regex
           end
         end
       end
@@ -581,6 +591,15 @@ module MMS2R
             return type if mail.header[header.downcase].decoded =~ regex
           end
         end
+      end
+
+      file = attachment(['image'])
+      if file
+        original_filename = file.original_filename
+          filenames = config['device_types']['filenames'] rescue {}
+          filenames.each do |type, regex|
+            return type if original_filename =~ regex
+          end
       end
 
       return :handset if File.exist?( File.expand_path(
