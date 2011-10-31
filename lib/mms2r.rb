@@ -52,24 +52,8 @@ module MMS2R
 
 end
 
-class Object
-
-  unless defined?(:blank?)
-    def blank?
-      respond_to?(:empty?) ? empty? : !self
-    end
-  end
-
-  unless defined?(:present?)
-    def present?
-      !blank?
-    end
-  end
-end
-
 %W{ mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|
   begin
-    gem 'mail', '= 2.2.13' if g == 'mail'
     require g
   rescue LoadError
     require 'rubygems'
@@ -77,7 +61,9 @@ end
   end
 end
 
-require File.join(File.dirname(__FILE__), 'mail_ext')
-require File.join(File.dirname(__FILE__), 'mms2r', 'media')
-require File.join(File.dirname(__FILE__), 'mms2r', 'media', 'sprint')
+require File.join(File.dirname(__FILE__), 'ext/mail')
+require File.join(File.dirname(__FILE__), 'ext/object')
+require File.join(File.dirname(__FILE__), 'mms2r/media')
+require File.join(File.dirname(__FILE__), 'mms2r/media/sprint')
+
 MMS2R.register('pm.sprint.com', MMS2R::Media::Sprint)
