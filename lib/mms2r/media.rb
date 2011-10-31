@@ -64,15 +64,15 @@
 # The root hash itself has two hashes under the keys 'ignore' and 'transform',
 # and an array under the 'number' key.
 # Each hash is itself keyed by mime-type.  The value pointed to by the mime-type
-# key is an array.  The ignore arrays are first evaluated as a regular expressions
-# and if the evaluation fails as a equality for a string filename.  Ignores
-# work by filename for the multi-part of the MMS that is being inspected.  The
-# array pointed to by the 'number' key represents an alternate mail header where
-# the sender's number can be found with a regular expression and replacement
-# value for a gsub eval.
+# key is an array.  The ignore arrays are first inspected as regular expressions
+# else are used as a equality for a string filename.  Ignores # work by filename
+# for the multi-part of the MMS that is being inspected.  The array pointed to
+# by the 'number' key represents an alternate mail header where the sender's
+# number can be found with a regular expression and replacement value for a
+# gsub.
 #
 # The transform arrays are themselves an array of two element arrays.  The elements
-# are parameters for gsub and will be evaluated from within the ruby code.
+# are regexp parameters for gsub.
 #
 # Ignore instructions are honored first then transform instructions.  In the sample,
 # masthead.jpg is ignored as a regular expression, and spacer.gif is ignored as a
@@ -190,9 +190,10 @@ module MMS2R
       log("#{self.class} created", :info)
       @carrier = self.class.domain(mail)
       @dir_count = 0
+      sha = Digest::SHA1.hexdigest("#{@carrier}-#{Time.now.to_i}-#{rand}")
       @media_dir = File.expand_path(
                      File.join(self.tmp_dir(),
-                     "#{self.safe_message_id(@mail.message_id)}_#{UUIDTools::UUID.random_create}"))
+                     "#{self.safe_message_id(@mail.message_id)}_#{sha}"))
       @media = {}
       @was_processed = false
       @number = nil

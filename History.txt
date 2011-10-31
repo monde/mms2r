@@ -1,3 +1,10 @@
+### 3.4.0 / 2011-10-31 (Serveta Skwigelf, Skwisgaar's hot mom)
+
+* 2 major enhancements
+  * regexp's in yaml configs are store as a ruby regexp and not a string that
+    is evaled.
+  * character encoding capability with 1.8 rubies and 1.9 rubies.
+
 ### 3.3.1 / 2011-01-01 (Reverend Aslaug Wartooth (deceased), Toki's dad)
 
 * 2 minor enhancements

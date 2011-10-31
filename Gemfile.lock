@@ -29,7 +29,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    uuidtools (2.1.2)
 
 PLATFORMS
   ruby
@@ -45,4 +44,3 @@ DEPENDENCIES
   rdoc
   rubyforge
   test-unit (= 1.2.3)
-  uuidtools

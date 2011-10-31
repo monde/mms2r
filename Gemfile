@@ -4,7 +4,6 @@ source :gemcutter
 
 gem "nokogiri"
 gem "mail"
-gem "uuidtools"
 gem "exifr"
 
 group :development, :test do

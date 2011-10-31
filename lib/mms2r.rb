@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.3.1'
+    VERSION = '3.4.0'
 
   end
 
@@ -52,7 +52,7 @@ module MMS2R
 
 end
 
-%W{ yaml mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|
+%W{ yaml mail fileutils pathname tmpdir yaml digest/sha1 iconv exifr }.each do |g|
   begin
     require g
   rescue LoadError

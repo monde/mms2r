@@ -1,4 +1,3 @@
-.gitignore
 Gemfile
 Gemfile.lock
 History.txt
@@ -43,9 +42,9 @@ conf/vzwpix.com.yml
 conf/waw.plspictures.com.yml
 dev_tools/anonymizer.rb
 dev_tools/debug_sprint_nokogiri_parsing.rb
-dev_tools/github.rb
 init.rb
-lib/mail_ext.rb
+lib/ext/mail.rb
+lib/ext/object.rb
 lib/mms2r.rb
 lib/mms2r/media.rb
 lib/mms2r/media/sprint.rb
@@ -55,6 +54,7 @@ test/fixtures/1nbox-2images-02.mail
 test/fixtures/1nbox-2images-03.mail
 test/fixtures/1nbox-2images-04.mail
 test/fixtures/3ireland-mms-01.mail
+test/fixtures/ad_new.txt
 test/fixtures/alltel-image-01.mail
 test/fixtures/alltel-mms-01.mail
 test/fixtures/alltel-mms-03.mail
@@ -70,6 +70,7 @@ test/fixtures/att-text-01.mail
 test/fixtures/bell-canada-image-01.mail
 test/fixtures/cingularme-text-01.mail
 test/fixtures/cingularme-text-02.mail
+test/fixtures/dici_un_mois_georgie.txt
 test/fixtures/dobson-image-01.mail
 test/fixtures/dot.jpg
 test/fixtures/generic.mail
@@ -140,10 +141,10 @@ test/fixtures/vodacom4me-southafrica-mms-04.mail
 test/fixtures/vtext-text-01.mail
 test/fixtures/vzwpix.com-image-01.mail
 test/fixtures/waw.plspictures.com-image-01.mail
+test/hax.rb
 test/test_1nbox_net.rb
 test/test_bell_canada.rb
 test/test_bellsouth_net.rb
-test/test_github.rb
 test/test_helper.rb
 test/test_mediamessaging_o2_co_uk.rb
 test/test_messaging_nextel_com.rb
