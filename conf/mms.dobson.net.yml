@@ -1,4 +1,4 @@
---- 
+---
 ignore:
-  application/smil: 
-   - /^<smil><head><layout><root-layout width=/i
+  application/smil:
+   - !ruby/regexp /^<smil><head><layout><root-layout width=/i

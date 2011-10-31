@@ -1,8 +1,8 @@
 ---
 ignore:
-  text/html: 
-   - /Diese Nachricht wurde Ihnen von einem Handy mit der Nummer/im
-transform: 
-  text/plain: 
-  - - /.*bermittelt.\s+(.+)\s+Wenn Sie mehr.*/im
-    - "\1"
+  text/html:
+   - !ruby/regexp /Diese Nachricht wurde Ihnen von einem Handy mit der Nummer/im
+transform:
+  text/plain:
+  - - !ruby/regexp /.*bermittelt.\s+(.+)\s+Wenn Sie mehr.*/im
+    - "\\1"

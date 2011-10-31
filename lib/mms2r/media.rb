@@ -159,7 +159,7 @@ module MMS2R
         end
 
       f = File.expand_path(File.join(self.conf_dir(), "from.yml"))
-      from = YAML::load_file(f) rescue {}
+      from = YAML::load_file(f)
 
       ret = case
         when from.include?(from_domain)
@@ -204,11 +204,11 @@ module MMS2R
       @default_html = nil
 
       f = File.expand_path(File.join(self.conf_dir(), "aliases.yml"))
-      @aliases = YAML::load_file(f) rescue {}
+      @aliases = YAML::load_file(f)
 
       conf = "#{@aliases[@carrier] || @carrier}.yml"
       f = File.expand_path(File.join(self.conf_dir(), conf))
-      c = YAML::load_file(f) rescue {}
+      c = File.exist?(f) ? YAML::load_file(f) : {}
       @config = self.class.initialize_config(c)
 
       processor_module = MMS2R::CARRIERS[@carrier]
@@ -228,7 +228,7 @@ module MMS2R
       unless @number
         params = config['number']
         if params && params.any? && (header = mail.header[params[0]])
-          @number = header.to_s.gsub(eval(params[1]), params[2])
+          @number = header.to_s.gsub(params[1], params[2])
         end
         if @number.nil? || @number.blank?
           @number = mail.from.first.split(/@|\//).first rescue ""
@@ -383,8 +383,8 @@ module MMS2R
     def ignore_media?(type, part)
       ignores = config['ignore'][type] || []
       ignore   = ignores.detect{ |test| filename?(part) == test}
-      ignore ||= ignores.detect{ |test| filename?(part) =~ eval(test) if test.index('/') == 0 }
-      ignore ||= ignores.detect{ |test| part.body.decoded.strip =~ eval(test) if test.index('/') == 0 }
+      ignore ||= ignores.detect{ |test| filename?(part) =~ test if test.is_a?(Regexp) }
+      ignore ||= ignores.detect{ |test| part.body.decoded.strip =~ test if test.is_a?(Regexp) }
       ignore ||= (part.body.decoded.strip.size == 0 ? true : nil)
       ignore.nil? ? false : true
     end
@@ -408,7 +408,7 @@ module MMS2R
       if part.part_type? =~ /^text\// ||
          part.part_type? == 'application/smil'
         type, content = transform_text_part(part)
-        mode = 'w'
+        mode = 'wb'
       else
         if part.part_type? == 'application/octet-stream'
           type = type_from_filename(filename?(part))
@@ -431,22 +431,25 @@ module MMS2R
     # configuration.
 
     def transform_text(type, text, original_encoding = 'ISO-8859-1')
-
       return type, text if !config['transform'] || !(transforms = config['transform'][type])
 
-      #convert to UTF-8
-      begin
-        c = Iconv.new('UTF-8', original_encoding )
-        utf_t = c.iconv(text)
-      rescue Exception => e
-        utf_t = text
+      if RUBY_VERSION < "1.9"
+        #convert to UTF-8
+        begin
+          c = Iconv.new('UTF-8', original_encoding )
+          utf_t = c.iconv(text)
+        rescue Exception => e
+          utf_t = text
+        end
+      else
+        utf_t = text.encoding == "ASCII-8BIT" ? text.force_encoding("ISO-8859-1").encode("UTF-8") : text
       end
 
       transforms.each do |transform|
         next unless transform.size == 2
         p = transform.first
         r = transform.last
-        utf_t = utf_t.gsub(eval(p), r) rescue utf_t
+        utf_t = utf_t.gsub(p, r) rescue utf_t
       end
 
       return type, utf_t
@@ -649,7 +652,7 @@ module MMS2R
 
     def self.initialize_config(c)
       f = File.expand_path(File.join(self.conf_dir(), "mms2r_media.yml"))
-      conf = YAML::load_file(f) rescue {}
+      conf = YAML::load_file(f)
       conf['ignore'] ||= {} unless conf['ignore']
       conf['transform'] = {} unless conf['transform']
       conf['number'] = [] unless conf['number']

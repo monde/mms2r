@@ -1,4 +1,4 @@
 transform:
   text/html:
-    - [/.*(<html)/im, "\1"]
-  
+  - - !ruby/regexp /.*(<html)/im
+    - "\\1"

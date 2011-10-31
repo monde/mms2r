@@ -1,14 +1,14 @@
 ---
 ignore:
   text/html:
-  - /We're sorry, this page is not available. We apologize for the inconvenience./mi
-  text/plain: 
-  - /You have new [Picture|Video] Mail!\s+Click Go\/View to see now./mi
-transform: 
-  text/plain: 
-  - - /^You have new Picture Mail!$/i
+  - !ruby/regexp /We're sorry, this page is not available. We apologize for the inconvenience./mi
+  text/plain:
+  - !ruby/regexp /You have new [Picture|Video] Mail!\s+Click Go\/View to see now./mi
+transform:
+  text/plain:
+  - - !ruby/regexp /^You have new Picture Mail!$/i
     - ""
-  - - /^New Message$/i
+  - - !ruby/regexp /^New Message$/i
     - ""
-  - - /^PictureMail$/i
+  - - !ruby/regexp /^PictureMail$/i
     - ""

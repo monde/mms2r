@@ -1,6 +1,6 @@
 ---
 ignore:
   text/plain:
-   - /This is an MMS message. Please go to http/m
+   - !ruby/regexp /This is an MMS message. Please go to http/m
   text/html:
-   - /You've received a Message from a TELUS phone./m
+   - !ruby/regexp /You've received a Message from a TELUS phone./m

@@ -1,5 +1,5 @@
 ---
 ignore:
   application/smil:
-  - /^pres\.smil/i
+  - !ruby/regexp /^pres\.smil/i
 

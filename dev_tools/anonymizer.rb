@@ -13,7 +13,7 @@ message = File.read(message_file)
 message.gsub!(phone_number, '2068675309')
 message.gsub!(email_address, 'tommy.tutone@example.com')
 
-out = File.open(message_file, "w")
+out = File.open(message_file, "wb")
 out.puts message
 out.close
 

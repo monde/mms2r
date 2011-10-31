@@ -1,4 +1,4 @@
 ---
 ignore:
   text/plain:
-  - /This Media Message has been sent using an O2 camera phone/mi
+  - !ruby/regexp /This Media Message has been sent using an O2 camera phone/mi

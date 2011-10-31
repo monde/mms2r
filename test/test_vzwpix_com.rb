@@ -154,7 +154,7 @@ www.verizonwireless.com/getitnow/getpix.}
     assert_equal "Wonderful picture!", IO.readlines(mms.media['text/plain'].first).join.strip
 
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match(/Windows-1252\?B\?SU1HMDAwMTYuanBn/, mms.media['image/jpeg'].first)
+    assert_match(/\/IMG00016\.jpg$/, mms.media['image/jpeg'].first)
     mms.purge
   end
 

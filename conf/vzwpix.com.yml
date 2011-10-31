@@ -1,8 +1,8 @@
 ---
 ignore:
-  text/plain: 
-  - /\AThis message (was|has been) sent using .* from Verizon Wireless!.*/m
-transform: 
-  text/plain: 
-  - - /\A(.+?)\s+This message (was|has been) sent using .* from Verizon Wireless!.*/m
-    - "\1"
+  text/plain:
+  - !ruby/regexp /\AThis message (was|has been) sent using .* from Verizon Wireless!.*/m
+transform:
+  text/plain:
+  - - !ruby/regexp /\A(.+?)\s+This message (was|has been) sent using .* from Verizon Wireless!.*/m
+    - "\\1"

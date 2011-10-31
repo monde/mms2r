@@ -4,8 +4,8 @@ ignore:
   - mms
   text/html:
    - mms.smil.txt
-   - /<html>\s+<head>\s+<title>Picture Messaging<\/title>/m
-  image/gif: 
+   - !ruby/regexp /<html>\s+<head>\s+<title>Picture Messaging<\/title>/m
+  image/gif:
   - spacer.gif
   - header.gif
   - bluebar.gif

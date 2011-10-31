@@ -1,28 +1,28 @@
 ---
 ignore:
-  image/jpeg: 
-  - /^masthead.jpg$/i
-  - /^logo.jpg$/i
-  image/gif: 
-  - /^dottedline350.gif$/i
-  - /^dottedline600.gif$/i
-  - /^dottedLine_350.gif$/i
-  - /^dottedLine_600.gif$/i
-  - /^spacer.gif$/i
-  - /^video.gif$/i
-  - /^audio.gif$/i
-  - /^tmobilelogo.gif$/i
-  - /^tmobilespace.gif$/i
-  text/html: 
-   - /<html>\s+<head>\s+<title>T-Mobile<\/title>/m
-   - /<title>MMS E-Mail<\/title>/m
+  image/jpeg:
+  - !ruby/regexp /^masthead.jpg$/i
+  - !ruby/regexp /^logo.jpg$/i
+  image/gif:
+  - !ruby/regexp /^dottedline350.gif$/i
+  - !ruby/regexp /^dottedline600.gif$/i
+  - !ruby/regexp /^dottedLine_350.gif$/i
+  - !ruby/regexp /^dottedLine_600.gif$/i
+  - !ruby/regexp /^spacer.gif$/i
+  - !ruby/regexp /^video.gif$/i
+  - !ruby/regexp /^audio.gif$/i
+  - !ruby/regexp /^tmobilelogo.gif$/i
+  - !ruby/regexp /^tmobilespace.gif$/i
+  text/html:
+   - !ruby/regexp /<html>\s+<head>\s+<title>T-Mobile<\/title>/m
+   - !ruby/regexp /<title>MMS E-Mail<\/title>/m
 
 number:
   - from
-  - /^"?([^\/@]+).*/
-  - "\1"
+  - !ruby/regexp /^"?([^\/@]+).*/
+  - "\\1"
 
-transform: 
-  text/plain: 
-  - - /.*\s+Text:\s+(.*?)\s+-+\s.*/im
-    - "\1"
+transform:
+  text/plain:
+  - - !ruby/regexp /.*\s+Text:\s+(.*?)\s+-+\s.*/im
+    - "\\1"

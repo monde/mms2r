@@ -11,7 +11,7 @@ class TestBellsouthNet < Test::Unit::TestCase
     assert_nil mms.media['text/plain']
 
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match(/Windows-1252\?B\?SU1HMDAwNjUuanBn/, mms.media['image/jpeg'].first)
+    assert_match(/\/IMG00065\.jpg$/, mms.media['image/jpeg'].first)
     mms.purge
   end
 end

@@ -52,7 +52,7 @@ class TestTmomailNet < Test::Unit::TestCase
     assert_nil mms.media['text/plain']
 
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match(/Windows-1252\?B\?SU1HMDAyMzkuanBn/, mms.media['image/jpeg'].first)
+    assert_match(/\/IMG00239\.jpg$/, mms.media['image/jpeg'].first)
     mms.purge
   end
 
@@ -66,7 +66,7 @@ class TestTmomailNet < Test::Unit::TestCase
     assert_nil mms.media['text/plain']
 
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match(/Windows-1252\?B\?SU1HMDAxNDEuanBn/, mms.media['image/jpeg'].first)
+    assert_match(/\/IMG00141\.jpg$/, mms.media['image/jpeg'].first)
     mms.purge
   end
 
@@ -103,7 +103,7 @@ class TestTmomailNet < Test::Unit::TestCase
 
     assert_file_size mms.media['image/jpeg'][0], 337
     file = mms.default_media
-    assert_equal '=?Windows-1252?B?SU1HMDA0NDAuanBn?=.jpg', file.original_filename
+    assert_equal 'IMG00440.jpg', file.original_filename
 
     mms.purge
   end

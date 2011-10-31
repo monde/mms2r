@@ -1,15 +1,15 @@
 ---
-transform: 
-  text/plain: 
-  - - /^You have received a new message$/i
+transform:
+  text/plain:
+  - - !ruby/regexp /^You have received a new message$/i
     - ""
 ignore:
-  image/jpeg: 
+  image/jpeg:
   - images/reb.jpg
   - images/tpm.jpg
-  image/gif: 
+  image/gif:
   - images/vf9.gif
-  text/html: 
-   - /<html><head>.*<title>MMS Message<\/title>/im
-  text/plain: 
-   - /You have received an MMS message.  To see the message correctly, you will need to view this message\s+in a graphical email application./im
+  text/html:
+   - !ruby/regexp /<html><head>.*<title>MMS Message<\/title>/im
+  text/plain:
+   - !ruby/regexp /You have received an MMS message.  To see the message correctly, you will need to view this message\s+in a graphical email application./im

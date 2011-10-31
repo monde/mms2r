@@ -48,7 +48,7 @@ class Test1nboxNet < Test::Unit::TestCase
 
     assert_not_nil mms.media['image/jpeg']
     assert_equal 1, mms.media['image/jpeg'].size
-    assert_match(/=\?UTF-8\?Q\?Copy_of_test1\.jpg\?=/, mms.media['image/jpeg'].first)
+    assert_match(/\/Copy of test1\.jpg$/, mms.media['image/jpeg'].first)
 
     mms.purge
   end

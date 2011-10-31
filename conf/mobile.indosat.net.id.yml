@@ -1,14 +1,14 @@
 ---
 ignore:
   text/plain:
-   - /\A\.\z/im
+   - !ruby/regexp /\A\.\z/im
    - .
   text/html:
-   - /I-Memova - Email Praktis. Cara Taktis. Powered by IM2./i
+   - !ruby/regexp /I-Memova - Email Praktis. Cara Taktis. Powered by IM2./i
   image/jpeg:
    - cp__newBanner.jpg
 number:
   - return-path
-  - /^([^@]+)@.*/
-  - "\1"
+  - !ruby/regexp /^([^@]+)@.*/
+  - "\\1"
 

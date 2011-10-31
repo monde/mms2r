@@ -1,26 +1,26 @@
 ---
 ignore:
   text/plain:
-  - /^\(no subject\)$/i
-  - /\ASent via BlackBerry (from|by) .*$/im
-  - /\ASent from my Verizon Wireless BlackBerry$/im
-  - /\ASent from (my|your) iPhone.?$/im
-  - /\ASent on the Sprint.* Now Network.*$/im
+  - !ruby/regexp /^\(no subject\)$/i
+  - !ruby/regexp /\ASent via BlackBerry (from|by) .*$/im
+  - !ruby/regexp /\ASent from my Verizon Wireless BlackBerry$/im
+  - !ruby/regexp /\ASent from (my|your) iPhone.?$/im
+  - !ruby/regexp /\ASent on the Sprint.* Now Network.*$/im
   multipart/mixed:
-  - "/^Attachment: /i"
-transform: 
-  text/plain: 
-  - - /\A(.*?)Sent via BlackBerry (from|by) .*$/im
-    - "\1"
-  - - /\A(.*?)Sent from my Verizon Wireless BlackBerry$/im
-    - "\1"  
-  - - /\A(.*?)Sent from (my|your) iPhone.?$/im
-    - "\1"
-  - - /\A(.*?)\s+image\/jpeg$/im
-    - "\1"
-  - - /\A(.*?)Sent on the Sprint.* Now Network.*$/im
-    - "\1"
-device_types: 
+  - !ruby/regexp "/^Attachment: /i"
+transform:
+  text/plain:
+  - - !ruby/regexp /\A(.*?)Sent via BlackBerry (from|by) .*$/im
+    - "\\1"
+  - - !ruby/regexp /\A(.*?)Sent from my Verizon Wireless BlackBerry$/im
+    - "\\1"
+  - - !ruby/regexp /\A(.*?)Sent from (my|your) iPhone.?$/im
+    - "\\1"
+  - - !ruby/regexp /\A(.*?)\s+image\/jpeg$/im
+    - "\\1"
+  - - !ruby/regexp /\A(.*?)Sent on the Sprint.* Now Network.*$/im
+    - "\\1"
+device_types:
   headers:
     x-mailer:
       :iphone: !ruby/regexp /iPhone Mail/i
@@ -29,7 +29,7 @@ device_types:
       :iphone: !ruby/regexp /iPhone Mail/i
     x-rim-org-msg-ref-id:
       :blackberry: !ruby/regexp /.+/
-  # TODO do something about the assortment of camera models that have 
+  # TODO do something about the assortment of camera models that have
   # been seen:
   # 1.3 Megapixel, 2.0 Megapixel, BlackBerry, CU920, G'z One TYPE-S,
   # Hermes, iPhone, LG8700, LSI_S5K4AAFA, Micron MT9M113 1.3MP YUV,

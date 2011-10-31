@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require "test_helper"
 
 class TestMms2rMedia < Test::Unit::TestCase
@@ -109,13 +111,13 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_initialize_config_contatenation
-    c = {'ignore' => {'text/plain' => ['/A TEST/']},
-         'transform' => {'text/plain' => ['/FOO/', '']},
-         'number' => ['from', '/^([^\s]+)\s.*/', '\1']
+    c = {'ignore' => {'text/plain' => [/A TEST/]},
+         'transform' => {'text/plain' => [/FOO/, '']},
+         'number' => ['from', /^([^\s]+)\s.*/, '\1']
     }
     config = MMS2R::Media.initialize_config(c)
-    assert_not_nil config['ignore']['text/plain'].detect{|v| v == '/A TEST/'}
-    assert_not_nil config['transform']['text/plain'].detect{|v| v == '/FOO/'}
+    assert_not_nil config['ignore']['text/plain'].detect{|v| v == /A TEST/}
+    assert_not_nil config['transform']['text/plain'].detect{|v| v == /FOO/}
     assert_not_nil config['number'].first == 'from'
   end
 
@@ -145,7 +147,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     YAML.expects(:load_file).at_least_once.with(mms_yaml).returns({})
     YAML.expects(:load_file).at_least_once.with(aliases_yaml).returns({})
     YAML.expects(:load_file).at_least_once.with(from_yaml).returns([])
-    YAML.expects(:load_file).at_least_once.with(example_yaml)
+    YAML.expects(:load_file).never.with(example_yaml)
     mms = MMS2R::Media.new stub_mail
   end
 
@@ -159,7 +161,7 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_mms_phone_number_from_config
     mail = stub_mail(:from => '"+2068675309" <TESTER@mms.vodacom4me.co.za>')
     mms = MMS2R::Media.new(mail)
-    mms.expects(:config).once.returns({'number' => ['from', '/^([^\s]+)\s.*/', '\1']})
+    mms.expects(:config).once.returns({'number' => ['from', /^([^\s]+)\s.*/, '\1']})
     assert_equal '+2068675309', mms.number
   end
 
@@ -172,7 +174,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     end
   end
 
-  def test_transform_text
+  def test_transform_text_plain
     mail = stub_mail
     mail.stubs(:from).returns(nil)
     mms = MMS2R::Media.new(mail)
@@ -196,19 +198,18 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal result, mms.transform_text(type, text)
 
     # matches in config
-    mms.expects(:config).at_least_once.returns({'transform' => {type => [["/(hello)/", 'world']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [[/(hello)/, 'world']]}})
     assert_equal [type, 'world'], mms.transform_text(type, text)
 
-    mms.expects(:config).at_least_once.returns({'transform' => {type => [['/^Ignore this part, (.+)/', '\1']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [[/^Ignore this part, (.+)/, '\1']]}})
     assert_equal [type, text], mms.transform_text(type, "Ignore this part, " + text)
 
     # chaining transforms
-    mms.expects(:config).at_least_once.returns({'transform' => {type => [['/(hello)/', 'world'], 
-                                                                ['/(world)/', 'mars']]}})
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [[/(hello)/, 'world'], 
+                                                                [/(world)/, 'mars']]}})
     assert_equal [type, 'mars'], mms.transform_text(type, text)
 
     # has a Iconv problem
-    Iconv.expects(:new).raises
     mms.expects(:config).at_least_once.returns({'transform' => {type => [['(hello)', 'world']]}})
     assert_equal result, mms.transform_text(type, text)
   end
@@ -223,11 +224,21 @@ class TestMms2rMedia < Test::Unit::TestCase
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert_equal true, File::exist?(file)
-    text = IO.readlines("#{file}").join
-    #assert_match(/D'ici un mois G\303\251orgie/, text)
-    assert_match(/#{Regexp.escape(fixture_data('dici_un_mois_georgie.txt').strip)}/, text)
-    #assert_equal("sample email message Fwd: sub D'ici un mois G\303\251orgie", mms.subject)
-    assert_equal("sample email message Fwd: sub #{fixture_data('dici_un_mois_georgie.txt').strip}", mms.subject)
+    text_lines = IO.readlines("#{file}")
+    text = text_lines.join
+
+    # ASCII-8BIT -> D'ici un mois G\xC3\xA9orgie
+    # UTF-8      ->  D'ici un mois Géorgie
+
+    if RUBY_VERSION < "1.9"
+      assert_equal("D'ici un mois Géorgie  body", text_lines.first.strip)
+      assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
+    else
+      #assert_equal("D'ici un mois Géorgie  body", text_lines.first.strip)
+      assert_equal("D'ici un mois G\xE9orgie  body", text_lines.first.strip)
+      assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
+    end
+
     mms.purge
   end
 
@@ -266,7 +277,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms = MMS2R::Media.new(mail)
     mms.stubs(:config).returns(
       { 'ignore' => {},
-        'transform' => {'text/plain' => [['/Default Subject: (.+)/', '\1']]}})
+        'transform' => {'text/plain' => [[/Default Subject: (.+)/, '\1']]}})
     assert_equal 'hello world', mms.subject
   end
 
@@ -318,7 +329,8 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms = MMS2R::Media.new stub_mail
     temp_big = temp_text_file("hello world")
     mms.stubs(:default_text).returns(File.new(temp_big))
-    assert_equal "hello world", mms.body
+    body = mms.body
+    assert_equal "hello world", body
   end
 
   def test_body_when_html
@@ -451,7 +463,7 @@ class TestMms2rMedia < Test::Unit::TestCase
 
   def test_ignore_media_by_filename_regexp
     name = 'foo.txt'
-    regexp = '/foo\.txt/i'
+    regexp = /foo\.txt/i
     type = 'text/plain'
     mms = MMS2R::Media.new stub_mail
     mms.stubs(:config).returns({'ignore' => {type => [regexp, 'nil.txt']}})
@@ -470,7 +482,7 @@ class TestMms2rMedia < Test::Unit::TestCase
   def test_ignore_media_by_regexp_on_file_content
     name = 'foo.txt'
     content = "aaaaaaahello worldbbbbbbbbb"
-    regexp = '/.*Hello World.*/i'
+    regexp = /.*Hello World.*/i
     type = 'text/plain'
     mms = MMS2R::Media.new stub_mail
     mms.stubs(:config).returns({'ignore' => {type => ['nil.txt', regexp]}})

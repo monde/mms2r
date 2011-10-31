@@ -1,11 +1,11 @@
 ---
-transform: 
-  text/plain: 
-  - - /^Multimedia message$/i
+transform:
+  text/plain:
+  - - !ruby/regexp /^Multimedia message$/i
     - ""
-  - - /\A(.+?)\s+--\s+=+\s+This mobile text message is brought to you by AT&T.*/im
-    - "\1"
-  - - /\A(.+?)\s+--\s+=+\s+Brought to you by, Cingular Wireless Messaging.*/im
-    - "\1"
-  - - /\A(.+?)\s+--\s+Mobile Email from a Cingular Wireless Customer.*/im
-    - "\1"
+  - - !ruby/regexp /\A(.+?)\s+--\s+=+\s+This mobile text message is brought to you by AT&T.*/im
+    - "\\1"
+  - - !ruby/regexp /\A(.+?)\s+--\s+=+\s+Brought to you by, Cingular Wireless Messaging.*/im
+    - "\\1"
+  - - !ruby/regexp /\A(.+?)\s+--\s+Mobile Email from a Cingular Wireless Customer.*/im
+    - "\\1"

@@ -1,17 +1,17 @@
 ---
 ignore:
   image/jpeg:
-  - /^.*tpm.jpg$/i
-  - /^.*vf5.jpg$/i
-  - /^.*reb.jpg$/i
+  - !ruby/regexp /^.*tpm.jpg$/i
+  - !ruby/regexp /^.*vf5.jpg$/i
+  - !ruby/regexp /^.*reb.jpg$/i
   image/gif:
-  - /^.*vf9.gif$/i
+  - !ruby/regexp /^.*vf9.gif$/i
   text/plain:
-  - /^You have received an MMS message.  To see the message correctly, you will need to view this message.*/im
+  - !ruby/regexp /^You have received an MMS message.  To see the message correctly, you will need to view this message.*/im
   text/html:
-  - /Yospace Technologies Ltd - MMS-to-Email version 1-0-1-1/im
+  - !ruby/regexp /Yospace Technologies Ltd - MMS-to-Email version 1-0-1-1/im
 
 number:
   - from
-  - /^([^\s\/@]+).*/
-  - "\1"
+  - !ruby/regexp /^([^\s\/@]+).*/
+  - "\\1"

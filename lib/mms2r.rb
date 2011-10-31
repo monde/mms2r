@@ -52,7 +52,7 @@ module MMS2R
 
 end
 
-%W{ mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|
+%W{ yaml mail fileutils pathname tmpdir yaml uuidtools iconv exifr }.each do |g|
   begin
     require g
   rescue LoadError
@@ -60,6 +60,9 @@ end
     require g
   end
 end
+
+# HAX to not deal with Psych YAML parser in Ruby >= 1.9
+#YAML::ENGINE.yamler= 'syck' if defined?(YAML::ENGINE)
 
 require File.join(File.dirname(__FILE__), 'ext/mail')
 require File.join(File.dirname(__FILE__), 'ext/object')

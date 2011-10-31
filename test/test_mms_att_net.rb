@@ -106,7 +106,7 @@ class TestMmsAttNet < Test::Unit::TestCase
     assert_equal "Hello world", IO.readlines(mms.media['text/plain'].first).join.strip
 
     assert_not_nil mms.media['image/jpeg'].first
-    assert_match(/Windows-1252\?B\?QkMtV0FLRS5qcGc/, mms.media['image/jpeg'].first)
+    assert_match(/\/BC-WAKE\.jpg$/, mms.media['image/jpeg'].first)
   end
 
   def test_image_from_blackberry2
