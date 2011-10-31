@@ -1,12 +1,14 @@
 = mms2r
 
-  http://mms2r.rubyforge.org/
-  by Mike Mondragon
-  http://github.com/monde/mms2r
-  http://github.com/monde/mms2r/issues
-  http://peepcode.com/products/mms2r-pdf
+  https://github.com/monde/mms2r
 
 == DESCRIPTION
+
+MMS2R by Mike Mondragon
+http://mms2r.rubyforge.org/
+https://github.com/monde/mms2r
+https://github.com/monde/mms2r/issues
+http://peepcode.com/products/mms2r-pdf
 
 MMS2R is a library that decodes the parts of an MMS message to disk while
 stripping out advertising injected by the mobile carriers.  MMS messages are
