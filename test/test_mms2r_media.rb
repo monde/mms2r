@@ -831,6 +831,13 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal true, mms.is_mobile?
   end
 
+  def test_android_app_by_exif
+    mail = smart_phone_mock('Retro Camera Android', "Xoloroid 2000")
+    mms = MMS2R::Media.new(mail)
+    assert_equal :android, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
   def test_handsets_by_exif
     handsets = YAML.load_file(fixture('handsets.yml'))
     handsets.each do |handset|

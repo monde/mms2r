@@ -41,6 +41,7 @@ device_types:
   # created and sent by the device, the regex is used by mms2r to detect the
   # model string
   makes:
+    :android: !ruby/regexp /Android/i
     :apple: !ruby/regexp /^(Apple|Hipstamatic)$/i
     :casio: !ruby/regexp /^CASIO$/i
     :dash: !ruby/regexp /T-Mobile Dash/i
