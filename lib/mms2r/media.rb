@@ -565,6 +565,10 @@ module MMS2R
           makes.each do |make, regex|
             return make if @exif.make =~ regex
           end
+          softwares = config['device_types']['software'] rescue {}
+          softwares.each do |software, regex|
+            return software if @exif.software =~ regex
+          end
         end
       end
 

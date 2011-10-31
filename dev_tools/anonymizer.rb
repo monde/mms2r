@@ -16,5 +16,3 @@ message.gsub!(email_address, 'tommy.tutone@example.com')
 out = File.open(message_file, "wb")
 out.puts message
 out.close
-
-

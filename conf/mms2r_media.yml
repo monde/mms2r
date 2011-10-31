@@ -61,3 +61,5 @@ device_types:
     :seoul_electronics: !ruby/regexp /^ISUS0/i
     :sprint: !ruby/regexp /^Sprint$/i
     :utstarcom: !ruby/regexp /^T1A_UC1.88$/i
+  software:
+    :blackberry: !ruby/regexp /^Rim Exif/i

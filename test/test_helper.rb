@@ -40,7 +40,7 @@ module MMS2R
       Mail.read(mail_fixture(name))
     end
 
-    def smart_phone_mock(make_text = 'Apple', model_text = 'iPhone', jpeg = true)
+    def smart_phone_mock(make_text = 'Apple', model_text = 'iPhone', software_text = nil, jpeg = true)
       mail = stub('mail',
                   :from => ['joe@example.com'],
                   :return_path => '<joe@example.com>',
@@ -55,7 +55,7 @@ module MMS2R
                   :filename => "foo.#{jpeg ? 'jpg' : 'tif'}" )
 
       mail.stubs(:parts).returns([part])
-      exif = stub('exif', :make => make_text, :model => model_text)
+      exif = stub('exif', :make => make_text, :model => model_text, :software => software_text)
       if jpeg
         EXIFR::JPEG.expects(:new).at_least_once.returns(exif)
       else

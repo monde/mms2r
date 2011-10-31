@@ -769,14 +769,21 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_faux_tiff_iphone_device_type_by_exif
-    mail = smart_phone_mock('Apple', 'iPhone', jpeg = false)
+    mail = smart_phone_mock('Apple', 'iPhone', nil, jpeg = false)
     mms = MMS2R::Media.new(mail)
     assert_equal :iphone, mms.device_type?
     assert_equal true, mms.is_mobile?
   end
 
-  def test_blackberry_device_type_by_exif
+  def test_blackberry_device_type_by_exif_make_model
     mail = smart_phone_mock('Research In Motion', 'BlackBerry')
+    mms = MMS2R::Media.new(mail)
+    assert_equal :blackberry, mms.device_type?
+    assert_equal true, mms.is_mobile?
+  end
+
+  def test_blackberry_device_type_by_exif_software
+    mail = smart_phone_mock(nil, nil, "Rim Exif Version1.00a")
     mms = MMS2R::Media.new(mail)
     assert_equal :blackberry, mms.device_type?
     assert_equal true, mms.is_mobile?
