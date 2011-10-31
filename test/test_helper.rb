@@ -1,14 +1,6 @@
 # do it like rake http://ozmm.org/posts/do_it_like_rake.html
-begin
-  gem 'test-unit'
-  require 'test/unit'
-rescue NoMethodError
-  require 'rubygems'
-  gem 'test-unit'
-  require 'test/unit'
-end
 
-%W{ set net/http net/https pp tempfile mocha }.each do |g|
+%W{ test/unit set net/http net/https pp tempfile mocha }.each do |g|
   begin
     require g
   rescue LoadError
