@@ -58,7 +58,7 @@ Corpus of carriers currently processed by MMS2R:
 * UAE MMS: mms.ae
 * Unicel: unicel.com, info2go.com
   (note: mobile number is tucked away in a text/plain part for unicel.com)
-* Verizon: vzwpix.com, vtext.com
+* Verizon: vzwpix.com, vtext.com, labwig.net
 * Virgin Mobile: vmpix.com, pixmbl.com, vmobl.com, yrmobl.com
 * Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
