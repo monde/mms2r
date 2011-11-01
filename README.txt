@@ -50,7 +50,7 @@ Corpus of carriers currently processed by MMS2R:
 * PLSPICTURES.COM mms hosting: waw.plspictures.com
 * PXT New Zealand: pxt.vodafone.net.nz
 * Rogers of Canada: rci.rogers.com
-* SaskTel: sasktel.com, sms.sasktel.com
+* SaskTel: sasktel.com, sms.sasktel.com, cdma.sasktel.com
 * Sprint: pm.sprint.com, messaging.sprintpcs.com, sprintpcs.com
 * T-Mobile: tmomail.net, mmsreply.t-mobile.co.uk, tmo.blackberry.net
 * TELUS Corporation (Canada): mms.telusmobility.com, msg.telus.com
