@@ -602,6 +602,15 @@ module MMS2R
           end
       end
 
+      file = attachment(['video'])
+      if file
+        original_filename = file.original_filename
+          filenames = config['device_types']['filenames'] rescue {}
+          filenames.each do |type, regex|
+            return type if original_filename =~ regex
+          end
+      end
+
       return :handset if File.exist?( File.expand_path(
                              File.join(self.conf_dir, "#{self.aliases[self.carrier] || self.carrier}.yml")
                          ) )
