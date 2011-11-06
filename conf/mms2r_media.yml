@@ -63,7 +63,7 @@ device_types:
     :dash: !ruby/regexp /T-Mobile Dash/i
     :droid: !ruby/regexp /Droid/i
     :htc: !ruby/regexp /HTC|Eris|HERO200/i
-    :iphone: !ruby/regexp /iPhone|201/i
+    :iphone: !ruby/regexp /iPhone/i
   software:
     :blackberry: !ruby/regexp /^Rim Exif/i
   filenames:
