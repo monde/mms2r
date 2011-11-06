@@ -29,6 +29,8 @@ device_types:
       :iphone: !ruby/regexp /iPhone Mail/i
     x-rim-org-msg-ref-id:
       :blackberry: !ruby/regexp /.+/
+    user-agent:
+      :iphone: !ruby/regexp /iPhone/i
   # TODO do something about the assortment of camera models that have
   # been seen:
   # 1.3 Megapixel, 2.0 Megapixel, BlackBerry, CU920, G'z One TYPE-S,

@@ -589,6 +589,8 @@ module MMS2R
           # that if they match, the header signals the type should be returned
           headers[header].each do |type, regex|
             return type if mail.header[header.downcase].decoded =~ regex
+            field = mail.header.fields.detect { |field| field.name.downcase == header.downcase }
+            return type if field && field.to_s =~ regex
           end
         end
       end
