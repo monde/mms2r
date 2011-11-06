@@ -53,6 +53,7 @@ device_types:
     :htc: !ruby/regexp /^HTC/i
     :lge: !ruby/regexp /^(LG|CX87BL05)/i
     :motorola: !ruby/regexp /^Motorola/i
+    :nokia: !ruby/regexp /^Nokia/i
     :pantech: !ruby/regexp /^PANTECH$/i
     :qualcomm: !ruby/regexp /^MSM6/i
     :research_in_motion: !ruby/regexp /^(RIM|Research In Motion)$/i

@@ -548,6 +548,7 @@ module MMS2R
     # * :iphone
     # * :lge
     # * :motorola
+    # * :nokia
     # * :pantech
     # * :samsung
     #
