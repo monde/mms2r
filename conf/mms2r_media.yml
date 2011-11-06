@@ -55,6 +55,7 @@ device_types:
     :motorola: !ruby/regexp /^Motorola/i
     :nokia: !ruby/regexp /^Nokia/i
     :pantech: !ruby/regexp /^PANTECH$/i
+    :palm: !ruby/regexp /Palm/i
     :qualcomm: !ruby/regexp /^MSM6/i
     :research_in_motion: !ruby/regexp /^(RIM|Research In Motion)$/i
     :samsung: !ruby/regexp /^(SAMSUNG|ES.M800|M6550B-SAM-4480)/i
@@ -63,6 +64,7 @@ device_types:
     :utstarcom: !ruby/regexp /^T1A_UC1.88$/i
   models:
     :blackberry: !ruby/regexp /BlackBerry/i
+    :centro: !ruby/regexp /^Palm Centro$/i
     :dash: !ruby/regexp /T-Mobile Dash/i
     :droid: !ruby/regexp /Droid/i
     :htc: !ruby/regexp /HTC|Eris|HERO200/i
