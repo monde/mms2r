@@ -1,3 +1,9 @@
+### 3.4.1 / 2011-11-06 (Fatty Ding-Dongs, Dethklok foster child)
+
+* 2 major enhancements
+  * Additional means to detect android, iphone, motorola, nokia, palm handsets
+  * Additional known SMS/MMS domains mm.att.net, labwig.net, cdma.sasktel.com
+
 ### 3.4.0 / 2011-10-31 (Serveta Skwigelf, Skwisgaar's hot mom)
 
 * 2 major enhancements
