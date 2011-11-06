@@ -65,6 +65,5 @@ device_types:
   software:
     :blackberry: !ruby/regexp /^Rim Exif/i
   filenames:
-    :iphone: !ruby/regexp /^photo\.JPG$/
-    :iphone: !ruby/regexp /^photo\.PNG$/
+    :iphone: !ruby/regexp /^photo\.(JPG|PNG)$/i
     :video: !ruby/regexp /\.3gp$/
