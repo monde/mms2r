@@ -21,6 +21,8 @@ transform:
   - - !ruby/regexp /\A(.*?)Sent on the Sprint.* Now Network.*$/im
     - "\\1"
 device_types:
+  boundary:
+    :motorola: !ruby/regexp /Motorola-A-Mail/i
   headers:
     x-mailer:
       :iphone: !ruby/regexp /iPhone Mail/i

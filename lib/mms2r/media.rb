@@ -613,6 +613,12 @@ module MMS2R
           end
       end
 
+      boundary = mail.boundary
+      boundaries = config['device_types']['boundary'] rescue {}
+      boundaries.each do |type, regex|
+        return type if boundary =~ regex
+      end
+
       return :handset if File.exist?( File.expand_path(
                              File.join(self.conf_dir, "#{self.aliases[self.carrier] || self.carrier}.yml")
                          ) )
