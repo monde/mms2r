@@ -30,7 +30,7 @@ Corpus of carriers currently processed by MMS2R:
 * 1nbox/Idea: 1nbox.net
 * 3 Ireland: mms.3ireland.ie
 * Alltel: mms.alltel.com
-* AT&T/Cingular/Legacy: mms.att.net, txt.att.net, mmode.com, mms.mycingular.com,
+* AT&T/Cingular/Legacy: mms.att.net, mm.att.net, txt.att.net, mmode.com, mms.mycingular.com,
   cingularme.com, mobile.mycingular.com pics.cingularme.com
 * Bell Canada: txt.bell.ca
 * Bell South / Suncom / SBC Global: bellsouth.net, sbcglobal.net
