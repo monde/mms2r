@@ -39,8 +39,12 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.4.1'
+    VERSION = '3.5.0'
 
+    ##
+    # Spoof User-Agent, primarily for the Sprint CDN
+
+    USER_AGENT = "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C28 Safari/419.3"
   end
 
   # Simple convenience function to make it a one-liner:

@@ -43,6 +43,10 @@ class TestMms2rMedia < Test::Unit::TestCase
     end
   end
 
+  def test_faux_user_agent
+    assert_equal "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C28 Safari/419.3",  MMS2R::Media::USER_AGENT
+  end
+
   def test_class_parse
     mms = mail('generic.mail')
     assert_equal ['noreply@rubyforge.org'], mms.from

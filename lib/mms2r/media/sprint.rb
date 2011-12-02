@@ -130,17 +130,21 @@ module MMS2R
         srcs.each do |src|
           begin
 
-            url = URI.parse(CGI.unescapeHTML(src))
+            uri = URI.parse(CGI.unescapeHTML(src))
             unless @is_video
               query={}
-              url.query.split('&').each{|a| p=a.split('='); query[p[0]] = p[1]}
+              uri.query.split('&').each{|a| p=a.split('='); query[p[0]] = p[1]}
               query.delete_if{|k, v| k == 'limitsize' or k == 'squareoutput' }
-              url.query = query.map{|k,v| "#{k}=#{v}"}.join("&")
+              uri.query = query.map{|k,v| "#{k}=#{v}"}.join("&")
             end
             # sprint is a ghetto, they expect to see &amp; for video request
-            url.query = url.query.gsub(/&/, "&amp;") if @is_video
+            uri.query = uri.query.gsub(/&/, "&amp;") if @is_video
 
-            res = Net::HTTP.get_response(url)
+            connection = Net::HTTP.new(uri.host, uri.port)
+            response, content = connection.get(
+              uri.request_uri,
+              { "User-Agent" => MMS2R::Media::USER_AGENT }
+            )
           rescue StandardError => err
             log("#{self.class} processing error, #{$!}", :error)
             next
@@ -148,19 +152,19 @@ module MMS2R
 
           # if the Sprint content server uses response code 500 when the content is purged
           # the content type will text/html and the body will be the message
-          if res.content_type == 'text/html' && res.code == "500"
+          if response.content_type == 'text/html' && response.code == "500"
             log("Sprint content server returned response code 500", :error)
             next
           end
 
           # setup the file path and file
           base = /\/RECIPIENT\/([^\/]+)\//.match(src)[1]
-          type = res.content_type
+          type = response.content_type
           file_name = "#{base}-#{cnt}.#{self.class.default_ext(type)}"
           file = File.join(msg_tmp_dir(),File.basename(file_name))
 
           # write it and add it to the media hash
-          type, file = sprint_write_file(type, res.body, file)
+          type, file = sprint_write_file(type, content, file)
           add_file(type, file) unless type.nil? || file.nil?
           cnt = cnt + 1
         end

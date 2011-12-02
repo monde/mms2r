@@ -1,3 +1,11 @@
+### 3.5.0 / 2011-12-01 (Dr. Milminiman Lamilim Swimwambli - Marriage expert)
+
+* 1 major bug fix
+  * In Ruby 1.9.X MMS2R::Media::Sprint was not fetching content from Sprint's
+    CDN correctly because the implementation of Net::HTTP in 1.9.X passes a
+    User-Agent header of "Ruby" to which Sprint responds with a fake 500 -
+    with help from James McGrath
+
 ### 3.4.1 / 2011-11-06 (Fatty Ding-Dongs, Dethklok foster child)
 
 * 2 major enhancements

@@ -4,23 +4,37 @@ class TestPmSprintCom < Test::Unit::TestCase
   include MMS2R::TestHelper
 
   def mock_sprint_image(message_id)
-    uri = URI.parse('http://pictures.sprintpcs.com//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?wm=1&ext=.jpg&iconifyVideo=true&inviteToken=PE5rJ5PdYzzwk7V7zoXU&outquality=90')
-    res = mock()
-    body = mock()
-    res.expects(:content_type).at_least_once.returns('image/jpeg')
-    res.expects(:body).once.returns(body)
-    res.expects(:code).never
-    Net::HTTP.expects(:get_response).once.returns res
+    response = mock('response')
+    body = mock('body')
+    connection = mock('connection')
+    response.expects(:content_type).twice.returns('image/jpeg')
+    response.expects(:code).never
+    Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).once.returns connection
+    connection.expects(:get).with(
+      # 1.9.2
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?inviteToken=PE5rJ5PdYzzwk7V7zoXU&outquality=90&ext=.jpg&iconifyVideo=true&wm=1'
+      # 1.8.7
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?wm=1&ext=.jpg&outquality=90&iconifyVideo=true&inviteToken=PE5rJ5PdYzzwk7V7zoXU'
+      kind_of(String),
+      { "User-Agent" => MMS2R::Media::USER_AGENT }
+    ).once.returns([response, body])
   end
 
   def mock_sprint_purged_image(message_id)
-    uri = URI.parse('http://pictures.sprintpcs.com//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?wm=1&ext=.jpg&iconifyVideo=true&inviteToken=PE5rJ5PdYzzwk7V7zoXU&outquality=90')
-    res = mock()
-    body = mock()
-    res.expects(:content_type).once.returns('text/html')
-    res.expects(:code).once.returns('500')
-    res.expects(:body).never
-    Net::HTTP.expects(:get_response).once.returns res
+    response = mock('response')
+    body = mock('body')
+    connection = mock('connection')
+    response.expects(:content_type).once.returns('text/html')
+    response.expects(:code).once.returns('500')
+    Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).once.returns connection
+    connection.expects(:get).with(
+      # 1.9.2
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?inviteToken=PE5rJ5PdYzzwk7V7zoXU&outquality=90&ext=.jpg&iconifyVideo=true&wm=1'
+      # 1.8.7
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?wm=1&ext=.jpg&outquality=90&iconifyVideo=true&inviteToken=PE5rJ5PdYzzwk7V7zoXU'
+      kind_of(String),
+      { "User-Agent" => MMS2R::Media::USER_AGENT }
+    ).once.returns([response, body])
   end
 
   def test_mms_should_have_text
@@ -50,14 +64,16 @@ class TestPmSprintCom < Test::Unit::TestCase
   def test_should_have_simple_video
     mail = mail('sprint-video-01.mail')
 
-    uri = URI.parse(
-     'http://pictures.sprintpcs.com//mmps/RECIPIENT/000_259e41e851be9b1d_1/2?inviteToken=lEvrJnPVY5UfOYmahQcx&amp;iconifyVideo=true&amp;wm=1&amp;limitsize=125,125&amp;outquality=90&amp;squareoutput=255,255,255&amp;ext=.jpg&amp;iconifyVideo=true&amp;wm=1')
-    res = mock()
-    body = mock()
-    res.expects(:content_type).at_least_once.returns('video/quicktime')
-    res.expects(:body).once.returns(body)
-    res.expects(:code).never
-    Net::HTTP.expects(:get_response).once.returns res
+    response = mock('response')
+    body = mock('body')
+    connection = mock('connection')
+    response.expects(:content_type).twice.returns('video/quicktime')
+    response.expects(:code).never
+    Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).once.returns connection
+    connection.expects(:get).with(
+      kind_of(String),
+      { "User-Agent" => MMS2R::Media::USER_AGENT }
+    ).once.returns([response, body])
 
     mms = MMS2R::Media.new(mail)
     assert_equal '2068675309', mms.number
@@ -126,22 +142,39 @@ class TestPmSprintCom < Test::Unit::TestCase
   def test_should_have_two_images
     mail = mail('sprint-two-images-01.mail')
 
-    uri1 = URI.parse('http://pictures.sprintpcs.com/mmps/RECIPIENT/001_104058d23d79fb6a_1/2?wm=1&ext=.jpg&iconifyVideo=true&inviteToken=5E1rJSPk5hYDkUnY7op0&outquality=90')
-    res1 = mock()
-    body1 = mock()
-    res1.expects(:content_type).at_least_once.returns('image/jpeg')
-    res1.expects(:body).once.returns(body1)
-    res1.expects(:code).never
-    Net::HTTP.expects(:get_response).returns res1
+    response = mock('response')
+    body = mock('body')
+    connection = mock('connection')
+    response.expects(:content_type).times(4).returns('image/jpeg')
+    response.expects(:code).never
+    Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).twice.returns connection
+    connection.expects(:get).with(
+      kind_of(String),
+      { "User-Agent" => MMS2R::Media::USER_AGENT }
+    ).twice.returns([response, body])
 
-    uri2 = URI.parse('http://pictures.sprintpcs.com/mmps/RECIPIENT/001_104058d23d79fb6a_1/3?wm=1&ext=.jpg&iconifyVideo=true&inviteToken=5E1rJSPk5hYDkUnY7op0&outquality=90')
+    # response1 = mock('response1')
+    # body1 = mock('body1')
+    # connection1 = mock('connection1')
+    # response1.expects(:content_type).at_least_once.returns('image/jpeg')
+    # response1.expects(:code).never
+    # Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).once.returns connection1
+    # connection1.expects(:get).with(
+    #   kind_of(String),
+    #   { "User-Agent" => MMS2R::Media::USER_AGENT }
+    # ).once.returns([response1, body1])
 
-    res2 = mock()
-    body2 = mock()
-    res2.expects(:content_type).at_least_once.returns('image/jpeg')
-    res2.expects(:body).once.returns(body2)
-    res2.expects(:code).never
-    Net::HTTP.expects(:get_response).returns res2
+    # response2 = mock('response2')
+    # body2 = mock('body2')
+    # connection2 = mock('connection2')
+    # response2.expects(:content_type).at_least_once.returns('image/jpeg')
+    # response2.expects(:code).never
+    # Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).once.returns connection2
+    # connection2.expects(:get).with(
+    #   kind_of(String),
+    #   { "User-Agent" => MMS2R::Media::USER_AGENT }
+    # ).once.returns([response2, body2])
+
     mms = MMS2R::Media.new(mail)
     assert_equal '2068675309', mms.number
     assert_equal "pm.sprint.com", mms.carrier
