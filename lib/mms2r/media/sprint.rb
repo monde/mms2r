@@ -185,7 +185,8 @@ module MMS2R
       def sprint_write_file(type, content, file = nil)
         file = sprint_temp_file(type) if file.nil?
         log("#{self.class} writing file #{file}", :info)
-        File.open(file,'w'){ |f| f.write(content) }
+        # force the encoding to be utf-8
+        File.open(file,'w'){ |f| f.write(content.force_encoding("UTF-8")) }
         return type, file
       end
 
