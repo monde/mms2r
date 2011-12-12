@@ -7,11 +7,6 @@ rescue LoadError
   require 'hoe'
 end
 
-begin
-  require 'rcov/rcovtask'
-rescue LoadError
-end
-
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "lib")
 require 'mms2r'
 require 'rake'

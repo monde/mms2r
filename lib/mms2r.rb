@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.5.0'
+    VERSION = '3.5.1'
 
     ##
     # Spoof User-Agent, primarily for the Sprint CDN

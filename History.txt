@@ -1,3 +1,8 @@
+### 3.5.1 / 2011-12-11 (Mashed Potato Johnson - oldest living blues guitarist in the world)
+
+* 1 bug fix
+  * A fix for the utf-8 encoding issue with ruby 1.9.2 - James McGrath
+
 ### 3.5.0 / 2011-12-01 (Dr. Milminiman Lamilim Swimwambli - Marriage expert)
 
 * 1 major bug fix
