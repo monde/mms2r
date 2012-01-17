@@ -266,6 +266,8 @@ module MMS2R
     def body
       text_file = default_text
       @body = text_file ? IO.readlines(text_file.path).join.strip : ""
+      ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
+      @body = ic.iconv(@body)
       if @body.blank? && html_file = default_html
         html = Nokogiri::HTML(IO.read(html_file.path))
         @body = (html.xpath("//head/title").map(&:text) + html.xpath("//body/*").map(&:text)).join(" ")
