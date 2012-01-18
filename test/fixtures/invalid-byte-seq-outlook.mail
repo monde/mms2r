@@ -1,0 +1,342 @@
+Delivered-To: testemail@mail.com
+Received: by 10.52.184.102 with SMTP id et6cs208438vdc;
+        Mon, 16 Jan 2012 14:19:35 -0800 (PST)
+Received: by 10.180.20.69 with SMTP id l5mr17988972wie.19.1326752373488;
+        Mon, 16 Jan 2012 14:19:33 -0800 (PST)
+Return-Path: <nelson+caf_=nelson=testemail@mail.com>
+Received: from mail-wi0-f172.toogle.com (mail-wi0-f172.toogle.com [209.85.212.172]) 
+     by mx.toogle.com with ESMTPS id c7si13165326wia.5.2012.01.16.14.19.32
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Mon, 16 Jan 2012 14:19:33 -0800 (PST)
+Received-SPF: neutral (toogle.com: 209.85.212.172 is neither permitted nor denied by best guess record for domain of nelson+caf_=nelson=testemail@mail.com) client-ip=209.85.212.172;
+Authentication-Results: mx.toogle.com; spf=neutral (toogle.com: 209.85.212.172 is neither permitted nor denied by best guess record for domain of nelson+caf_=nelson=testemail@mail.com) smtp.mail=nelson+caf_=nelson=testemail@mail.com
+Received: by wics10 with SMTP id s10so1698315wic.31
+        for <testemail@mail.com>; Mon, 16 Jan 2012 14:19:32 -0800 (PST)
+Received: by 10.180.73.72 with SMTP id j8mr12775876wiv.2.1326752372616;
+        Mon, 16 Jan 2012 14:19:32 -0800 (PST)
+X-Forwarded-To: testemail@mail.com
+X-Forwarded-For: testemail@mail.com testemail@mail.com
+Delivered-To: testemail@mail.com
+Received: by 10.216.22.196 with SMTP id t46cs153584wet;
+        Mon, 16 Jan 2012 14:19:31 -0800 (PST)
+Received: by 10.236.168.37 with SMTP id j25mr19473152yhl.92.1326752370735;
+        Mon, 16 Jan 2012 14:19:30 -0800 (PST)
+Return-Path: <testemail@mail.com>
+Received: from barracuda.ngSmith.com (barracuda.ngSmith.com. [192.168.97.98])
+        by mx.toogle.com with ESMTP id i66si8419543yhn.66.2012.01.16.14.19.28;
+        Mon, 16 Jan 2012 14:19:30 -0800 (PST)
+Received-SPF: pass (toogle.com: best guess record for domain of testemail@mail.com designates 192.168.97.98 as permitted sender) client-ip=192.168.97.98;
+X-ASG-Debug-ID: 1326752367-0199b2096162000001-x7cFak
+Received: from Mail.NGSmith.com (legacy.ngSmith.com [192.168.0.61]) by barracuda.ngSmith.com with ESMTP id f6DuStHCxnYrGzVR for <testemail@mail.com>; Mon, 16 Jan 2012 16:19:27 -0600 (CST)
+X-Barracuda-Envelope-From: testemail@mail.com
+Received: from MSPEXCH1.ngSmith.com ([fe80::ecf7:ebc1:c6af:b594]) by
+ MSPEXCH2.ngSmith.com ([fe80::4106:cc1:bb08:dd9f%15]) with mapi id
+ 14.01.0339.001; Mon, 16 Jan 2012 16:19:27 -0600
+From: Aaron Doe <testemail@mail.com>
+X-Barracuda-Apparent-Source-IP: fe80::ecf7:ebc1:c6af:b594
+To: ProformaExpress <testemail@mail.com>
+Subject: RE: Issue 14794:Don M. says.. Aaron - I completed RNS Test Question
+ 3, which was done as a  'Cargo Control Number' query.     H
+Thread-Topic: Issue 14794:Don M. says.. Aaron - I completed RNS Test
+ Question 3, which was done as a  'Cargo Control Number' query.     H
+X-ASG-Orig-Subj: RE: Issue 14794:Don M. says.. Aaron - I completed RNS Test Question
+ 3, which was done as a  'Cargo Control Number' query.     H
+Thread-Index: AQHM1JquY55Wte0hREivWFQKTv0KkpYPkFyF
+Date: Mon, 16 Jan 2012 22:19:26 +0000
+Message-ID: <testemail@mail.com>
+References: <testemail@mail.com-64-64-167.mail>
+In-Reply-To: <testemail@mail.com-64-64-167.mail>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [192.168.106.241]
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+X-Barracuda-Connect: legacy.ngSmith.com[192.168.0.61]
+X-Barracuda-Start-Time: 1326752367
+X-Barracuda-URL: http://192.168.0.95:8000/cgi-mod/mark.cgi
+X-Virus-Scanned: by bsmtpd at ngSmith.com
+X-Barracuda-Spam-Score: 0.00
+X-Barracuda-Spam-Status: No, SCORE=0.00 using global scores of TAG_LEVEL=1000.0 QUARANTINE_LEVEL=1000.0 KILL_LEVEL=9.0 tests=
+X-Barracuda-Spam-Report: Code version 3.2, rules version 3.2.2.86107
+  Rule breakdown below
+   pts rule name              description
+  ---- ---------------------- --------------------------------------------------
+
+Don,
+
+Please have express change "CC" to "ABT"
+Aaron
+
+________________________________
+From: ProformaExpress [testemail@mail.com]
+Sent: Monday, January 16, 2012 4:10 PM
+To: Christian Doe; Pat Doe; Don Doe; Jim Doe; Michael H=
+anson; Tim Doe; Aaron Doe
+Subject: Issue 14794:Don M. says.. Aaron - I completed RNS Test Question 3,=
+ which was done as a 'Cargo Control Number' query. H
+
+
+Direct link to Issue 14794<http://trakr.net/list/ProformaExpress/rev=
+ise/14794>   I am working on this<http://trakr.net/list/ProformaExpr=
+ess/work/19406>
+
+
+#10     Don Doe said less than a minute ago [Mon, Jan 16, 2012 02:10 PM =
+PST]                 status:active
+
+
+
+Aaron - I completed RNS Test Question 3, which was done as a 'Cargo Control=
+ Number' query.
+
+Having a problem, per attached, where the EDIFACT file is showing the Notif=
+ication_Qualifier (Reference Qualifier) as - TN - which should only be used=
+ for Transaction Number queries.
+
+In this case the EDIFACT file should be showing 'ABT' for a Cargo Control N=
+umber Query - not TN.
+
+The Express XML is showing 'CC' for the 'Notification_Qualifier' on Cargo C=
+ontrol Number queries.
+
+When you get the CC, it has to be shown as ABT in the EDIFACT.
+
+The last test question (2) required query by Transaction Number - so TN was=
+ correct.
+
+When you get 'CC' - please change to 'ABT' in the EDIFACT.
+
+Let me know if you need additional information.
+
+Thanks
+
+
+
+
+Wrong_Reference_Qualifier.xlsx<http://trakr.net/uploads/1/14794/Wron=
+g_Reference_Qualifier.xlsx> view<http://trakr.net/uploads/1/14794/Wr=
+ong_Reference_Qualifier.xlsx?viewer=3D1>
+
+
+
+        Email(s) sent to: Christian Doe,Pat Doe,Don Doe,Jim,=
+Michael Doe,Tim Doe,Aaron Doe
+        Direct link to Issue 14794<http://trakr.net/list/ProformaExp=
+ress/revise/14794>
+
+All attachments for this issue:
+
+Wrong_Reference_Qualifier.xlsx<http://trakr.net/uploads/1/14794/Wron=
+g_Reference_Qualifier.xlsx> view<http://trakr.net/uploads/1/14794/Wr=
+ong_Reference_Qualifier.xlsx?viewer=3D1>
+RNS_Query_by_Transaction_Number.xlsx<http://trakr.net/uploads/1/1479=
+4/RNS_Query_by_Transaction_Number.xlsx> view<http://trakr.net/upload=
+s/1/14794/RNS_Query_by_Transaction_Number.xlsx?viewer=3D1>
+RNS_Qeury_specifics.xlsx<http://trakr.net/uploads/1/14794/RNS_Qeury_=
+specifics.xlsx> view<http://trakr.net/uploads/1/14794/RNS_Qeury_spec=
+ifics.xlsx?viewer=3D1>
+
+
+        Issue History..
+#9      Don Doe said about 7 hours ago [Mon, Jan 16, 2012 07:10 AM PST] =
+
+             status:active
+
+
+
+Per Judi's email below - RNS Question 2 is correct.
+Have sent # 3 now.
+
+Question 2 was sent on Thursday so she is taking a couple days,
+or more, to get back with the question status.
+_________________________________________
+From: Johnson, Judi
+Sent: Monday, January 16, 2012 9:27 AM
+To: Don Doe
+Subject: RE: RNS Client Test Package =96 Question 2
+
+Hi Don
+That is correct
+Go to test 3
+Bye Judi
+_________________________________________
+From: Don Doe [mailto:testemail@mail.com<mailto:testemail@mail.com>]
+Sent: January 12, 2012 5:03 PM
+To: Johnson, Judi
+Subject: RE: RNS Client Test Package - 1
+Importance: High
+
+Hi Judi,
+
+I have sent the RNS Transaction for Test Question 2 again.
+The programmer has fixed the RNS Transaction showing TN for Transaction Num=
+ber.
+
+
+
+
+#8      Don Doe said 4 days ago [Thu, Jan 12, 2012 07:58 AM PST]        =
+     status:active
+
+
+
+OK - sending it again.
+Thanks
+
+
+
+
+#7      Aaron Doe said 4 days ago [Thu, Jan 12, 2012 07:48 AM PST]       =
+     status:active
+
+
+
+Refreshed the map. I tested and it is working now.
+
+Aaron
+
+
+
+
+#6      Don Doe said 4 days ago [Thu, Jan 12, 2012 06:26 AM PST]        =
+     status:active
+
+
+
+I just re-sent the RNS Query Test 2 again - but got the same results.
+
+Express sent - <notification_qualifier>TN</notification_qualifier>
+
+But - ABT was sent to CBSA again:
+UNB+UNOA:2+6128547363+RCCECECPT:12+120112:0810+22++CUSREP'UNG+CUSREP+612854=
+7363+PARSPDN+120112:0810+22+UN+D:96A'UNH+0022+CUSREP:D:96A:UN'BGM+998'DTM+1=
+32:20120112:203'RFF+ABT:14142123913549'UNT+5+0022'UNE+1+22'UNZ+1+22'
+
+
+
+
+#5      Aaron Doe said 4 days ago [Thu, Jan 12, 2012 02:25 AM PST]       =
+     status:active
+
+
+
+The qualifier is mapped. Please retest.
+
+
+
+
+#4      Don Doe said 5 days ago [Wed, Jan 11, 2012 11:02 AM PST]        =
+     status:active
+
+
+
+Aaron - TN or ABT are both being included in the XML when oppopriate.
+Can you not go by this?
+
+Getting for the Transaction Number query -
+<Notification_qualifier>TN</Notification_qualifier>
+or
+<Notification_qualifier>ABT</Notification_qualifier>
+
+Do you have to have an indicator also?
+
+Should I recreate the RNS transaction to send or are you sending the one yo=
+u fixed?
+Thanks
+
+
+
+
+
+#3      Aaron Doe said 5 days ago [Wed, Jan 11, 2012 10:25 AM PST]       =
+     status:active
+
+
+
+I changed =93ABT=94 to =93TN=94. If you need to switch between the CCN and =
+the TN I will need an indicator in the xml. Don recheck step 1.
+
+
+
+
+#2      Don Doe said 5 days ago [Wed, Jan 11, 2012 07:51 AM PST]        =
+     status:active
+
+
+
+When completing the RNS Query Test 2 - sending by Transaction Number - have=
+ to send "TN" for the Reference Qualifier, per attached.
+
+But the EDIFACT sent shows ABT (for Cargo Control Number) in error. .
+
+The XML file sent from Express - also attached - does show TN - but the EDI=
+FACT file is showing: ABT
+
+Please correct - as soon as possible.
+
+Thanks
+
+
+
+
+RNS_Query_by_Transaction_Number.xlsx<http://trakr.net/uploads/1/1479=
+4/RNS_Query_by_Transaction_Number.xlsx> view<http://trakr.net/upload=
+s/1/14794/RNS_Query_by_Transaction_Number.xlsx?viewer=3D1>
+
+
+
+
+#1      Don Doe said 6 days ago [Tue, Jan 10, 2012 07:58 PM PST]        =
+     status:active
+
+
+
+I completed the RNS Test Question 2 today. Still waiting to hear the result=
+s from Judi at CBSA.
+
+Question 2 requires that you do the query using the Transaction Id.
+In this case, Judi told me to use - 14142123913549 for the Transaction Id -=
+ which I did.
+
+But, per attached, the Query Responses grid doesn't tell you that this quer=
+y was completed by "Transaction Id" and doesn't show the "Transaction Id" u=
+sed with the query.
+
+Need to have a column that shows whether the RNS Query was done by Cargo Co=
+ntrol Number (CCN), Conveyance Reference, or Transaction Id.
+
+Also need to be able to see the Transaction #, CCN, or Conveyance Reference=
+ used within the Query Responses.
+
+This would let the user know what type of query was sent and make it easier=
+ to know which RNS Query is which.
+
+Let me know if any questions.
+
+Thanks.
+
+
+
+
+RNS_Qeury_specifics.xlsx<http://trakr.net/uploads/1/14794/RNS_Qeury_=
+specifics.xlsx> view<http://trakr.net/uploads/1/14794/RNS_Qeury_spec=
+ifics.xlsx?viewer=3D1>
+
+
+C-TPAT SVI Partner ID:  norBro01937 / norCon01149=0D
+
+This message and any attachments are intended solely for the addressee(s) a=
+nd are confidential.  If you receive this message in error, please delete i=
+t and immediately notify the sender.  Norman G. Smith, Inc. accepts no lia=
+bility for any claims in connection with the content or the transmission of=
+ this message.  To better protect yourself, we suggest you obtain written a=
+dvice from the applicable Government agency.  =0D
+All business is transacted subject to our Terms and Conditions of Service. =
+ Visit http://www.ngSmith.com/tools/forms/eng/terms_conditions.pdf for a f=
+ull copy.=0D=0D
+
+
+
