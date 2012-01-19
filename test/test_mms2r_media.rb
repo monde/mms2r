@@ -11,13 +11,15 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def setup
-    @tmpdir = File.join(Dir.tmpdir, "#{Time.now.to_i}-t")
-    FileUtils.mkdir_p(@tmpdir)
-    @confdir = File.join(Dir.tmpdir, "#{Time.now.to_i}-c")
-    FileUtils.mkdir_p(@confdir)
+    @oldtmpdir = MMS2R::Media.tmp_dir || File.join(Dir.tmpdir, "#{Time.now.to_i}-#{rand(1000)}")
+    @oldconfdir = MMS2R::Media.conf_dir || File.join(Dir.tmpdir, "#{Time.now.to_i}-#{rand(1000)}")
+    FileUtils.mkdir_p(@oldtmpdir)
+    FileUtils.mkdir_p(@oldconfdir)
 
-    @oldtmpdir = MMS2R::Media.tmp_dir
-    @oldconfdir = MMS2R::Media.conf_dir
+    @tmpdir = File.join(Dir.tmpdir, "#{Time.now.to_i}-#{rand(1000)}")
+    FileUtils.mkdir_p(@tmpdir)
+    @confdir = File.join(Dir.tmpdir, "#{Time.now.to_i}-#{rand(1000)}")
+    FileUtils.mkdir_p(@confdir)
   end
 
   def teardown
@@ -231,19 +233,17 @@ class TestMms2rMedia < Test::Unit::TestCase
     text_lines = IO.readlines("#{file}")
     text = text_lines.join
 
-    # ASCII-8BIT -> D'ici un mois G\xC3\xA9orgie
-    # UTF-8      ->  D'ici un mois Géorgie
+    # ASCII-8BIT -> D'ici un mois G\xE9orgie
+    # UTF-8      -> D'ici un mois Géorgie
 
     if RUBY_VERSION < "1.9"
+      assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
       assert_equal("D'ici un mois Géorgie  body", text_lines.first.strip)
-      assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
     else
-      #assert_equal("D'ici un mois Géorgie  body", text_lines.first.strip)
-      assert_equal("D'ici un mois G\xE9orgie  body", text_lines.first.strip)
-      assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
+      assert_equal(Iconv.new('UTF-8', 'ISO-8859-1').iconv("sample email message Fwd: sub D'ici un mois Géorgie"), mms.subject)
+      assert_equal(Iconv.new('UTF-8', 'ISO-8859-1').iconv("D'ici un mois G\xE9orgie  body"), text_lines.first.strip)
     end
 
-    mms.purge
   end
 
   def test_subject

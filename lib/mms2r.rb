@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.5.1'
+    VERSION = '3.6.0'
 
     ##
     # Spoof User-Agent, primarily for the Sprint CDN
@@ -65,8 +65,14 @@ end
   end
 end
 
-# HAX to not deal with Psych YAML parser in Ruby >= 1.9
-#YAML::ENGINE.yamler= 'syck' if defined?(YAML::ENGINE)
+if RUBY_VERSION >= "1.9"
+  begin
+    require 'psych'
+    YAML::ENGINE.yamler= 'syck' if defined?(YAML::ENGINE)
+  rescue LoadError
+  end
+end
+
 
 require File.join(File.dirname(__FILE__), 'ext/mail')
 require File.join(File.dirname(__FILE__), 'ext/object')

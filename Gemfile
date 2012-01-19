@@ -1,10 +1,11 @@
 # -*- ruby -*-
 
-source :gemcutter
+source :rubygems
 
 gem "nokogiri"
 gem "mail"
 gem "exifr"
+# gem "psych"
 
 group :development, :test do
   gem "rdoc"

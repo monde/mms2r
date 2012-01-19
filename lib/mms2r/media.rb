@@ -266,8 +266,16 @@ module MMS2R
     def body
       text_file = default_text
       @body = text_file ? IO.readlines(text_file.path).join.strip : ""
-      ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
-      @body = ic.iconv(@body)
+      @body.force_encoding("ISO-8859-1") if RUBY_VERSION >= "1.9" && @body.encoding == "ASCII-8BIT"
+
+      begin
+        ic = Iconv.new('UTF-8', 'ISO-8859-1' )
+        @body = ic.iconv(@body)
+        @body << ic.iconv(nil)
+        ic.close
+      rescue Exception => e
+      end
+
       if @body.blank? && html_file = default_html
         html = Nokogiri::HTML(IO.read(html_file.path))
         @body = (html.xpath("//head/title").map(&:text) + html.xpath("//body/*").map(&:text)).join(" ")
@@ -436,16 +444,13 @@ module MMS2R
     def transform_text(type, text, original_encoding = 'ISO-8859-1')
       return type, text if !config['transform'] || !(transforms = config['transform'][type])
 
-      if RUBY_VERSION < "1.9"
-        #convert to UTF-8
-        begin
-          c = Iconv.new('UTF-8', original_encoding )
-          utf_t = c.iconv(text)
-        rescue Exception => e
-          utf_t = text
-        end
-      else
-        utf_t = text.encoding == "ASCII-8BIT" ? text.force_encoding("ISO-8859-1").encode("UTF-8") : text
+      begin
+        ic = Iconv.new('UTF-8', original_encoding )
+        utf_t = ic.iconv(text)
+        utf_t << ic.iconv(nil)
+        ic.close
+      rescue Exception => e
+        utf_t = text
       end
 
       transforms.each do |transform|
@@ -588,12 +593,12 @@ module MMS2R
 
       headers = config['device_types']['headers'] rescue {}
       headers.keys.each do |header|
-        if mail.header[header.downcase]
+        if mail.header[header]
           # headers[header] refers to a hash of smart phone types with regex values
           # that if they match, the header signals the type should be returned
           headers[header].each do |type, regex|
-            return type if mail.header[header.downcase].decoded =~ regex
-            field = mail.header.fields.detect { |field| field.name.downcase == header.downcase }
+            return type if mail.header[header].decoded =~ regex
+            field = mail.header.fields.detect { |field| field.name == header }
             return type if field && field.to_s =~ regex
           end
         end

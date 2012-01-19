@@ -82,6 +82,7 @@ test/fixtures/iconv-fr-text-01.mail
 test/fixtures/indosat-image-01.mail
 test/fixtures/indosat-image-02.mail
 test/fixtures/info2go-image-01.mail
+test/fixtures/invalid-byte-seq-outlook.mail
 test/fixtures/iphone-image-01.mail
 test/fixtures/iphone-image-02.mail
 test/fixtures/luxgsm-image-01.mail
@@ -148,6 +149,7 @@ test/test_1nbox_net.rb
 test/test_bell_canada.rb
 test/test_bellsouth_net.rb
 test/test_helper.rb
+test/test_invalid_byte_seq_outlook.rb
 test/test_mediamessaging_o2_co_uk.rb
 test/test_messaging_nextel_com.rb
 test/test_messaging_sprintpcs_com.rb

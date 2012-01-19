@@ -1,3 +1,10 @@
+### 3.6.0 / 2012-01-19 (Agent 216 - assassin, master of infiltration and sabotage)
+
+* 1 major enhancement
+  * Ruby 1.8.7, 1.9.2, and 1.9.3 compatible
+* 1 bug fix
+  * A fix for the utf-8 encoding issue with ruby 1.9.2 - minimul / Christian
+
 ### 3.5.1 / 2011-12-11 (Mashed Potato Johnson - oldest living blues guitarist in the world)
 
 * 1 bug fix
