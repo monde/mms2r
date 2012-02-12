@@ -134,17 +134,19 @@ module MMS2R
             unless @is_video
               query={}
               uri.query.split('&').each{|a| p=a.split('='); query[p[0]] = p[1]}
-              query.delete_if{|k, v| k == 'limitsize' or k == 'squareoutput' }
+              query.delete_if{|k, v| k == 'limitsize' || k == 'squareoutput' }
               uri.query = query.map{|k,v| "#{k}=#{v}"}.join("&")
             end
             # sprint is a ghetto, they expect to see &amp; for video request
             uri.query = uri.query.gsub(/&/, "&amp;") if @is_video
 
             connection = Net::HTTP.new(uri.host, uri.port)
-            response, content = connection.get(
+            #connection.set_debug_output $stdout
+            response = connection.get2(
               uri.request_uri,
               { "User-Agent" => MMS2R::Media::USER_AGENT }
             )
+            content = response.body
           rescue StandardError => err
             log("#{self.class} processing error, #{$!}", :error)
             next

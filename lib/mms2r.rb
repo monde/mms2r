@@ -39,7 +39,7 @@ module MMS2R
     ##
     # MMS2R library version
 
-    VERSION = '3.6.0'
+    VERSION = '3.6.1'
 
     ##
     # Spoof User-Agent, primarily for the Sprint CDN
@@ -50,9 +50,10 @@ module MMS2R
   # Simple convenience function to make it a one-liner:
   # MMS2R.parse raw_mail or MMS2R.parse File.load(raw_mail)
   # Combined w/ the method_missing delegation, this should behave as an enhanced Mail object, more or less.
-  def self.parse raw_mail
+  def self.parse raw_mail, options = {}
     mail = Mail.new raw_mail
-    MMS2R::Media.new(mail) end
+    MMS2R::Media.new(mail, options)
+  end
 
 end
 
