@@ -46,7 +46,7 @@ class TestMms2rMedia < Test::Unit::TestCase
   end
 
   def test_faux_user_agent
-    assert_equal "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1C28 Safari/419.3",  MMS2R::Media::USER_AGENT
+    assert_equal "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2",  MMS2R::Media::USER_AGENT
   end
 
   def test_class_parse

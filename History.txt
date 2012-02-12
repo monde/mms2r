@@ -1,3 +1,8 @@
+### 3.6.2 / 2012-02-12 (Mr. Gojira - Owner Mr. Gojira's Driving School - retake driver's exam)
+
+* 1 minor enhancement
+  * Change user agent given to Sprint so it returns a properly sized image.
+
 ### 3.6.1 / 2012-02-11 (Mr. Gojira - Owner Mr. Gojira's Driving School)
 
 * 1 minor enhancement
