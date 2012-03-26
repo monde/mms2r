@@ -193,6 +193,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal result, mms.transform_text(type, text)
 
     # testing the default config
+    assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent from my Windows Phone")
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent via BlackBerry from T-Mobile")
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent from my Verizon Wireless BlackBerry")
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', 'Sent from my iPhone')

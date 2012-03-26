@@ -9,10 +9,6 @@
   end
 end
 
-# NOTE when we upgrade to test-unit 2.x.x or greater we'll not need redgreen,
-# it's baked into test-unit
-begin require 'redgreen'; rescue LoadError; end
-
 require File.join(File.expand_path(File.dirname(__FILE__)), '..', 'lib', 'mms2r')
 
 module MMS2R
@@ -84,7 +80,6 @@ module Net #:nodoc:
     alias :old_net_http_connect :connect
 
     def request(req, body = nil, &block)
-      prot = use_ssl ? "https" : "http"
       uri_cls = use_ssl ? URI::HTTPS : URI::HTTP
       query = req.path.split('?',2)
       opts = {:host => self.address,

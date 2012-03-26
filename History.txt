@@ -1,3 +1,8 @@
+### 3.6.3 / 2012-03.25 (Dethklok Minute Host - host of The Dethklok Minute)
+
+* 1 minor enhancement
+  * strip Windows phone default footer
+
 ### 3.6.2 / 2012-02-12 (Mr. Gojira - Owner Mr. Gojira's Driving School - retake driver's exam)
 
 * 1 minor enhancement
