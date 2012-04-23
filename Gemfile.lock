@@ -37,6 +37,7 @@ DEPENDENCIES
   exifr
   gemcutter
   hoe
+  json
   mail
   mocha
   nokogiri
