@@ -7,6 +7,7 @@
 require 'net/http'
 require 'nokogiri'
 require 'cgi'
+require 'json'
 
 module MMS2R
 
@@ -105,30 +106,48 @@ module MMS2R
           type, file = sprint_write_file(type, text.strip)
           add_file(type, file) unless type.nil? || file.nil?
         end
-        
         # if no text was found, there still might be a message with images
         # that can be seen at the end of the "View Entire Message" link       
         if !text_found
-          # Sprint uses AJAX/josn to serve up the content at the end of the link so this is conveluted
           view_entire_message_link = doc.search("a").find { |link| link.inner_html == "View Entire Message"}
-          url = view_entire_message_link.attr("href")
-          # extract the "invite" param out of the url - this will be the id we pass to the ajax path below
-          inviteMessageId = CGI::parse(URI::parse(url).query)["invite"].first
-          json_url = "http://pictures.sprintpcs.com/ui-refresh/guest/getMessageContainerJSON.do%3FcomponentType%3DmediaDetail&invite=#{inviteMessageId}&externalMessageId=#{inviteMessageId}"
-          # pull down the json from the url and parse it
-          json_response = Net::HTTP.get_response(URI.parse(json_url))
-          json = JSON.parse(json_response.body)
-          
-          # there may be multiple "results" in the json - due to multiple images
-          # cycle through them and extract the "description" which is the text 
-          # message the sender sent with the images
-          json["Results"].each do |result| 
-            type = 'text/plain'
-            text = result["description"] ? result["description"].strip : nil
-            next if text.empty?
-            type, text = transform_text(type, text)
-            type, file = sprint_write_file(type, text.strip)
-            add_file(type, file) unless type.nil? || file.nil?
+          # if we can't find the view entire message link, give up
+          if view_entire_message_link
+            # Sprint uses AJAX/json to serve up the content at the end of the link so this is conveluted
+            url = view_entire_message_link.attr("href")
+            # extract the "invite" param out of the url - this will be the id we pass to the ajax path below
+            inviteMessageId = CGI::parse(URI::parse(url).query)["invite"].first
+            
+            if inviteMessageId
+              json_url = "http://pictures.sprintpcs.com/ui-refresh/guest/getMessageContainerJSON.do%3FcomponentType%3DmediaDetail&invite=#{inviteMessageId}&externalMessageId=#{inviteMessageId}"
+              # pull down the json from the url and parse it
+              uri = URI.parse(json_url)
+              connection = Net::HTTP.new(uri.host, uri.port)
+              response = connection.get2(
+                uri.request_uri,
+                { "User-Agent" => MMS2R::Media::USER_AGENT }
+              )
+              content = response.body
+              
+              # if the content has expired, sprint sends back html "content expired page
+              # json will fail to parse
+              begin
+                json = JSON.parse(content)
+                
+                # there may be multiple "results" in the json - due to multiple images
+                # cycle through them and extract the "description" which is the text 
+                # message the sender sent with the images
+                json["Results"].each do |result| 
+                  type = 'text/plain'
+                  text = result["description"] ? result["description"].strip : nil
+                  next if text.empty?
+                  type, text = transform_text(type, text)
+                  type, file = sprint_write_file(type, text.strip)
+                  add_file(type, file) unless type.nil? || file.nil?
+                end
+              rescue JSON::ParserError => e
+                log("#{self.class} processing error, #{$!}", :error)
+              end
+            end
           end
         end       
       end
@@ -182,7 +201,6 @@ module MMS2R
             log("#{self.class} processing error, #{$!}", :error)
             next
           end
-
           # if the Sprint content server uses response code 500 when the content is purged
           # the content type will text/html and the body will be the message
           if response.content_type == 'text/html' && response.code == "500"
