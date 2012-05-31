@@ -38,7 +38,7 @@ class TestPmSprintCom < Test::Unit::TestCase
       { "User-Agent" => MMS2R::Media::USER_AGENT }
     ).once.returns(response)
   end
-  
+
   def mock_sprint_ajax
     response = mock('response')
     body = mock('body')
@@ -85,8 +85,8 @@ class TestPmSprintCom < Test::Unit::TestCase
       kind_of(String),
       { "User-Agent" => MMS2R::Media::USER_AGENT }
     ).twice.returns(response)
-  end  
-  
+  end
+
   def test_mms_should_have_text
     mail = mail('sprint-text-01.mail')
     mms = MMS2R::Media.new(mail)
@@ -247,7 +247,7 @@ class TestPmSprintCom < Test::Unit::TestCase
 
     mms.purge
   end
-  
+
   def test_message_is_missing_in_mail_purged_from_content_server
     # this test is questionable
     mail = mail('sprint-image-missing-message.mail')
@@ -261,7 +261,7 @@ class TestPmSprintCom < Test::Unit::TestCase
 
     mms.purge
   end
-  
+
   def test_image_should_be_purged_from_content_server
     mail = mail('sprint-image-01.mail')
     mock_sprint_purged_image(mail.message_id)

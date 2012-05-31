@@ -213,7 +213,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal [type, text], mms.transform_text(type, "Ignore this part, " + text)
 
     # chaining transforms
-    mms.expects(:config).at_least_once.returns({'transform' => {type => [[/(hello)/, 'world'], 
+    mms.expects(:config).at_least_once.returns({'transform' => {type => [[/(hello)/, 'world'],
                                                                 [/(world)/, 'mars']]}})
     assert_equal [type, 'mars'], mms.transform_text(type, text)
 
@@ -710,7 +710,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.process do |type, files|
       assert_equal 1, files.size
       assert_equal true, type == 'text/plain' || type == 'text/html'
-      assert_equal true, File.basename(files.first) == 'message.txt' || 
+      assert_equal true, File.basename(files.first) == 'message.txt' ||
                          File.basename(files.first) == 'message.html'
       assert_equal true, File::exist?(files.first)
     end
