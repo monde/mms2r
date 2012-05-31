@@ -6,11 +6,11 @@ module MMS2R
     end
 
     def self.minor
-      6
+      7
     end
 
     def self.patch
-      5
+      0
     end
 
     def self.pre

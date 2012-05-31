@@ -1,4 +1,15 @@
-### 3.6.3 / 2012-03.25 (Dethklok Minute Host - host of The Dethklok Minute)
+### 3.7.0 / 2012-05-31 (The Teenager - Edgar's brother via Eric's face)
+
+* 2 major enhancements
+  * Improve processing of Sprint media - James McGrath
+  * Remove Hoe and gemcutter dependencies
+
+### 3.6.4 / 2012-04-22 (Molly - Pickles' mother)
+
+* 1 minor enhancement
+  * strip a variation of the iphone default footer
+
+### 3.6.3 / 2012-03-25 (Dethklok Minute Host - host of The Dethklok Minute)
 
 * 1 minor enhancement
   * strip Windows phone default footer
