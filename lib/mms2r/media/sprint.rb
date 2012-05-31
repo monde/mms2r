@@ -1,5 +1,5 @@
 #--
-# Copyright (c) 2007-2010 by Mike Mondragon (mikemondragon@gmail.com)
+# Copyright (c) 2007-2012 by Mike Mondragon (mikemondragon@gmail.com)
 #
 # Please see the LICENSE file for licensing information.
 #++

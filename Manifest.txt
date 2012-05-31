@@ -2,6 +2,7 @@
 Gemfile
 Gemfile.lock
 History.txt
+LICENSE
 Manifest.txt
 README.TMail.txt
 README.txt
