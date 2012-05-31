@@ -38,7 +38,55 @@ class TestPmSprintCom < Test::Unit::TestCase
       { "User-Agent" => MMS2R::Media::USER_AGENT }
     ).once.returns(response)
   end
+  
+  def mock_sprint_ajax
+    response = mock('response')
+    body = mock('body')
+    # this is a response from a real sprint message
+    file = File.open("./test/fixtures/sprint-ajax-response-success.json", "rb")
+    json = file.read
+    body.expects(:to_str).returns json
+    connection = mock('connection')
+    connection.stubs(:use_ssl=).returns(true)
+    response.expects(:body).twice.returns(body)
+    response.expects(:code).once.returns('200')
+    response.expects(:content_type).twice.returns('text/html')
 
+    Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).twice.returns connection
+    connection.expects(:get2).with(
+      # 1.9.2
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?inviteToken=PE5rJ5PdYzzwk7V7zoXU&outquality=90&ext=.jpg&iconifyVideo=true&wm=1'
+      # 1.8.7
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?wm=1&ext=.jpg&outquality=90&iconifyVideo=true&inviteToken=PE5rJ5PdYzzwk7V7zoXU'
+      kind_of(String),
+      { "User-Agent" => MMS2R::Media::USER_AGENT }
+    ).twice.returns(response)
+  end
+
+  def mock_sprint_ajax_purged
+    response = mock('response')
+    body = mock('body')
+    # this is a response from a real sprint message
+    file = File.open("./test/fixtures/sprint-ajax-response-failure.html", "rb")
+    error_html = file.read
+    body.expects(:to_str).returns error_html
+    connection = mock('connection')
+    connection.stubs(:use_ssl=).returns(true)
+    response.expects(:body).twice.returns(body)
+    response.expects(:code).once.returns('500')
+    response.expects(:content_type).once.returns('text/html')
+
+    Net::HTTP.expects(:new).with('pictures.sprintpcs.com', 80).twice.returns connection
+    connection.expects(:get2).with(
+      # 1.9.2
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?inviteToken=PE5rJ5PdYzzwk7V7zoXU&outquality=90&ext=.jpg&iconifyVideo=true&wm=1'
+      # 1.8.7
+      # '//mmps/RECIPIENT/001_2066c7013e7ca833_1/2?wm=1&ext=.jpg&outquality=90&iconifyVideo=true&inviteToken=PE5rJ5PdYzzwk7V7zoXU'
+      kind_of(String),
+      { "User-Agent" => MMS2R::Media::USER_AGENT }
+    ).twice.returns(response)
+  end  
+  
   def test_mms_should_have_text
     mail = mail('sprint-text-01.mail')
     mms = MMS2R::Media.new(mail)
@@ -185,6 +233,35 @@ class TestPmSprintCom < Test::Unit::TestCase
     mms.purge
   end
 
+  def test_message_is_missing_in_mail
+    # this test is questionable
+    mail = mail('sprint-image-missing-message.mail')
+    mock_sprint_ajax
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal 1, mms.media['text/plain'].size
+
+    # test that the message was extracted from the ajax response
+    message = IO.readlines(mms.media['text/plain'].first).join("")
+    assert_equal "Just testing the caption on Sprint", message
+
+    mms.purge
+  end
+  
+  def test_message_is_missing_in_mail_purged_from_content_server
+    # this test is questionable
+    mail = mail('sprint-image-missing-message.mail')
+    mock_sprint_ajax_purged
+    mms = MMS2R::Media.new(mail)
+
+    assert_equal '5135455555', mms.number
+    assert_equal "pm.sprint.com", mms.carrier
+
+    assert_equal 0, mms.media.size
+
+    mms.purge
+  end
+  
   def test_image_should_be_purged_from_content_server
     mail = mail('sprint-image-01.mail')
     mock_sprint_purged_image(mail.message_id)
@@ -230,6 +307,7 @@ class TestPmSprintCom < Test::Unit::TestCase
 
   def test_new_subject
     mail = mail('sprint-new-image-01.mail')
+    mock_sprint_ajax
     mms = MMS2R::Media.new(mail)
     assert_equal '2068675309', mms.number
     assert_equal "pm.sprint.com", mms.carrier

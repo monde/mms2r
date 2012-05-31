@@ -5,6 +5,7 @@ source :rubygems
 gem "nokogiri"
 gem "mail"
 gem "exifr"
+gem "json"
 # gem "psych"
 
 group :development, :test do
