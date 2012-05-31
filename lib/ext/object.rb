@@ -1,11 +1,19 @@
 class Object
 
-  def blank?
-    respond_to?(:empty?) ? empty? : !self
+  unless respond_to?(:blank?)
+
+    def blank?
+      respond_to?(:empty?) ? empty? : !self
+    end
+
   end
 
-  def present?
-    !blank?
+  unless respond_to?(:present?)
+
+    def present?
+      !blank?
+    end
+
   end
 
 end
