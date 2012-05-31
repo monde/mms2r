@@ -5,7 +5,7 @@ ignore:
   - !ruby/regexp /\ASent via BlackBerry (from|by) .*$/im
   - !ruby/regexp /\ASent from my Windows Phone.*$/im
   - !ruby/regexp /\ASent from my Verizon Wireless BlackBerry$/im
-  - !ruby/regexp /\ASent from (my|your) iPhone.?$/im
+  - !ruby/regexp /\ASent (via|(from (my|your))) iPhone.?$/im
   - !ruby/regexp /\ASent on the Sprint.* Now Network.*$/im
   multipart/mixed:
   - !ruby/regexp "/^Attachment: /i"
@@ -17,7 +17,7 @@ transform:
     - "\\1"
   - - !ruby/regexp /\A(.*?)Sent from my Verizon Wireless BlackBerry$/im
     - "\\1"
-  - - !ruby/regexp /\A(.*?)Sent from (my|your) iPhone.?$/im
+  - - !ruby/regexp /\A(.*?)Sent (via|(from (my|your))) iPhone.?$/im
     - "\\1"
   - - !ruby/regexp /\A(.*?)\s+image\/jpeg$/im
     - "\\1"

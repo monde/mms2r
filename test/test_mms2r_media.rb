@@ -196,6 +196,7 @@ class TestMms2rMedia < Test::Unit::TestCase
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent from my Windows Phone")
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent via BlackBerry from T-Mobile")
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', "Sent from my Verizon Wireless BlackBerry")
+    assert_equal ['text/plain', ''], mms.transform_text('text/plain', 'Sent via iPhone')
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', 'Sent from my iPhone')
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', 'Sent from your iPhone.')
     assert_equal ['text/plain', ''], mms.transform_text('text/plain', " \n\nimage/jpeg")
