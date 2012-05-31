@@ -93,21 +93,22 @@ module MMS2R
         # the user.  (note) we'll have to verify that if they attach multiple texts
         # to the MMS then Sprint stacks it up in multiple <pre>'s.  The only <pre>
         # tag in the document is for text from the user.
-        # if there is no text media found in the mail body - then we go to more 
+        # if there is no text media found in the mail body - then we go to more
         # extreme measures.
         text_found = false
-        
+
         doc.search("/html/body//pre").each do |pre|
           type = 'text/plain'
           text = pre.inner_html.strip
           next if text.empty?
+
           text_found = true
           type, text = transform_text(type, text)
           type, file = sprint_write_file(type, text.strip)
           add_file(type, file) unless type.nil? || file.nil?
         end
         # if no text was found, there still might be a message with images
-        # that can be seen at the end of the "View Entire Message" link       
+        # that can be seen at the end of the "View Entire Message" link
         if !text_found
           view_entire_message_link = doc.search("a").find { |link| link.inner_html == "View Entire Message"}
           # if we can't find the view entire message link, give up
@@ -116,7 +117,7 @@ module MMS2R
             url = view_entire_message_link.attr("href")
             # extract the "invite" param out of the url - this will be the id we pass to the ajax path below
             inviteMessageId = CGI::parse(URI::parse(url).query)["invite"].first
-            
+
             if inviteMessageId
               json_url = "http://pictures.sprintpcs.com/ui-refresh/guest/getMessageContainerJSON.do%3FcomponentType%3DmediaDetail&invite=#{inviteMessageId}&externalMessageId=#{inviteMessageId}"
               # pull down the json from the url and parse it
@@ -127,16 +128,16 @@ module MMS2R
                 { "User-Agent" => MMS2R::Media::USER_AGENT }
               )
               content = response.body
-              
+
               # if the content has expired, sprint sends back html "content expired page
               # json will fail to parse
               begin
                 json = JSON.parse(content)
-                
+
                 # there may be multiple "results" in the json - due to multiple images
-                # cycle through them and extract the "description" which is the text 
+                # cycle through them and extract the "description" which is the text
                 # message the sender sent with the images
-                json["Results"].each do |result| 
+                json["Results"].each do |result|
                   type = 'text/plain'
                   text = result["description"] ? result["description"].strip : nil
                   next if text.empty?
@@ -149,7 +150,7 @@ module MMS2R
               end
             end
           end
-        end       
+        end
       end
 
       ##
