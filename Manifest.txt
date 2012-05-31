@@ -48,6 +48,7 @@ lib/ext/mail.rb
 lib/ext/object.rb
 lib/mms2r.rb
 lib/mms2r/media.rb
+lib/mms2r/version.rb
 lib/mms2r/media/sprint.rb
 mms2r.gemspec
 test/fixtures/1nbox-2images-01.mail

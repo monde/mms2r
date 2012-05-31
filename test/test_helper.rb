@@ -1,6 +1,12 @@
-# do it like rake http://ozmm.org/posts/do_it_like_rake.html
+if ENV['COVERAGE']
+  require 'simplecov'
+  SimpleCov.start do
+    add_filter 'test'
+  end
+end
 
-%W{ test/unit set net/http net/https pp tempfile mocha rcov/rcovtask }.each do |g|
+# do it like rake http://ozmm.org/posts/do_it_like_rake.html
+%W{ test/unit set net/http net/https pp tempfile mocha }.each do |g|
   begin
     require g
   rescue LoadError

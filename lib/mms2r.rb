@@ -37,11 +37,6 @@ module MMS2R
   class MMS2R::Media
 
     ##
-    # MMS2R library version
-
-    VERSION = '3.6.3'
-
-    ##
     # Spoof User-Agent, primarily for the Sprint CDN
 
     USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2"

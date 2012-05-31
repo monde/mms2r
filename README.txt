@@ -5,9 +5,8 @@
 == DESCRIPTION
 
 MMS2R by Mike Mondragon
-http://mms2r.rubyforge.org/
 https://github.com/monde/mms2r
-https://github.com/monde/mms2r/issues
+https://rubygems.org/gems/mms2r
 http://peepcode.com/products/mms2r-pdf
 
 MMS2R is a library that decodes the parts of an MMS message to disk while

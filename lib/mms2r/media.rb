@@ -803,6 +803,7 @@ module MMS2R
 
       #get the largest file
       files.each do |path|
+        next unless File.exist?(path)
         if File.size(path) > size
           size = File.size(path)
           file = File.new(path)
