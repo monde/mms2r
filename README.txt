@@ -219,4 +219,4 @@ MMS2R's [Flickr page](http://www.flickr.com/photos/8627919@N05/)
 * Scott Taylor [github profile](http://github.com/smtlaissezfaire)
 * Jaap van der Meer [github profile](http://github.com/japetheape)
 * Karl Baum [github profile](http://github.com/kbaum)
-* James McGrath [blog](http://jamespmcgrath.com)
+* James McGrath (blog)[http://jamespmcgrath.com]
