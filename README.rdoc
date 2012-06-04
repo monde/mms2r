@@ -24,7 +24,7 @@ parts the mail is comprised of.
 Contact the author to add additional carriers to be processed by the library.
 Suggestions and patches appreciated and welcomed!
 
-Corpus of carriers currently processed by MMS2R:
+=== Corpus of carriers currently processed by MMS2R:
 
 * 1nbox/Idea: 1nbox.net
 * 3 Ireland: mms.3ireland.ie
@@ -62,7 +62,7 @@ Corpus of carriers currently processed by MMS2R:
 * Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
 
-Corpus of smart phones known to MMS2R:
+=== Corpus of smart phones known to MMS2R:
 * Apple iPhone variants
 * Blackberry / Research In Motion variants
 * Casio variants
@@ -77,15 +77,15 @@ Corpus of smart phones known to MMS2R:
 * Sprint variants
 * UTStarCom variants
 
-As Seen On The Internets - sites known to be using MMS2R in some fashion
+=== As Seen On The Internets - sites known to be using MMS2R in some fashion
 
-* twitpic.com [http://www.twitpic.com/]
-* Simplton [http://simplton.com/]
-* fanchatter.com [http://www.fanchatter.com/]
-* camura.com [http://www.camura.com/]
-* eachday.com [http://www.eachday.com/]
-* beenup2.com [http://www.beenup2.com/]
-* snapmylife.com [http://www.snapmylife.com/]
+* twitpic.com[http://www.twitpic.com/]
+* Simplton[http://simplton.com/]
+* fanchatter.com[http://www.fanchatter.com/]
+* camura.com[http://www.camura.com/]
+* eachday.com[http://www.eachday.com/]
+* beenup2.com[http://www.beenup2.com/]
+* snapmylife.com[http://www.snapmylife.com/]
 * email the author to be listed here
 
 
@@ -195,27 +195,28 @@ git clone git://github.com/monde/mms2r.git
 
 == AUTHORS
 
-Copyright (c) 2007-2012 by Mike Mondragon (blog[http://plasti.cx/])
+Copyright (c) 2007-2012 by Mike Mondragon blog[http://plasti.cx/]
 
-MMS2R's Flickr page[http://www.flickr.com/photos/8627919@N05/]
+MMS2R's {Flickr page}[http://www.flickr.com/photos/8627919@N05/]
 
 == CONTRIBUTORS
 
-* Luke Francl (blog[http://railspikes.com/])
-* Will Jessup (blog[http://www.willjessup.com/])
-* Shane Vitarana (blog[http://www.shanesbrain.net/])
-* Layton Wedgeworth (http://www.beenup2.com/)
-* Jason Haruska (blog[http://software.haruska.com/])
-* Dave Myron (company[http://contentfree.com/])
+* Luke Francl - blog[http://railspikes.com/]
+* Will Jessup - blog[http://www.willjessup.com/]
+* Shane Vitarana - blog[http://www.shanesbrain.net/]
+* Layton Wedgeworth - company[http://www.beenup2.com/]
+* Jason Haruska - blog[http://software.haruska.com/]
+* Dave Myron - company[http://contentfree.com/]
 * Vijay Yellapragada
-* Jesse Dp (github profile[http://github.com/jessedp])
+* Jesse Dp - {github profile}[http://github.com/jessedp]
 * David Alm
 * Jeremy Wilkins
-* Matt Conway (github profile[http://github.com/wr0ngway])
+* Matt Conway - {github profile}[http://github.com/wr0ngway]
 * Kai Kai
 * Michael DelGaudio
-* Sai Emrys (blog[http://saizai.com])
-* Brendan Lim (github profile[http://github.com/brendanlim])
-* Scott Taylor (github profile[http://github.com/smtlaissezfaire])
-* Jaap van der Meer (github profile[http://github.com/japetheape])
-* Karl Baum (github profile[http://github.com/kbaum])
+* Sai Emrys - blog[http://saizai.com]
+* Brendan Lim - {github profile}[http://github.com/brendanlim]
+* Scott Taylor - {github profile}[http://github.com/smtlaissezfaire]
+* Jaap van der Meer - {github profile}[http://github.com/japetheape]
+* Karl Baum - {github profile}[http://github.com/kbaum]
+* James McGrath - blog[http://jamespmcgrath.com]

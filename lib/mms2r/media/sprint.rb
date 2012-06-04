@@ -139,7 +139,8 @@ module MMS2R
                 # message the sender sent with the images
                 json["Results"].each do |result|
                   type = 'text/plain'
-                  text = result["description"] ? result["description"].strip : nil
+                  # remove any &nbsp; chars from the resulting text
+                  text = result["description"] ? result["description"].gsub(/[[:space:]]/, " ").strip : nil
                   next if text.empty?
                   type, text = transform_text(type, text)
                   type, file = sprint_write_file(type, text.strip)

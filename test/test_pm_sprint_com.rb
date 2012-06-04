@@ -239,12 +239,15 @@ class TestPmSprintCom < Test::Unit::TestCase
     mock_sprint_ajax
     mms = MMS2R::Media.new(mail)
 
-    assert_equal 1, mms.media['text/plain'].size
-
+    assert_equal 2, mms.media['text/plain'].size
+    
     # test that the message was extracted from the ajax response
     message = IO.readlines(mms.media['text/plain'].first).join("")
-    assert_equal "Just testing the caption on Sprint", message
-
+    assert_equal "First text content.", message
+    
+    # test that the &nbsp; was removed ()
+    assert message.last.bytes.to_a != [194, 160]
+    
     mms.purge
   end
 
