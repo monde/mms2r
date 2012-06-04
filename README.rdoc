@@ -197,7 +197,7 @@ git clone git://github.com/monde/mms2r.git
 
 Copyright (c) 2007-2012 by Mike Mondragon blog[http://plasti.cx/]
 
-MMS2R's {Flickr page}(http://www.flickr.com/photos/8627919@N05/]
+MMS2R's {Flickr page}[http://www.flickr.com/photos/8627919@N05/]
 
 == CONTRIBUTORS
 
