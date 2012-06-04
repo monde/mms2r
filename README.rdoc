@@ -77,7 +77,7 @@ Suggestions and patches appreciated and welcomed!
 * Sprint variants
 * UTStarCom variants
 
-As Seen On The Internets - sites known to be using MMS2R in some fashion
+=== As Seen On The Internets - sites known to be using MMS2R in some fashion
 
 * twitpic.com[http://www.twitpic.com/]
 * Simplton[http://simplton.com/]
