@@ -47,7 +47,7 @@
 #
 # == More Examples
 #
-# See the README.txt file for more examples
+# See the README.rdoc file for more examples
 #
 # == Built In Configuration
 #

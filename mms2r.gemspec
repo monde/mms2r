@@ -26,8 +26,8 @@ Gem::Specification.new do |gem|
   gem.rubygems_version = ">= 1.3.6"
   gem.files         = `git ls-files`.split("\n")
   gem.require_path  = ['lib']
-  gem.rdoc_options = ["--main", "README.txt"]
-  gem.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.TMail.txt", "README.txt"]
+  gem.rdoc_options = ["--main", "README.rdoc"]
+  gem.extra_rdoc_files = ["History.txt", "Manifest.txt", "README.TMail.txt", "README.rdoc"]
 
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
 end

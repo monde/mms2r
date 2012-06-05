@@ -5,7 +5,7 @@ History.txt
 LICENSE
 Manifest.txt
 README.TMail.txt
-README.txt
+README.rdoc
 Rakefile
 conf/1nbox.net.yml
 conf/aliases.yml
