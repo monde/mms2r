@@ -21,7 +21,7 @@ Gem::Specification.new do |gem|
   gem.email       = ["mikemondragon@gmail.com"]
   gem.homepage    = "https://github.com/monde/mms2r"
   gem.summary     = "Extract user media from MMS (and not carrier cruft)"
-  gem.description = open(File.join(File.dirname(__FILE__), 'README.txt')).readlines[6...22].join
+  gem.description = "MMS2R is a library that decodes the parts of an MMS message to disk while stripping out advertising injected by the mobile carriers."
   gem.rubyforge_project = "mms2r"
   gem.rubygems_version = ">= 1.3.6"
   gem.files         = `git ls-files`.split("\n")

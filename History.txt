@@ -1,3 +1,9 @@
+### 3.7.1 / 2012-06-04 (Abrigail Remeltindtdrinc - The Record Cleaner)
+
+* 2 minor enhancements
+  * Improve processing of Sprint media - James McGrath
+  * RDoc format documentation - James McGrath
+
 ### 3.7.0 / 2012-05-31 (The Teenager - Edgar's brother via Eric's face)
 
 * 2 major enhancements
