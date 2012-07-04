@@ -4,6 +4,8 @@ ignore:
   - !ruby/regexp /We're sorry, this page is not available. We apologize for the inconvenience./mi
   text/plain:
   - !ruby/regexp /You have new [Picture|Video] Mail!\s+Click Go\/View to see now./mi
+  - !ruby/regexp /You have received a Picture Mail from /mi
+  - !ruby/regexp /Click Go\/View to see/mi
 transform:
   text/plain:
   - - !ruby/regexp /^You have new Picture Mail!$/i
