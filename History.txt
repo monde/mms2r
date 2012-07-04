@@ -1,3 +1,8 @@
+### 3.8.0 / 2012-07-04 (Dr. Donald Gorfield – Comedy specialist)
+
+* 1 major enhancement
+  * Handle MMS from Sprint that have their media attached rather than CDN'd
+
 ### 3.7.1 / 2012-06-04 (Abrigail Remeltindtdrinc - The Record Cleaner)
 
 * 2 minor enhancements
