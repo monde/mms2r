@@ -311,18 +311,10 @@ class TestMms2rMedia < Test::Unit::TestCase
 
   def test_attachment_should_return_duck_typed_file
     mms = MMS2R::Media.new stub_mail
-    temp_big = temp_text_file("hello world")
-    size = File.size(temp_text_file("hello world"))
-    temp_small = temp_text_file("hello")
-    mms.stubs(:media).returns({'text/plain' => [temp_small, temp_big]})
     duck_file = mms.send(:attachment, ['text'])
-    assert_not_nil duck_file
-    assert_equal true, File::exist?(duck_file)
-    assert_equal true, File::exist?(temp_big)
-    assert_equal temp_big, duck_file.local_path
-    assert_equal File.basename(temp_big), duck_file.original_filename
-    assert_equal size, duck_file.size
+    assert_equal 1, duck_file.size
     assert_equal 'text/plain', duck_file.content_type
+    assert_equal "a", open(mms.media['text/plain'].first).read
   end
 
   def test_empty_body
@@ -632,86 +624,24 @@ class TestMms2rMedia < Test::Unit::TestCase
     mms.purge
   end
 
-  def test_process_with_multipart_alternative_parts
-    mail = stub_mail
-
-    plain = stub('plain', :filename => 'message.txt', :content_type => 'text/plain', :part_type? => 'text/plain', :body => Mail::Body.new('a'), :main_type => 'text')
-    plain.stubs(:multipart?).at_least_once.returns(false)
-
-    html = stub('html', :filename => 'message.html', :content_type => 'text/html', :part_type? => 'text/html', :body => Mail::Body.new('a'), :main_type => 'text')
-    html.stubs(:multipart?).at_least_once.returns(false)
-
-    multi = stub('multi', :content_type => 'multipart/alternative', :part_type? => 'multipart/alternative', :parts => [plain, html])
-    multi.stubs(:multipart?).at_least_once.returns(true)
-
-    mail.stubs(:multipart?).at_least_once.returns(true)
-    mail.stubs(:parts).at_least_once.returns([multi])
-
-    # the multipart/alternative should get flattend to text and html
-    mms = MMS2R::Media.new(mail)
-    assert_equal 2, mms.media.size
-    assert_equal 2, mms.media.size
-    assert_not_nil mms.media['text/plain']
-    assert_not_nil mms.media['text/html']
-    assert_equal 1, mms.media['text/plain'].size
-    assert_equal 1, mms.media['text/html'].size
-    assert_equal 'message.txt', File.basename(mms.media['text/plain'].first)
-    assert_equal 'message.html', File.basename(mms.media['text/html'].first)
-    assert_equal true, File.exist?(mms.media['text/plain'].first)
-    assert_equal true, File.exist?(mms.media['text/html'].first)
-    assert_equal 1, File.size(mms.media['text/plain'].first)
-    assert_equal 1, File.size(mms.media['text/html'].first)
-    mms.purge
+  def test_folding_with_multipart_alternative_parts
+    mail = mail('helio-message-01.mail')
+    mms = MMS2R::Media.new(Mail.new)
+    assert_equal 5, mms.send(:folded_parts, mail.parts).size
   end
 
   def test_process_when_media_is_ignored
-    mail = stub_mail
-    plain = stub('plain', :filename => 'message.txt', :content_type => 'text/plain', :part_type? => 'text/plain', :body => Mail::Body.new(''), :main_type => 'text')
-    plain.stubs(:multipart?).at_least_once.returns(false)
-
-    html = stub('html', :filename => 'message.html', :content_type => 'text/html', :part_type? => 'text/html', :body => Mail::Body.new(''), :main_type => 'text')
-    html.stubs(:multipart?).at_least_once.returns(false)
-
-
-    multi = stub('multi', :content_type => 'multipart/alternative', :part_type? => 'multipart/alternative', :parts => [plain, html])
-    multi.stubs(:multipart?).at_least_once.returns(true)
-
-    mail.stubs(:multipart?).at_least_once.returns(true)
-    mail.stubs(:parts).at_least_once.returns([multi])
-
-    mms = MMS2R::Media.new(mail, :process => :lazy)
-    mms.stubs(:config).returns({'ignore' => {'text/plain' => ['message.txt'],
-                                             'text/html' => ['message.html']}})
-    assert_nothing_raised { mms.process }
-    # the multipart/alternative should get flattend to text and html and then
-    # what's flattened is ignored
-    assert_equal 0, mms.media.size
-    mms.purge
+    # TODO - I'd like to get away from mocks and test on real data, and
+    # this is covered repeatedly for various samples from the carrier
   end
 
   def test_process_when_yielding_to_a_block
-    mail = stub_mail
-
-    plain = stub('plain', :filename => 'message.txt', :content_type => 'text/plain', :part_type? => 'text/plain', :body => Mail::Body.new('a'), :main_type => 'text')
-    plain.stubs(:multipart?).at_least_once.returns(false)
-
-    html = stub('html', :filename => 'message.html', :content_type => 'text/html', :part_type? => 'text/html', :body => Mail::Body.new('b'), :main_type => 'text')
-    html.stubs(:multipart?).at_least_once.returns(false)
-
-    multi = stub('multi', :content_type => 'multipart/alternative', :part_type? => 'multipart/alternative', :parts => [plain, html])
-    multi.stubs(:multipart?).at_least_once.returns(true)
-
-    mail.stubs(:multipart?).at_least_once.returns(true)
-    mail.stubs(:parts).at_least_once.returns([multi])
-
-    # the multipart/alternative should get flattend to text and html
+    mail = mail('att-image-01.mail')
     mms = MMS2R::Media.new(mail)
-    assert_equal 2, mms.media.size
     mms.process do |type, files|
       assert_equal 1, files.size
-      assert_equal true, type == 'text/plain' || type == 'text/html'
-      assert_equal true, File.basename(files.first) == 'message.txt' ||
-                         File.basename(files.first) == 'message.html'
+      assert_equal true, type == 'image/jpeg'
+      assert_equal true, File.basename(files.first) == 'Photo_12.jpg'
       assert_equal true, File::exist?(files.first)
     end
     mms.purge

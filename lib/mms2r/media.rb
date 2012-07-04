@@ -343,33 +343,16 @@ module MMS2R
     # note: purge must be explicitly called to remove the media files
     #       mms2r extracts from an mms message.
 
-    def process() # :yields: media_type, file
+    def process # :yields: media_type, file
       unless @was_processed
         log("#{self.class} processing", :info)
 
-        parts = mail.multipart? ? mail.parts : [mail]
-
-        # Double check for multipart/related, if it exists replace it with its
-        # children parts.  Do this twice as multipart/alternative can have
-        # children and we want to fold everything down
-        for i in 1..2
-          flat = []
-          parts.each do |p|
-            if p.multipart?
-              p.parts.each {|mp| flat << mp }
-            else
-              flat << p
-            end
-          end
-          parts = flat.dup
-        end
-
-        # get to work
-        parts.each do |p|
-          t = p.part_type?
-          unless ignore_media?(t,p)
-            t,f = process_media(p)
-            add_file(t,f) unless t.nil? || f.nil?
+        parts = self.folded_parts(mail)
+        parts.each do |part|
+          if part.part_type? == 'text/html'
+            process_html_part(part)
+          else
+            process_part(part)
           end
         end
 
@@ -437,6 +420,25 @@ module MMS2R
     end
 
     ##
+    # Helper to decide if a part should be kept or ignored
+
+    def process_part(part)
+      return if ignore_media?(part.part_type?, part)
+
+      type, file = process_media(part)
+      add_file(type, file) unless type.nil? || file.nil?
+    end
+
+    ##
+    # Helper to decide if a html part should be kept or ignored.
+    # We are defining it here primarily for the benefit so that Sprint
+    # can override a special case for processing.
+
+    def process_html_part(part)
+      process_part(part)
+    end
+
+    ##
     # Helper for process_media template method to transform text.
     # See the transform section in the discussion of the built-in
     # configuration.
@@ -490,7 +492,7 @@ module MMS2R
     # Purges the unique MMS2R::Media.media_dir directory created
     # for this producer and all of the media that it contains.
 
-    def purge()
+    def purge
       log("#{self.class} purging #{@media_dir} and all its contents", :info)
       FileUtils.rm_rf(@media_dir)
     end
@@ -507,7 +509,7 @@ module MMS2R
     # Helper to temp_file to create a unique temporary directory that is a
     # child of tmp_dir  This version is based on the message_id of the mail.
 
-    def msg_tmp_dir()
+    def msg_tmp_dir
       @dir_count += 1
       dir = File.expand_path(File.join(@media_dir, "#{@dir_count}"))
       FileUtils.mkdir_p(dir)
@@ -762,7 +764,7 @@ module MMS2R
       self.class.initialize_config(config)
     end
 
-    private
+    protected
 
     ##
     # accessor for the config
@@ -778,6 +780,19 @@ module MMS2R
       ext = filename.split('.').last
       ent = MMS2R::EXT.detect{|k,v| v == ext}
       ent.nil? ? nil : ent.first
+    end
+
+    ##
+    # Helper to fold all the parts of multipart mail down into a flat array.
+    # multipart/related and multipart/alternative parts can have child parts.
+    def folded_parts(parts)
+      return folded_parts([parts]) unless parts.respond_to?(:each)
+
+      result = [] # NOTE could use #tap but want 1.8.7 compat
+      parts.each do |part|
+        result << (part.multipart? ? folded_parts(part.parts) : part)
+      end
+      result.flatten
     end
 
     ##

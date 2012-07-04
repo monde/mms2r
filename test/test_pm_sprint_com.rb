@@ -259,7 +259,6 @@ class TestPmSprintCom < Test::Unit::TestCase
 
     assert_equal '5135455555', mms.number
     assert_equal "pm.sprint.com", mms.carrier
-
     assert_equal 0, mms.media.size
 
     mms.purge

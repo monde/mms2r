@@ -28,52 +28,24 @@ module MMS2R
 
     module Sprint
 
+      protected
+
       ##
-      # Override process() because Sprint doesn't attach media (images, video,
-      # etc.) to its MMS.  Media such as images and videos are hosted on a
-      # Sprint content server.   MMS2R::Media::Sprint has to pick apart an
-      # HTML attachment to find the URL to the media on Sprint's content
-      # server and download each piece of content.  Any text message part of
-      # the MMS if it exists is embedded in the html.
+      # Helper to process old style media on the Sprint CDN which didn't attach
+      # media (images, video, etc.) to its MMS.  Media such as images and
+      # videos are hosted on a Sprint content server.  MMS2R::Media::Sprint has
+      # to pick apart an HTML attachment to find the URL to the media on
+      # Sprint's content server and download each piece of content.  Any text
+      # message part of the MMS if it exists is embedded in the html.
 
-      def process
-        unless @was_processed
-          log("#{self.class} processing", :info)
-          #sprint MMS are multipart
-          parts = @mail.parts
+      def process_html_part(part)
+        doc = Nokogiri(part.body.decoded)
 
-          #find the payload html
-          doc = nil
-          parts.each do |p|
-            next unless p.part_type? == 'text/html'
-            d = Nokogiri(p.body.decoded)
-            title = d.at('title').inner_html
-            if title =~ /You have new Picture Mail!/
-              doc = d
-              @is_video = (p.body.decoded =~ /type=&quot;VIDEO&quot;&gt;/m ? true : false)
-            end
-          end
-          return if doc.nil? # it was a dud
-          @is_video ||= false
-
-          # break it down
-          sprint_phone_number(doc)
-          sprint_process_text(doc)
-          sprint_process_media(doc)
-
-          @was_processed = true
-        end
-
-        # when process acts upon a block
-        if block_given?
-          media.each do |k, v|
-            yield(k, v)
-          end
-        end
-
+        is_video = (part.body.decoded =~ /type=&quot;VIDEO&quot;&gt;/m ? true : false)
+        sprint_process_media(doc, is_video)
+        sprint_process_text(doc)
+        sprint_phone_number(doc)
       end
-
-      private
 
       ##
       # Digs out where Sprint hides the phone number
@@ -82,7 +54,8 @@ module MMS2R
         c = doc.search("/html/head/comment()").last
         t = c.content.gsub(/\s+/m," ").strip
         #@number returned in parent's #number
-        @number = / name=&quot;MDN&quot;&gt;(\d+)&lt;/.match(t)[1]
+        matched = / name=&quot;MDN&quot;&gt;(\d+)&lt;/.match(t)
+        @number = matched[1] if matched
       end
 
       ##
@@ -157,7 +130,7 @@ module MMS2R
       ##
       # Fetch all the media that is referred to in the doc
 
-      def sprint_process_media(doc)
+      def sprint_process_media(doc, is_video=false)
         srcs = Array.new
         # collect all the images in the document, even though
         # they are <img> tag some might actually refer to video.
@@ -183,14 +156,14 @@ module MMS2R
           begin
 
             uri = URI.parse(CGI.unescapeHTML(src))
-            unless @is_video
+            unless is_video
               query={}
               uri.query.split('&').each{|a| p=a.split('='); query[p[0]] = p[1]}
               query.delete_if{|k, v| k == 'limitsize' || k == 'squareoutput' }
               uri.query = query.map{|k,v| "#{k}=#{v}"}.join("&")
             end
             # sprint is a ghetto, they expect to see &amp; for video request
-            uri.query = uri.query.gsub(/&/, "&amp;") if @is_video
+            uri.query = uri.query.gsub(/&/, "&amp;") if is_video
 
             connection = Net::HTTP.new(uri.host, uri.port)
             #connection.set_debug_output $stdout

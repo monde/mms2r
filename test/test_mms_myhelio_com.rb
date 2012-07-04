@@ -21,6 +21,7 @@ class TestMmsMyhelioCom < Test::Unit::TestCase
     assert_equal "mms.myhelio.com", mms.carrier
     assert_equal 1, mms.media.size
     assert_equal 1, mms.media['text/plain'].size
+    assert_equal "Test message", open(mms.media['text/plain'].first).read
     mms.purge
   end
 
