@@ -42,12 +42,65 @@ module MMS2R
     USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2"
   end
 
+  ##
   # Simple convenience function to make it a one-liner:
-  # MMS2R.parse raw_mail or MMS2R.parse File.load(raw_mail)
+  # MMS2R.parse raw_mail or
+  # MMS2R.parse File.load(file)
+  # MMS2R.parse File.load(path_to_file)
   # Combined w/ the method_missing delegation, this should behave as an enhanced Mail object, more or less.
-  def self.parse raw_mail, options = {}
-    mail = Mail.new raw_mail
+
+  def self.parse thing, options = {}
+    mail = case
+           when File.exist?(thing); Mail.new(open(thing).read)
+           when thing.respond_to?(:read); Mail.new(thing.read)
+           else
+             Mail.new(thing)
+           end
+
     MMS2R::Media.new(mail, options)
+  end
+
+  ##
+  # Compare original MMS2R results with original mail values and other metrics.
+  #
+  # Takes a file path, mms2r object, mail object, or mail text blob.
+
+  def self.debug(thing, options = {})
+    mms = case thing
+          when MMS2R::Media; thing
+          when Mail::Message; MMS2R::Media.new(thing, options)
+          else
+            self.parse(thing, options)
+          end
+
+    <<OUT
+#{'-' * 80}
+
+  original mail
+    #{'from:'.ljust(15)} #{mms.mail.from}
+    #{'to:'.ljust(15)} #{mms.mail.to}
+    #{'subject:'.ljust(15)} #{mms.mail.subject}
+
+  mms2r
+    #{'from:'.ljust(15)} #{mms.from}
+    #{'to:'.ljust(15)} #{mms.to}
+    #{'subject:'.ljust(15)} #{mms.subject}
+    #{'number:'.ljust(15)} #{mms.number}
+
+    default media
+      #{mms.default_media.inspect}
+
+    default text
+      #{mms.default_text.inspect}
+      #{mms.default_text.read if mms.default_text}
+
+    all plain text
+      #{(mms.media['text/plain']||[]).each {|t| open(t).read}.join("\n\n")}
+
+    media hash
+      #{mms.media.inspect}
+
+OUT
   end
 
 end
