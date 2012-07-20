@@ -1,0 +1,5 @@
+---
+transform:
+  text/plain:
+  - - !ruby/regexp /^This is an MMS message. Please go to .* to reply to the message.\n\n/i
+    - "\\1"
