@@ -61,6 +61,7 @@ Suggestions and patches appreciated and welcomed!
 * Virgin Mobile: vmpix.com, pixmbl.com, vmobl.com, yrmobl.com
 * Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
+* Cincinnati Bell: mms.gocbw.com
 
 === Corpus of smart phones known to MMS2R:
 * Apple iPhone variants
