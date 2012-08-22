@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mms2r (3.8.1)
+    mms2r (3.8.2)
       exifr (>= 1.0.3)
       json (>= 1.6.0)
       mail (>= 2.4.0)

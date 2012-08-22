@@ -1,3 +1,9 @@
+### 3.8.2 / 2012-08-21 (Seth - Pickles The Drummer's brother)
+
+* 2 minor enhancements
+  * Broadened handling of generic "Sent from" footers in smart phones
+  * Add ability to process HTC Sensation footer
+
 ### 3.8.1 / 2012-07-22 (Calvert - Pickles The Drummer's dad)
 
 * 1 major enhancement
