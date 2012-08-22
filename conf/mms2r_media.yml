@@ -3,12 +3,15 @@ ignore:
   text/plain:
   - !ruby/regexp /^\(no subject\)$/i
   - !ruby/regexp /\ASent (via|(from (my|your))) /im
+  - !ruby/regexp /\AFrom my HTC /im
   - !ruby/regexp /\ASent on the Sprint.* Now Network.*$/im
   multipart/mixed:
   - !ruby/regexp "/^Attachment: /i"
 transform:
   text/plain:
   - - !ruby/regexp /\A(.*?)Sent (via|(from (my|your))) .*/im
+    - "\\1"
+  - - !ruby/regexp /\A(.*?)From my HTC .*/im
     - "\\1"
   - - !ruby/regexp /\A(.*?)\s+image\/jpeg$/im
     - "\\1"
