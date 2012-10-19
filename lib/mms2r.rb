@@ -105,7 +105,7 @@ OUT
 
 end
 
-%W{ yaml mail fileutils pathname tmpdir yaml digest/sha1 iconv exifr }.each do |g|
+%W{ yaml mail fileutils pathname tmpdir yaml digest/sha1 exifr }.each do |g|
   begin
     require g
   rescue LoadError

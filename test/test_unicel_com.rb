@@ -19,7 +19,7 @@ class TestUnicelCom < Test::Unit::TestCase
     assert_equal 337, File.size(image)
 
     file = mms.media['text/plain'][0]
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_match(/2068675309/, text)
 
     mms.purge

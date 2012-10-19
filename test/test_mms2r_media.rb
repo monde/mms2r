@@ -233,20 +233,16 @@ class TestMms2rMedia < Test::Unit::TestCase
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert_equal true, File::exist?(file)
-    text_lines = IO.readlines("#{file}")
-    text = text_lines.join
+    if RUBY_VERSION < "1.9"
+      text = IO.read("#{file}")
+    else
+      text = IO.read("#{file}", :mode => "rb")
+    end
 
     # ASCII-8BIT -> D'ici un mois G\xE9orgie
     # UTF-8      -> D'ici un mois Géorgie
 
-    if RUBY_VERSION < "1.9"
-      assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
-      assert_equal("D'ici un mois Géorgie  body", text_lines.first.strip)
-    else
-      assert_equal(Iconv.new('UTF-8', 'ISO-8859-1').iconv("sample email message Fwd: sub D'ici un mois Géorgie"), mms.subject)
-      assert_equal(Iconv.new('UTF-8', 'ISO-8859-1').iconv("D'ici un mois G\xE9orgie  body"), text_lines.first.strip)
-    end
-
+    assert_equal("sample email message Fwd: sub D'ici un mois Géorgie", mms.subject)
   end
 
   def test_subject

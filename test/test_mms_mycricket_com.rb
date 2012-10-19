@@ -48,7 +48,7 @@ class TestMmsMycricketCom < Test::Unit::TestCase
 
     file = mms.media['text/plain'].first
     assert_equal true, File::exist?(file), "file #{file} does not exist"
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_match(/Hello World/, text)
 
     assert_match(/02-14-08_2114.jpg$/, mms.media['image/jpeg'].first)

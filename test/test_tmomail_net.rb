@@ -37,7 +37,7 @@ class TestTmomailNet < Test::Unit::TestCase
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert File::exist?(file), "file #{file} does not exist"
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_equal "Lillies", text.strip
 
     mms.purge

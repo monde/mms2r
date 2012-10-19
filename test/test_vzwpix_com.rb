@@ -79,7 +79,7 @@ www.verizonwireless.com/getitnow/getpix.}
     assert_not_nil file
     assert_equal true, File::exist?(file)
 
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_match(/hello world/, text)
     mms.purge
   end
@@ -102,7 +102,7 @@ www.verizonwireless.com/getitnow/getpix.}
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert_equal true, File::exist?(file)
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_no_match(/Regexp.escape(@ad_old)/, text)
     assert_no_match(/Regexp.escape@greet/, text)
     assert_equal "? Weird", text
@@ -139,7 +139,7 @@ www.verizonwireless.com/getitnow/getpix.}
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert_equal true, File::exist?(file)
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_match(/hello world/, text)
     mms.purge
   end
@@ -151,7 +151,7 @@ www.verizonwireless.com/getitnow/getpix.}
     assert_equal 'yahoo.com', mms.carrier
 
     assert_not_nil mms.media['text/plain']
-    assert_equal "Wonderful picture!", IO.readlines(mms.media['text/plain'].first).join.strip
+    assert_equal "Wonderful picture!", IO.read(mms.media['text/plain'].first).strip
 
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/\/IMG00016\.jpg$/, mms.media['image/jpeg'].first)

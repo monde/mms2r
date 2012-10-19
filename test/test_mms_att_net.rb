@@ -103,7 +103,7 @@ class TestMmsAttNet < Test::Unit::TestCase
     assert_equal "example.com", mms.carrier
 
     assert_not_nil mms.media['text/plain']
-    assert_equal "Hello world", IO.readlines(mms.media['text/plain'].first).join.strip
+    assert_equal "Hello world", IO.read(mms.media['text/plain'].first).strip
 
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/\/BC-WAKE\.jpg$/, mms.media['image/jpeg'].first)
@@ -118,7 +118,7 @@ class TestMmsAttNet < Test::Unit::TestCase
     assert_equal 2, mms.media.size
 
     assert_not_nil mms.media['text/plain']
-    assert_match(/^Testing memorymail from my blackberry and at&t.$/, IO.readlines(mms.media['text/plain'].first).join.strip)
+    assert_match(/^Testing memorymail from my blackberry and at&t.$/, IO.read(mms.media['text/plain'].first).strip)
 
     assert_not_nil mms.media['image/jpeg'].first
     assert_match(/IMG00367.jpg/, mms.media['image/jpeg'].first)

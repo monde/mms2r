@@ -242,7 +242,7 @@ class TestPmSprintCom < Test::Unit::TestCase
     assert_equal 2, mms.media['text/plain'].size
     
     # test that the message was extracted from the ajax response
-    message = IO.readlines(mms.media['text/plain'].first).join("")
+    message = IO.read(mms.media['text/plain'].first)
     assert_equal "First text content.", message
     
     # test that the &nbsp; was removed ()

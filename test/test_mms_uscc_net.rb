@@ -24,7 +24,7 @@ class TestMmsUsccNet < Test::Unit::TestCase
     file = mms.media['text/plain'][0]
     assert_not_nil file
     assert_equal true, File::exist?(file)
-    text = IO.readlines("#{file}").join
+    text = IO.read("#{file}")
     assert_match(/This is what i do at work most the day/, text)
 
     mms.purge

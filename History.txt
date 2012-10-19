@@ -1,3 +1,8 @@
+### 3.9.0 / 2012-10-18 (Jean-Pierre - A French chef)
+
+* 1 minor enhancement
+  * refined character encoding capability with 1.8 rubies and 1.9 rubies.
+
 ### 3.8.2 / 2012-08-21 (Seth - Pickles The Drummer's brother)
 
 * 2 minor enhancements

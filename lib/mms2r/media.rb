@@ -265,18 +265,21 @@ module MMS2R
 
     def body
       text_file = default_text
-      @body = text_file ? IO.readlines(text_file.path).join.strip : ""
-      @body.force_encoding("ISO-8859-1") if RUBY_VERSION >= "1.9" && @body.encoding == "ASCII-8BIT"
 
-      begin
-        ic = Iconv.new('UTF-8', 'ISO-8859-1' )
+      if RUBY_VERSION < "1.9"
+        @body = text_file ? IO.read(text_file.path).strip : ""
+        require 'iconv'
+        ic = Iconv.new('UTF-8', 'ISO-8859-1')
         @body = ic.iconv(@body)
         @body << ic.iconv(nil)
         ic.close
-      rescue Exception => e
+      else
+        @body = text_file ? IO.read(text_file.path, :mode => "rb").strip : ""
+        @body = @body.chars.select{|i| i.valid_encoding?}.join
       end
 
-      if @body.blank? && html_file = default_html
+      if @body.blank? &&
+         html_file = default_html
         html = Nokogiri::HTML(IO.read(html_file.path))
         @body = (html.xpath("//head/title").map(&:text) + html.xpath("//body/*").map(&:text)).join(" ")
       end
@@ -402,7 +405,6 @@ module MMS2R
       if part.part_type? =~ /^text\// ||
          part.part_type? == 'application/smil'
         type, content = transform_text_part(part)
-        mode = 'wb'
       else
         if part.part_type? == 'application/octet-stream'
           type = type_from_filename(filename?(part))
@@ -410,12 +412,11 @@ module MMS2R
           type = part.part_type?
         end
         content = part.body.decoded
-        mode = 'wb' # open with binary bit for Windows for non text
       end
       return type, nil if content.nil? || content.empty?
 
       log("#{self.class} writing file #{file}", :info)
-      File.open(file, mode){ |f| f.write(content) }
+      File.open(file, 'wb'){ |f| f.write(content) }
       return type, file
     end
 
@@ -443,26 +444,25 @@ module MMS2R
     # See the transform section in the discussion of the built-in
     # configuration.
 
-    def transform_text(type, text, original_encoding = 'ISO-8859-1')
+    def transform_text(type, text)
       return type, text if !config['transform'] || !(transforms = config['transform'][type])
 
-      begin
-        ic = Iconv.new('UTF-8', original_encoding )
-        utf_t = ic.iconv(text)
-        utf_t << ic.iconv(nil)
+      if RUBY_VERSION < "1.9"
+        require 'iconv'
+        ic = Iconv.new('UTF-8', 'ISO-8859-1')
+        text = ic.iconv(text)
+        text << ic.iconv(nil)
         ic.close
-      rescue Exception => e
-        utf_t = text
       end
 
       transforms.each do |transform|
         next unless transform.size == 2
         p = transform.first
         r = transform.last
-        utf_t = utf_t.gsub(p, r) rescue utf_t
+        text = text.gsub(p, r) rescue text
       end
 
-      return type, utf_t
+      return type, text
     end
 
     ##
