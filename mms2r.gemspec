@@ -3,7 +3,7 @@ require "mms2r/version"
 
 Gem::Specification.new do |gem|
 
-  gem.add_dependency 'rake',     ['= 0.9.2.2']
+  gem.add_dependency 'rake'
   gem.add_dependency 'nokogiri', ['>= 1.5.0']
   gem.add_dependency 'mail',     ['>= 2.4.0']
   gem.add_dependency 'exifr',    ['>= 1.0.3']

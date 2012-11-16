@@ -10,7 +10,7 @@ module MMS2R
     end
 
     def self.patch
-      0
+      1
     end
 
     def self.pre

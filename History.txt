@@ -1,3 +1,8 @@
+### 3.9.1 / 2012-11-15 (#216 - Klokateer afflicted with dwarfism)
+
+* 1 minor enhancement
+  * remove rake 0.9.2.2 dependency
+
 ### 3.9.0 / 2012-10-18 (Jean-Pierre - A French chef)
 
 * 1 minor enhancement
