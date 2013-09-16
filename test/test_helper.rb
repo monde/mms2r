@@ -6,7 +6,7 @@ if ENV['COVERAGE']
 end
 
 # do it like rake http://ozmm.org/posts/do_it_like_rake.html
-%W{ test/unit set net/http net/https pp tempfile mocha }.each do |g|
+%W{ test/unit set net/http net/https pp tempfile mocha/setup }.each do |g|
   begin
     require g
   rescue LoadError

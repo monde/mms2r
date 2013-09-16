@@ -1,3 +1,8 @@
+### 3.9.2 / 2013-09-15 (Abigail Remeltindrinc - record producer)
+
+* 1 minor enhancement
+  * psych hack is only for ruby 1.9
+
 ### 3.9.1 / 2012-11-15 (#216 - Klokateer afflicted with dwarfism)
 
 * 1 minor enhancement

@@ -114,7 +114,7 @@ end
   end
 end
 
-if RUBY_VERSION >= "1.9"
+if RUBY_VERSION == "1.9" && RUBY_VERSION < "2.0"
   begin
     require 'psych'
     YAML::ENGINE.yamler= 'syck' if defined?(YAML::ENGINE)
