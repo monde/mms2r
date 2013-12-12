@@ -5,9 +5,10 @@
 ## DESCRIPTION
 
 MMS2R by Mike Mondragon
-https://github.com/monde/mms2r
-https://rubygems.org/gems/mms2r
-http://peepcode.com/products/mms2r-pdf
+
+* https://github.com/monde/mms2r
+* https://rubygems.org/gems/mms2r
+* http://peepcode.com/products/mms2r-pdf
 
 MMS2R is a library that decodes the parts of a MMS message to disk while
 stripping out advertising injected by the mobile carriers.  MMS messages are
@@ -80,13 +81,13 @@ Suggestions and patches appreciated and welcomed!
 
 ### As Seen On The Internets - sites known to be using MMS2R in some fashion
 
-* twitpic.com[http://www.twitpic.com/]
-* Simplton[http://simplton.com/]
-* fanchatter.com[http://www.fanchatter.com/]
-* camura.com[http://www.camura.com/]
-* eachday.com[http://www.eachday.com/]
-* beenup2.com[http://www.beenup2.com/]
-* snapmylife.com[http://www.snapmylife.com/]
+* twitpic.com - http://www.twitpic.com/
+* Simplton - http://simplton.com/
+* fanchatter.com - http://www.fanchatter.com/
+* camura.com - [http://www.camura.com/
+* eachday.com - [http://www.eachday.com/
+* beenup2.com - [http://www.beenup2.com/
+* snapmylife.com - [http://www.snapmylife.com/
 * email the author to be listed here
 
 
@@ -102,10 +103,12 @@ Suggestions and patches appreciated and welcomed!
 ## BOOKS
 
 MMS2R, Making email useful
+
 http://peepcode.com/products/mms2r-pdf
 
 ## SYNOPSIS
 
+```ruby
   begin
     require 'mms2r'
   rescue LoadError
@@ -174,6 +177,7 @@ http://peepcode.com/products/mms2r-pdf
 
   #remove all the media that was put to temporary disk
   mail.purge
+```
 
 ## REQUIREMENTS
 
@@ -184,36 +188,40 @@ http://peepcode.com/products/mms2r-pdf
 
 ## INSTALL
 
-* sudo gem install mms2r
+```
+sudo gem install mms2r
+```
 
 ## SOURCE
 
+```
 git clone git://github.com/monde/mms2r.git
+```
 
 ## AUTHORS
 
-Copyright (c) 2007-2012 by Mike Mondragon blog[http://plasti.cx/]
+Copyright (c) 2007-2012 by Mike Mondragon blog http://plasti.cx/
 
-MMS2R's {Flickr page}[http://www.flickr.com/photos/8627919@N05/]
+MMS2R's Flickr page http://www.flickr.com/photos/8627919@N05/
 
 ## CONTRIBUTORS
 
-* Luke Francl - blog[http://railspikes.com/]
-* Will Jessup - blog[http://www.willjessup.com/]
-* Shane Vitarana - blog[http://www.shanesbrain.net/]
-* Layton Wedgeworth - company[http://www.beenup2.com/]
-* Jason Haruska - blog[http://software.haruska.com/]
-* Dave Myron - company[http://contentfree.com/]
+* Luke Francl - http://railspikes.com/
+* Will Jessup - http://www.willjessup.com/
+* Shane Vitarana - http://www.shanesbrain.net/
+* Layton Wedgeworth - http://www.beenup2.com/
+* Jason Haruska - http://software.haruska.com/
+* Dave Myron - http://contentfree.com/
 * Vijay Yellapragada
-* Jesse Dp - {github profile}[http://github.com/jessedp]
+* Jesse Dp - http://github.com/jessedp
 * David Alm
 * Jeremy Wilkins
-* Matt Conway - {github profile}[http://github.com/wr0ngway]
+* Matt Conway - http://github.com/wr0ngway
 * Kai Kai
 * Michael DelGaudio
-* Sai Emrys - blog[http://saizai.com]
-* Brendan Lim - {github profile}[http://github.com/brendanlim]
-* Scott Taylor - {github profile}[http://github.com/smtlaissezfaire]
-* Jaap van der Meer - {github profile}[http://github.com/japetheape]
-* Karl Baum - {github profile}[http://github.com/kbaum]
-* James McGrath - blog[http://jamespmcgrath.com]
+* Sai Emrys - http://saizai.com/
+* Brendan Lim - http://github.com/brendanlim
+* Scott Taylor - http://github.com/smtlaissezfaire
+* Jaap van der Meer - http://github.com/japetheape
+* Karl Baum - http://github.com/kbaum
+* James McGrath - http://jamespmcgrath.com/
