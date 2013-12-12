@@ -84,10 +84,10 @@ Suggestions and patches appreciated and welcomed!
 * twitpic.com - http://www.twitpic.com/
 * Simplton - http://simplton.com/
 * fanchatter.com - http://www.fanchatter.com/
-* camura.com - [http://www.camura.com/
-* eachday.com - [http://www.eachday.com/
-* beenup2.com - [http://www.beenup2.com/
-* snapmylife.com - [http://www.snapmylife.com/
+* camura.com - http://www.camura.com/
+* eachday.com - http://www.eachday.com/
+* beenup2.com - http://www.beenup2.com/
+* snapmylife.com - http://www.snapmylife.com/
 * email the author to be listed here
 
 
