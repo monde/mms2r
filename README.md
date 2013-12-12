@@ -1,8 +1,8 @@
-= mms2r
+# mms2r
 
   https://github.com/monde/mms2r
 
-== DESCRIPTION
+## DESCRIPTION
 
 MMS2R by Mike Mondragon
 https://github.com/monde/mms2r
@@ -24,13 +24,14 @@ parts the mail is comprised of.
 Contact the author to add additional carriers to be processed by the library.
 Suggestions and patches appreciated and welcomed!
 
-=== Corpus of carriers currently processed by MMS2R:
+[![tip for next commit](http://tip4commit.com/projects/198.svg)](http://tip4commit.com/projects/198)
+
+### Corpus of carriers currently processed by MMS2R:
 
 * 1nbox/Idea: 1nbox.net
 * 3 Ireland: mms.3ireland.ie
 * Alltel: mms.alltel.com
-* AT&T/Cingular/Legacy: mms.att.net, mm.att.net, txt.att.net, mmode.com, mms.mycingular.com,
-  cingularme.com, mobile.mycingular.com pics.cingularme.com
+* AT&T/Cingular/Legacy: mms.att.net, mm.att.net, txt.att.net, mmode.com, mms.mycingular.com, cingularme.com, mobile.mycingular.com pics.cingularme.com
 * Bell Canada: txt.bell.ca
 * Bell South / Suncom / SBC Global: bellsouth.net, sbcglobal.net
 * Cricket Wireless: mms.mycricket.com
@@ -55,15 +56,14 @@ Suggestions and patches appreciated and welcomed!
 * TELUS Corporation (Canada): mms.telusmobility.com, msg.telus.com
 * U.S. Cellular: mms.uscc.net
 * UAE MMS: mms.ae
-* Unicel: unicel.com, info2go.com
-  (note: mobile number is tucked away in a text/plain part for unicel.com)
+* Unicel: unicel.com, info2go.com (note: mobile number is tucked away in a text/plain part for unicel.com)
 * Verizon: vzwpix.com, vtext.com, labwig.net
 * Virgin Mobile: vmpix.com, pixmbl.com, vmobl.com, yrmobl.com
 * Virgin Mobile of Canada: vmobile.ca
 * Vodacom: mms.vodacom4me.co.za
 * Cincinnati Bell: mms.gocbw.com
 
-=== Corpus of smart phones known to MMS2R:
+### Corpus of smart phones known to MMS2R:
 * Apple iPhone variants
 * Blackberry / Research In Motion variants
 * Casio variants
@@ -78,7 +78,7 @@ Suggestions and patches appreciated and welcomed!
 * Sprint variants
 * UTStarCom variants
 
-=== As Seen On The Internets - sites known to be using MMS2R in some fashion
+### As Seen On The Internets - sites known to be using MMS2R in some fashion
 
 * twitpic.com[http://www.twitpic.com/]
 * Simplton[http://simplton.com/]
@@ -90,25 +90,21 @@ Suggestions and patches appreciated and welcomed!
 * email the author to be listed here
 
 
-== FEATURES
+## FEATURES
 
-* #default_media and #default_text methods return a File that can be used in
-  attachment_fu or Paperclip
+* #default_media and #default_text methods return a File that can be used in attachment_fu or Paperclip
 * #process supports blocks for enumerating over the content of the MMS
 * #process can be made lazy when :process => :lazy is passed to new
 * logging is enabled when :logger => your_logger is passed to new
-* an mms instance acts like a Mail object, any methods not defined on the
-  instance are delegated to it's underlying Mail object
-* #device_type? returns a symbol representing a device or smartphone type
-  Known smartphones thus far: iPhone, BlackBerry, T-Mobile Dash, Droid,
-  Samsung
+* an mms instance acts like a Mail object, any methods not defined on the instance are delegated to it's underlying Mail object
+* #device_type? returns a symbol representing a device or smartphone type.  Known smartphones thus far: iPhone, BlackBerry, T-Mobile Dash, Droid, Samsung
 
-== BOOKS
+## BOOKS
 
 MMS2R, Making email useful
 http://peepcode.com/products/mms2r-pdf
 
-== SYNOPSIS
+## SYNOPSIS
 
   begin
     require 'mms2r'
@@ -179,28 +175,28 @@ http://peepcode.com/products/mms2r-pdf
   #remove all the media that was put to temporary disk
   mail.purge
 
-== REQUIREMENTS
+## REQUIREMENTS
 
 * Mail (mail)
 * Nokogiri (nokogiri)
 * UUIDTools (uuidtools)
 * EXIF Reader (exif)
 
-== INSTALL
+## INSTALL
 
 * sudo gem install mms2r
 
-== SOURCE
+## SOURCE
 
 git clone git://github.com/monde/mms2r.git
 
-== AUTHORS
+## AUTHORS
 
 Copyright (c) 2007-2012 by Mike Mondragon blog[http://plasti.cx/]
 
 MMS2R's {Flickr page}[http://www.flickr.com/photos/8627919@N05/]
 
-== CONTRIBUTORS
+## CONTRIBUTORS
 
 * Luke Francl - blog[http://railspikes.com/]
 * Will Jessup - blog[http://www.willjessup.com/]
