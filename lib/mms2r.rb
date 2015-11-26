@@ -23,12 +23,10 @@ module MMS2R
   # A hash of file extensions for common mime-types
 
   EXT = {
-    'text/plain' => 'text',
     'text/plain' => 'txt',
     'text/html' => 'html',
     'image/png' => 'png',
     'image/gif' => 'gif',
-    'image/jpeg' => 'jpeg',
     'image/jpeg' => 'jpg',
     'video/quicktime' => 'mov',
     'video/3gpp2' => '3g2'
